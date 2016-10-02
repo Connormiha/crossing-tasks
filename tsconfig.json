@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "jsx": "react"
+    },
+    "filesGlob": [
+        "./src/*.ts",
+        "./src/*.tsx"
+    ],
+    "files": [
+        "./typings/index.d.ts",
+        "./src/additionTypings.d.ts"
+    ],
+    "atom": {
+        "rewriteTsconfig": false
+    }
+}

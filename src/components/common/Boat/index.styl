@@ -1,0 +1,32 @@
+@keyframes shaker
+    10%, 90%
+        transform: translate(-4px, 0)
+
+    20%, 80%
+        transform: translate(4px, 0)
+
+    30%, 50%, 70%
+        transform: translate(-6px, 0)
+
+    40%, 60%
+        transform: translate(6px, 0)
+
+.boat
+    position: absolute
+    width: 50px
+    height: 70px
+    background: url(/src/assets/images/boat.svg) no-repeat
+    background-size: contain
+    transition: all 1s
+
+    &_position
+        &_left
+            top: 154px
+            left: 246px
+
+        &_right
+            top: 154px
+            left: 518px
+
+    &_invalid
+        animation: shaker 0.5s
