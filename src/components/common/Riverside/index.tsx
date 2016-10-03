@@ -6,12 +6,12 @@ import Сharacter from 'components/common/Сharacter';
 
 export default class Riverside extends React.PureComponent<any, any> {
     renderItems() {
-        let {onMoveCharacter} = this.props;
+        let {onMoveCharacter, characters, items} = this.props;
 
-        return this.props.items.map((id) => {
+        return items.map((id) => {
             return (
                 <div className={b('item').toString()} key={id}>
-                    <Сharacter id={id} onClick={onMoveCharacter.bind(null, id)} />
+                    <Сharacter id={id} name={characters[id].name} onClick={onMoveCharacter.bind(null, id)} />
                 </div>
             );
         });

@@ -4,30 +4,39 @@ import {connect} from 'react-redux';
 import {batchActions} from 'redux-batched-actions';
 import * as collocationActions from 'flux/collocation';
 import * as messageActions from 'flux/message';
+import * as gameActions from 'flux/game';
 import PageEntryPure from './index.pure';
 
-import game from 'games';
+import games from 'games';
 
 export default connect(
-    ({collocation, message}) => ({collocation, message}),
+    ({collocation, message, game}) =>
+        ({collocation, message, game}),
     (dispatch) => {
         return {
-            onStartGame() {
-                dispatch(collocationActions.init(game.collocation));
+            onStartGame(id: string) {
+                dispatch(batchActions([
+                    collocationActions.init(games[id].collocation),
+                    gameActions.set(id),
+                    gameActions.init(Object.keys(games))
+                ]));
             },
 
-            onMoveCharacter(collocation: any, id: string) {
-                let {success, message} = game.validator(collocation, id);
+            onMoveCharacter(collocation: any, gameId: string, id: string) {
+                let {success, message} = games[gameId].validator(collocation, id);
 
                 if (success) {
-                    dispatch(collocationActions.moveCharacter(id));
+                    dispatch(batchActions([
+                        collocationActions.moveCharacter(id),
+                        messageActions.set('')
+                    ]));
                 } else {
                     dispatch(messageActions.set(message));
                 }
             },
 
-            onMoveBoat(collocation) {
-                let {success, message} = game.boatValidator(collocation);
+            onMoveBoat(collocation, gameId: string) {
+                let {success, message} = games[gameId].boatValidator(collocation);
 
                 if (success) {
                     dispatch(batchActions([

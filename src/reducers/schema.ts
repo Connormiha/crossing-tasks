@@ -1,8 +1,8 @@
-import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT} from 'games';
+import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'games';
 
 const schema = {
     collocation: {
-        boat: [],
+        [BOAT]: [],
         [RIVERSIDE_LEFT]: [],
         [RIVERSIDE_RIGHT]: [],
         boatPosition: RIVERSIDE_LEFT
@@ -10,6 +10,10 @@ const schema = {
     message: {
         content: '',
         hidden: true
+    },
+    game: {
+        currentGame: 'game_1',
+        list: []
     }
 };
 

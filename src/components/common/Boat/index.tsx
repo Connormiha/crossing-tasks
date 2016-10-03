@@ -9,12 +9,12 @@ const b = bem(BOAT);
 
 export default class Boat extends React.PureComponent<any, any> {
     renderItems() {
-        let {items, onMoveCharacter} = this.props;
+        let {items, characters, onMoveCharacter} = this.props;
 
         return items.map((id: string) => {
             return (
                 <div className={b('item').toString()} key={id}>
-                    <Сharacter id={id} onClick={onMoveCharacter.bind(null, id)} packed />
+                    <Сharacter id={id} name={characters[id].name} onClick={onMoveCharacter.bind(null, id)} packed />
                 </div>
             );
         });

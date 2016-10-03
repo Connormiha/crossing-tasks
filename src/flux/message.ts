@@ -14,7 +14,6 @@ const getDefaultState = () =>
 export default (state = getDefaultState(), {type, content}) => {
     switch (type) {
         case MESSEGE_SET:
-            console.log(content);
             return state.set('content', content);
     }
 

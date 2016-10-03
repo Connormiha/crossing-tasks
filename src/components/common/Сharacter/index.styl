@@ -1,8 +1,17 @@
+@keyframes decrease
+    0%
+        width: 32px
+        height: 32px
+    100%
+        width: 24px
+        height: 24px
+
 .character
     position: relative
     background-size: contain
     width: 32px
     height: 32px
+    margin: 5px 0
     cursor: pointer
 
     &_skin
@@ -22,7 +31,40 @@
             // http://www.flaticon.com/free-icon/wolf_165191#term=wolf&page=1&position=17
             background-image: url(/src/assets/images/wolf.svg)
 
+        &_caveman
+            // http://www.flaticon.com/free-icon/caveman_78967#term=Caveman&page=1&position=1
+            background-image: url(/src/assets/images/caveman.svg)
+
+        &_priest
+            // http://www.flaticon.com/free-icon/priest_90522#term=Priest&page=1&position=17
+            background-image: url(/src/assets/images/priest.svg)
+
+        &_woman_black
+            // http://www.flaticon.com/free-icon/modeling-woman_83146#term=woman%20model&page=1&position=1
+            background-image: url(/src/assets/images/woman_black.svg)
+
+        &_woman_white
+            // http://www.flaticon.com/free-icon/modeling-woman_83146#term=woman%20model&page=1&position=1
+            background-image: url(/src/assets/images/woman_white.svg)
+
+        &_woman_red
+            // http://www.flaticon.com/free-icon/modeling-woman_83146#term=woman%20model&page=1&position=1
+            background-image: url(/src/assets/images/woman_red.svg)
+
+        &_men_black
+            // http://www.flaticon.com/free-icon/flamenco-male-model_40045#term=men%20model&page=1&position=1
+            background-image: url(/src/assets/images/men_black.svg)
+
+        &_men_white
+            // http://www.flaticon.com/free-icon/flamenco-male-model_40045#term=men%20model&page=1&position=1
+            background-image: url(/src/assets/images/men_white.svg)
+
+        &_men_red
+            // http://www.flaticon.com/free-icon/flamenco-male-model_40045#term=men%20model&page=1&position=1
+            background-image: url(/src/assets/images/men_red.svg)
+
     &_packed
         width: 24px
         height: 24px
         margin: 0 auto
+        animation: decrease 0.5s
