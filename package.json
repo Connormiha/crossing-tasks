@@ -1,6 +1,6 @@
 {
-  "name": "react-started-kit",
-  "description": "Empty project for Single Page Application. Stack technologies: TypeScript, Webpack, React, Redux, Stylus, PostCSS, Jest",
+  "name": "crossing-tasks",
+  "description": "",
   "version": "0.0.1",
   "license": "MIT",
   "author": "Mikhail Bodrov <connormiha1@gmail.com>",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Connormiha/react-started-kit2.git"
+    "url": "git://github.com/Connormiha/crossing-tasks.git"
   },
   "scripts": {
     "build": "NODE_ENV=production webpack",
@@ -45,8 +45,8 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "6.4.1",
-    "bem-cn": "2.1.2",
+    "autoprefixer": "6.5.0",
+    "bem-cn": "2.1.3",
     "css-loader": "0.25.0",
     "enzyme": "2.4.1",
     "extract-text-webpack-plugin": "1.0.1",
@@ -56,10 +56,10 @@
     "gulp-stylint": "^3.0.0",
     "gulp-tslint": "^6.1.1",
     "html-webpack-plugin": "2.22.0",
-    "jest-cli": "^15.1.1",
+    "jest-cli": "^16.0.0",
     "json-loader": "0.5.4",
-    "lodash": "^4.16.1",
-    "postcss": "5.2.0",
+    "lodash": "^4.16.3",
+    "postcss": "5.2.4",
     "poststylus": "^0.2.3",
     "react": "15.3.2",
     "react-addons-test-utils": "15.3.2",
@@ -68,7 +68,7 @@
     "react-router": "2.8.1",
     "redux": "3.6.0",
     "redux-batched-actions": "^0.1.3",
-    "seamless-immutable": "6.1.1",
+    "seamless-immutable": "6.1.3",
     "style-loader": "0.13.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.3.1",

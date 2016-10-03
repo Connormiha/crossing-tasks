@@ -3,7 +3,8 @@
         "target": "es6",
         "module": "commonjs",
         "moduleResolution": "node",
-        "jsx": "react"
+        "jsx": "react",
+        "lib": ["dom", "es2017"]
     },
     "filesGlob": [
         "./src/*.ts",

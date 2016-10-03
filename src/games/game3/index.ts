@@ -49,9 +49,13 @@ const game: Game = {
                 description: 'Savages do not have to get numerical superiority in any riverside',
                 check(collocation: any): boolean {
                     for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
-                        let side = collocation[item],
-                            mens = [],
-                            womans = [];
+                        let side: string[] = collocation[item],
+                            mens: string[] = [],
+                            womans: string[] = [];
+
+                        if (item !== collocation.boatPosition) {
+                            side = side.concat(collocation[BOAT]);
+                        }
 
                         for (let character of side) {
                             if (characters[character].sex === 'female') {
