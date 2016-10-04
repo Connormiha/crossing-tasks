@@ -38,7 +38,9 @@ export default class PageEntryPure extends React.PureComponent<any, any> {
                     />
                     <Riverside
                         items={collocation[RIVERSIDE_RIGHT]} characters={characters}
-                        onMoveCharacter={collocation.boatPosition === RIVERSIDE_RIGHT ? onMoveCharacter : noop} disableMove={game.currentGame !== RIVERSIDE_RIGHT} side={RIVERSIDE_RIGHT}
+                        disableMove={game.currentGame !== RIVERSIDE_RIGHT}
+                        side={RIVERSIDE_RIGHT}
+                        onMoveCharacter={collocation.boatPosition === RIVERSIDE_RIGHT ? onMoveCharacter : noop}
                     />
                     <Boat
                         items={collocation.boat} position={collocation.boatPosition} invalid={!!message.content} characters={characters}

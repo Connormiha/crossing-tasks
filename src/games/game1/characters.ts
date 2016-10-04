@@ -3,16 +3,16 @@ const characters = {
         name: 'Farmer'
     },
 
-    wolf: {
-        name: 'Wolf'
-    },
-
     cabbage: {
         name: 'Cabbage'
     },
 
     sheep: {
         name: 'Sheep'
+    },
+
+    wolf: {
+        name: 'Wolf'
     }
 };
 

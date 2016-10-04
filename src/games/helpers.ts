@@ -9,8 +9,6 @@ export interface ValidatorResult {
 }
 
 export interface Game {
-    validator(collocation: any, characterId: string): ValidatorResult;
-    boatValidator(collocation: any): ValidatorResult;
     characters: any;
     collocation: any;
     title: string;
@@ -25,6 +23,8 @@ export interface Game {
             check(collocation: any): boolean;
         }>;
     };
+    validator(collocation: any, characterId: string): ValidatorResult;
+    boatValidator(collocation: any): ValidatorResult;
 }
 
 const getCharacterDirection = (collocation: any, characterId: string): string => {
@@ -33,7 +33,7 @@ const getCharacterDirection = (collocation: any, characterId: string): string =>
             return item === BOAT ? collocation.boatPosition : BOAT;
         }
     }
-}
+};
 
 export function validator(collocation: any, characterId: string): ValidatorResult {
     let moveTo: string = getCharacterDirection(collocation, characterId);
@@ -43,7 +43,7 @@ export function validator(collocation: any, characterId: string): ValidatorResul
             return {
                 success: false,
                 message: rule.description
-            }
+            };
         }
     }
 
@@ -58,7 +58,7 @@ export function boatValidator(collocation: any): ValidatorResult {
             return {
                 success: false,
                 message: rule.description
-            }
+            };
         }
     }
 
