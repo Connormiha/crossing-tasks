@@ -19,7 +19,7 @@ const game: Game = {
         ],
         beforeDeparture: [
             {
-                description: 'Savages do not have to get numerical superiority in boat',
+                description: 'A woman can not be with a man without a husband in boat',
                 check(collocation: any): boolean {
                     let side = collocation[BOAT],
                         mens: string[] = [],
@@ -46,7 +46,7 @@ const game: Game = {
             },
 
             {
-                description: 'Savages do not have to get numerical superiority in any riverside',
+                description: 'A woman can not be with a man without a husband in riverside',
                 check(collocation: any): boolean {
                     for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
                         let side: string[] = collocation[item],
