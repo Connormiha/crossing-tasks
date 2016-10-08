@@ -1,7 +1,8 @@
 import schema from 'reducers/schema';
 
-export const GAME_SET: string = 'GAME_SET';
-export const GAME_INIT: string = 'GAME_INIT';
+import {
+    GAME_SET, GAME_INIT
+} from './constants';
 
 /**
  * Sets currentGame

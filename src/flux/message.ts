@@ -1,6 +1,6 @@
 import schema from 'reducers/schema';
 
-const MESSEGE_SET: string = 'MESSEGE_SET';
+import {MESSEGE_SET} from './constants';
 
 /**
  * Sets message

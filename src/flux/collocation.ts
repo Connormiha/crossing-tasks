@@ -1,9 +1,9 @@
 import schema from 'reducers/schema';
 import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'games';
 
-const COLLOCATION_MOVE_CHARACTER: string = 'COLLOCATION_MOVE_CHARACTER';
-const COLLOCATION_MOVE_BOAT: string = 'COLLOCATION_MOVE_BOAT';
-const COLLOCATION_INIT: string = 'COLLOCATION_INIT';
+import {
+    COLLOCATION_MOVE_CHARACTER, COLLOCATION_MOVE_BOAT, COLLOCATION_INIT
+} from './constants';
 
 /**
  * Moves character to other position (form/to boat)
