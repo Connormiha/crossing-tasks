@@ -2,7 +2,7 @@ import characters from './characters';
 
 import {
     RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT, ValidatorResult,
-    Game, validator, boatValidator
+    Game, landingValidator, depetureValidator
 } from 'games/helpers';
 
 const game: Game = {
@@ -54,8 +54,8 @@ const game: Game = {
             }
         ]
     },
-    validator,
-    boatValidator,
+    landingValidator,
+    depetureValidator,
     characters,
     collocation: {
         [BOAT]: [],

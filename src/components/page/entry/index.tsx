@@ -23,7 +23,7 @@ export default connect(
             },
 
             onMoveCharacter(collocation: any, gameId: string, id: string) {
-                let {success, message} = games[gameId].validator(collocation, id);
+                let {success, message} = games[gameId].landingValidator(collocation, id);
 
                 if (success) {
                     dispatch(batchActions([
@@ -36,7 +36,7 @@ export default connect(
             },
 
             onMoveBoat(collocation, gameId: string) {
-                let {success, message} = games[gameId].boatValidator(collocation);
+                let {success, message} = games[gameId].depetureValidator(collocation);
 
                 if (success) {
                     dispatch(batchActions([
