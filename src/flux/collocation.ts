@@ -48,7 +48,7 @@ export default (state = getDefaultState(), {type, collocation, id}) => {
             return state.set('boatPosition', state.boatPosition === RIVERSIDE_LEFT ? RIVERSIDE_RIGHT : RIVERSIDE_LEFT);
 
         case COLLOCATION_INIT:
-            return state.merge(collocation);
+            return state.merge(collocation).set('boatPosition', RIVERSIDE_LEFT);
     }
 
     return state;
