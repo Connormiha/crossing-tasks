@@ -18,7 +18,7 @@ export default class Riverside extends React.PureComponent<Props, {}> {
         return items.map((id: string) => {
             return (
                 <div className={b('item').toString()} key={id}>
-                    <Сharacter id={id} name={characters[id].name} onClick={onMoveCharacter.bind(null, id)} />
+                    <Сharacter name={characters[id].name} onClick={onMoveCharacter.bind(null, id)} />
                 </div>
             );
         });

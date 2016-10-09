@@ -23,7 +23,7 @@ export default class Boat extends React.PureComponent<Props, {}> {
         return items.map((id: string) => {
             return (
                 <div className={b('item').toString()} key={id}>
-                    <Сharacter id={id} name={characters[id].name} onClick={onMoveCharacter.bind(null, id)} packed />
+                    <Сharacter name={characters[id].name} onClick={onMoveCharacter.bind(null, id)} packed />
                 </div>
             );
         });

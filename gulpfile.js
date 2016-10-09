@@ -12,7 +12,7 @@ let changedFilesTypescript;
 let changedFilesStylus;
 
 if (PRE_COMMIT) {
-    changedFiles = execSync('git diff --cached --name-only --diff-filter=ACM src', {encoding: 'utf8'});
+    changedFiles = execSync('git diff --cached --name-only --diff-filter=ACM src __tests__', {encoding: 'utf8'});
     changedFiles = changedFiles.split('\n');
     changedFilesTypescript = changedFiles.filter((item) => /\.tsx?$/.test(item) && !/\.d\.ts$/.test(item));
     changedFilesStylus = changedFiles.filter((item) => /\.styl$/.test(item));
@@ -23,7 +23,7 @@ if (PRE_COMMIT) {
  * @desc Check TypeScript validation
  */
 gulp.task('tslint', () =>
-    gulp.src(PRE_COMMIT ? changedFilesTypescript : ['src/**/*.{ts,tsx}', '!src/**/*.d.ts'])
+    gulp.src(PRE_COMMIT ? changedFilesTypescript : ['{src,__tests__}/**/*.{ts,tsx}', '!src/**/*.d.ts'])
         .pipe(tslint({
             formatter: 'verbose'
         }))

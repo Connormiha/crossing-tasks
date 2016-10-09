@@ -49,7 +49,7 @@
         "radix": true,
         "semicolon": true,
         "trailing-comma": true,
-        "triple-equals": [true, "allow-null-check"],
+        "triple-equals": true,
         "variable-name": false,
         "whitespace": [true,
             "check-branch",

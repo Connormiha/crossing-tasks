@@ -1,0 +1,13 @@
+exports[`<Character /> should render 1`] = `
+<div
+  className="character character_skin_farmer"
+  onClick={[Function]}
+  title="farmer" />
+`;
+
+exports[`<Character /> should render packed 1`] = `
+<div
+  className="character character_skin_sheep character_packed"
+  onClick={[Function]}
+  title="sheep" />
+`;

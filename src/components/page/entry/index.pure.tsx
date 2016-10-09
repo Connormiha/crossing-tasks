@@ -5,7 +5,12 @@ import ListGames from 'components/common/ListGames';
 
 const b = bem('entry');
 
-export default class PageEntryPure extends React.PureComponent<any, {}> {
+interface Props extends React.Props<any> {
+    game: any;
+    onSelectGame(): void;
+}
+
+export default class PageEntryPure extends React.PureComponent<Props, {}> {
     render() {
         let {game, onSelectGame} = this.props;
 

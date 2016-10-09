@@ -18,4 +18,17 @@ describe('Collocation Store', () => {
     it('should have initial state', () => {
         expect(getState()).toEqual(schema.collocation);
     });
+
+    it('should init', () => {
+        store.dispatch(Actions.init({
+            [RIVERSIDE_LEFT]: ['foo', 'bar'],
+            [RIVERSIDE_RIGHT]: [],
+            [BOAT]: []
+        }));
+
+        expect(getState().boatPosition).toBe(RIVERSIDE_LEFT);
+        expect(getState()[RIVERSIDE_LEFT]).toEqual(['foo', 'bar']);
+        expect(getState()[RIVERSIDE_RIGHT]).toEqual([]);
+        expect(getState()[BOAT]).toEqual([]);
+    });
 });
