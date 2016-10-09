@@ -4,13 +4,18 @@ import * as React from 'react';
 
 const b = bem('list-games');
 
-export default class ListGames extends React.PureComponent<any, any> {
+interface Props extends React.Props<any> {
+    items: string[];
+    onClick(): void;
+}
+
+export default class ListGames extends React.PureComponent<Props, {}> {
     renderList() {
         let {items, onClick} = this.props;
 
         return items.map((id) => {
             return (
-                <li key={id} onClick={onClick.bind(null, id)}>
+                <li className={b('item')} key={id} onClick={onClick.bind(null, id)}>
                     {id}
                 </li>
             );
@@ -18,8 +23,6 @@ export default class ListGames extends React.PureComponent<any, any> {
     }
 
     render() {
-        let {disabled, onClick} = this.props;
-
         return (
             <ul className={b.toString()}>
                 {this.renderList()}

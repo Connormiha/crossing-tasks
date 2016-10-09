@@ -1,7 +1,7 @@
 import characters from './characters';
 
 import {
-    RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT, ValidatorResult,
+    RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT,
     Game, landingValidator, depetureValidator
 } from 'games/helpers';
 

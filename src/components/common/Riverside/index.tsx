@@ -2,9 +2,9 @@ import './index.styl';
 const b = bem('riverside');
 
 import * as React from 'react';
-import Сharacter from 'components/common/Сharacter';
+import Сharacter from 'components/common/Character';
 
-interface Props {
+interface Props extends React.Props<any> {
     side: string;
     items: string[];
     characters: any;

@@ -38,7 +38,8 @@ module.exports = {
     //context: sourcePath,
     output: {
         path: PARAMS.FOLDER,
-        filename: '[name].bundle.js'
+        publicPath: '/',
+        filename: '[name].[hash].bundle.js'
     },
     resolve: {
         root: [sourcePath],
@@ -90,6 +91,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
+            inject: 'head',
             minify: {
                 //removeComments: true
             }

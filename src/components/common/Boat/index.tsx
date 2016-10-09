@@ -1,13 +1,22 @@
 import './index.styl';
 
 import * as React from 'react';
-import Сharacter from 'components/common/Сharacter';
+import Сharacter from 'components/common/Character';
 
-import {BOAT} from 'games';
+import {BOAT, PositionCharacter} from 'games';
 
 const b = bem(BOAT);
 
-export default class Boat extends React.PureComponent<any, any> {
+interface Props extends React.Props<any> {
+    items: string[];
+    characters: any;
+    position: PositionCharacter;
+    invalid: boolean;
+    onMoveCharacter(): void;
+    onMoveEnd(): void;
+}
+
+export default class Boat extends React.PureComponent<Props, {}> {
     renderItems() {
         let {items, characters, onMoveCharacter} = this.props;
 

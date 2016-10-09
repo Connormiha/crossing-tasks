@@ -2,6 +2,8 @@ export const RIVERSIDE_LEFT: string = 'left';
 export const RIVERSIDE_RIGHT: string = 'right';
 export const BOAT: string = 'boat';
 
+export type PositionCharacter = 'left' | 'right' | 'boat';
+
 export interface ValidatorResult {
     success: boolean;
     message?: string;

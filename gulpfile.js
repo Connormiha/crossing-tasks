@@ -12,32 +12,33 @@ let changedFilesTypescript;
 let changedFilesStylus;
 
 if (PRE_COMMIT) {
-    changedFiles = execSync('git diff --cached --name-only --diff-filter=ACM', {encoding: 'utf8'});
+    changedFiles = execSync('git diff --cached --name-only --diff-filter=ACM src', {encoding: 'utf8'});
     changedFiles = changedFiles.split('\n');
-    changedFilesTypescript = changedFiles.filter((item) => /^src\/.+?\.tsx?$/.test(item) && !/\.d\.ts$/.test(item));
-    changedFilesStylus = changedFiles.filter((item) => /^src\/.+?\.styl$/.test(item));
+    changedFilesTypescript = changedFiles.filter((item) => /\.tsx?$/.test(item) && !/\.d\.ts$/.test(item));
+    changedFilesStylus = changedFiles.filter((item) => /\.styl$/.test(item));
 }
 
 /**
  *
  * @desc Check TypeScript validation
  */
-gulp.task('tslint', ()=>
+gulp.task('tslint', () =>
     gulp.src(PRE_COMMIT ? changedFilesTypescript : ['src/**/*.{ts,tsx}', '!src/**/*.d.ts'])
         .pipe(tslint({
             formatter: 'verbose'
         }))
-        .pipe(tslint.report())
+        .pipe(tslint.report({emitError: PRE_COMMIT}))
 );
 
 /**
  *
  * @desc Check stylus validation
  */
-gulp.task('styluslint', ()=>
+gulp.task('styluslint', () =>
     gulp.src(PRE_COMMIT ? changedFilesStylus : ['src/**/*.styl'])
         .pipe(stylint())
         .pipe(stylint.reporter())
+        .pipe(stylint.reporter('fail', {failOnWarning: PRE_COMMIT}))
 );
 
 /**
