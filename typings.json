@@ -1,8 +1,8 @@
 {
   "globalDependencies": {
     "jest": "registry:dt/jest#15.1.1+20160919141445",
-    "lodash": "registry:dt/lodash#4.14.0+20161003133408",
-    "react": "registry:dt/react#0.14.0+20160927082313",
+    "lodash": "registry:dt/lodash#4.14.0+20161004174455",
+    "react": "registry:dt/react#0.14.0+20161008064207",
     "react-addons-test-utils": "registry:dt/react-addons-test-utils#0.14.0+20160427035638",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
     "react-redux": "registry:dt/react-redux#4.4.0+20160908183346",
