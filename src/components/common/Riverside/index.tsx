@@ -4,11 +4,18 @@ const b = bem('riverside');
 import * as React from 'react';
 import Сharacter from 'components/common/Сharacter';
 
-export default class Riverside extends React.PureComponent<any, any> {
+interface Props {
+    side: string;
+    items: string[];
+    characters: any;
+    onMoveCharacter(): void;
+}
+
+export default class Riverside extends React.PureComponent<Props, {}> {
     renderItems() {
         let {onMoveCharacter, characters, items} = this.props;
 
-        return items.map((id) => {
+        return items.map((id: string) => {
             return (
                 <div className={b('item').toString()} key={id}>
                     <Сharacter id={id} name={characters[id].name} onClick={onMoveCharacter.bind(null, id)} />

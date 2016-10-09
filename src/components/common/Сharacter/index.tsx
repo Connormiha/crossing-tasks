@@ -4,7 +4,14 @@ import * as React from 'react';
 
 const b = bem('character');
 
-export default class Character extends React.PureComponent<any, any> {
+interface Props {
+    id: string;
+    packed?: boolean;
+    name: string;
+    onClick(e: React.SyntheticEvent): void;
+}
+
+export default class Character extends React.PureComponent<Props, {}> {
     render() {
         let {id, packed, name, onClick} = this.props;
 
