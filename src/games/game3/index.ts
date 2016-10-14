@@ -6,7 +6,7 @@ import {
 } from 'games/helpers';
 
 const game: Game = {
-    title: 'Crossing 2',
+    title: 'Crossing 3',
     description: 'No woman with other men without her hasband',
     rules: {
         beforeLanding: [
