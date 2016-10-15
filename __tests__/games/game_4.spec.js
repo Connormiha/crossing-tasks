@@ -3,9 +3,9 @@ import {
     Game
 } from 'games/helpers';
 
-const game: Game = games.game_2;
+const game: Game = games.game_4;
 
-describe('Game_2', () => {
+describe('Game_4', () => {
     let result;
 
     it('shouldn\'t move empty boat', () => {

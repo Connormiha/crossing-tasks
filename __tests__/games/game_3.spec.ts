@@ -13,5 +13,4 @@ describe('Game_3', () => {
 
         expect(result.success).toBe(false);
     });
-
 });
