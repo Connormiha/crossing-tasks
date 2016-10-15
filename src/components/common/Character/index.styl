@@ -6,6 +6,27 @@
         width: 24px
         height: 24px
 
+// @stylint off
+$characters =   'cabbage',
+                'farmer',
+                'sheep',
+                'wolf',
+                'caveman',
+                'priest',
+                'woman_black',
+                'woman_white',
+                'woman_red',
+                'men_black',
+                'men_white',
+                'men_red',
+                'boy_red',
+                'boy_yellow',
+                'girl_red',
+                'girl_yellow',
+                'policeman',
+                'criminal'
+// @stylint on
+
 .character
     position: relative
     background-size: contain
@@ -15,77 +36,20 @@
     cursor: pointer
 
     &_skin
-        &_cabbage
-            // http://www.flaticon.com/free-icon/cabbage_135237#term=cabbage&page=1&position=10
-            background-image: url(/src/assets/images/cabbage.svg)
+        for $item in $characters
+            &_{$item}
+                background-image: url(/src/assets/images/$item.svg)
 
-        &_farmer
-            // http://www.flaticon.com/free-icon/farmer_10613#term=farmer&page=1&position=8
-            background-image: url(/src/assets/images/farmer.svg)
-
-        &_sheep
-            // http://www.flaticon.com/free-icon/sheep_220082#term=sheep&page=1&position=8
-            background-image: url(/src/assets/images/sheep.svg)
-
-        &_wolf
-            // http://www.flaticon.com/free-icon/wolf_165191#term=wolf&page=1&position=17
-            background-image: url(/src/assets/images/wolf.svg)
-
-        &_caveman
-            // http://www.flaticon.com/free-icon/caveman_78967#term=Caveman&page=1&position=1
-            background-image: url(/src/assets/images/caveman.svg)
-
-        &_priest
-            // http://www.flaticon.com/free-icon/priest_90522#term=Priest&page=1&position=17
-            background-image: url(/src/assets/images/priest.svg)
-
-        &_woman_black
-            // http://www.flaticon.com/free-icon/modeling-woman_83146#term=woman%20model&page=1&position=1
-            background-image: url(/src/assets/images/woman_black.svg)
-
-        &_woman_white
-            // http://www.flaticon.com/free-icon/modeling-woman_83146#term=woman%20model&page=1&position=1
-            background-image: url(/src/assets/images/woman_white.svg)
-
-        &_woman_red
-            // http://www.flaticon.com/free-icon/modeling-woman_83146#term=woman%20model&page=1&position=1
-            background-image: url(/src/assets/images/woman_red.svg)
-
-        &_men_black
-            // http://www.flaticon.com/free-icon/flamenco-male-model_40045#term=men%20model&page=1&position=1
-            background-image: url(/src/assets/images/men_black.svg)
-
-        &_men_white
-            // http://www.flaticon.com/free-icon/flamenco-male-model_40045#term=men%20model&page=1&position=1
-            background-image: url(/src/assets/images/men_white.svg)
-
-        &_men_red
-            // http://www.flaticon.com/free-icon/flamenco-male-model_40045#term=men%20model&page=1&position=1
-            background-image: url(/src/assets/images/men_red.svg)
-
-        &_boy_red
-            // http://www.flaticon.com/free-icon/flamenco-male-model_40045#term=men%20model&page=1&position=1
-            background-image: url(/src/assets/images/boy_red.svg)
-
-        &_boy_yellow
-            // http://www.flaticon.com/free-icon/flamenco-male-model_40045#term=men%20model&page=1&position=1
-            background-image: url(/src/assets/images/boy_yellow.svg)
-
-        &_girl_red
-            // http://www.flaticon.com/free-icon/flamenco-male-model_40045#term=men%20model&page=1&position=1
-            background-image: url(/src/assets/images/girl_red.svg)
-
-        &_girl_yellow
-            // http://www.flaticon.com/free-icon/flamenco-male-model_40045#term=men%20model&page=1&position=1
-            background-image: url(/src/assets/images/girl_yellow.svg)
-
-        &_policeman
-            // http://www.flaticon.com/free-icon/flamenco-male-model_40045#term=men%20model&page=1&position=1
-            background-image: url(/src/assets/images/policeman.svg)
-
-        &_criminal
-            // http://www.flaticon.com/free-icon/flamenco-male-model_40045#term=men%20model&page=1&position=1
-            background-image: url(/src/assets/images/criminal.svg)
+        // http://www.flaticon.com/free-icon/cabbage_135237#term=cabbage&page=1&position=10
+        // http://www.flaticon.com/free-icon/farmer_10613#term=farmer&page=1&position=8
+        // http://www.flaticon.com/free-icon/sheep_220082#term=sheep&page=1&position=8
+        // http://www.flaticon.com/free-icon/wolf_165191#term=wolf&page=1&position=17
+        // http://www.flaticon.com/free-icon/caveman_78967#term=Caveman&page=1&position=1
+        // http://www.flaticon.com/free-icon/priest_90522#term=Priest&page=1&position=17
+        // http://www.flaticon.com/free-icon/modeling-woman_83146#term=woman%20model&page=1&position=1
+        // http://www.flaticon.com/free-icon/modeling-woman_83146#term=woman%20model&page=1&position=1
+        // http://www.flaticon.com/free-icon/modeling-woman_83146#term=woman%20model&page=1&position=1
+        // http://www.flaticon.com/free-icon/flamenco-male-model_40045#term=men%20model&page=1&position=1
 
     &_packed
         width: 24px
