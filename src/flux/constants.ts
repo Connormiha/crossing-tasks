@@ -1,8 +1,8 @@
-export const COLLOCATION_MOVE_CHARACTER: Symbol = Symbol();
-export const COLLOCATION_MOVE_BOAT: Symbol = Symbol();
-export const COLLOCATION_INIT: Symbol = Symbol();
+export const COLLOCATION_MOVE_CHARACTER: symbol = Symbol();
+export const COLLOCATION_MOVE_BOAT: symbol = Symbol();
+export const COLLOCATION_INIT: symbol = Symbol();
 
-export const GAME_SET: Symbol = Symbol();
-export const GAME_INIT: Symbol = Symbol();
+export const GAME_SET: symbol = Symbol();
+export const GAME_INIT: symbol = Symbol();
 
-export const MESSEGE_SET: Symbol = Symbol();
+export const MESSEGE_SET: symbol = Symbol();

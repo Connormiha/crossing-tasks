@@ -4,7 +4,7 @@ import Pure from './index.pure';
 
 export default connect(
     ({game}) => ({game}),
-    (dispatch) => {
+    () => {
         return {
             onSelectGame(id: string) {
                 browserHistory.push(`/play/${id}/`);
