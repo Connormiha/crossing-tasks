@@ -1,8 +1,6 @@
-import './index.styl';
+const styles = require('./index.styl');
 
 import * as React from 'react';
-
-const b = bem('list-games');
 
 interface Props extends React.Props<any> {
     items: string[];
@@ -15,7 +13,7 @@ export default class ListGames extends React.PureComponent<Props, {}> {
 
         return items.map((id) => {
             return (
-                <li className={b('item')} key={id} onClick={onClick.bind(null, id)}>
+                <li className={styles.item} key={id} onClick={onClick.bind(null, id)}>
                     {id}
                 </li>
             );
@@ -24,7 +22,7 @@ export default class ListGames extends React.PureComponent<Props, {}> {
 
     render() {
         return (
-            <ul className={b.toString()}>
+            <ul className={styles['list-games']}>
                 {this.renderList()}
             </ul>
         );

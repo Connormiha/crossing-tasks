@@ -15,8 +15,15 @@ function extractStyle(loaders) {
     return ExtractTextPlugin.extract('style', loaders.substr(loaders.indexOf('!')));
 }
 
-let cssLoaders = 'style!css?localIdentName=[hash:base64]';
-let stylusLoaders = `${cssLoaders}!stylus`;
+let cssLoaders = 'style!css?localIdentName=';
+
+if (NODE_ENV === 'production') {
+    cssLoaders += '[hash:base64:5]';
+} else {
+    cssLoaders += '[local]_[hash:base64:5]';
+}
+
+let stylusLoaders = `${cssLoaders}&modules!stylus`;
 
 cssLoaders = extractStyle(cssLoaders);
 stylusLoaders = extractStyle(stylusLoaders);
@@ -67,7 +74,7 @@ module.exports = {
                 loader: stylusLoaders
             },
             {
-                test: /\.(png|svg|jpg|gif)$/,
+                test: /\.(png|svg|jpg|gif|woff2?|eot)$/,
                 loader: "file"
             },
             {
@@ -86,8 +93,7 @@ module.exports = {
     plugins: [
         new webpack.ProvidePlugin({
             React: 'react',
-            immutable: 'seamless-immutable',
-            bem: 'bem-cn'
+            immutable: 'seamless-immutable'
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html',

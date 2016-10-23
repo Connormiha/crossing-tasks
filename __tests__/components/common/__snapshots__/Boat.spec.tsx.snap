@@ -1,22 +1,22 @@
 exports[`<Boat /> should render 1`] = `
 <div
-  className="boat"
+  className="boat boat_position_left"
   onTransitionEnd={[Function]} />
 `;
 
 exports[`<Boat /> should render items 1`] = `
 <div
-  className="boat"
+  className="boat boat_position_left"
   onTransitionEnd={[Function]}>
   <div
-    className="boat__item">
+    className="item">
     <div
       className="character character_skin_foo character_packed"
       onClick={[Function]}
       title="foo" />
   </div>
   <div
-    className="boat__item">
+    className="item">
     <div
       className="character character_skin_bar character_packed"
       onClick={[Function]}

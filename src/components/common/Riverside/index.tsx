@@ -1,5 +1,4 @@
-import './index.styl';
-const b = bem('riverside');
+const styles = require('./index.styl');
 
 import * as React from 'react';
 import Сharacter from 'components/common/Character';
@@ -17,7 +16,7 @@ export default class Riverside extends React.PureComponent<Props, {}> {
 
         return items.map((id: string) => {
             return (
-                <div className={b('item').toString()} key={id}>
+                <div key={id}>
                     <Сharacter name={characters[id].name} onClick={onMoveCharacter.bind(null, id)} />
                 </div>
             );
@@ -28,7 +27,7 @@ export default class Riverside extends React.PureComponent<Props, {}> {
         const {side} = this.props;
 
         return (
-            <div className={b({side}).toString()}>
+            <div className={`${styles.riverside} ${styles['riverside_side_' + side]}`}>
                 {this.renderItems()}
             </div>
         );

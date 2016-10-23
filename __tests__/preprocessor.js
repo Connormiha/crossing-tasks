@@ -1,6 +1,14 @@
 const tsc = require('typescript');
 const tsconfig = require('../tsconfig.json');
 
+let styles = `
+return new Proxy({}, {
+    get(target, prop) {
+        return prop;
+    }
+});
+`;
+
 module.exports = {
     process(src, path) {
         if (path.endsWith('.ts') || path.endsWith('.tsx')) {
@@ -12,7 +20,7 @@ module.exports = {
         }
 
         if (path.endsWith('.styl') || path.endsWith('.css')) {
-            return '';
+            return styles;
         }
 
         return src;

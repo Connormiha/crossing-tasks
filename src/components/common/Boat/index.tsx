@@ -1,11 +1,9 @@
-import './index.styl';
+const styles = require('./index.styl');
 
 import * as React from 'react';
 import Сharacter from 'components/common/Character';
 
-import {BOAT, PositionCharacter} from 'games';
-
-const b = bem(BOAT);
+import {PositionCharacter} from 'games';
 
 interface Props extends React.Props<any> {
     items: string[];
@@ -22,7 +20,7 @@ export default class Boat extends React.PureComponent<Props, {}> {
 
         return items.map((id: string) => {
             return (
-                <div className={b('item').toString()} key={id}>
+                <div className={styles.item} key={id}>
                     <Сharacter name={characters[id].name} onClick={onMoveCharacter.bind(null, id)} packed />
                 </div>
             );
@@ -32,8 +30,14 @@ export default class Boat extends React.PureComponent<Props, {}> {
     render() {
         const {position, invalid, onMoveEnd} = this.props;
 
+        let className = `${styles.boat} ${styles['boat_position_' + position]}`;
+
+        if (invalid) {
+            className += ` ${styles.boat_invalid}`;
+        }
+
         return (
-            <div className={b({position, invalid}).toString()} onTransitionEnd={onMoveEnd}>
+            <div className={className} onTransitionEnd={onMoveEnd}>
                 {this.renderItems()}
             </div>
         );

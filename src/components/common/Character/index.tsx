@@ -1,8 +1,6 @@
-import './index.styl';
+const styles = require('./index.styl');
 
 import * as React from 'react';
-
-const b = bem('character');
 
 interface Props extends React.Props<any> {
     packed?: boolean;
@@ -12,10 +10,15 @@ interface Props extends React.Props<any> {
 
 export default class Character extends React.PureComponent<Props, {}> {
     render() {
-        let {packed, name, onClick} = this.props;
+        let {packed, name, onClick} = this.props,
+            className = `${styles.character} ${styles['character_skin_' + name.toLowerCase()]}`;
+
+        if (packed) {
+            className += ` ${styles.character_packed}`;
+        }
 
         return (
-            <div className={b({skin: name.toLowerCase(), packed}).toString()} onClick={onClick} title={name} />
+            <div className={className} onClick={onClick} title={name} />
         );
     }
 }

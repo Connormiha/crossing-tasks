@@ -1,8 +1,6 @@
-import './index.styl';
+const styles = require('./index.styl');
 
 import * as React from 'react';
-
-const b = bem('play');
 
 import Riverside from 'components/common/Riverside';
 import Boat from 'components/common/Boat';
@@ -39,8 +37,8 @@ export default class PagePlayPure extends React.PureComponent<Props, {}> {
         onMoveCharacter = onMoveCharacter.bind(null, collocation, game.currentGame);
 
         return (
-            <div className={b.toString()}>
-                <div className={b('content').toString()}>
+            <div className={styles.page}>
+                <div className={styles.content}>
                     <Riverside
                         items={collocation[RIVERSIDE_LEFT]} characters={characters}
                         onMoveCharacter={collocation.boatPosition === RIVERSIDE_LEFT ? onMoveCharacter : noop} side={RIVERSIDE_LEFT}

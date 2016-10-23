@@ -1,9 +1,7 @@
-import './index.styl';
+const styles = require('./index.styl');
 
 import * as React from 'react';
 import ListGames from 'components/common/ListGames';
-
-const b = bem('entry');
 
 interface Props extends React.Props<any> {
     game: any;
@@ -15,8 +13,8 @@ export default class PageEntryPure extends React.PureComponent<Props, {}> {
         let {game, onSelectGame} = this.props;
 
         return (
-            <div className={b.toString()}>
-                <div className={b('content').toString()}>
+            <div className={styles.page}>
+                <div className={styles.content}>
                     <ListGames items={game.list} onClick={onSelectGame} />
                 </div>
             </div>
