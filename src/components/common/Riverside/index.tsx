@@ -10,7 +10,7 @@ interface Props extends React.Props<any> {
     onMoveCharacter(): void;
 }
 
-export default class Riverside extends React.PureComponent<Props, {}> {
+export default class Riverside extends React.PureComponent<Props, null> {
     renderItems() {
         let {onMoveCharacter, characters, items} = this.props;
 

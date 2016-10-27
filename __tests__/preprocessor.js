@@ -1,8 +1,8 @@
 const tsc = require('typescript');
 const tsconfig = require('../tsconfig.json');
 
-let styles = `
-return new Proxy({}, {
+const styles = `
+module.exports = new Proxy({}, {
     get(target, prop) {
         return prop;
     }

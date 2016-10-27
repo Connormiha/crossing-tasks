@@ -2,7 +2,12 @@ const styles = require('./index.styl');
 
 import * as React from 'react';
 
-export default class Boat extends React.PureComponent<any, any> {
+interface Props extends React.Props<any> {
+    disabled: boolean;
+    onClick(): void;
+}
+
+export default class Boat extends React.PureComponent<Props, null> {
     render() {
         let {disabled, onClick} = this.props;
 

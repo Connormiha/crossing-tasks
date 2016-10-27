@@ -8,7 +8,7 @@ interface Props extends React.Props<any> {
     onClick(e: React.SyntheticEvent): void;
 }
 
-export default class Character extends React.PureComponent<Props, {}> {
+export default class Character extends React.PureComponent<Props, null> {
     render() {
         let {packed, name, onClick} = this.props,
             className = `${styles.character} ${styles['character_skin_' + name.toLowerCase()]}`;

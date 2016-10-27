@@ -2,7 +2,7 @@ const styles = require('./index.styl');
 
 import * as React from 'react';
 
-export default class River extends React.PureComponent<any, any> {
+export default class River extends React.PureComponent<any, null> {
     render() {
         return (
             <div className={styles.river}>
