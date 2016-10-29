@@ -1,0 +1,6 @@
+exports[`<Warning /> should render 1`] = `
+<div
+  className="warning">
+  Foo
+</div>
+`;

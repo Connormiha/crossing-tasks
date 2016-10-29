@@ -4,7 +4,6 @@ import Boat from 'components/common/Boat';
 import * as noop from 'lodash/noop';
 
 describe('<Boat />', () => {
-
     it('should render', () => {
         let tree = renderer.create(<Boat items={[]} position="left" onMoveEnd={noop} onMoveCharacter={noop} />).toJSON();
 
