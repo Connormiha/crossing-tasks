@@ -6,7 +6,7 @@ import {
 } from 'games/helpers';
 
 const game: Game = {
-    title: 'Crossing 3',
+    title: 'Crossing 4',
     description: '@todo',
     rules: {
         beforeLanding: [
@@ -54,10 +54,6 @@ const game: Game = {
                 check(collocation: any): boolean {
                     for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
                         let side = collocation[item];
-
-                        if (item !== collocation.boatPosition && collocation.boatPosition !== BOAT) {
-                            side = side.concat(collocation[BOAT]);
-                        }
 
                         if (side.includes('criminal') &&
                             !side.includes('policeman') &&
