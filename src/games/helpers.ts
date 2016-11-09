@@ -35,6 +35,8 @@ const getCharacterDirection = (collocation: any, characterId: string): string =>
             return item === BOAT ? collocation.boatPosition : BOAT;
         }
     }
+
+    return '';
 };
 
 export function landingValidator(collocation: any, characterId: string): ValidatorResult {

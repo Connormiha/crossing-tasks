@@ -22,7 +22,7 @@ interface Props extends React.Props<any> {
     onStartGame(id: string): void;
 }
 
-export default class PagePlayPure extends React.PureComponent<Props, null> {
+export default class PagePlayPure extends React.PureComponent<Props, {}> {
     componentWillMount() {
         this.props.onStartGame(this.props.routeParams.id);
     }
