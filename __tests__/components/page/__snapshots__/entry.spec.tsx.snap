@@ -37,6 +37,14 @@ exports[`<PageEntryPure /> should render 1`] = `
           game_4
         </a>
       </li>
+      <li
+        className="item">
+        <a
+          onClick={[Function]}
+          style={Object {}}>
+          game_5
+        </a>
+      </li>
     </ul>
   </div>
 </div>
