@@ -9,7 +9,7 @@ import Warning from 'components/common/Warning';
 
 import * as noop from 'lodash/noop';
 
-import games, {RIVERSIDE_LEFT, RIVERSIDE_RIGHT} from 'games';
+import games, {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'games';
 
 interface Props extends React.Props<any> {
     game: any;
@@ -19,12 +19,29 @@ interface Props extends React.Props<any> {
     onMoveCharacter(): void;
     onMoveBoat(): void;
     onBoatMoveEnd(): void;
+    onFinishGame(): void;
     onStartGame(id: string): void;
 }
 
 export default class PagePlayPure extends React.PureComponent<Props, {}> {
     componentWillMount() {
         this.props.onStartGame(this.props.routeParams.id);
+    }
+
+    componentDidUpdate() {
+        let {game: {finished}, collocation, onFinishGame} = this.props;
+
+        if (!finished && collocation[BOAT].length === 0 && collocation[RIVERSIDE_LEFT].length === 0) {
+            onFinishGame();
+        }
+    }
+
+    renderFinished(): React.ReactElement<any> {
+        return (
+            <div className={styles.finish}>
+                <div>Finished!</div>
+            </div>
+        );
     }
 
     render() {
@@ -54,6 +71,9 @@ export default class PagePlayPure extends React.PureComponent<Props, {}> {
                     />
                     <Remote onClick={onMoveBoat.bind(null, collocation, game.currentGame)} disabled={!collocation.boat.length} />
                     <Warning>{message.content}</Warning>
+                    {game.finished &&
+                        this.renderFinished()
+                    }
                 </div>
             </div>
         );

@@ -13,6 +13,7 @@ const schema = {
     },
     game: {
         currentGame: 'game_1',
+        finished: false,
         list: []
     }
 };

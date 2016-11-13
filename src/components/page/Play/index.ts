@@ -53,6 +53,10 @@ export default connect(
                 }
 
                 dispatch(batchActions(actions));
+            },
+
+            onFinishGame() {
+                dispatch(gameActions.finish());
             }
         };
     }
