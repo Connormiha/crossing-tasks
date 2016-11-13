@@ -7,7 +7,7 @@ import {
 
 const game: Game = {
     title: 'Crossing 3',
-    description: 'No woman with other men without her hasband',
+    description: 'No woman with other men without her hasband (or other woman)',
     rules: {
         beforeLanding: [
             {
@@ -52,7 +52,7 @@ const game: Game = {
             },
 
             {
-                description: 'A woman can not be with a man without a husband in riverside',
+                description: 'A woman can not be with a men without a husband or other woman in riverside',
                 check(collocation: any): boolean {
                     for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
                         let side: string[] = collocation[item],
@@ -71,12 +71,11 @@ const game: Game = {
                             }
                         }
 
-                        if (mens.length) {
-                            for (let woman of women) {
-                                if (!mens.includes(woman)) {
-                                    return false;
-                                }
-                            }
+                        if (mens.length &&
+                            women.length === 1 &&
+                            !mens.includes(women[0])
+                        ) {
+                            return false;
                         }
                     }
 
