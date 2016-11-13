@@ -1,7 +1,7 @@
 {
   "globalDependencies": {
     "jest": "registry:dt/jest#16.0.0+20161025131017",
-    "lodash": "registry:dt/lodash#4.14.0+20161028154038",
+    "lodash": "registry:dt/lodash#4.14.0+20161110215204",
     "react": "registry:dt/react#0.14.0+20161024223416",
     "react-addons-test-utils": "registry:dt/react-addons-test-utils#0.14.0+20160427035638",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
