@@ -59,6 +59,13 @@ module.exports = {
     watch: PARAMS.watch,
     module: {
         noParse: [/\.min\.js$/],
+        preLoaders: [
+            {
+                test: /\.tsx?$/,
+                loader: 'tslint',
+                exclude: [nodePath]
+            }
+        ],
         loaders: [
             {
                 test: /\.tsx?$/,
