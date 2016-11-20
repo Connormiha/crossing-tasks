@@ -76,17 +76,24 @@ export default class PagePlayPure extends React.PureComponent<Props, {}> {
             <div className={styles.page}>
                 <div className={styles.content}>
                     <Riverside
-                        items={collocation[RIVERSIDE_LEFT]} characters={characters} side={RIVERSIDE_LEFT}
+                        items={collocation[RIVERSIDE_LEFT]}
+                        characters={characters}
+                        side={RIVERSIDE_LEFT}
                         onMoveCharacter={collocation.boatPosition === RIVERSIDE_LEFT ? this.handleMoveCharacter : noop}
                     />
                     <Riverside
-                        items={collocation[RIVERSIDE_RIGHT]} characters={characters}
+                        items={collocation[RIVERSIDE_RIGHT]}
+                        characters={characters}
                         side={RIVERSIDE_RIGHT}
                         onMoveCharacter={collocation.boatPosition === RIVERSIDE_RIGHT ? this.handleMoveCharacter : noop}
                     />
                     <Boat
-                        items={collocation.boat} position={collocation.boatPosition} invalid={!!message.content} characters={characters}
-                        onMoveCharacter={this.handleMoveCharacter} onMoveEnd={this.handleMoveBoatEnd}
+                        items={collocation.boat}
+                        position={collocation.boatPosition}
+                        invalid={!!message.content}
+                        characters={characters}
+                        onMoveCharacter={this.handleMoveCharacter}
+                        onMoveEnd={this.handleMoveBoatEnd}
                     />
                     <Remote onClick={this.handleMoveBoat} disabled={!collocation.boat.length} />
                     <Warning>{message.content}</Warning>
