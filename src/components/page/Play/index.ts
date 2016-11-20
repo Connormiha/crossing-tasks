@@ -32,7 +32,7 @@ export default connect(
                 }
             },
 
-            onMoveBoat(collocation, gameId: string) {
+            onMoveBoat(collocation: any, gameId: string) {
                 let {success, message} = games[gameId].depetureValidator(collocation);
 
                 if (success) {
@@ -45,7 +45,7 @@ export default connect(
                 }
             },
 
-            onBoatMoveEnd(collocation) {
+            onBoatMoveEnd(collocation: any) {
                 let actions: Array<any> = [];
 
                 for (let id of collocation.boat) {

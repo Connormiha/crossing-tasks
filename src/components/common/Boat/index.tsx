@@ -10,7 +10,7 @@ interface Props extends React.Props<any> {
     characters: any;
     position: PositionCharacter;
     invalid: boolean;
-    onMoveCharacter(): void;
+    onMoveCharacter(id: string): void;
     onMoveEnd(): void;
 }
 
@@ -21,7 +21,7 @@ export default class Boat extends React.PureComponent<Props, null> {
         return items.map((id: string) => {
             return (
                 <div className={styles.item} key={id}>
-                    <Сharacter name={characters[id].name} onClick={onMoveCharacter.bind(null, id)} packed />
+                    <Сharacter name={characters[id].name} id={id} onClick={onMoveCharacter} packed />
                 </div>
             );
         });

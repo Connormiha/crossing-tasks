@@ -7,7 +7,7 @@ interface Props extends React.Props<any> {
     side: string;
     items: string[];
     characters: any;
-    onMoveCharacter(): void;
+    onMoveCharacter(id: string): void;
 }
 
 export default class Riverside extends React.PureComponent<Props, null> {
@@ -17,7 +17,7 @@ export default class Riverside extends React.PureComponent<Props, null> {
         return items.map((id: string) => {
             return (
                 <div key={id}>
-                    <Сharacter name={characters[id].name} onClick={onMoveCharacter.bind(null, id)} />
+                    <Сharacter name={characters[id].name} id={id} onClick={onMoveCharacter} />
                 </div>
             );
         });

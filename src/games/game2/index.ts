@@ -13,7 +13,7 @@ const game: Game = {
             {
                 description: 'The boat can accommodate only two persons',
                 check(collocation: any, characterId: string, moveTo: string): boolean {
-                    return moveTo !== BOAT || collocation.boat.length < 2;
+                    return collocation.boat.length < 2;
                 }
             }
         ],
