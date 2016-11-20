@@ -1,0 +1,158 @@
+exports[`<PagePlayPure /> should render (Boat right)) 1`] = `
+<div
+  className="page">
+  <div
+    className="content">
+    <div
+      className="riverside riverside_side_left">
+      <div>
+        <div
+          className="character character_skin_sheep"
+          onClick={[Function]}
+          title="Sheep" />
+      </div>
+    </div>
+    <div
+      className="riverside riverside_side_right">
+      <div>
+        <div
+          className="character character_skin_wolf"
+          onClick={[Function]}
+          title="Wolf" />
+      </div>
+    </div>
+    <div
+      className="boat boat_position_right"
+      onTransitionEnd={[Function]}>
+      <div
+        className="item">
+        <div
+          className="character character_skin_farmer character_packed"
+          onClick={[Function]}
+          title="Farmer" />
+      </div>
+      <div
+        className="item">
+        <div
+          className="character character_skin_cabbage character_packed"
+          onClick={[Function]}
+          title="Cabbage" />
+      </div>
+    </div>
+    <button
+      className="remote"
+      disabled={false}
+      onClick={[Function]}>
+      Go
+    </button>
+    
+  </div>
+</div>
+`;
+
+exports[`<PagePlayPure /> should render 1`] = `
+<div
+  className="page">
+  <div
+    className="content">
+    <div
+      className="riverside riverside_side_left">
+      <div>
+        <div
+          className="character character_skin_sheep"
+          onClick={[Function]}
+          title="Sheep" />
+      </div>
+    </div>
+    <div
+      className="riverside riverside_side_right">
+      <div>
+        <div
+          className="character character_skin_wolf"
+          onClick={[Function]}
+          title="Wolf" />
+      </div>
+    </div>
+    <div
+      className="boat boat_position_left"
+      onTransitionEnd={[Function]}>
+      <div
+        className="item">
+        <div
+          className="character character_skin_farmer character_packed"
+          onClick={[Function]}
+          title="Farmer" />
+      </div>
+      <div
+        className="item">
+        <div
+          className="character character_skin_cabbage character_packed"
+          onClick={[Function]}
+          title="Cabbage" />
+      </div>
+    </div>
+    <button
+      className="remote"
+      disabled={false}
+      onClick={[Function]}>
+      Go
+    </button>
+    
+  </div>
+</div>
+`;
+
+exports[`<PagePlayPure /> should render with message 1`] = `
+<div
+  className="page">
+  <div
+    className="content">
+    <div
+      className="riverside riverside_side_left">
+      <div>
+        <div
+          className="character character_skin_sheep"
+          onClick={[Function]}
+          title="Sheep" />
+      </div>
+    </div>
+    <div
+      className="riverside riverside_side_right">
+      <div>
+        <div
+          className="character character_skin_wolf"
+          onClick={[Function]}
+          title="Wolf" />
+      </div>
+    </div>
+    <div
+      className="boat boat_position_left boat_invalid"
+      onTransitionEnd={[Function]}>
+      <div
+        className="item">
+        <div
+          className="character character_skin_farmer character_packed"
+          onClick={[Function]}
+          title="Farmer" />
+      </div>
+      <div
+        className="item">
+        <div
+          className="character character_skin_cabbage character_packed"
+          onClick={[Function]}
+          title="Cabbage" />
+      </div>
+    </div>
+    <button
+      className="remote"
+      disabled={false}
+      onClick={[Function]}>
+      Go
+    </button>
+    <div
+      className="warning">
+      Test
+    </div>
+  </div>
+</div>
+`;

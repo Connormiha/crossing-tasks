@@ -96,7 +96,9 @@ export default class PagePlayPure extends React.PureComponent<Props, {}> {
                         onMoveEnd={this.handleMoveBoatEnd}
                     />
                     <Remote onClick={this.handleMoveBoat} disabled={!collocation.boat.length} />
-                    <Warning>{message.content}</Warning>
+                    {message.content &&
+                        <Warning>{message.content}</Warning>
+                    }
                     {game.finished &&
                         this.renderFinished()
                     }
