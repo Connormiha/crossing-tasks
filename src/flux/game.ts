@@ -10,7 +10,7 @@ import {
 export const set = (id: string) =>
     ({type: GAME_SET, id});
 
-export const init = (list: Array<string>) =>
+export const init = (list: string[]) =>
     ({type: GAME_INIT, list});
 
 export const finish = () =>
@@ -22,7 +22,7 @@ const getDefaultState = () =>
 export default (state = getDefaultState(), {type, id, list}) => {
     switch (type) {
         case GAME_SET:
-            return state.merge({'currentGame': id, finished: false});
+            return state.merge({currentGame: id, finished: false});
 
         case GAME_INIT:
             return state.set('list', list);

@@ -49,11 +49,22 @@ describe('<PagePlayPure />', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    it('should render (Boat right))', () => {
+    it('should render (Boat right)', () => {
         let tree = renderer.create(
             <PagePlayPure
                 {...params}
                 collocation={Object.assign({}, params.collocation, {boatPosition: RIVERSIDE_RIGHT})}
+            />
+        ).toJSON();
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    it('should render finished', () => {
+        let tree = renderer.create(
+            <PagePlayPure
+                {...params}
+                game={Object.assign({}, params.game, {finished: true})}
             />
         ).toJSON();
 

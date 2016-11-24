@@ -46,7 +46,7 @@ export default connect(
             },
 
             onBoatMoveEnd(collocation: any) {
-                let actions: Array<any> = [];
+                let actions: any[] = [];
 
                 for (let id of collocation.boat) {
                     actions.push(collocationActions.moveCharacter(id));
