@@ -1001,6 +1001,20 @@ cssesc@^0.1.0:
     postcss-value-parser "^3.2.3"
     postcss-zindex "^2.0.1"
 
+csso-loader@0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/csso-loader/-/csso-loader-0.2.0.tgz#65b5a528ab4a7077d6a9a40cd70002162bbc2491"
+  dependencies:
+    csso "^2.1.0"
+    loader-utils "^0.2.14"
+
+csso@2.3.0, csso@^2.1.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/csso/-/csso-2.3.0.tgz#cd1abed15055808f1428a9cd86a02f05dae926e3"
+  dependencies:
+    clap "^1.0.9"
+    source-map "^0.5.3"
+
 csso@~2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/csso/-/csso-2.2.1.tgz#51fbb5347e50e81e6ed51668a48490ae6fe2afe2"
@@ -2888,7 +2902,7 @@ load-json-file@^1.0.0, load-json-file@^1.1.0:
     pinkie-promise "^2.0.0"
     strip-bom "^2.0.0"
 
-loader-utils@^0.2.11, loader-utils@^0.2.16, loader-utils@^0.2.3, loader-utils@^0.2.6, loader-utils@^0.2.7, loader-utils@^0.2.9, loader-utils@~0.2.2, loader-utils@~0.2.5:
+loader-utils@^0.2.11, loader-utils@^0.2.14, loader-utils@^0.2.16, loader-utils@^0.2.3, loader-utils@^0.2.6, loader-utils@^0.2.7, loader-utils@^0.2.9, loader-utils@~0.2.2, loader-utils@~0.2.5:
   version "0.2.16"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-0.2.16.tgz#f08632066ed8282835dff88dfb52704765adee6d"
   dependencies:

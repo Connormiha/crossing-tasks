@@ -7,7 +7,6 @@ const poststylus = require('poststylus');
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const path = require('path');
-const PARAMS = {};
 const nodePath = path.join(__dirname, './node_modules');
 const sourcePath = path.join(__dirname, './src/');
 
@@ -15,27 +14,28 @@ function extractStyle(loaders) {
     return ExtractTextPlugin.extract('style', loaders.substr(loaders.indexOf('!')));
 }
 
-let cssLoaders = 'style!css?localIdentName=';
+const CONFIG = {
+    production: {
+       csso: '!csso',
+       localIdentName: '[hash:base64:5]',
+       watch: false,
+       sourceMap: '',
+       FOLDER: `${__dirname}/build`
+   },
+   development: {
+       csso: '',
+       localIdentName: '[local]_[hash:base64:5]',
+       watch: true,
+       sourceMap: 'inline-source-map',
+       FOLDER: `${__dirname}/deploy`
+   }
+}[NODE_ENV];
 
-if (NODE_ENV === 'production') {
-    cssLoaders += '[hash:base64:5]';
-} else {
-    cssLoaders += '[local]_[hash:base64:5]';
-}
-
-let stylusLoaders = `${cssLoaders}&modules!stylus`;
+let cssLoaders = `style!css?localIdentName=${CONFIG.localIdentName}&modules${CONFIG.csso}`;
+let stylusLoaders = `${cssLoaders}!stylus`;
 
 cssLoaders = extractStyle(cssLoaders);
 stylusLoaders = extractStyle(stylusLoaders);
-
-if (NODE_ENV === 'production') {
-    PARAMS.watch = false;
-    PARAMS.FOLDER = `${__dirname}/build`;
-} else {
-    PARAMS.sourceMap = 'inline-source-map';
-    PARAMS.watch = true;
-    PARAMS.FOLDER = `${__dirname}/deploy`;
-}
 
 module.exports = {
     entry: {
@@ -44,7 +44,7 @@ module.exports = {
 
     //context: sourcePath,
     output: {
-        path: PARAMS.FOLDER,
+        path: CONFIG.FOLDER,
         publicPath: '/',
         filename: '[name].[hash].bundle.js'
     },
@@ -56,7 +56,7 @@ module.exports = {
     resolveLoader: {
         root: [nodePath]
     },
-    watch: PARAMS.watch,
+    watch: CONFIG.watch,
     module: {
         noParse: [/\.min\.js$/],
         preLoaders: [
@@ -81,7 +81,7 @@ module.exports = {
                 loader: stylusLoaders
             },
             {
-                test: /\.(png|svg|jpg|gif|woff2?|eot)$/,
+                test: /\.(png|svg|jpg|gif|ico|woff2?|eot)$/,
                 loader: "file"
             },
             {
@@ -96,7 +96,7 @@ module.exports = {
         ]
     },
     //postcss: [postCssPreCss, autoprefixer({browsers: ['last 2 versions']})],
-    //devtool: PARAMS.sourceMap,
+    //devtool: CONFIG.sourceMap,
     plugins: [
         new webpack.ProvidePlugin({
             React: 'react',
@@ -139,7 +139,8 @@ module.exports = {
 };
 
 
-if (NODE_ENV === 'production') {
+// UglifyJs doensn't support ES6. Temporary switched off
+if (NODE_ENV === 'production' && false) {
   module.exports.plugins.push(
       new webpack.optimize.UglifyJsPlugin({
         compress: {
