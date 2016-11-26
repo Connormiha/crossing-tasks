@@ -2,15 +2,16 @@
   "globalDependencies": {
     "jest": "registry:dt/jest#16.0.0+20161025131017",
     "lodash": "registry:dt/lodash#4.14.0+20161110215204",
-    "react": "registry:dt/react#0.14.0+20161117000655",
+    "react": "registry:dt/react#0.14.0+20161124131900",
     "react-addons-test-utils": "registry:dt/react-addons-test-utils#0.14.0+20160427035638",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
     "react-redux": "registry:dt/react-redux#4.4.0+20160908183346",
-    "react-router": "registry:dt/react-router#2.0.0+20160928130202",
+    "react-router": "registry:dt/react-router#2.0.0+20161117134353",
     "react-router/history": "registry:dt/react-router/history#2.0.0+20160830150755",
     "redux": "registry:dt/redux#3.5.2+20160703092728"
   },
   "dependencies": {
-    "enzyme": "registry:npm/enzyme#2.2.0+20160322031343"
+    "enzyme": "registry:npm/enzyme#2.2.0+20160322031343",
+    "redux-thunk": "registry:npm/redux-thunk#2.0.0+20160525185520"
   }
 }
