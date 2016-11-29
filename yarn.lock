@@ -4964,9 +4964,9 @@ stylint@1.4.1:
     user-home "2.0.0"
     yargs "4.7.1"
 
-stylus-loader@2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/stylus-loader/-/stylus-loader-2.3.1.tgz#cf8872c68e9f98d5b4262f672b69cf082377b30e"
+stylus-loader@2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/stylus-loader/-/stylus-loader-2.4.0.tgz#2ffbf2854a2071086b88bc338f423ad985b43544"
   dependencies:
     loader-utils "^0.2.9"
     when "~3.6.x"
