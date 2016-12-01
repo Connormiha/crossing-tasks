@@ -20,7 +20,7 @@ export default class Boat extends React.PureComponent<Props, null> {
 
         return items.map((id: string) => {
             return (
-                <div className={styles.item} key={id}>
+                <div className={styles.boat} key={id}>
                     <Сharacter name={characters[id].name} id={id} onClick={onMoveCharacter} packed />
                 </div>
             );
