@@ -25,14 +25,14 @@ exports[`<PagePlayPure /> should render (Boat right) 1`] = `
       className="boat boat_position_right"
       onTransitionEnd={[Function]}>
       <div
-        className="item">
+        className="boat">
         <div
           className="character character_skin_farmer character_packed"
           onClick={[Function]}
           title="Farmer" />
       </div>
       <div
-        className="item">
+        className="boat">
         <div
           className="character character_skin_cabbage character_packed"
           onClick={[Function]}
@@ -77,14 +77,14 @@ exports[`<PagePlayPure /> should render 1`] = `
       className="boat boat_position_left"
       onTransitionEnd={[Function]}>
       <div
-        className="item">
+        className="boat">
         <div
           className="character character_skin_farmer character_packed"
           onClick={[Function]}
           title="Farmer" />
       </div>
       <div
-        className="item">
+        className="boat">
         <div
           className="character character_skin_cabbage character_packed"
           onClick={[Function]}
@@ -129,14 +129,14 @@ exports[`<PagePlayPure /> should render finished 1`] = `
       className="boat boat_position_left"
       onTransitionEnd={[Function]}>
       <div
-        className="item">
+        className="boat">
         <div
           className="character character_skin_farmer character_packed"
           onClick={[Function]}
           title="Farmer" />
       </div>
       <div
-        className="item">
+        className="boat">
         <div
           className="character character_skin_cabbage character_packed"
           onClick={[Function]}
@@ -187,14 +187,14 @@ exports[`<PagePlayPure /> should render with message 1`] = `
       className="boat boat_position_left boat_invalid"
       onTransitionEnd={[Function]}>
       <div
-        className="item">
+        className="boat">
         <div
           className="character character_skin_farmer character_packed"
           onClick={[Function]}
           title="Farmer" />
       </div>
       <div
-        className="item">
+        className="boat">
         <div
           className="character character_skin_cabbage character_packed"
           onClick={[Function]}
