@@ -31,7 +31,7 @@ const CONFIG = {
    }
 }[NODE_ENV];
 
-let cssLoaders = `style!css?localIdentName=${CONFIG.localIdentName}&modules${CONFIG.csso}`;
+let cssLoaders = `style!css?localIdentName=${CONFIG.localIdentName}&modules!typed-css-modules${CONFIG.csso}`;
 let stylusLoaders = `${cssLoaders}!stylus`;
 
 cssLoaders = extractStyle(cssLoaders);

@@ -6,3 +6,4 @@
 /coverage
 /typings
 npm-debug.log
+*.styl.d.ts

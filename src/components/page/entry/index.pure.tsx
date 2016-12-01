@@ -1,4 +1,4 @@
-const styles = require('./index.styl');
+import * as styles from './index.styl';
 
 import * as React from 'react';
 import ListGames from 'components/common/ListGames';
