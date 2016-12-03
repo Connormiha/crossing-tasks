@@ -910,9 +910,9 @@ css-color-names@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/css-color-names/-/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
 
-css-loader@0.26.0:
-  version "0.26.0"
-  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-0.26.0.tgz#160d378f5b8e0fd4ff6daf4f3580e2219b33025f"
+css-loader@0.26.1:
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-0.26.1.tgz#2ba7f20131b93597496b3e9bb500785a49cd29ea"
   dependencies:
     babel-code-frame "^6.11.0"
     css-selector-tokenizer "^0.7.0"
@@ -4080,15 +4080,9 @@ postcss-minify-selectors@^2.0.4:
     postcss "^5.0.14"
     postcss-selector-parser "^2.0.0"
 
-postcss-modules-extract-imports@1.0.0:
+postcss-modules-extract-imports@1.0.0, postcss-modules-extract-imports@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/postcss-modules-extract-imports/-/postcss-modules-extract-imports-1.0.0.tgz#5b07f368e350cda6fd5c8844b79123a7bd3e37be"
-  dependencies:
-    postcss "^5.0.4"
-
-postcss-modules-extract-imports@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/postcss-modules-extract-imports/-/postcss-modules-extract-imports-1.0.1.tgz#8fb3fef9a6dd0420d3f6d4353cf1ff73f2b2a341"
   dependencies:
     postcss "^5.0.4"
 
