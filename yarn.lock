@@ -5213,9 +5213,9 @@ ts-loader@1.2.2:
     object-assign "^4.1.0"
     semver "^5.0.1"
 
-tslint-loader@3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/tslint-loader/-/tslint-loader-3.2.1.tgz#68f39ad778f2c38521a76f16b1980757225d5e69"
+tslint-loader@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/tslint-loader/-/tslint-loader-3.3.0.tgz#6e6a50fc82e85ff3d1cb53e23dd24ae9e47d91ea"
   dependencies:
     loader-utils "^0.2.7"
     mkdirp "^0.5.1"
