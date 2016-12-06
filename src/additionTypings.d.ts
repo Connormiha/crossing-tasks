@@ -7,11 +7,6 @@ declare module 'bem-cn' {
     export = x;
 }
 
-declare module 'redux-batched-actions' {
-    export function enableBatching(reducer: any): any;
-    export function batchActions(actions: Array<any>): any;
-}
-
 declare module 'redux-devtools-extension/developmentOnly' {
     export function composeWithDevTools(arg: any): any;
 }
