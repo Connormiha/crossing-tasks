@@ -18,12 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
     store.dispatch(gameActions.init(Object.keys(games)));
 
     render(
-        <Provider store={store}>
-            <Router history={browserHistory}>
-                <Route path="/" component={PageEntry} />
-                <Route path="/play/:id/" component={PagePlay} />
-            </Router>
-        </Provider>,
+        (
+            <Provider store={store}>
+                <Router history={browserHistory}>
+                    <Route path="/" component={PageEntry} />
+                    <Route path="/play/:id/" component={PagePlay} />
+                </Router>
+            </Provider>
+        ),
         document.querySelector('#app')
     );
 });

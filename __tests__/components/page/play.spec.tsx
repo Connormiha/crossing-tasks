@@ -1,8 +1,12 @@
 import * as renderer from 'react-test-renderer';
+import {mapDispatchToProps} from 'components/page/Play';
 import PagePlayPure from 'components/page/Play/index.pure';
+import {createAppStore} from 'store';
 import * as noop from 'lodash/noop';
 import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'games';
+import games from 'games';
 
+/* tslint:disable:jsx-wrap-multiline */
 describe('<PagePlayPure />', () => {
     const params = {
         game: {
@@ -69,5 +73,30 @@ describe('<PagePlayPure />', () => {
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
+    });
+});
+
+describe('<PagePlay />', () => {
+    let store,
+        mapProps;
+
+    const getState = () =>
+        store.getState();
+
+    beforeEach(() => {
+        store = createAppStore();
+        mapProps = mapDispatchToProps(store.dispatch);
+    });
+
+    it('should work onStartGame', () => {
+        let game_1: string = Object.keys(games)[0];
+
+        mapProps.onStartGame(game_1);
+
+        expect(getState().collocation).toEqual(
+            Object.assign({}, games[game_1].collocation, {boatPosition: RIVERSIDE_LEFT})
+        );
+
+        expect(getState().game).toMatchObject({currentGame: game_1, finished: false});
     });
 });

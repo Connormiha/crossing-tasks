@@ -3,6 +3,7 @@ import Character from 'components/common/Character';
 
 import * as noop from 'lodash/noop';
 
+/* tslint:disable:jsx-wrap-multiline */
 describe('<Character />', () => {
     it('should render', () => {
         let tree = renderer.create(

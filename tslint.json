@@ -2,6 +2,7 @@
     "extends": ["tslint:latest", "tslint-react"],
     "rules": {
         "jsx-no-multiline-js": false,
+        "jsx-wrap-multiline": true,
 
         "class-name": true,
         "comment-format": [true, "check-space"],

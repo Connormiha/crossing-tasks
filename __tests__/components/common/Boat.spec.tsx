@@ -3,6 +3,7 @@ import Boat from 'components/common/Boat';
 
 import * as noop from 'lodash/noop';
 
+/* tslint:disable:jsx-wrap-multiline */
 describe('<Boat />', () => {
     it('should render', () => {
         let tree = renderer.create(<Boat
