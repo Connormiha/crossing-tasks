@@ -59,7 +59,7 @@
     "@types/react-router": "2.0.41",
     "@types/redux-thunk": "2.1.32",
     "@types/seamless-immutable": "6.1.2",
-    "autoprefixer": "6.6.0",
+    "autoprefixer": "6.6.1",
     "css-loader": "0.26.1",
     "csso": "2.3.0",
     "csso-loader": "0.2.1",
