@@ -6,6 +6,7 @@
         "strictNullChecks": true,
         "noUnusedLocals": true,
         "jsx": "react",
+        "baseUrl" : "src",
         "lib": ["dom", "es2017"]
     },
     "filesGlob": [
