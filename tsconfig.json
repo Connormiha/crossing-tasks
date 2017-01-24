@@ -9,10 +9,6 @@
         "baseUrl" : "src",
         "lib": ["dom", "es2017"]
     },
-    "filesGlob": [
-        "./src/*.ts",
-        "./src/*.tsx"
-    ],
     "files": [
         "./src/additionTypings.d.ts"
     ],
