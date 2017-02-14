@@ -3,9 +3,9 @@ import {
     RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT, Game
 } from 'games/helpers';
 
-const game: Game = games.game_1;
+const game: Game = games.game_7;
 
-describe('Game_1', () => {
+describe('Game_7', () => {
     let result;
 
     it('shouldn\'t move empty boat', () => {
@@ -15,7 +15,7 @@ describe('Game_1', () => {
     });
 
     it('shouldn\'t move boat without farmer', () => {
-        for (let item of ['sheep', 'coat', 'cabbage', 'wolf']) {
+        for (let item of ['sheep', 'coat', 'cabbage', 'wolf1', 'wolf2', 'dog']) {
             result = game.depetureValidator({
                 [BOAT]: [item],
                 [RIVERSIDE_LEFT]: game.collocation[RIVERSIDE_LEFT].filter((name) => name !== item),
@@ -41,7 +41,7 @@ describe('Game_1', () => {
     it('shouldn\'t leave sheep with cabbage alone without farmer', () => {
         for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
             result = game.depetureValidator({
-                [BOAT]: ['farmer', 'wolf'],
+                [BOAT]: ['farmer', 'wolf1'],
                 [item]: game.collocation[RIVERSIDE_LEFT].filter((name) => name !== 'farmer' && name !== 'wolf'),
                 [item === RIVERSIDE_RIGHT ? RIVERSIDE_LEFT : RIVERSIDE_RIGHT]: []
             });
@@ -50,9 +50,9 @@ describe('Game_1', () => {
         }
     });
 
-    it('shouldn\'t push on boat more, than 2 persons', () => {
+    it('shouldn\'t push on boat more, than 3 persons', () => {
         result = game.landingValidator({
-            [BOAT]: ['farmer', 'wolf'],
+            [BOAT]: ['farmer', 'wolf1', 'wolf2'],
             [RIVERSIDE_LEFT]: game.collocation[RIVERSIDE_LEFT].filter((name) => name !== 'farmer' || name !== 'wolf'),
             [RIVERSIDE_RIGHT]: []
         }, 'sheep', BOAT);
