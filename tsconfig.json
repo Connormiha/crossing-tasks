@@ -1,12 +1,13 @@
 {
     "compilerOptions": {
         "target": "es6",
-        "module": "commonjs",
+        "module": "ES2015",
         "moduleResolution": "node",
         "strictNullChecks": true,
         "noUnusedLocals": true,
         "jsx": "react",
         "baseUrl" : "src",
+        "allowSyntheticDefaultImports": true,
         "lib": ["dom", "es2017"]
     },
     "files": [

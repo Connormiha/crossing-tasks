@@ -10,20 +10,23 @@ const path = require('path');
 const nodePath = path.join(__dirname, './node_modules');
 const sourcePath = path.join(__dirname, './src/');
 
-function extractStyle(loaders) {
-    return ExtractTextPlugin.extract('style', loaders.substr(loaders.indexOf('!')));
+function extractStyle(use) {
+    return ExtractTextPlugin.extract({
+        fallback: "style-loader",
+        use
+    });
 }
 
 const CONFIG = {
     production: {
-       csso: '!csso',
+       csso: true,
        localIdentName: '[hash:base64:5]',
        watch: false,
        sourceMap: '',
        FOLDER: `${__dirname}/build`
    },
    development: {
-       csso: '',
+       csso: false,
        localIdentName: '[local]_[hash:base64:5]',
        watch: true,
        sourceMap: 'inline-source-map',
@@ -31,8 +34,29 @@ const CONFIG = {
    }
 }[NODE_ENV];
 
-let cssLoaders = `style!css?localIdentName=${CONFIG.localIdentName}&modules!typed-css-modules${CONFIG.csso}`;
-let stylusLoaders = `${cssLoaders}!stylus`;
+let cssLoaders = [
+        {
+            loader: 'css-loader',
+            options: {
+                localIdentName: CONFIG.localIdentName,
+                modules: true
+            }
+        },
+        'typed-css-modules-loader',
+    ]
+    .concat(CONFIG.csso ? 'csso-loader' : [])
+    .concat(
+        {
+            loader: 'postcss-loader',
+            options: {
+                plugins: [
+                    autoprefixer({browsers: ['last 2 versions']})
+                ]
+            }
+        }
+    )
+
+let stylusLoaders = cssLoaders.concat('stylus-loader');
 
 cssLoaders = extractStyle(cssLoaders);
 stylusLoaders = extractStyle(stylusLoaders);
@@ -49,53 +73,44 @@ module.exports = {
         filename: '[name].[hash].bundle.js'
     },
     resolve: {
-        root: [sourcePath],
+        modules: [
+            sourcePath,
+            'node_modules'
+        ],
         //modulesDirectories: [nodePath],
-        extensions:         ['', '.js', '.ts', '.tsx', '.json']
-    },
-    resolveLoader: {
-        root: [nodePath]
+        extensions:         ['.js', '.ts', '.tsx', '.json'],
+        // This is default param
+        enforceExtension: false
     },
     watch: CONFIG.watch,
     module: {
         noParse: [/\.min\.js$/],
-        preLoaders: [
+        rules: [
             {
                 test: /\.tsx?$/,
-                loader: 'tslint',
-                exclude: [nodePath]
-            }
-        ],
-        loaders: [
+                exclude: [nodePath],
+                loader: 'tslint-loader',
+                enforce: 'pre'
+            },
             {
                 test: /\.tsx?$/,
-                loader: 'ts',
-                exclude: [nodePath]
+                exclude: [nodePath],
+                loader: 'ts-loader'
             },
             {
                 test: /\.css$/,
-                loader: cssLoaders
+                use: cssLoaders
             },
             {
                 test: /\.styl$/,
-                loader: stylusLoaders
+                use: stylusLoaders
             },
             {
                 test: /\.(png|svg|jpg|gif|ico|woff2?|eot)$/,
-                loader: "file"
-            },
-            {
-                test: /\.json$/,
-                loader: 'json'
+                loader: 'file-loader'
             }
         ],
     },
-    stylus: {
-        use: [
-            poststylus(autoprefixer({browsers: ['last 2 versions']}))
-        ]
-    },
-    //postcss: [postCssPreCss, autoprefixer({browsers: ['last 2 versions']})],
     //devtool: CONFIG.sourceMap,
     plugins: [
         new webpack.ProvidePlugin({
@@ -109,7 +124,7 @@ module.exports = {
                 //removeComments: true
             }
         }),
-        new ExtractTextPlugin("app.[hash].css"),
+        new ExtractTextPlugin('app.[hash].css'),
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify(NODE_ENV)
@@ -118,7 +133,7 @@ module.exports = {
     ],
     devServer: {
         host: 'localhost',
-        post: 8080,
+        port: 8080,
         historyApiFallback: true,
         // It suppress error shown in console, so it has to be set to false.
         quiet: false,
