@@ -1,6 +1,6 @@
-import * as styles from './index.styl';
+import styles from './index.styl';
 
-import * as React from 'react';
+import React from 'react';
 import ListGames from 'components/common/ListGames';
 
 interface Props extends React.Props<any> {

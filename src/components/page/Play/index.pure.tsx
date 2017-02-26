@@ -1,6 +1,6 @@
-import * as styles from './index.styl';
+import styles from './index.styl';
 
-import * as React from 'react';
+import React from 'react';
 
 import Riverside from 'components/common/Riverside';
 import Boat from 'components/common/Boat';
@@ -8,7 +8,7 @@ import Remote from 'components/common/Remote';
 import Warning from 'components/common/Warning';
 
 import {bindMethods} from 'helpers';
-import * as noop from 'lodash/noop';
+import noop from 'lodash/noop';
 
 import games, {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'games';
 

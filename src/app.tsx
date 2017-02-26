@@ -1,7 +1,7 @@
 import './style.styl';
 
 /* tslint:disable:no-unused-variable */
-import * as React from 'react';
+import React from 'react';
 /* tslint:enable:no-unused-variable */
 import {render} from 'react-dom';
 import store from 'store';

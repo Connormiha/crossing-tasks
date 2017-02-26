@@ -1,6 +1,6 @@
-import * as styles from './index.styl';
+import styles from './index.styl';
 
-import * as React from 'react';
+import React from 'react';
 
 export default class Warning extends React.PureComponent<any, null> {
     render() {

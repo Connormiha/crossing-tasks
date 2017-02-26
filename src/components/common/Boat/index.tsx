@@ -1,6 +1,6 @@
-import * as styles from './index.styl';
+import styles from './index.styl';
 
-import * as React from 'react';
+import React from 'react';
 import Сharacter from 'components/common/Character';
 
 import {PositionCharacter} from 'games';
