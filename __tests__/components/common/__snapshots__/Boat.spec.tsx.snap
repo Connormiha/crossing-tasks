@@ -1,26 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<Boat /> should render 1`] = `
 <div
   className="boat boat_position_left"
-  onTransitionEnd={[Function]} />
+  onTransitionEnd={[Function]}
+/>
 `;
 
 exports[`<Boat /> should render items 1`] = `
 <div
   className="boat boat_position_left"
-  onTransitionEnd={[Function]}>
+  onTransitionEnd={[Function]}
+>
   <div
-    className="character">
+    className="character"
+  >
     <div
       className="character character_skin_foo character_packed"
       onClick={[Function]}
-      title="foo" />
+      title="foo"
+    />
   </div>
   <div
-    className="character">
+    className="character"
+  >
     <div
       className="character character_skin_bar character_packed"
       onClick={[Function]}
-      title="bar" />
+      title="bar"
+    />
   </div>
 </div>
 `;

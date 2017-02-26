@@ -1,48 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<PagePlayPure /> should render (Boat right) 1`] = `
 <div
-  className="page">
+  className="page"
+>
   <div
-    className="content">
+    className="content"
+  >
     <div
-      className="riverside riverside_side_left">
+      className="riverside riverside_side_left"
+    >
       <div>
         <div
           className="character character_skin_sheep"
           onClick={[Function]}
-          title="Sheep" />
+          title="Sheep"
+        />
       </div>
     </div>
     <div
-      className="riverside riverside_side_right">
+      className="riverside riverside_side_right"
+    >
       <div>
         <div
           className="character character_skin_wolf"
           onClick={[Function]}
-          title="Wolf" />
+          title="Wolf"
+        />
       </div>
     </div>
     <div
       className="boat boat_position_right"
-      onTransitionEnd={[Function]}>
+      onTransitionEnd={[Function]}
+    >
       <div
-        className="character">
+        className="character"
+      >
         <div
           className="character character_skin_farmer character_packed"
           onClick={[Function]}
-          title="Farmer" />
+          title="Farmer"
+        />
       </div>
       <div
-        className="character">
+        className="character"
+      >
         <div
           className="character character_skin_cabbage character_packed"
           onClick={[Function]}
-          title="Cabbage" />
+          title="Cabbage"
+        />
       </div>
     </div>
     <button
       className="remote"
       disabled={false}
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       Go
     </button>
     
@@ -52,49 +66,61 @@ exports[`<PagePlayPure /> should render (Boat right) 1`] = `
 
 exports[`<PagePlayPure /> should render 1`] = `
 <div
-  className="page">
+  className="page"
+>
   <div
-    className="content">
+    className="content"
+  >
     <div
-      className="riverside riverside_side_left">
+      className="riverside riverside_side_left"
+    >
       <div>
         <div
           className="character character_skin_sheep"
           onClick={[Function]}
-          title="Sheep" />
+          title="Sheep"
+        />
       </div>
     </div>
     <div
-      className="riverside riverside_side_right">
+      className="riverside riverside_side_right"
+    >
       <div>
         <div
           className="character character_skin_wolf"
           onClick={[Function]}
-          title="Wolf" />
+          title="Wolf"
+        />
       </div>
     </div>
     <div
       className="boat boat_position_left"
-      onTransitionEnd={[Function]}>
+      onTransitionEnd={[Function]}
+    >
       <div
-        className="character">
+        className="character"
+      >
         <div
           className="character character_skin_farmer character_packed"
           onClick={[Function]}
-          title="Farmer" />
+          title="Farmer"
+        />
       </div>
       <div
-        className="character">
+        className="character"
+      >
         <div
           className="character character_skin_cabbage character_packed"
           onClick={[Function]}
-          title="Cabbage" />
+          title="Cabbage"
+        />
       </div>
     </div>
     <button
       className="remote"
       disabled={false}
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       Go
     </button>
     
@@ -104,54 +130,67 @@ exports[`<PagePlayPure /> should render 1`] = `
 
 exports[`<PagePlayPure /> should render finished 1`] = `
 <div
-  className="page">
+  className="page"
+>
   <div
-    className="content">
+    className="content"
+  >
     <div
-      className="riverside riverside_side_left">
+      className="riverside riverside_side_left"
+    >
       <div>
         <div
           className="character character_skin_sheep"
           onClick={[Function]}
-          title="Sheep" />
+          title="Sheep"
+        />
       </div>
     </div>
     <div
-      className="riverside riverside_side_right">
+      className="riverside riverside_side_right"
+    >
       <div>
         <div
           className="character character_skin_wolf"
           onClick={[Function]}
-          title="Wolf" />
+          title="Wolf"
+        />
       </div>
     </div>
     <div
       className="boat boat_position_left"
-      onTransitionEnd={[Function]}>
+      onTransitionEnd={[Function]}
+    >
       <div
-        className="character">
+        className="character"
+      >
         <div
           className="character character_skin_farmer character_packed"
           onClick={[Function]}
-          title="Farmer" />
+          title="Farmer"
+        />
       </div>
       <div
-        className="character">
+        className="character"
+      >
         <div
           className="character character_skin_cabbage character_packed"
           onClick={[Function]}
-          title="Cabbage" />
+          title="Cabbage"
+        />
       </div>
     </div>
     <button
       className="remote"
       disabled={false}
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       Go
     </button>
     
     <div
-      className="finish">
+      className="finish"
+    >
       <div>
         Finished!
       </div>
@@ -162,53 +201,66 @@ exports[`<PagePlayPure /> should render finished 1`] = `
 
 exports[`<PagePlayPure /> should render with message 1`] = `
 <div
-  className="page">
+  className="page"
+>
   <div
-    className="content">
+    className="content"
+  >
     <div
-      className="riverside riverside_side_left">
+      className="riverside riverside_side_left"
+    >
       <div>
         <div
           className="character character_skin_sheep"
           onClick={[Function]}
-          title="Sheep" />
+          title="Sheep"
+        />
       </div>
     </div>
     <div
-      className="riverside riverside_side_right">
+      className="riverside riverside_side_right"
+    >
       <div>
         <div
           className="character character_skin_wolf"
           onClick={[Function]}
-          title="Wolf" />
+          title="Wolf"
+        />
       </div>
     </div>
     <div
       className="boat boat_position_left boat_invalid"
-      onTransitionEnd={[Function]}>
+      onTransitionEnd={[Function]}
+    >
       <div
-        className="character">
+        className="character"
+      >
         <div
           className="character character_skin_farmer character_packed"
           onClick={[Function]}
-          title="Farmer" />
+          title="Farmer"
+        />
       </div>
       <div
-        className="character">
+        className="character"
+      >
         <div
           className="character character_skin_cabbage character_packed"
           onClick={[Function]}
-          title="Cabbage" />
+          title="Cabbage"
+        />
       </div>
     </div>
     <button
       className="remote"
       disabled={false}
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       Go
     </button>
     <div
-      className="warning">
+      className="warning"
+    >
       Test
     </div>
   </div>

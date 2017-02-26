@@ -1,63 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<PageEntryPure /> should render 1`] = `
 <div
-  className="page">
+  className="page"
+>
   <div
-    className="content">
+    className="content"
+  >
     <ul
-      className="list-games">
+      className="list-games"
+    >
       <li
-        className="item">
+        className="item"
+      >
         <a
           onClick={[Function]}
-          style={Object {}}>
+          style={Object {}}
+        >
           game_1
         </a>
       </li>
       <li
-        className="item">
+        className="item"
+      >
         <a
           onClick={[Function]}
-          style={Object {}}>
+          style={Object {}}
+        >
           game_2
         </a>
       </li>
       <li
-        className="item">
+        className="item"
+      >
         <a
           onClick={[Function]}
-          style={Object {}}>
+          style={Object {}}
+        >
           game_3
         </a>
       </li>
       <li
-        className="item">
+        className="item"
+      >
         <a
           onClick={[Function]}
-          style={Object {}}>
+          style={Object {}}
+        >
           game_4
         </a>
       </li>
       <li
-        className="item">
+        className="item"
+      >
         <a
           onClick={[Function]}
-          style={Object {}}>
+          style={Object {}}
+        >
           game_5
         </a>
       </li>
       <li
-        className="item">
+        className="item"
+      >
         <a
           onClick={[Function]}
-          style={Object {}}>
+          style={Object {}}
+        >
           game_6
         </a>
       </li>
       <li
-        className="item">
+        className="item"
+      >
         <a
           onClick={[Function]}
-          style={Object {}}>
+          style={Object {}}
+        >
           game_7
         </a>
       </li>

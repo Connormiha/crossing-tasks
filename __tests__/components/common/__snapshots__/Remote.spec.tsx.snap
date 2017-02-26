@@ -1,8 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<Remote /> should render disabled 1`] = `
 <button
   className="remote"
   disabled={true}
-  onClick={[Function]}>
+  onClick={[Function]}
+>
   Go
 </button>
 `;
@@ -11,7 +14,8 @@ exports[`<Remote /> should render enabled 1`] = `
 <button
   className="remote"
   disabled={undefined}
-  onClick={[Function]}>
+  onClick={[Function]}
+>
   Go
 </button>
 `;
