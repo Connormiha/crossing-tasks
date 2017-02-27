@@ -1,5 +1,5 @@
 import React from 'react';
-import * as immutable from 'seamless-immutable';
+import immutable from 'seamless-immutable';
 
 global.React = React;
 global.immutable = immutable;

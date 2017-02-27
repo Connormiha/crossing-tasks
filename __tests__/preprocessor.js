@@ -1,8 +1,18 @@
 const tsc = require('typescript');
 const tsconfig = require('../tsconfig.json');
+const {transform} = require("babel-core");
+const babelConfig = {
+    plugins: ['transform-es2015-modules-commonjs']
+};
 
 const styles = `
-module.exports = new Proxy({}, {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = new Proxy({}, {
     get(target, prop) {
         return prop;
     }
@@ -12,11 +22,13 @@ module.exports = new Proxy({}, {
 module.exports = {
     process(src, path) {
         if (path.endsWith('.ts') || path.endsWith('.tsx')) {
-            return tsc.transpile(
+            let tsCode = tsc.transpile(
                 src,
                 tsconfig.compilerOptions,
                 path, []
             );
+
+            return transform(tsCode, babelConfig).code;
         }
 
         if (path.endsWith('.styl') || path.endsWith('.css')) {

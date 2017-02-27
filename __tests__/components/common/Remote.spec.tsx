@@ -1,7 +1,7 @@
 import * as renderer from 'react-test-renderer';
 import Remote from 'components/common/Remote';
 
-import * as noop from 'lodash/noop';
+import noop from 'lodash/noop';
 
 describe('<Remote />', () => {
     it('should render enabled', () => {

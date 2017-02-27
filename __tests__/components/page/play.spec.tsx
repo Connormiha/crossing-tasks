@@ -2,7 +2,7 @@ import * as renderer from 'react-test-renderer';
 import {mapDispatchToProps} from 'components/page/Play';
 import PagePlayPure from 'components/page/Play/index.pure';
 import {createAppStore} from 'store';
-import * as noop from 'lodash/noop';
+import noop from 'lodash/noop';
 import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'games';
 import games from 'games';
 

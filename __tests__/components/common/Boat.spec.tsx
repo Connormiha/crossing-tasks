@@ -1,7 +1,7 @@
 import * as renderer from 'react-test-renderer';
 import Boat from 'components/common/Boat';
 
-import * as noop from 'lodash/noop';
+import noop from 'lodash/noop';
 
 /* tslint:disable:jsx-wrap-multiline */
 describe('<Boat />', () => {
