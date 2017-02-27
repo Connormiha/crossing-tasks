@@ -19,7 +19,7 @@
     "lint": "gulp lint",
     "start": "webpack-dev-server",
     "coverage": "jest --coverage",
-    "test": "jest"
+    "test": "jest --no-cache"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -38,6 +38,7 @@
       "node_modules",
       "src"
     ],
+    "watchman": false,
     "notify": true,
     "collectCoverage": false,
     "collectCoverageFrom": [
@@ -90,7 +91,7 @@
     "stylus": "0.54.5",
     "stylus-loader": "2.5.0",
     "ts-loader": "2.0.1",
-    "tslint": "4.4.2",
+    "tslint": "4.5.0",
     "tslint-loader": "3.4.2",
     "tslint-react": "2.4.0",
     "typed-css-modules": "0.2.0",
