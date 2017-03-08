@@ -18,19 +18,22 @@ function extractStyle(use) {
 
 const CONFIG = {
     production: {
-       csso: true,
-       localIdentName: '[hash:base64:5]',
-       watch: false,
-       sourceMap: '',
-       FOLDER: `${__dirname}/build`
-   },
-   development: {
-       csso: false,
-       localIdentName: '[local]_[hash:base64:5]',
-       watch: true,
-       sourceMap: 'inline-source-map',
-       FOLDER: `${__dirname}/deploy`
-   }
+        csso: true,
+        localIdentName: '[hash:base64:5]',
+        watch: false,
+        sourceMap: '',
+        FOLDER: `${__dirname}/build`
+    },
+    development: {
+        csso: false,
+        localIdentName: '[dir]--[hash:base64:5]',
+        // getLocalIdent(context, localIdentName, localName, options) {
+        //     return 'whatever_random_class_name'
+        // },
+        watch: true,
+        sourceMap: 'inline-source-map',
+        FOLDER: `${__dirname}/deploy`
+    }
 }[NODE_ENV];
 
 let cssLoaders = [
@@ -38,6 +41,7 @@ let cssLoaders = [
             loader: 'css-loader',
             options: {
                 localIdentName: CONFIG.localIdentName,
+                getLocalIdent: CONFIG.getLocalIdent,
                 modules: true
             }
         },
