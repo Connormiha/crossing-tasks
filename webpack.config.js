@@ -26,10 +26,7 @@ const CONFIG = {
     },
     development: {
         csso: false,
-        localIdentName: '[dir]--[hash:base64:5]',
-        // getLocalIdent(context, localIdentName, localName, options) {
-        //     return 'whatever_random_class_name'
-        // },
+        localIdentName: '[local]--[hash:base64:5]',
         watch: true,
         sourceMap: 'inline-source-map',
         FOLDER: `${__dirname}/deploy`
