@@ -21,14 +21,12 @@ const CONFIG = {
         csso: true,
         localIdentName: '[hash:base64:5]',
         watch: false,
-        sourceMap: '',
         FOLDER: `${__dirname}/build`
     },
     development: {
         csso: false,
         localIdentName: '[local]--[hash:base64:5]',
         watch: true,
-        sourceMap: 'inline-source-map',
         FOLDER: `${__dirname}/deploy`
     }
 }[NODE_ENV];
@@ -38,14 +36,14 @@ let cssLoaders = [
             loader: 'css-loader',
             options: {
                 localIdentName: CONFIG.localIdentName,
-                getLocalIdent: CONFIG.getLocalIdent,
                 modules: true
             }
-        },
-        'typed-css-modules-loader',
+        }
     ]
     .concat(CONFIG.csso ? 'csso-loader' : [])
     .concat(
+        'typed-css-modules-loader',
+        'resolve-url-loader',
         {
             loader: 'postcss-loader',
             options: {
