@@ -2,6 +2,7 @@
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BabiliPlugin = require("babili-webpack-plugin");
 const autoprefixer = require('autoprefixer');
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -152,16 +153,11 @@ module.exports = {
 };
 
 
-// UglifyJs doensn't support ES6. Temporary switched off
-if (NODE_ENV === 'production' && false) {
+if (NODE_ENV === 'production') {
   module.exports.plugins.push(
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-            // don't show unreachable variables etc
-            warnings:     false,
-            drop_console: true,
-            unsafe:       true
-        }
+      new BabiliPlugin(null, {
+          comments: false,
+          sourceMap: false
       })
   );
 }

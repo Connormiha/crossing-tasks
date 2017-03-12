@@ -64,6 +64,7 @@
     "autoprefixer": "6.7.6",
     "babel-core": "6.23.1",
     "babel-plugin-transform-es2015-modules-commonjs": "6.23.0",
+    "babili-webpack-plugin": "0.0.11",
     "css-loader": "0.27.1",
     "csso": "2.3.2",
     "csso-loader": "0.2.2",
