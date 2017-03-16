@@ -914,7 +914,7 @@ cheerio@^0.22.0:
     lodash.reject "^4.4.0"
     lodash.some "^4.4.0"
 
-chokidar@1.5.2, chokidar@^1.4.3:
+chokidar@1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.5.2.tgz#293e728640cc93dd8277424334b3c6d4ad3a348a"
   dependencies:
@@ -929,7 +929,7 @@ chokidar@1.5.2, chokidar@^1.4.3:
   optionalDependencies:
     fsevents "^1.0.0"
 
-chokidar@^1.6.0:
+chokidar@^1.4.3, chokidar@^1.6.0:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.6.1.tgz#2f4447ab5e96e50fb3d789fd90d4c72e0e4c70c2"
   dependencies:
@@ -1283,6 +1283,12 @@ css-selector-tokenizer@^0.7.0:
     fastparse "^1.1.1"
     regexpu-core "^1.0.0"
 
+css-tree@1.0.0-alpha17:
+  version "1.0.0-alpha17"
+  resolved "https://registry.yarnpkg.com/css-tree/-/css-tree-1.0.0-alpha17.tgz#7ab95ab72c533917af8be54313fec81841c5223a"
+  dependencies:
+    source-map "^0.5.3"
+
 css-what@2.1:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.0.tgz#9467d032c38cfaefb9f2d79501253062f87fa1bd"
@@ -1337,14 +1343,20 @@ cssesc@^0.1.0:
     postcss-value-parser "^3.2.3"
     postcss-zindex "^2.0.1"
 
-csso-loader@0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/csso-loader/-/csso-loader-0.2.2.tgz#63d5b2cba851a1791f6caa1ebfc2bf5e7a601b93"
+csso-loader@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/csso-loader/-/csso-loader-0.3.0.tgz#b2ba34d8213b8276d038ded6fba192ca8dbda9f3"
   dependencies:
-    csso "^2.3.1"
+    csso "^3.0.1"
     loader-utils "^1.0.3"
 
-csso@2.3.2, csso@^2.3.1, csso@~2.3.1:
+csso@3.0.1, csso@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/csso/-/csso-3.0.1.tgz#1469af5ee2ec509addadd8777aa0e45acb6b2f58"
+  dependencies:
+    css-tree "1.0.0-alpha17"
+
+csso@~2.3.1:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/csso/-/csso-2.3.2.tgz#ddd52c587033f49e94b71fc55569f252e8ff5f85"
   dependencies:
@@ -5281,9 +5293,9 @@ strip-json-comments@2.0.1, strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-style-loader@0.13.2:
-  version "0.13.2"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.13.2.tgz#74533384cf698c7104c7951150b49717adc2f3bb"
+style-loader@0.14.1:
+  version "0.14.1"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.14.1.tgz#27b9b6c9822adf8c4748e02a1efae229405d79a5"
   dependencies:
     loader-utils "^1.0.2"
 
