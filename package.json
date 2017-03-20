@@ -13,13 +13,14 @@
     "url": "git://github.com/Connormiha/crossing-tasks.git"
   },
   "scripts": {
+    "build": "rm -fr build && NODE_ENV=production webpack",
+    "coverage": "jest --coverage",
+    "lint": "gulp lint",
     "precommit": "NODE_ENV=pre_commit npm run lint",
     "prepush": "npm test",
-    "build": "rm -fr build && NODE_ENV=production webpack",
-    "lint": "gulp lint",
     "start": "webpack-dev-server",
-    "coverage": "jest --coverage",
-    "test": "jest --no-cache"
+    "test": "jest --no-cache",
+    "upgrade": "yarn upgrade-interactive --exact"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -95,12 +96,12 @@
     "style-loader": "0.14.1",
     "stylus": "0.54.5",
     "stylus-loader": "3.0.1",
-    "ts-loader": "2.0.1",
+    "ts-loader": "2.0.2",
     "tslint": "4.5.1",
     "tslint-loader": "3.4.3",
     "tslint-react": "2.5.0",
     "typed-css-modules": "0.2.0",
-    "typed-css-modules-loader": "0.0.4",
+    "typed-css-modules-loader": "0.0.5",
     "typescript": "2.2.1",
     "webpack": "2.2.1",
     "webpack-dev-server": "2.4.2",

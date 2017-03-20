@@ -5479,9 +5479,9 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-ts-loader@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-2.0.1.tgz#2ec8fa5e20ef01062a4a2c28c9d6ac828c32e75d"
+ts-loader@2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-2.0.2.tgz#74abc2f15a9f1d8432873dfa35eef8e513caa622"
   dependencies:
     colors "^1.0.3"
     enhanced-resolve "^3.0.0"
@@ -5545,14 +5545,14 @@ type-is@~1.6.14:
     media-typer "0.3.0"
     mime-types "~2.1.13"
 
-typed-css-modules-loader@0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/typed-css-modules-loader/-/typed-css-modules-loader-0.0.4.tgz#134e063b4301f8bd3fa2d5405a147a61fa296792"
+typed-css-modules-loader@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/typed-css-modules-loader/-/typed-css-modules-loader-0.0.5.tgz#83230c61eb9805d962f94d7006b772f4a33c7956"
   dependencies:
     loader-utils "^0.2.15"
-    object-assign "^4.1.0"
+    typed-css-modules "^0.2.0"
 
-typed-css-modules@0.2.0:
+typed-css-modules@0.2.0, typed-css-modules@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/typed-css-modules/-/typed-css-modules-0.2.0.tgz#eb6d9ca3fe4dea9a39a3c6b0b994f1360e449dc8"
   dependencies:
