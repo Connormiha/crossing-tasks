@@ -6,9 +6,9 @@
   version "0.17.31"
   resolved "https://registry.yarnpkg.com/@types/cheerio/-/cheerio-0.17.31.tgz#bfeda3e3e8647a6e49b2998d137c81d5d8ab52d0"
 
-"@types/enzyme@2.7.5":
-  version "2.7.5"
-  resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-2.7.5.tgz#a7c52a444cfa7711b16096681d134f4718df8a86"
+"@types/enzyme@2.7.6":
+  version "2.7.6"
+  resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-2.7.6.tgz#b210dd68e0009a916a7f02f2d168cde1f85d35b9"
   dependencies:
     "@types/cheerio" "*"
     "@types/react" "*"
@@ -5293,9 +5293,9 @@ strip-json-comments@2.0.1, strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-style-loader@0.14.1:
-  version "0.14.1"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.14.1.tgz#27b9b6c9822adf8c4748e02a1efae229405d79a5"
+style-loader@0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.15.0.tgz#17ff9527ae109b94d8c53d253dc9333041438a2d"
   dependencies:
     loader-utils "^1.0.2"
 

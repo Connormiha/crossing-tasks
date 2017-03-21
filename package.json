@@ -51,7 +51,7 @@
     ]
   },
   "devDependencies": {
-    "@types/enzyme": "2.7.5",
+    "@types/enzyme": "2.7.6",
     "@types/history": "3.2.0",
     "@types/jest": "19.2.2",
     "@types/lodash": "4.14.55",
@@ -93,7 +93,7 @@
     "redux-thunk": "2.2.0",
     "resolve-url-loader": "2.0.2",
     "seamless-immutable": "7.1.1",
-    "style-loader": "0.14.1",
+    "style-loader": "0.15.0",
     "stylus": "0.54.5",
     "stylus-loader": "3.0.1",
     "ts-loader": "2.0.2",
