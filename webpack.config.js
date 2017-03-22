@@ -2,6 +2,7 @@
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const BabiliPlugin = require("babili-webpack-plugin");
 const autoprefixer = require('autoprefixer');
 const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -22,13 +23,25 @@ const CONFIG = {
         csso: true,
         localIdentName: '[hash:base64:5]',
         watch: false,
-        FOLDER: `${__dirname}/build`
+        FOLDER: `${__dirname}/build`,
+        minifyHTML: {
+            removeComments: true,
+            removeScriptTypeAttributes: true,
+            removeStyleLinkTypeAttributes: true,
+            removeRedundantAttributes: true,
+            collapseWhitespace: true
+        }
     },
     development: {
         csso: false,
         localIdentName: '[local]--[hash:base64:5]',
         watch: true,
-        FOLDER: `${__dirname}/deploy`
+        FOLDER: `${__dirname}/deploy`,
+        minifyHTML: {
+            removeScriptTypeAttributes: true,
+            removeStyleLinkTypeAttributes: true,
+            removeRedundantAttributes: true
+        }
     }
 }[NODE_ENV];
 
@@ -119,9 +132,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             inject: 'head',
-            minify: {
-                //removeComments: true
-            }
+            minify: CONFIG.minifyHTML
+        }),
+        new ScriptExtHtmlWebpackPlugin({
+            defaultAttribute: 'defer'
         }),
         new ExtractTextPlugin('app.[hash].css'),
         new webpack.DefinePlugin({

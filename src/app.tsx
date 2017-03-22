@@ -14,20 +14,18 @@ import games from 'games';
 // Redux
 import * as gameActions from 'flux/game';
 
-document.addEventListener("DOMContentLoaded", () => {
-    store.dispatch(gameActions.init(Object.keys(games)));
+store.dispatch(gameActions.init(Object.keys(games)));
 
-    render(
-        (
-            <Provider store={store}>
-                <Router>
-                    <Switch>
-                        <Route path="/" exact component={PageEntry} />
-                        <Route path="/play/:id/" exact component={PagePlay} />
-                    </Switch>
-                </Router>
-            </Provider>
-        ),
-        document.querySelector('#app')
-    );
-});
+render(
+    (
+        <Provider store={store}>
+            <Router>
+                <Switch>
+                    <Route path="/" exact component={PageEntry} />
+                    <Route path="/play/:id/" exact component={PagePlay} />
+                </Switch>
+            </Router>
+        </Provider>
+    ),
+    document.querySelector('#app')
+);
