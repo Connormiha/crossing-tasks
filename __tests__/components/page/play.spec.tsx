@@ -16,8 +16,10 @@ describe('<PagePlayPure />', () => {
         message: {
             content: ''
         }
-        routeParams: {
-            id: ''
+        match: {
+            params: {
+                id: ''
+            }
         },
         collocation: {
             [BOAT]: ['farmer', 'cabbage'],

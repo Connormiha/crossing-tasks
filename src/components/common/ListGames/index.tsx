@@ -1,7 +1,7 @@
 import styles from './index.styl';
 
 import React from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 
 interface Props extends React.Props<any> {
     items: string[];

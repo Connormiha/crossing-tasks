@@ -16,7 +16,7 @@ interface Props extends React.Props<any> {
     game: any;
     collocation: any;
     message: any;
-    routeParams: {id: string};
+    match: {params: any};
     onMoveCharacter(collocation: any, gameId: string, id: string): void;
     onMoveBoat(collocation: any, gameId: string): void;
     onBoatMoveEnd(collocation: any): void;
@@ -31,7 +31,7 @@ export default class PagePlayPure extends React.PureComponent<Props, {}> {
     }
 
     componentWillMount() {
-        this.props.onStartGame(this.props.routeParams.id);
+        this.props.onStartGame(this.props.match.params.id);
     }
 
     componentDidUpdate() {

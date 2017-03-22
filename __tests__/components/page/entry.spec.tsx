@@ -1,4 +1,5 @@
 import * as renderer from 'react-test-renderer';
+import {BrowserRouter as Router} from 'react-router-dom';
 import PageEntryPure from 'components/page/Entry/index.pure';
 import games from 'games';
 
@@ -6,11 +7,13 @@ import games from 'games';
 describe('<PageEntryPure />', () => {
     it('should render', () => {
         let tree = renderer.create(
-            <PageEntryPure
-                game={{
-                    list: Object.keys(games)
-                }}
-            />
+            <Router>
+                <PageEntryPure
+                    game={{
+                        list: Object.keys(games)
+                    }}
+                />
+            </Router>
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

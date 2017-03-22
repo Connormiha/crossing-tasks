@@ -14,8 +14,8 @@ exports[`<PageEntryPure /> should render 1`] = `
         className="item"
       >
         <a
+          href="/play/game_1/"
           onClick={[Function]}
-          style={Object {}}
         >
           game_1
         </a>
@@ -24,8 +24,8 @@ exports[`<PageEntryPure /> should render 1`] = `
         className="item"
       >
         <a
+          href="/play/game_2/"
           onClick={[Function]}
-          style={Object {}}
         >
           game_2
         </a>
@@ -34,8 +34,8 @@ exports[`<PageEntryPure /> should render 1`] = `
         className="item"
       >
         <a
+          href="/play/game_3/"
           onClick={[Function]}
-          style={Object {}}
         >
           game_3
         </a>
@@ -44,8 +44,8 @@ exports[`<PageEntryPure /> should render 1`] = `
         className="item"
       >
         <a
+          href="/play/game_4/"
           onClick={[Function]}
-          style={Object {}}
         >
           game_4
         </a>
@@ -54,8 +54,8 @@ exports[`<PageEntryPure /> should render 1`] = `
         className="item"
       >
         <a
+          href="/play/game_5/"
           onClick={[Function]}
-          style={Object {}}
         >
           game_5
         </a>
@@ -64,8 +64,8 @@ exports[`<PageEntryPure /> should render 1`] = `
         className="item"
       >
         <a
+          href="/play/game_6/"
           onClick={[Function]}
-          style={Object {}}
         >
           game_6
         </a>
@@ -74,8 +74,8 @@ exports[`<PageEntryPure /> should render 1`] = `
         className="item"
       >
         <a
+          href="/play/game_7/"
           onClick={[Function]}
-          style={Object {}}
         >
           game_7
         </a>

@@ -6,7 +6,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import store from 'store';
 import {Provider} from 'react-redux';
-import {Router, Route, browserHistory} from 'react-router';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import PagePlay from 'components/page/Play';
 import PageEntry from 'components/page/Entry';
 import games from 'games';
@@ -20,9 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
     render(
         (
             <Provider store={store}>
-                <Router history={browserHistory}>
-                    <Route path="/" component={PageEntry} />
-                    <Route path="/play/:id/" component={PagePlay} />
+                <Router>
+                    <Switch>
+                        <Route path="/" exact component={PageEntry} />
+                        <Route path="/play/:id/" exact component={PagePlay} />
+                    </Switch>
                 </Router>
             </Provider>
         ),
