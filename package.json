@@ -14,41 +14,13 @@
   },
   "scripts": {
     "build": "rm -fr build && NODE_ENV=production webpack",
-    "coverage": "jest --coverage",
+    "coverage": "jest --coverage --config jest.json",
     "lint": "gulp lint",
     "precommit": "NODE_ENV=pre_commit npm run lint",
     "prepush": "npm test",
     "start": "webpack-dev-server",
-    "test": "jest --no-cache",
+    "test": "jest --no-cache --config jest.json",
     "upgrade": "yarn upgrade-interactive --exact"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json",
-      "styl",
-      "css"
-    ],
-    "transform": {
-      ".*": "<rootDir>/__tests__/preprocessor.js"
-    },
-    "testRegex": "/__tests__/.*\\.spec\\.(ts|tsx)$",
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ],
-    "watchman": false,
-    "notify": true,
-    "collectCoverage": false,
-    "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}",
-      "!src/**/*.d.ts"
-    ],
-    "setupFiles": [
-      "<rootDir>/__tests__/setup.ts"
-    ]
   },
   "devDependencies": {
     "@types/enzyme": "2.7.6",

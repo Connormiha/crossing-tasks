@@ -1,0 +1,28 @@
+{
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js",
+    "json",
+    "styl",
+    "css"
+  ],
+  "transform": {
+    ".*": "<rootDir>/__tests__/preprocessor.js"
+  },
+  "testRegex": "/__tests__/.*\\.spec\\.(ts|tsx)$",
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ],
+  "watchman": false,
+  "notify": true,
+  "collectCoverage": false,
+  "collectCoverageFrom": [
+    "src/**/*.{ts,tsx}",
+    "!src/**/*.d.ts"
+  ],
+  "setupFiles": [
+    "<rootDir>/__tests__/setup.ts"
+  ]
+}
