@@ -13,12 +13,13 @@
     "url": "git://github.com/Connormiha/crossing-tasks.git"
   },
   "scripts": {
-    "build": "rm -fr build && NODE_ENV=production webpack",
+    "build": "rm -fr build && npm run createTypesCss && NODE_ENV=production webpack",
     "coverage": "jest --coverage --config jest.json",
     "lint": "gulp lint",
     "precommit": "NODE_ENV=pre_commit npm run lint",
     "prepush": "npm test",
-    "start": "webpack-dev-server",
+    "createTypesCss": "node helpers/createStylTs.js",
+    "start": "npm run createTypesCss && webpack-dev-server",
     "test": "jest --no-cache --config jest.json",
     "upgrade": "yarn upgrade-interactive --exact"
   },

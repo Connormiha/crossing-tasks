@@ -55,8 +55,8 @@ let cssLoaders = [
         }
     ]
     .concat(CONFIG.csso ? 'csso-loader' : [])
+    .concat(NODE_ENV === 'production' ? [] : 'typed-css-modules-loader')
     .concat(
-        'typed-css-modules-loader',
         'resolve-url-loader',
         {
             loader: 'postcss-loader',
@@ -126,19 +126,19 @@ module.exports = {
                 use: [
                     {
                         loader: 'file-loader'
-                    },
+                    }
+                ].concat(
                     NODE_ENV === 'production'
-                    ?
-                        {
-                            loader: 'svgo-loader',
-                            options: {
-                                plugins: [
-                                  {removeTitle: true}
-                                ]
-                            }
+                    ? {
+                        loader: 'svgo-loader',
+                        options: {
+                            plugins: [
+                              {removeTitle: true}
+                            ]
                         }
-                    : null
-                ]
+                    }
+                    : []
+                )
             }
         ],
     },
