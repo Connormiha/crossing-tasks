@@ -118,8 +118,27 @@ module.exports = {
                 use: stylusLoaders
             },
             {
-                test: /\.(png|svg|jpg|gif|ico|woff2?|eot)$/,
+                test: /\.(png|jpg|gif|ico|woff2?|eot)$/,
                 loader: 'file-loader'
+            },
+            {
+                test: /\.svg$/,
+                use: [
+                    {
+                        loader: 'file-loader'
+                    },
+                    NODE_ENV === 'production'
+                    ?
+                        {
+                            loader: 'svgo-loader',
+                            options: {
+                                plugins: [
+                                  {removeTitle: true}
+                                ]
+                            }
+                        }
+                    : null
+                ]
             }
         ],
     },
