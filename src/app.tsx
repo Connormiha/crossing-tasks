@@ -6,9 +6,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import store from 'store';
 import {Provider} from 'react-redux';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import PagePlay from 'components/page/Play';
-import PageEntry from 'components/page/Entry';
+import routes from 'routes';
 import games from 'games';
 
 // Redux
@@ -19,12 +17,7 @@ store.dispatch(gameActions.init(Object.keys(games)));
 render(
     (
         <Provider store={store}>
-            <Router>
-                <Switch>
-                    <Route path="/" exact component={PageEntry} />
-                    <Route path="/play/:id/" exact component={PagePlay} />
-                </Switch>
-            </Router>
+            {routes}
         </Provider>
     ),
     document.querySelector('#app')
