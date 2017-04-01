@@ -6,9 +6,9 @@
   version "0.17.31"
   resolved "https://registry.yarnpkg.com/@types/cheerio/-/cheerio-0.17.31.tgz#bfeda3e3e8647a6e49b2998d137c81d5d8ab52d0"
 
-"@types/enzyme@2.7.6":
-  version "2.7.6"
-  resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-2.7.6.tgz#b210dd68e0009a916a7f02f2d168cde1f85d35b9"
+"@types/enzyme@2.7.7":
+  version "2.7.7"
+  resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-2.7.7.tgz#52688e130fe55185f14844919ec559961488f53d"
   dependencies:
     "@types/cheerio" "*"
     "@types/react" "*"
@@ -21,9 +21,9 @@
   version "19.2.2"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-19.2.2.tgz#71f428be2fa6eb9f15bb0abc3cade67905f94839"
 
-"@types/lodash@4.14.60":
-  version "4.14.60"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.60.tgz#8ed9d4ef4d11c7e073f0040e5cd7a665d1d270b4"
+"@types/lodash@4.14.61":
+  version "4.14.61"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.61.tgz#0518c10805b1f9d21f98f82b1311ac2a6ec75892"
 
 "@types/react-addons-test-utils@0.14.17":
   version "0.14.17"
@@ -1856,9 +1856,9 @@ fbjs@^0.8.1, fbjs@^0.8.4:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
 
-file-loader@0.10.1:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-0.10.1.tgz#815034119891fc6441fb5a64c11bc93c22ddd842"
+file-loader@0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-0.11.0.tgz#af018f39c44617305f1ee92f850c7a65a4331616"
   dependencies:
     loader-utils "^1.0.2"
 
@@ -4980,9 +4980,9 @@ script-ext-html-webpack-plugin@1.7.1:
   dependencies:
     debug "^2.3.3"
 
-seamless-immutable@7.1.1:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/seamless-immutable/-/seamless-immutable-7.1.1.tgz#9bc9dac26f990e38c59e3b2a1c9f2346bfbd2c01"
+seamless-immutable@7.1.2:
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/seamless-immutable/-/seamless-immutable-7.1.2.tgz#c87a1eba6767a32455311d76600ac5eddeafbb69"
 
 select-hose@^2.0.0:
   version "2.0.0"
