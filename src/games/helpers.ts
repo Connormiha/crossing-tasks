@@ -56,7 +56,7 @@ export function landingValidator(collocation: any, characterId: string): Validat
     return {
         success: true
     };
-};
+}
 
 export function depetureValidator(collocation: any): ValidatorResult {
     for (let rule of this.rules.beforeDeparture) {
