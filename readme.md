@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Connormiha/crossing-tasks.svg?branch=master)](https://travis-ci.org/Connormiha/crossing-tasks)
+
 # crossing-tasks
 
 **TypeScript** - compile to ES6 (or ES5. see tsconfig.json)
