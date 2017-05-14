@@ -16,7 +16,6 @@
     "node_modules",
     "src"
   ],
-  "notify": true,
   "bail": true,
   "collectCoverageFrom": [
     "src/**/*.{ts,tsx}",
