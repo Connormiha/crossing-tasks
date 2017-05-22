@@ -131,6 +131,13 @@ ajv@^4.11.2, ajv@^4.7.0:
     co "^4.6.0"
     json-stable-stringify "^1.0.1"
 
+ajv@^5.0.0:
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.1.3.tgz#423d1c302c61e617081b30ca05f595ec51408e33"
+  dependencies:
+    co "^4.6.0"
+    json-stable-stringify "^1.0.1"
+
 align-text@^0.1.1, align-text@^0.1.3:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/align-text/-/align-text-0.1.4.tgz#0cd90a561093f35d0a99256c22b7069433fad117"
@@ -1214,9 +1221,9 @@ css-color-names@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/css-color-names/-/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
 
-css-loader@0.28.1:
-  version "0.28.1"
-  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-0.28.1.tgz#220325599f8f00452d9ceb4c3ca6c8a66798642d"
+css-loader@0.28.2:
+  version "0.28.2"
+  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-0.28.2.tgz#0ff48e1d6013afcdb585d46c1e61a5fcd036404e"
   dependencies:
     babel-code-frame "^6.11.0"
     css-selector-tokenizer "^0.7.0"
@@ -1546,11 +1553,7 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
-electron-to-chromium@^1.2.5:
-  version "1.3.10"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.10.tgz#63d62b785471f0d8dda85199d64579de8a449f08"
-
-electron-to-chromium@^1.3.11:
+electron-to-chromium@^1.2.5, electron-to-chromium@^1.3.11:
   version "1.3.11"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.11.tgz#744761df1d67b492b322ce9aa0aba5393260eb61"
 
@@ -4897,6 +4900,12 @@ sax@^1.2.1, sax@~1.2.1:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.2.tgz#fd8631a23bc7826bef5d871bdb87378c95647828"
 
+schema-utils@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.3.0.tgz#f5877222ce3e931edae039f17eb3716e7137f8cf"
+  dependencies:
+    ajv "^5.0.0"
+
 script-ext-html-webpack-plugin@1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/script-ext-html-webpack-plugin/-/script-ext-html-webpack-plugin-1.8.0.tgz#0b9e9aec8c78bcd9cefbc5f6e21d2be7a15735cd"
@@ -5224,11 +5233,12 @@ strip-json-comments@2.0.1, strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-style-loader@0.17.0:
-  version "0.17.0"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.17.0.tgz#e8254bccdb7af74bd58274e36107b4d5ab4df310"
+style-loader@0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.18.0.tgz#5b7a895860bda966286c8bb80ffd4ccbaf0411f5"
   dependencies:
     loader-utils "^1.0.2"
+    schema-utils "^0.3.0"
 
 stylint@1.4.1:
   version "1.4.1"
@@ -5406,9 +5416,9 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-ts-loader@2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-2.0.3.tgz#89b8c87598f048df065766e07e1538f0eaeb1165"
+ts-loader@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-2.1.0.tgz#5a8efcc5c72c06fc49d69bad69c85617c6194f77"
   dependencies:
     colors "^1.0.3"
     enhanced-resolve "^3.0.0"
