@@ -59,7 +59,7 @@ describe('<PagePlayPure />', () => {
         let tree = renderer.create(
             <PagePlayPure
                 {...params}
-                collocation={Object.assign({}, params.collocation, {boatPosition: RIVERSIDE_RIGHT})}
+                collocation={{...params.collocation, boatPosition: RIVERSIDE_RIGHT}}
             />
         ).toJSON();
 
@@ -70,7 +70,7 @@ describe('<PagePlayPure />', () => {
         let tree = renderer.create(
             <PagePlayPure
                 {...params}
-                game={Object.assign({}, params.game, {finished: true})}
+                game={{...params.game, finished: true}}
             />
         ).toJSON();
 
@@ -96,7 +96,7 @@ describe('<PagePlay />', () => {
         mapProps.onStartGame(game_1);
 
         expect(getState().collocation).toEqual(
-            Object.assign({}, games[game_1].collocation, {boatPosition: RIVERSIDE_LEFT})
+            {...games[game_1].collocation, boatPosition: RIVERSIDE_LEFT}
         );
 
         expect(getState().game).toMatchObject({currentGame: game_1, finished: false});
