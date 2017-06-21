@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "Mikhail Bodrov <connormiha1@gmail.com>",
   "engines": {
-    "node": ">=7.6.0"
+    "node": ">=8.1.0"
   },
   "repository": {
     "type": "git",
@@ -71,15 +71,15 @@
     "stylus-loader": "3.0.1",
     "svgo": "0.7.2",
     "svgo-loader": "1.2.1",
-    "ts-loader": "2.1.0",
+    "ts-loader": "2.2.0",
     "tslint": "5.4.3",
     "tslint-loader": "3.5.3",
     "tslint-react": "3.0.0",
     "typed-css-modules": "0.2.0",
     "typed-css-modules-loader": "0.0.9",
     "typescript": "2.3.4",
-    "webpack": "2.6.1",
-    "webpack-dev-server": "2.4.5",
+    "webpack": "3.0.0",
+    "webpack-dev-server": "2.5.0",
     "webpack-sources": "1.0.1"
   }
 }
