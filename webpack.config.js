@@ -57,12 +57,11 @@ let cssLoaders = [
     .concat(CONFIG.csso ? 'csso-loader' : [])
     .concat(NODE_ENV === 'production' ? [] : 'typed-css-modules-loader')
     .concat(
-        'resolve-url-loader',
         {
             loader: 'postcss-loader',
             options: {
                 plugins: [
-                    autoprefixer({browsers: ['Chrome 58', 'Firefox 53', 'Safari 10']})
+                    autoprefixer({browsers: ['Chrome 59', 'Firefox 54', 'Safari 10']})
                 ]
             }
         }
