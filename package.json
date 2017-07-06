@@ -35,7 +35,7 @@
     "@types/react-router-dom": "4.0.0",
     "@types/redux-thunk": "2.1.32",
     "@types/seamless-immutable": "6.1.2",
-    "autoprefixer": "7.1.1",
+    "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
     "babel-plugin-transform-es2015-modules-commonjs": "6.24.1",
     "babili-webpack-plugin": "0.1.2",
