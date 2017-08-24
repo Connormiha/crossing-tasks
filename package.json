@@ -25,8 +25,8 @@
   "devDependencies": {
     "@types/enzyme": "2.8.0",
     "@types/history": "4.6.0",
-    "@types/jest": "20.0.7",
-    "@types/lodash": "4.14.73",
+    "@types/jest": "20.0.8",
+    "@types/lodash": "4.14.74",
     "@types/react": "15.0.22",
     "@types/react-addons-test-utils": "0.14.18",
     "@types/react-dom": "15.5.0",
