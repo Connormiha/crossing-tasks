@@ -3,8 +3,7 @@ import {mapDispatchToProps} from 'components/page/Play';
 import PagePlayPure from 'components/page/Play/index.pure';
 import {createAppStore} from 'store';
 import noop from 'lodash/noop';
-import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'games';
-import games from 'games';
+import games, {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'games';
 
 /* tslint:disable:jsx-wrap-multiline */
 describe('<PagePlayPure />', () => {
