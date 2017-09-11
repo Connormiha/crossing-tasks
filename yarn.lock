@@ -1481,6 +1481,13 @@ css-tree@1.0.0-alpha19:
   dependencies:
     source-map "^0.5.3"
 
+css-tree@1.0.0-alpha23:
+  version "1.0.0-alpha23"
+  resolved "https://registry.yarnpkg.com/css-tree/-/css-tree-1.0.0-alpha23.tgz#5129518def61e99931d9a3397c3d6758af2ff0c5"
+  dependencies:
+    mdn-data "^1.0.0"
+    source-map "^0.5.3"
+
 css-what@2.1:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.0.tgz#9467d032c38cfaefb9f2d79501253062f87fa1bd"
@@ -1533,7 +1540,13 @@ csso-loader@0.3.1:
     csso "^3.0.1"
     loader-utils "^1.1.0"
 
-csso@3.1.1, csso@^3.0.1:
+csso@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/csso/-/csso-3.2.0.tgz#b290b9581551904aad45bca8988af17ca0711235"
+  dependencies:
+    css-tree "1.0.0-alpha23"
+
+csso@^3.0.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/csso/-/csso-3.1.1.tgz#ab427584486c2e02e180327511b0b02a9179c272"
   dependencies:
@@ -3992,6 +4005,10 @@ map-stream@~0.0.7:
 math-expression-evaluator@^1.2.14:
   version "1.2.16"
   resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.16.tgz#b357fa1ca9faefb8e48d10c14ef2bcb2d9f0a7c9"
+
+mdn-data@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-1.0.0.tgz#a69d9da76847b4d5834c1465ea25c0653a1fbf66"
 
 media-typer@0.3.0:
   version "0.3.0"
