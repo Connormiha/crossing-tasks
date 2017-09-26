@@ -3,7 +3,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-const BabiliPlugin = require("babili-webpack-plugin");
+const BabelPlugin = require("babel-webpack-plugin");
 const autoprefixer = require('autoprefixer');
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -50,6 +50,7 @@ let cssLoaders = [
             loader: 'css-loader',
             options: {
                 localIdentName: CONFIG.localIdentName,
+                root: sourcePath,
                 modules: true
             }
         }
@@ -188,9 +189,19 @@ module.exports = {
 
 if (NODE_ENV === 'production') {
   module.exports.plugins.push(
-      new BabiliPlugin(null, {
-          comments: false,
-          sourceMap: false
-      })
+      new BabelPlugin({
+            test: /\.js$/,
+            presets: [
+                [
+                    'minify',
+                    {
+                        removeConsole: true,
+                        removeDebugger: true,
+                    },
+                ],
+            ],
+            plugins: ['transform-react-remove-prop-types'],
+            sourceMaps: false,
+        })
   );
 }
