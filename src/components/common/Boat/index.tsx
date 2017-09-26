@@ -14,7 +14,7 @@ interface Props extends React.Props<any> {
     onMoveEnd(): void;
 }
 
-export default class Boat extends React.PureComponent<Props, null> {
+export default class Boat extends React.PureComponent<Props, {}> {
     renderItems() {
         let {items, characters, onMoveCharacter} = this.props;
 

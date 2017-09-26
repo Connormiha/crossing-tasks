@@ -10,7 +10,7 @@ interface Props extends React.Props<any> {
     onClick(id: string): void;
 }
 
-export default class Character extends React.PureComponent<Props, null> {
+export default class Character extends React.PureComponent<Props, {}> {
     constructor(props) {
         super(props);
         bindMethods(this, ['handleClick']);

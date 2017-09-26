@@ -8,6 +8,12 @@
         "jsx": "react",
         "baseUrl" : "src",
         "allowSyntheticDefaultImports": true,
+        "paths": {
+            "history": ["../node_modules/@types/history/index"],
+            "redux": ["../node_modules/@types/redux/index"],
+            "react": ["../node_modules/@types/react/index"],
+            "react-router": ["../node_modules/@types/react-router/index"],
+        },
         "lib": ["dom", "es2017"]
     },
     "files": [

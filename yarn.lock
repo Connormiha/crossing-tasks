@@ -6,9 +6,9 @@
   version "0.17.31"
   resolved "https://registry.yarnpkg.com/@types/cheerio/-/cheerio-0.17.31.tgz#bfeda3e3e8647a6e49b2998d137c81d5d8ab52d0"
 
-"@types/enzyme@2.8.0":
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-2.8.0.tgz#84c6204cf89831223a89ab6dc3f490b1e0886352"
+"@types/enzyme@2.8.8":
+  version "2.8.8"
+  resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-2.8.8.tgz#ddef76ac5435bb6d96c129b2b541d72c0ce75a41"
   dependencies:
     "@types/cheerio" "*"
     "@types/react" "*"
@@ -33,43 +33,54 @@
   version "6.0.88"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.88.tgz#f618f11a944f6a18d92b5c472028728a3e3d4b66"
 
-"@types/react-addons-test-utils@0.14.18":
-  version "0.14.18"
-  resolved "https://registry.yarnpkg.com/@types/react-addons-test-utils/-/react-addons-test-utils-0.14.18.tgz#83e10af1dbe5ec2535bc2dc5373d7bc3b82fdee1"
+"@types/react-addons-test-utils@0.14.20":
+  version "0.14.20"
+  resolved "https://registry.yarnpkg.com/@types/react-addons-test-utils/-/react-addons-test-utils-0.14.20.tgz#66a5787b8f15cce01c195fe2b95b89046054810d"
   dependencies:
     "@types/react" "*"
 
-"@types/react-dom@15.5.0":
-  version "15.5.0"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-15.5.0.tgz#7f4fb9613d4051141773242f7b6b5f1a46b34bd9"
+"@types/react-dom@15.5.4":
+  version "15.5.4"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-15.5.4.tgz#3f75ba86a2ce9a7d1d9e7d1ee3f186f3a9652d8f"
   dependencies:
     "@types/react" "*"
 
-"@types/react-redux@4.4.41":
-  version "4.4.41"
-  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-4.4.41.tgz#8613af4650b204682707747fe29d8aaad56c2f76"
+"@types/react-redux@5.0.9":
+  version "5.0.9"
+  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-5.0.9.tgz#9bfe915356aa0b10d1b9211df0121a06aa7ec9af"
   dependencies:
     "@types/react" "*"
     redux "^3.6.0"
 
-"@types/react-router-dom@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-4.0.0.tgz#a3c26001ac47a174b1f039111db22215c03a3cfa"
+"@types/react-router-dom@4.0.8":
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-4.0.8.tgz#a9731bf35d053cdd27053baacc19e505d74514f3"
   dependencies:
     "@types/history" "*"
     "@types/react" "*"
     "@types/react-router" "*"
 
-"@types/react-router@*", "@types/react-router@4.0.0":
+"@types/react-router@*":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-4.0.0.tgz#9303bc1c07a3562848bd1498252fc54edcc0cb40"
   dependencies:
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@15.0.22":
+"@types/react-router@4.0.15":
+  version "4.0.15"
+  resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-4.0.15.tgz#be8aaefc20afd968a5dbcffcf09060e6c2e8746e"
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+
+"@types/react@*":
   version "15.0.22"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.22.tgz#50803cde8d89f60a9b034f2dd0d619bc5f0273b5"
+
+"@types/react@16.0.7":
+  version "16.0.7"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.7.tgz#f85b6c33c988a1631e2f32fedae71ec6d9718a0d"
 
 "@types/redux-thunk@2.1.32":
   version "2.1.32"
@@ -6332,9 +6343,9 @@ typed-css-modules@^0.2.0:
     mkdirp "^0.5.1"
     yargs "^3.32.0"
 
-typescript@2.3.4:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.3.4.tgz#3d38321828231e434f287514959c37a82b629f42"
+typescript@2.5.3:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.5.3.tgz#df3dcdc38f3beb800d4bc322646b04a3f6ca7f0d"
 
 ua-parser-js@^0.7.9:
   version "0.7.12"

@@ -7,7 +7,7 @@ interface Props extends React.Props<any> {
     onClick(): void;
 }
 
-export default class Boat extends React.PureComponent<Props, null> {
+export default class Boat extends React.PureComponent<Props, {}> {
     render() {
         let {disabled, onClick} = this.props;
 
