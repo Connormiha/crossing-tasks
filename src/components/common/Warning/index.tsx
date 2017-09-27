@@ -2,7 +2,7 @@ import styles from './index.styl';
 
 import React from 'react';
 
-export default class Warning extends React.PureComponent<any, {}> {
+export default class Warning extends React.PureComponent<any> {
     render() {
         let {children} = this.props;
 

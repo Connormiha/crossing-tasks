@@ -23,14 +23,14 @@
     "upgrade": "yarn upgrade-interactive --exact --latest"
   },
   "devDependencies": {
-    "@types/enzyme": "2.8.8",
+    "@types/enzyme": "2.8.9",
     "@types/history": "4.6.0",
     "@types/jest": "21.1.1",
     "@types/lodash": "4.14.76",
     "@types/node": "8.0.31",
     "@types/react": "16.0.7",
     "@types/react-addons-test-utils": "0.14.20",
-    "@types/react-dom": "15.5.4",
+    "@types/react-dom": "15.5.5",
     "@types/react-redux": "5.0.9",
     "@types/react-router": "4.0.15",
     "@types/react-router-dom": "4.0.8",
@@ -82,7 +82,7 @@
     "typed-css-modules-loader": "0.0.11",
     "typescript": "2.5.3",
     "webpack": "3.6.0",
-    "webpack-dev-server": "2.8.2",
+    "webpack-dev-server": "2.9.1",
     "webpack-sources": "1.0.1"
   }
 }

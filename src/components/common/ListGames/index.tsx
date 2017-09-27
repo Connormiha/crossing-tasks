@@ -7,7 +7,7 @@ interface Props extends React.Props<any> {
     items: string[];
 }
 
-export default class ListGames extends React.PureComponent<Props, {}> {
+export default class ListGames extends React.PureComponent<Props> {
     renderList() {
         let {items} = this.props;
 
