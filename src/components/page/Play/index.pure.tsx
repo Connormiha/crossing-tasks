@@ -1,4 +1,4 @@
-import styles from './index.styl';
+import style from './index.styl';
 
 import React from 'react';
 
@@ -11,6 +11,10 @@ import {bindMethods} from 'helpers';
 import noop from 'lodash/noop';
 
 import games, {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'games';
+
+import bem from 'bem-css-modules';
+
+const b = bem({...style});
 
 interface Props extends React.Props<any> {
     game: any;
@@ -62,7 +66,7 @@ export default class PagePlayPure extends React.PureComponent<Props> {
 
     renderFinished(): React.ReactElement<any> {
         return (
-            <div className={styles.finish}>
+            <div className={b('finish')}>
                 <div>Finished!</div>
             </div>
         );
@@ -73,8 +77,8 @@ export default class PagePlayPure extends React.PureComponent<Props> {
             characters = games[game.currentGame].characters;
 
         return (
-            <div className={styles.page}>
-                <div className={styles.content}>
+            <div className={b()}>
+                <div className={b('content')}>
                     <Riverside
                         items={collocation[RIVERSIDE_LEFT]}
                         characters={characters}

@@ -1,13 +1,17 @@
-import styles from './index.styl';
+import style from './index.styl';
 
 import React from 'react';
+
+import bem from 'bem-css-modules';
+
+const b = bem({...style});
 
 export default class Warning extends React.PureComponent<any> {
     render() {
         let {children} = this.props;
 
         return (
-            <div className={styles.warning}>{children}</div>
+            <div className={b()}>{children}</div>
         );
     }
 }

@@ -1,6 +1,10 @@
-import styles from './index.styl';
+import style from './index.styl';
 
 import React from 'react';
+
+import bem from 'bem-css-modules';
+
+const b = bem({...style});
 
 interface Props extends React.Props<any> {
     disabled: boolean;
@@ -12,7 +16,7 @@ export default class Boat extends React.PureComponent<Props> {
         let {disabled, onClick} = this.props;
 
         return (
-            <button className={styles.remote} onClick={onClick} disabled={disabled}>
+            <button className={b()} onClick={onClick} disabled={disabled}>
                 Go
             </button>
         );

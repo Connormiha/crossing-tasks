@@ -1,7 +1,11 @@
-import styles from './index.styl';
+import style from './index.styl';
 
 import React from 'react';
 import Сharacter from 'components/common/Character';
+
+import bem from 'bem-css-modules';
+
+const b = bem({...style});
 
 interface Props extends React.Props<any> {
     side: string;
@@ -27,7 +31,7 @@ export default class Riverside extends React.PureComponent<Props> {
         const {side} = this.props;
 
         return (
-            <div className={`${styles.riverside} ${styles['riverside_side_' + side]}`}>
+            <div className={b('', {side})}>
                 {this.renderItems()}
             </div>
         );

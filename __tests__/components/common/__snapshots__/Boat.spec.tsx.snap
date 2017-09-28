@@ -13,21 +13,21 @@ exports[`<Boat /> should render items 1`] = `
   onTransitionEnd={[Function]}
 >
   <div
-    className="character"
+    className="boat__character"
   >
     <div
-      className="character character_skin_foo character_packed"
+      className="character character_skin_sheep character_packed"
       onClick={[Function]}
-      title="foo"
+      title="sheep"
     />
   </div>
   <div
-    className="character"
+    className="boat__character"
   >
     <div
-      className="character character_skin_bar character_packed"
+      className="character character_skin_farmer character_packed"
       onClick={[Function]}
-      title="bar"
+      title="farmer"
     />
   </div>
 </div>

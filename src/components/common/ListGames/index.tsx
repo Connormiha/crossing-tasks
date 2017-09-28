@@ -1,7 +1,11 @@
-import styles from './index.styl';
+import style from './index.styl';
 
 import React from 'react';
 import {Link} from 'react-router-dom';
+
+import bem from 'bem-css-modules';
+
+const b = bem({...style});
 
 interface Props extends React.Props<any> {
     items: string[];
@@ -13,7 +17,7 @@ export default class ListGames extends React.PureComponent<Props> {
 
         return items.map((id) => {
             return (
-                <li className={styles.item} key={id}>
+                <li className={b('item')} key={id}>
                     <Link to={`/play/${id}/`}>{id}</Link>
                 </li>
             );
@@ -22,7 +26,7 @@ export default class ListGames extends React.PureComponent<Props> {
 
     render() {
         return (
-            <ul className={styles['list-games']}>
+            <ul className={b()}>
                 {this.renderList()}
             </ul>
         );

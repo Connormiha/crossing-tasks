@@ -11,6 +11,7 @@ describe('<Boat />', () => {
             position="left"
             onMoveEnd={noop}
             onMoveCharacter={noop}
+            invalid={false}
         />).toJSON();
 
         expect(tree).toMatchSnapshot();
@@ -18,12 +19,13 @@ describe('<Boat />', () => {
 
     it('should render items', () => {
         let items = [0, 1],
-            characters = {0: {name: 'foo'}, 1: {name: 'bar'}},
+            characters = {0: {name: 'sheep'}, 1: {name: 'farmer'}},
             tree = renderer.create(
                 <Boat
                     items={items}
                     characters={characters}
                     position="left"
+                    invalid={false}
                     onMoveEnd={noop}
                     onMoveCharacter={noop}
                 />

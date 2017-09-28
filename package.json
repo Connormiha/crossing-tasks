@@ -43,6 +43,7 @@
     "babel-plugin-transform-react-remove-prop-types": "0.4.8",
     "babel-preset-minify": "0.2.0",
     "babel-webpack-plugin": "0.1.1",
+    "bem-css-modules": "1.0.2",
     "css-loader": "0.28.7",
     "csso": "3.2.0",
     "csso-loader": "0.3.1",

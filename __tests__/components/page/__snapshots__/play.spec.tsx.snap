@@ -2,10 +2,10 @@
 
 exports[`<PagePlayPure /> should render (Boat right) 1`] = `
 <div
-  className="page"
+  className="page-play"
 >
   <div
-    className="content"
+    className="page-play__content"
   >
     <div
       className="riverside riverside_side_left"
@@ -34,7 +34,7 @@ exports[`<PagePlayPure /> should render (Boat right) 1`] = `
       onTransitionEnd={[Function]}
     >
       <div
-        className="character"
+        className="boat__character"
       >
         <div
           className="character character_skin_farmer character_packed"
@@ -43,7 +43,7 @@ exports[`<PagePlayPure /> should render (Boat right) 1`] = `
         />
       </div>
       <div
-        className="character"
+        className="boat__character"
       >
         <div
           className="character character_skin_cabbage character_packed"
@@ -66,10 +66,10 @@ exports[`<PagePlayPure /> should render (Boat right) 1`] = `
 
 exports[`<PagePlayPure /> should render 1`] = `
 <div
-  className="page"
+  className="page-play"
 >
   <div
-    className="content"
+    className="page-play__content"
   >
     <div
       className="riverside riverside_side_left"
@@ -98,7 +98,7 @@ exports[`<PagePlayPure /> should render 1`] = `
       onTransitionEnd={[Function]}
     >
       <div
-        className="character"
+        className="boat__character"
       >
         <div
           className="character character_skin_farmer character_packed"
@@ -107,7 +107,7 @@ exports[`<PagePlayPure /> should render 1`] = `
         />
       </div>
       <div
-        className="character"
+        className="boat__character"
       >
         <div
           className="character character_skin_cabbage character_packed"
@@ -130,10 +130,10 @@ exports[`<PagePlayPure /> should render 1`] = `
 
 exports[`<PagePlayPure /> should render finished 1`] = `
 <div
-  className="page"
+  className="page-play"
 >
   <div
-    className="content"
+    className="page-play__content"
   >
     <div
       className="riverside riverside_side_left"
@@ -162,7 +162,7 @@ exports[`<PagePlayPure /> should render finished 1`] = `
       onTransitionEnd={[Function]}
     >
       <div
-        className="character"
+        className="boat__character"
       >
         <div
           className="character character_skin_farmer character_packed"
@@ -171,7 +171,7 @@ exports[`<PagePlayPure /> should render finished 1`] = `
         />
       </div>
       <div
-        className="character"
+        className="boat__character"
       >
         <div
           className="character character_skin_cabbage character_packed"
@@ -189,7 +189,7 @@ exports[`<PagePlayPure /> should render finished 1`] = `
     </button>
     
     <div
-      className="finish"
+      className="page-play__finish"
     >
       <div>
         Finished!
@@ -201,10 +201,10 @@ exports[`<PagePlayPure /> should render finished 1`] = `
 
 exports[`<PagePlayPure /> should render with message 1`] = `
 <div
-  className="page"
+  className="page-play"
 >
   <div
-    className="content"
+    className="page-play__content"
   >
     <div
       className="riverside riverside_side_left"
@@ -233,7 +233,7 @@ exports[`<PagePlayPure /> should render with message 1`] = `
       onTransitionEnd={[Function]}
     >
       <div
-        className="character"
+        className="boat__character"
       >
         <div
           className="character character_skin_farmer character_packed"
@@ -242,7 +242,7 @@ exports[`<PagePlayPure /> should render with message 1`] = `
         />
       </div>
       <div
-        className="character"
+        className="boat__character"
       >
         <div
           className="character character_skin_cabbage character_packed"

@@ -2,16 +2,16 @@
 
 exports[`<PageEntryPure /> should render 1`] = `
 <div
-  className="page"
+  className="page-entry"
 >
   <div
-    className="content"
+    className="page-entry__content"
   >
     <ul
       className="list-games"
     >
       <li
-        className="item"
+        className="list-games__item"
       >
         <a
           href="/play/game_1/"
@@ -21,7 +21,7 @@ exports[`<PageEntryPure /> should render 1`] = `
         </a>
       </li>
       <li
-        className="item"
+        className="list-games__item"
       >
         <a
           href="/play/game_2/"
@@ -31,7 +31,7 @@ exports[`<PageEntryPure /> should render 1`] = `
         </a>
       </li>
       <li
-        className="item"
+        className="list-games__item"
       >
         <a
           href="/play/game_3/"
@@ -41,7 +41,7 @@ exports[`<PageEntryPure /> should render 1`] = `
         </a>
       </li>
       <li
-        className="item"
+        className="list-games__item"
       >
         <a
           href="/play/game_4/"
@@ -51,7 +51,7 @@ exports[`<PageEntryPure /> should render 1`] = `
         </a>
       </li>
       <li
-        className="item"
+        className="list-games__item"
       >
         <a
           href="/play/game_5/"
@@ -61,7 +61,7 @@ exports[`<PageEntryPure /> should render 1`] = `
         </a>
       </li>
       <li
-        className="item"
+        className="list-games__item"
       >
         <a
           href="/play/game_6/"
@@ -71,7 +71,7 @@ exports[`<PageEntryPure /> should render 1`] = `
         </a>
       </li>
       <li
-        className="item"
+        className="list-games__item"
       >
         <a
           href="/play/game_7/"
