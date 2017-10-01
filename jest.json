@@ -9,7 +9,7 @@
   ],
   "transform": {
     ".+\\.(ts|tsx)$": "<rootDir>/__tests__/preprocessor-typescript.js",
-    ".+\\.(css|styl)$": "<rootDir>/__tests__/preprocessor-stylus.js"
+    ".+\\.(css|styl)$": "<rootDir>/node_modules/jest-css-modules-transform"
   },
   "testRegex": "/__tests__/.*\\.spec\\.(ts|tsx)$",
   "moduleDirectories": [
