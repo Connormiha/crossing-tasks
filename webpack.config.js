@@ -105,7 +105,7 @@ module.exports = {
         setImmediate: false
     },
     module: {
-        noParse: [/\.min\.js$/],
+        // noParse: [/\.min\.js$/],
         rules: [
             {
                 test: /\.tsx?$/,
