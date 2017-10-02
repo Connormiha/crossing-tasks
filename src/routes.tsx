@@ -5,12 +5,14 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import PagePlay from 'components/page/Play';
 import PageEntry from 'components/page/Entry';
+import NotFound from 'components/page/NotFound';
 
 export default (
     <Router>
         <Switch>
             <Route path="/" exact component={PageEntry} />
             <Route path="/play/:id/" exact component={PagePlay} />
+            <Route path="*" component={NotFound} />
         </Switch>
     </Router>
 );

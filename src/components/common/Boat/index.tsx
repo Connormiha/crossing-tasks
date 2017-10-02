@@ -35,7 +35,7 @@ export default class Boat extends React.PureComponent<Props> {
         const {position, invalid, onMoveEnd} = this.props;
 
         return (
-            <div className={b('', {position, invalid})} onTransitionEnd={onMoveEnd}>
+            <div className={b({position, invalid})} onTransitionEnd={onMoveEnd}>
                 {this.renderItems()}
             </div>
         );

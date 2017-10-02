@@ -31,7 +31,7 @@ export default class Riverside extends React.PureComponent<Props> {
         const {side} = this.props;
 
         return (
-            <div className={b('', {side})}>
+            <div className={b({side})}>
                 {this.renderItems()}
             </div>
         );

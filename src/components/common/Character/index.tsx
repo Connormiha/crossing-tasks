@@ -28,7 +28,7 @@ export default class Character extends React.PureComponent<Props> {
         let {packed, name} = this.props;
 
         return (
-            <div className={b('', {skin: name.toLowerCase(), packed: !!packed})} onClick={this.handleClick} title={name} />
+            <div className={b({skin: name.toLowerCase(), packed: !!packed})} onClick={this.handleClick} title={name} />
         );
     }
 }
