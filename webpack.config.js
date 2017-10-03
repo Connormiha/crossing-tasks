@@ -3,7 +3,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-const BabelPlugin = require("babel-webpack-plugin");
+const UglifyEsPlugin = require('uglify-es-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const ROOT_URL = process.env.ROOT_URL || '';
@@ -197,19 +197,15 @@ module.exports = {
 
 if (NODE_ENV === 'production') {
   module.exports.plugins.push(
-      new BabelPlugin({
-            test: /\.js$/,
-            presets: [
-                [
-                    'minify',
-                    {
-                        removeConsole: true,
-                        removeDebugger: true,
-                    },
-                ],
-            ],
-            plugins: ['transform-react-remove-prop-types'],
-            sourceMaps: false,
-        })
-  );
+      new UglifyEsPlugin({
+          ecma: 8,
+          compress: {
+              // https://github.com/mishoo/UglifyJS2/pull/2325
+              unsafe_methods: true,
+              unsafe_arrows: true,
+              drop_console: true,
+              passes: 2,
+          },
+      })
+  )
 }

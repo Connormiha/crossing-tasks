@@ -42,9 +42,6 @@
     "autoprefixer": "7.1.4",
     "babel-core": "6.26.0",
     "babel-plugin-transform-es2015-modules-commonjs": "6.26.0",
-    "babel-plugin-transform-react-remove-prop-types": "0.4.9",
-    "babel-preset-minify": "0.2.0",
-    "babel-webpack-plugin": "0.1.1",
     "bem-css-modules": "1.1.0",
     "css-loader": "0.28.7",
     "csso": "3.2.0",
@@ -86,6 +83,7 @@
     "typed-css-modules": "0.3.0",
     "typed-css-modules-loader": "0.0.11",
     "typescript": "2.5.3",
+    "uglify-es-webpack-plugin": "0.10.0",
     "webpack": "3.6.0",
     "webpack-dev-server": "2.9.1",
     "webpack-sources": "1.0.1"

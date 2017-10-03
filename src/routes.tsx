@@ -7,8 +7,10 @@ import PagePlay from 'components/page/Play';
 import PageEntry from 'components/page/Entry';
 import NotFound from 'components/page/NotFound';
 
+const ROOT_URL = process.env.ROOT_URL;
+
 export default (
-    <Router basename={`/${process.env.ROOT_URL}`}>
+    <Router basename={`/${ROOT_URL}`}>
         <Switch>
             <Route path="/" exact component={PageEntry} />
             <Route path="/play/:id/" exact component={PagePlay} />
