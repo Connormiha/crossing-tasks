@@ -6,6 +6,7 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const BabelPlugin = require("babel-webpack-plugin");
 const autoprefixer = require('autoprefixer');
 const NODE_ENV = process.env.NODE_ENV || 'development';
+const ROOT_URL = process.env.ROOT_URL || '';
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const path = require('path');
 const nodePath = path.join(__dirname, './node_modules');
@@ -51,7 +52,7 @@ let cssLoaders = [
             options: {
                 localIdentName: CONFIG.localIdentName,
                 root: sourcePath,
-                modules: true
+                modules: true,
             }
         }
     ]
@@ -82,7 +83,7 @@ module.exports = {
     output: {
         path: CONFIG.FOLDER,
         publicPath: '/',
-        filename: '[name].[hash].bundle.js'
+        filename: `${ROOT_URL}/static/[name].[hash].bundle.js`.replace(/^\//, '')
     },
     resolve: {
         modules: [
@@ -128,13 +129,19 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif|ico|woff2?|eot)$/,
-                loader: 'file-loader'
+                loader: 'file-loader',
+                options: {
+                    name: `${ROOT_URL}/static/[hash].[ext]`.replace(/^\//, ''),
+                },
             },
             {
                 test: /\.svg$/,
                 use: [
                     {
-                        loader: 'file-loader'
+                        loader: 'file-loader',
+                        options: {
+                            name: `${ROOT_URL}/static/[hash].[ext]`.replace(/^\//, ''),
+                        },
                     }
                 ].concat(
                     NODE_ENV === 'production'
@@ -165,11 +172,12 @@ module.exports = {
         new ScriptExtHtmlWebpackPlugin({
             defaultAttribute: 'defer'
         }),
-        new ExtractTextPlugin('app.[hash].css'),
+        new ExtractTextPlugin(`${ROOT_URL}/static/[hash].css`.replace(/^\//, '')),
         new webpack.DefinePlugin({
             'process.env': {
-                'NODE_ENV': JSON.stringify(NODE_ENV)
-            }
+                'NODE_ENV': JSON.stringify(NODE_ENV),
+                'ROOT_URL': JSON.stringify(ROOT_URL),
+            },
         }),
         new webpack.optimize.ModuleConcatenationPlugin()
     ],
