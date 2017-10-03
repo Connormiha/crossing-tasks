@@ -22,7 +22,8 @@
     "createTypesCss": "node helpers/createStylTs.js",
     "start": "npm run createTypesCss && webpack-dev-server",
     "test": "jest --no-cache --config jest.json",
-    "upgrade": "yarn upgrade-interactive --exact --latest"
+    "upgrade": "yarn upgrade-interactive --exact --latest",
+    "update-gh": "./helpers/update-gh.sh"
   },
   "devDependencies": {
     "@types/enzyme": "2.8.10",
