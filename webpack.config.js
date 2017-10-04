@@ -6,6 +6,7 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const UglifyEsPlugin = require('uglify-es-webpack-plugin');
 const SvgStorePlugin = require('external-svg-sprite-loader/lib/SvgStorePlugin');
 const CssoWebpackPlugin = require('csso-webpack-plugin').default;
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const ROOT_URL = process.env.ROOT_URL || '';
@@ -173,7 +174,7 @@ module.exports = {
                 'ROOT_URL': JSON.stringify(ROOT_URL),
             },
         }),
-        new webpack.optimize.ModuleConcatenationPlugin()
+        new webpack.optimize.ModuleConcatenationPlugin(),
     ],
     devServer: {
         host: 'localhost',
@@ -190,7 +191,7 @@ module.exports = {
 
 
 if (NODE_ENV === 'production') {
-  module.exports.plugins.push(
+  module.exports.plugins = module.exports.plugins.concat(
       new UglifyEsPlugin({
           ecma: 8,
           compress: {
@@ -200,10 +201,17 @@ if (NODE_ENV === 'production') {
               drop_console: true,
               passes: 2,
           },
-      })
-  );
+      }),
+      new CssoWebpackPlugin(),
+      new PreloadWebpackPlugin({
+          rel: 'preload',
+          as(entry) {
+              if (/\.css$/.test(entry)) return 'style';
+              if (/\.woff$/.test(entry)) return 'font';
+              if (/\.(svg|png)$/.test(entry)) return 'image';
 
-  module.exports.plugins.push(
-      new CssoWebpackPlugin()
-  );
+              return 'script';
+          }
+      }),
+  )
 }

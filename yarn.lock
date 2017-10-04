@@ -1398,12 +1398,6 @@ css-selector-tokenizer@^0.7.0:
     fastparse "^1.1.1"
     regexpu-core "^1.0.0"
 
-css-tree@1.0.0-alpha19:
-  version "1.0.0-alpha19"
-  resolved "https://registry.yarnpkg.com/css-tree/-/css-tree-1.0.0-alpha19.tgz#949aa846c2c15b3979792e8fce05f6b6e3ebcad4"
-  dependencies:
-    source-map "^0.5.3"
-
 css-tree@1.0.0-alpha23:
   version "1.0.0-alpha23"
   resolved "https://registry.yarnpkg.com/css-tree/-/css-tree-1.0.0-alpha23.tgz#5129518def61e99931d9a3397c3d6758af2ff0c5"
@@ -1456,13 +1450,6 @@ cssesc@^0.1.0:
     postcss-value-parser "^3.2.3"
     postcss-zindex "^2.0.1"
 
-csso-loader@0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/csso-loader/-/csso-loader-0.3.1.tgz#2401a8c825a079ec243e2654e355562201a8a6d4"
-  dependencies:
-    csso "^3.0.1"
-    loader-utils "^1.1.0"
-
 csso-webpack-plugin@1.0.0-beta.8:
   version "1.0.0-beta.8"
   resolved "https://registry.yarnpkg.com/csso-webpack-plugin/-/csso-webpack-plugin-1.0.0-beta.8.tgz#1d53143b51c76041d4f573a97a7cb554c9421307"
@@ -1472,17 +1459,11 @@ csso-webpack-plugin@1.0.0-beta.8:
     source-map "^0.5.7"
     webpack-sources "^1.0.1"
 
-csso@3.2.0, csso@^3.1.1:
+csso@^3.1.1:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/csso/-/csso-3.2.0.tgz#b290b9581551904aad45bca8988af17ca0711235"
   dependencies:
     css-tree "1.0.0-alpha23"
-
-csso@^3.0.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/csso/-/csso-3.1.1.tgz#ab427584486c2e02e180327511b0b02a9179c272"
-  dependencies:
-    css-tree "1.0.0-alpha19"
 
 csso@~2.3.1:
   version "2.3.2"
@@ -5153,6 +5134,12 @@ postcss@^6.0.11:
     chalk "^2.1.0"
     source-map "^0.5.7"
     supports-color "^4.4.0"
+
+preload-webpack-plugin@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/preload-webpack-plugin/-/preload-webpack-plugin-2.0.0.tgz#a355614548400e29b75d5aa7a114cd63cd99c92d"
+  dependencies:
+    object-assign "^4.1.1"
 
 prelude-ls@~1.1.2:
   version "1.1.2"
