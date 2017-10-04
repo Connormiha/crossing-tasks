@@ -1,7 +1,7 @@
 # /usr/bin/env bash
 
 npm run build:gh
-git checkout gh-names
+git checkout gh-pages
 rm -fr static index.html 404.html
 cp build/index.html ./
 cp index.html 404.html
