@@ -6,6 +6,7 @@
 /coverage
 /typings
 /src
+__tests__
 npm-debug.log
 yarn-error.log
 *.styl.d.ts
