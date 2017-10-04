@@ -362,7 +362,7 @@ async@^2.1.2, async@^2.1.4:
   dependencies:
     lodash "^4.14.0"
 
-async@^2.4.1:
+async@^2.4.1, async@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/async/-/async-2.5.0.tgz#843190fd6b7357a0b9e1c956edddd5ec8462b54d"
   dependencies:
@@ -1463,7 +1463,16 @@ csso-loader@0.3.1:
     csso "^3.0.1"
     loader-utils "^1.1.0"
 
-csso@3.2.0:
+csso-webpack-plugin@1.0.0-beta.8:
+  version "1.0.0-beta.8"
+  resolved "https://registry.yarnpkg.com/csso-webpack-plugin/-/csso-webpack-plugin-1.0.0-beta.8.tgz#1d53143b51c76041d4f573a97a7cb554c9421307"
+  dependencies:
+    async "^2.5.0"
+    csso "^3.1.1"
+    source-map "^0.5.7"
+    webpack-sources "^1.0.1"
+
+csso@3.2.0, csso@^3.1.1:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/csso/-/csso-3.2.0.tgz#b290b9581551904aad45bca8988af17ca0711235"
   dependencies:

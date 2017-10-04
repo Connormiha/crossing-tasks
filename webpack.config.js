@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const UglifyEsPlugin = require('uglify-es-webpack-plugin');
 const SvgStorePlugin = require('external-svg-sprite-loader/lib/SvgStorePlugin');
+const CssoWebpackPlugin = require('csso-webpack-plugin').default;
 const autoprefixer = require('autoprefixer');
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const ROOT_URL = process.env.ROOT_URL || '';
@@ -22,7 +23,6 @@ function extractStyle(use) {
 
 const CONFIG = {
     production: {
-        csso: true,
         localIdentName: '[hash:base64:5]',
         watch: false,
         FOLDER: `${__dirname}/build`,
@@ -32,10 +32,12 @@ const CONFIG = {
             removeStyleLinkTypeAttributes: true,
             removeRedundantAttributes: true,
             collapseWhitespace: true
-        }
+        },
+        alias: {
+            'invariant': 'lodash/noop',
+        },
     },
     development: {
-        csso: false,
         localIdentName: '[local]',
         watch: true,
         FOLDER: `${__dirname}/deploy`,
@@ -43,7 +45,8 @@ const CONFIG = {
             removeScriptTypeAttributes: true,
             removeStyleLinkTypeAttributes: true,
             removeRedundantAttributes: true
-        }
+        },
+        alias: {},
     }
 }[NODE_ENV];
 
@@ -57,7 +60,6 @@ let cssLoaders = [
             }
         }
     ]
-    .concat(CONFIG.csso ? 'csso-loader' : [])
     .concat(NODE_ENV === 'production' ? [] : 'typed-css-modules-loader')
     .concat(
         {
@@ -94,7 +96,8 @@ module.exports = {
         //modulesDirectories: [nodePath],
         extensions:         ['.js', '.ts', '.tsx', '.json'],
         // This is default param
-        enforceExtension: false
+        enforceExtension: false,
+        alias: CONFIG.alias,
     },
     watch: CONFIG.watch,
     node: {
@@ -198,5 +201,9 @@ if (NODE_ENV === 'production') {
               passes: 2,
           },
       })
-  )
+  );
+
+  module.exports.plugins.push(
+      new CssoWebpackPlugin()
+  );
 }
