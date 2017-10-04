@@ -1,4 +1,5 @@
 import schema from 'reducers/schema';
+import immutable from 'immutability-helper';
 
 import {MESSEGE_SET} from './constants';
 
@@ -9,12 +10,12 @@ export const set = (content: string) =>
     ({type: MESSEGE_SET, content});
 
 const getDefaultState = () =>
-    immutable(schema.message);
+    schema.message;
 
 export default (state = getDefaultState(), {type, content}) => {
     switch (type) {
         case MESSEGE_SET:
-            return state.set('content', content);
+            return immutable(state, {content: {$set: content}});
     }
 
     return state;

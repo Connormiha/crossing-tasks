@@ -1,4 +1,5 @@
 import schema from 'reducers/schema';
+import immutable from 'immutability-helper';
 
 import {
     GAME_SET, GAME_INIT, GAME_FINISH
@@ -17,18 +18,18 @@ export const finish = () =>
     ({type: GAME_FINISH});
 
 const getDefaultState = () =>
-    immutable(schema.game);
+    schema.game;
 
 export default (state = getDefaultState(), {type, id, list}) => {
     switch (type) {
         case GAME_SET:
-            return state.merge({currentGame: id, finished: false});
+            return immutable(state, {$merge: {currentGame: id, finished: false}});
 
         case GAME_INIT:
-            return state.set('list', list);
+            return immutable(state, {list: {$set: list}});
 
         case GAME_FINISH:
-            return state.set('finished', true);
+            return immutable(state, {finished: {$set: true}});
     }
 
     return state;

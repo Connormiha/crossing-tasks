@@ -29,7 +29,8 @@ describe('Game Store', () => {
     });
 
     it('should set', () => {
-        store.getState()[STORE_ID] = store.getState()[STORE_ID].set('finished', true);
+        store.getState()[STORE_ID] = {...store.getState()[STORE_ID], finished: true};
+
         // Ensure correct mock
         expect(getState().finished).toBe(true);
 

@@ -156,7 +156,6 @@ module.exports = {
     plugins: [
         new webpack.ProvidePlugin({
             React: 'react',
-            immutable: 'seamless-immutable'
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
