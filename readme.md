@@ -8,10 +8,10 @@
 **Webpack** - build manager  
 **Jest, Enzyme** - unit tests library  
 **Tslint, Stylint** - TypeScript and Stylus code validation  
-**Gulp** for run linters
+**Gulp** for run linters  
 **Yarn** Package manager (instead of npm)
 
-Tested with Node.js 7
+Tested with Node.js 8
 
 Before install Yarn  
 ### Install
