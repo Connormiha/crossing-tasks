@@ -2,7 +2,7 @@
 
 # crossing-tasks
 
-**TypeScript** - compile to ES6 (or ES5. see tsconfig.json)
+**TypeScript** - compile to ES6 (or ES5. see tsconfig.json)  
 **Stylus, PostCSS** - css preprocessor  
 **React**, **Redux**  
 **Webpack** - build manager  

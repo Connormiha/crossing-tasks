@@ -6,7 +6,7 @@ import bem from 'bem-css-modules';
 
 const b = bem({...style});
 
-export default class Warning extends React.PureComponent<any> {
+export default class Warning extends React.Component<any> {
     render() {
         let {children} = this.props;
 

@@ -11,7 +11,7 @@ interface Props extends React.Props<any> {
     game: any;
 }
 
-export default class PageEntryPure extends React.PureComponent<Props> {
+export default class PageEntryPure extends React.Component<Props> {
     render() {
         let {game} = this.props;
 

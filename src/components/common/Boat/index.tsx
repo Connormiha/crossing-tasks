@@ -1,4 +1,5 @@
 import style from './index.styl';
+import PureComponent from 'components/common/pure-component';
 
 import React from 'react';
 import Сharacter from 'components/common/Character';
@@ -18,7 +19,11 @@ interface Props extends React.Props<any> {
     onMoveEnd(): void;
 }
 
-export default class Boat extends React.PureComponent<Props> {
+export default class Boat extends PureComponent<Props> {
+    get _updateItems() {
+        return ['items', 'position', 'invalid'];
+    }
+
     renderItems() {
         let {items, characters, onMoveCharacter} = this.props;
 

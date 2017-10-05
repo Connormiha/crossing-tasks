@@ -14,7 +14,11 @@ interface Props extends React.Props<any> {
     onMoveCharacter(id: string): void;
 }
 
-export default class Riverside extends React.PureComponent<Props> {
+export default class Riverside extends React.Component<Props> {
+    shouldComponentUpdate(nextProps) {
+        return this.props.items !== nextProps.items;
+    }
+
     renderItems() {
         let {onMoveCharacter, characters, items} = this.props;
 

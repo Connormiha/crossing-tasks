@@ -14,10 +14,14 @@ interface Props extends React.Props<any> {
     onClick(id: string): void;
 }
 
-export default class Character extends React.PureComponent<Props> {
+export default class Character extends React.Component<Props> {
     constructor(props) {
         super(props);
         bindMethods(this, ['handleClick']);
+    }
+
+    shouldComponentUpdate() {
+        return false;
     }
 
     handleClick() {
