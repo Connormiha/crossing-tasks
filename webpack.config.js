@@ -197,10 +197,8 @@ if (NODE_ENV === 'production') {
               // https://github.com/mishoo/UglifyJS2/pull/2325
               unsafe_methods: true,
               unsafe_arrows: true,
-              unsafe_math: true,
               drop_console: true,
               passes: 2,
-              pure_getters: true,
               pure_funcs: ['invariant'],
           },
       }),
