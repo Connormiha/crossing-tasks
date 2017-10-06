@@ -3,6 +3,7 @@ import PureComponent from 'components/common/pure-component';
 
 import React from 'react';
 import Сharacter from 'components/common/Character';
+import AudioWave from 'components/common/audio-wave';
 
 import {PositionCharacter} from 'games';
 
@@ -42,6 +43,7 @@ export default class Boat extends PureComponent<Props> {
         return (
             <div className={b({position, invalid})} onTransitionEnd={onMoveEnd}>
                 {this.renderItems()}
+                <AudioWave position={position} />
             </div>
         );
     }

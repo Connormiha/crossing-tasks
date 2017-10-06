@@ -95,7 +95,7 @@ module.exports = {
             'node_modules'
         ],
         //modulesDirectories: [nodePath],
-        extensions:         ['.js', '.ts', '.tsx', '.json'],
+        extensions:         ['.js', '.ts', '.tsx', '.json', '.mp3'],
         // This is default param
         enforceExtension: false,
         alias: CONFIG.alias,
@@ -133,7 +133,7 @@ module.exports = {
                 use: stylusLoaders
             },
             {
-                test: /\.(png|jpg|gif|ico|woff2?|eot)$/,
+                test: /\.(png|jpg|gif|ico|woff2?|eot|mp3)$/,
                 loader: 'file-loader',
                 options: {
                     name: `${ROOT_URL}/static/[hash].[ext]`.replace(/^\//, ''),
@@ -197,8 +197,11 @@ if (NODE_ENV === 'production') {
               // https://github.com/mishoo/UglifyJS2/pull/2325
               unsafe_methods: true,
               unsafe_arrows: true,
+              unsafe_math: true,
               drop_console: true,
               passes: 2,
+              pure_getters: true,
+              pure_funcs: ['invariant'],
           },
       }),
       new CssoWebpackPlugin(),

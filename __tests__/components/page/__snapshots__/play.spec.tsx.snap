@@ -51,6 +51,9 @@ exports[`<PagePlayPure /> should render (Boat right) 1`] = `
           title="Cabbage"
         />
       </div>
+      <audio
+        src="assets/audio/wave.mp3"
+      />
     </div>
     <button
       className="remote"
@@ -115,6 +118,9 @@ exports[`<PagePlayPure /> should render 1`] = `
           title="Cabbage"
         />
       </div>
+      <audio
+        src="assets/audio/wave.mp3"
+      />
     </div>
     <button
       className="remote"
@@ -179,6 +185,9 @@ exports[`<PagePlayPure /> should render finished 1`] = `
           title="Cabbage"
         />
       </div>
+      <audio
+        src="assets/audio/wave.mp3"
+      />
     </div>
     <button
       className="remote"
@@ -250,6 +259,9 @@ exports[`<PagePlayPure /> should render with message 1`] = `
           title="Cabbage"
         />
       </div>
+      <audio
+        src="assets/audio/wave.mp3"
+      />
     </div>
     <button
       className="remote"
