@@ -20,6 +20,9 @@ describe('<PagePlayPure />', () => {
                 id: ''
             }
         },
+        settings: {
+            volume: '1',
+        },
         collocation: {
             [BOAT]: ['farmer', 'cabbage'],
             [RIVERSIDE_LEFT]: ['sheep'],

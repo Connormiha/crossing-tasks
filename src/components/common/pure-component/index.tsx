@@ -1,7 +1,7 @@
 import shouldUpdateOptimize from 'helpers/shouldUpdateOptimize';
 import React from 'react';
 
-export default class PureComponent<Props> extends React.Component<Props> {
+export default class PureComponent<Props, State = {}> extends React.Component<Props, State> {
     _shouldComponentUpdate: (props1: any, props2: any) => boolean;
     _updateItems: string[];
 

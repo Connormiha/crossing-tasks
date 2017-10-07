@@ -3,6 +3,7 @@ import {batchActions} from 'redux-batched-actions';
 import * as collocationActions from 'flux/collocation';
 import * as messageActions from 'flux/message';
 import * as gameActions from 'flux/game';
+import * as settingsActions from 'flux/settings';
 import PagePlayPure from './index.pure';
 
 import games from 'games';
@@ -54,12 +55,15 @@ export const mapDispatchToProps = (dispatch) => {
 
         onFinishGame() {
             dispatch(gameActions.finish());
-        }
+        },
+
+        onChangeVolume(volume: string) {
+            dispatch(settingsActions.setVolume(volume));
+        },
     };
 };
 
 export default connect(
-    ({collocation, message, game}) =>
-        ({collocation, message, game}),
+    (state) => state,
     mapDispatchToProps
 )(PagePlayPure);

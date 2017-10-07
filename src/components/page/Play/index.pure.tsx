@@ -2,6 +2,7 @@ import style from './index.styl';
 
 import React from 'react';
 
+import Settings from 'components/common/settings';
 import Riverside from 'components/common/Riverside';
 import Boat from 'components/common/Boat';
 import Remote from 'components/common/Remote';
@@ -16,19 +17,21 @@ import bem from 'bem-css-modules';
 
 const b = bem({...style});
 
-interface Props extends React.Props<any> {
+interface IProps extends React.Props<any> {
     game: any;
     collocation: any;
     message: any;
+    settings: any;
     match: {params: any};
     onMoveCharacter(collocation: any, gameId: string, id: string): void;
     onMoveBoat(collocation: any, gameId: string): void;
     onBoatMoveEnd(collocation: any): void;
     onFinishGame(): void;
     onStartGame(id: string): void;
+    onChangeVolume(volume: string): void;
 }
 
-export default class PagePlayPure extends React.Component<Props> {
+export default class PagePlayPure extends React.Component<IProps> {
     constructor(props) {
         super(props);
         bindMethods(this, ['handleMoveCharacter', 'handleMoveBoat', 'handleMoveBoatEnd']);
@@ -73,7 +76,7 @@ export default class PagePlayPure extends React.Component<Props> {
     }
 
     render() {
-        let {collocation, message, game} = this.props,
+        let {collocation, message, game, settings, onChangeVolume} = this.props,
             characters = games[game.currentGame].characters;
 
         return (
@@ -96,10 +99,12 @@ export default class PagePlayPure extends React.Component<Props> {
                         position={collocation.boatPosition}
                         invalid={!!message.content}
                         characters={characters}
+                        volume={settings.volume}
                         onMoveCharacter={this.handleMoveCharacter}
                         onMoveEnd={this.handleMoveBoatEnd}
                     />
                     <Remote onClick={this.handleMoveBoat} disabled={!collocation.boat.length} />
+                    <Settings settings={settings} onChangeVolume={onChangeVolume} />
                     {message.content &&
                         <Warning>{message.content}</Warning>
                     }

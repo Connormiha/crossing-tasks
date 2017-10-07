@@ -7,3 +7,5 @@ export const GAME_INIT: symbol = Symbol();
 export const GAME_FINISH: symbol = Symbol();
 
 export const MESSEGE_SET: symbol = Symbol();
+
+export const SETTINGS_SET_VOLUME: symbol = Symbol();

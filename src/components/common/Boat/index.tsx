@@ -16,6 +16,7 @@ interface Props extends React.Props<any> {
     characters: any;
     position: PositionCharacter;
     invalid: boolean;
+    volume: string;
     onMoveCharacter(id: string): void;
     onMoveEnd(): void;
 }
@@ -38,12 +39,12 @@ export default class Boat extends PureComponent<Props> {
     }
 
     render() {
-        const {position, invalid, onMoveEnd} = this.props;
+        const {position, invalid, volume, onMoveEnd} = this.props;
 
         return (
             <div className={b({position, invalid})} onTransitionEnd={onMoveEnd}>
                 {this.renderItems()}
-                <AudioWave position={position} />
+                <AudioWave position={position} volume={volume} />
             </div>
         );
     }

@@ -4,20 +4,19 @@ import {PositionCharacter} from 'games';
 
 interface IProps {
     position: PositionCharacter;
+    volume: string;
 }
 
-export default class AudioWave extends React.Component<IProps> {
+export default class AudioWave extends React.PureComponent<IProps> {
     _audio: HTMLAudioElement;
-
-    shouldComponentUpdate(nextProps) {
-        return nextProps.position !== this.props.position;
-    }
 
     componentDidUpdate(prevProps) {
         if (prevProps.position !== this.props.position) {
             this._audio.currentTime = 0;
             this._audio.play();
         }
+
+        this._audio.volume = parseFloat(this.props.volume);
     }
 
     render() {

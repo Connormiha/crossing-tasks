@@ -15,7 +15,10 @@ const schema = {
         currentGame: 'game_1',
         finished: false,
         list: []
-    }
+    },
+    settings: {
+        volume: '1',
+    },
 };
 
 export default schema;

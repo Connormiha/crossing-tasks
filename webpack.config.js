@@ -4,7 +4,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const UglifyEsPlugin = require('uglify-es-webpack-plugin');
-const SvgStorePlugin = require('external-svg-sprite-loader/lib/SvgStorePlugin');
 const CssoWebpackPlugin = require('csso-webpack-plugin').default;
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const autoprefixer = require('autoprefixer');
@@ -143,11 +142,11 @@ module.exports = {
                 test: /\.svg$/,
                 use: [
                     {
-                        loader: 'external-svg-sprite-loader',
-                        options: {
-                            name: `${ROOT_URL}/static/[hash].svg`.replace(/^\//, ''),
-                        },
-                    }
+                        loader: 'svg-url-loader',
+                    },
+                    {
+                        loader: 'svgo-loader',
+                    },
                 ]
             }
         ],
@@ -165,7 +164,6 @@ module.exports = {
         new ScriptExtHtmlWebpackPlugin({
             defaultAttribute: 'defer'
         }),
-        new SvgStorePlugin(),
         new ExtractTextPlugin(`${ROOT_URL}/static/[hash].css`.replace(/^\//, '')),
         new webpack.DefinePlugin({
             'process.env': {

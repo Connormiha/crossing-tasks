@@ -1,0 +1,38 @@
+.settings
+    position: absolute
+    left: 5px
+    top: 5px
+
+    &__volume
+        width: 20px
+        height: 20px
+        background-size: contain
+        background-repeat: no-repeat
+        cursor: pointer
+        position: relative
+
+        &_type
+            &_mute
+                background-image: url(assets/images/volume-mute.svg)
+
+            &_low
+                background-position: -2px 0
+                background-image: url(assets/images/volume-low.svg)
+
+            &_high
+                background-image: url(assets/images/volume-high.svg)
+
+    &__volume-range
+        top: 100%
+        left: 0
+        position: absolute
+
+        &_hidden
+            display: none
+
+    &__volume-toggler
+        position: absolute
+        left: 0
+        top: 0
+        right: 0
+        bottom: 0

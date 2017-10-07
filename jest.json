@@ -3,9 +3,7 @@
     "ts",
     "tsx",
     "js",
-    "json",
-    "styl",
-    "css"
+    "json"
   ],
   "transform": {
     ".+\\.(ts|tsx)$": "<rootDir>/__tests__/preprocessor-typescript.js",
