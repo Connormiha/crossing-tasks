@@ -16,7 +16,7 @@ interface IState {
 export default class Settings extends React.PureComponent<IProps, IState> {
     constructor(props) {
         super(props);
-        bindMethods(this, ['handleChangeVolume', 'handleToggleVolumeControl']);
+        bindMethods(this, ['handleChangeVolume', 'handleToggleVolumeControl', 'handleBlurVolume']);
 
         this.state = {
             isVolumeRangeEnabled: false,
@@ -34,6 +34,11 @@ export default class Settings extends React.PureComponent<IProps, IState> {
     handleChangeVolume(e: any) {
         e.preventDefault();
         this.props.onChangeVolume(e.target.value);
+    }
+
+    handleBlurVolume(e: any) {
+        e.preventDefault();
+        this.setState({isVolumeRangeEnabled: false});
     }
 
     render() {
@@ -65,6 +70,7 @@ export default class Settings extends React.PureComponent<IProps, IState> {
                         max="1"
                         step="0.05"
                         onChange={this.handleChangeVolume}
+                        onBlur={this.handleBlurVolume}
                         className={b('volume-range', {hidden: !isVolumeRangeEnabled})}
                     />
                 </div>

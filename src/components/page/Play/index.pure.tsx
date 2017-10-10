@@ -7,6 +7,7 @@ import Riverside from 'components/common/Riverside';
 import Boat from 'components/common/Boat';
 import Remote from 'components/common/Remote';
 import Warning from 'components/common/Warning';
+import Sound from 'components/common/sound';
 
 import {bindMethods} from 'helpers';
 import noop from 'lodash/noop';
@@ -99,12 +100,15 @@ export default class PagePlayPure extends React.Component<IProps> {
                         position={collocation.boatPosition}
                         invalid={!!message.content}
                         characters={characters}
-                        volume={settings.volume}
                         onMoveCharacter={this.handleMoveCharacter}
                         onMoveEnd={this.handleMoveBoatEnd}
                     />
                     <Remote onClick={this.handleMoveBoat} disabled={!collocation.boat.length} />
                     <Settings settings={settings} onChangeVolume={onChangeVolume} />
+                    <Sound
+                        boatPosition={collocation.boatPosition}
+                        volume={settings.volume}
+                    />
                     {message.content &&
                         <Warning>{message.content}</Warning>
                     }

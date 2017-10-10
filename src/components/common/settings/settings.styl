@@ -10,6 +10,7 @@
         background-repeat: no-repeat
         cursor: pointer
         position: relative
+        display: block
 
         &_type
             &_mute
@@ -26,9 +27,11 @@
         top: 100%
         left: 0
         position: absolute
+        transition: opacity 1s
 
         &_hidden
-            display: none
+            pointer-events: none
+            opacity: 0
 
     &__volume-toggler
         position: absolute
