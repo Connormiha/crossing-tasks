@@ -12,17 +12,21 @@ import Sound from 'components/common/sound';
 import {bindMethods} from 'helpers';
 import noop from 'lodash/noop';
 
-import games, {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'games';
+import games from 'games';
+import {
+    RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT,
+    IGameState, IMessageState, ISettingsState, ICollocationState,
+} from 'flux/types';
 
 import bem from 'bem-css-modules';
 
 const b = bem({...style});
 
 interface IProps extends React.Props<any> {
-    game: any;
-    collocation: any;
-    message: any;
-    settings: any;
+    game: IGameState;
+    collocation: ICollocationState;
+    message: IMessageState;
+    settings: ISettingsState;
     match: {params: any};
     onMoveCharacter(collocation: any, gameId: string, id: string): void;
     onMoveBoat(collocation: any, gameId: string): void;

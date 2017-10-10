@@ -1,7 +1,7 @@
 import * as Actions from 'flux/collocation';
 import {createAppStore} from 'store';
 import schema from 'reducers/schema';
-import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'games';
+import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
 
 const STORE_ID: string = 'collocation';
 

@@ -1,10 +1,20 @@
-import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'games';
+import {
+    RIVERSIDE_LEFT,
+    ICollocationState, IMessageState, IGameState, ISettingsState,
+} from 'flux/types';
 
-const schema = {
+interface ISchema {
+    collocation: ICollocationState;
+    message: IMessageState;
+    game: IGameState;
+    settings: ISettingsState;
+}
+
+const schema: ISchema = {
     collocation: {
-        [BOAT]: [],
-        [RIVERSIDE_LEFT]: [],
-        [RIVERSIDE_RIGHT]: [],
+        boat: [],
+        left: [],
+        right: [],
         boatPosition: RIVERSIDE_LEFT
     },
     message: {
@@ -17,7 +27,7 @@ const schema = {
         list: []
     },
     settings: {
-        volume: '1',
+        volume: 1,
     },
 };
 

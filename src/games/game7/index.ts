@@ -1,7 +1,8 @@
 import characters from './characters';
 
+import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
+
 import {
-    RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT,
     Game, landingValidator, depetureValidator
 } from 'games/helpers';
 

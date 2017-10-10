@@ -1,6 +1,7 @@
 import games from 'games';
+import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
 import {
-    RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT, Game
+    Game
 } from 'games/helpers';
 
 const game: Game = games.game_7;

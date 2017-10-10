@@ -5,16 +5,18 @@ import {
     SETTINGS_SET_VOLUME
 } from './constants';
 
+import {ISettingsState} from 'flux/types';
+
 /**
  * Sets sound volume
  */
-export const setVolume = (volume: string) =>
+export const setVolume = (volume: number) =>
     ({type: SETTINGS_SET_VOLUME, volume});
 
-const getDefaultState = () =>
+const getDefaultState = (): ISettingsState =>
     schema.settings;
 
-export default (state = getDefaultState(), {type, volume}) => {
+export default (state: ISettingsState = getDefaultState(), {type, volume}): ISettingsState => {
     switch (type) {
         case SETTINGS_SET_VOLUME:
             return immutable(state, {volume: {$set: volume}});

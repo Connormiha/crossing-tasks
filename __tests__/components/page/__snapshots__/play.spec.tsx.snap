@@ -51,9 +51,6 @@ exports[`<PagePlayPure /> should render (Boat right) 1`] = `
           title="Cabbage"
         />
       </div>
-      <audio
-        src="assets/audio/wave.mp3"
-      />
     </div>
     <button
       className="remote"
@@ -76,13 +73,17 @@ exports[`<PagePlayPure /> should render (Boat right) 1`] = `
           className="settings__volume-range settings__volume-range_hidden"
           max="1"
           min="0"
+          onBlur={[Function]}
           onChange={[Function]}
           step="0.05"
           type="range"
-          value={1}
+          value="1"
         />
       </div>
     </div>
+    <audio
+      src="assets/audio/wave.mp3"
+    />
     
   </div>
 </div>
@@ -139,9 +140,6 @@ exports[`<PagePlayPure /> should render 1`] = `
           title="Cabbage"
         />
       </div>
-      <audio
-        src="assets/audio/wave.mp3"
-      />
     </div>
     <button
       className="remote"
@@ -164,13 +162,17 @@ exports[`<PagePlayPure /> should render 1`] = `
           className="settings__volume-range settings__volume-range_hidden"
           max="1"
           min="0"
+          onBlur={[Function]}
           onChange={[Function]}
           step="0.05"
           type="range"
-          value={1}
+          value="1"
         />
       </div>
     </div>
+    <audio
+      src="assets/audio/wave.mp3"
+    />
     
   </div>
 </div>
@@ -227,9 +229,6 @@ exports[`<PagePlayPure /> should render finished 1`] = `
           title="Cabbage"
         />
       </div>
-      <audio
-        src="assets/audio/wave.mp3"
-      />
     </div>
     <button
       className="remote"
@@ -252,13 +251,17 @@ exports[`<PagePlayPure /> should render finished 1`] = `
           className="settings__volume-range settings__volume-range_hidden"
           max="1"
           min="0"
+          onBlur={[Function]}
           onChange={[Function]}
           step="0.05"
           type="range"
-          value={1}
+          value="1"
         />
       </div>
     </div>
+    <audio
+      src="assets/audio/wave.mp3"
+    />
     
     <div
       className="page-play__finish"
@@ -322,9 +325,6 @@ exports[`<PagePlayPure /> should render with message 1`] = `
           title="Cabbage"
         />
       </div>
-      <audio
-        src="assets/audio/wave.mp3"
-      />
     </div>
     <button
       className="remote"
@@ -347,13 +347,17 @@ exports[`<PagePlayPure /> should render with message 1`] = `
           className="settings__volume-range settings__volume-range_hidden"
           max="1"
           min="0"
+          onBlur={[Function]}
           onChange={[Function]}
           step="0.05"
           type="range"
-          value={1}
+          value="1"
         />
       </div>
     </div>
+    <audio
+      src="assets/audio/wave.mp3"
+    />
     <div
       className="warning"
     >

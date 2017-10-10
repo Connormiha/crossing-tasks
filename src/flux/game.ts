@@ -5,6 +5,8 @@ import {
     GAME_SET, GAME_INIT, GAME_FINISH
 } from './constants';
 
+import {IGameState} from 'flux/types';
+
 /**
  * Sets currentGame
  */
@@ -17,10 +19,10 @@ export const init = (list: string[]) =>
 export const finish = () =>
     ({type: GAME_FINISH});
 
-const getDefaultState = () =>
+const getDefaultState = (): IGameState =>
     schema.game;
 
-export default (state = getDefaultState(), {type, id, list}) => {
+export default (state: IGameState = getDefaultState(), {type, id, list}): IGameState => {
     switch (type) {
         case GAME_SET:
             return immutable(state, {$merge: {currentGame: id, finished: false}});

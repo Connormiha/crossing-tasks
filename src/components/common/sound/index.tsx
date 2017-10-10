@@ -4,7 +4,7 @@ import {PositionCharacter} from 'games';
 
 interface IProps {
     boatPosition: PositionCharacter;
-    volume: string;
+    volume: number;
 }
 
 export default class Sound extends React.PureComponent<IProps> {

@@ -57,7 +57,7 @@ export const mapDispatchToProps = (dispatch) => {
             dispatch(gameActions.finish());
         },
 
-        onChangeVolume(volume: string) {
+        onChangeVolume(volume: number) {
             dispatch(settingsActions.setVolume(volume));
         },
     };

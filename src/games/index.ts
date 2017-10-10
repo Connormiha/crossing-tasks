@@ -7,11 +7,11 @@ import game_6 from 'games/game6';
 import game_7 from 'games/game7';
 
 import {
-    RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT, Game, ValidatorResult, PositionCharacter
+    Game, ValidatorResult, PositionCharacter
 } from 'games/helpers';
 
 export {
-    RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT, Game, ValidatorResult, PositionCharacter
+    Game, ValidatorResult, PositionCharacter
 };
 
 const games = {

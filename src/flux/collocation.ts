@@ -1,6 +1,6 @@
 import schema from 'reducers/schema';
 import immutable from 'immutability-helper';
-import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'games';
+import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT, ICollocationState} from 'flux/types';
 
 import {
     COLLOCATION_MOVE_CHARACTER, COLLOCATION_MOVE_BOAT, COLLOCATION_INIT
@@ -24,10 +24,10 @@ export const moveBoat = () =>
 export const init = (collocation: any) =>
     ({type: COLLOCATION_INIT, collocation});
 
-const getDefaultState = (): any =>
+const getDefaultState = (): ICollocationState =>
     schema.collocation;
 
-export default (state = getDefaultState(), {type, collocation, id}) => {
+export default (state: ICollocationState = getDefaultState(), {type, collocation, id}): ICollocationState => {
     switch (type) {
         case COLLOCATION_MOVE_CHARACTER:
             for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT]) {

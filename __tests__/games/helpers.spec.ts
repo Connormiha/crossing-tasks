@@ -1,7 +1,7 @@
 import {
     ValidatorResult, landingValidator, depetureValidator,
-    RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT
 } from 'games/helpers';
+import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
 
 const mockCollocation = {
     [RIVERSIDE_LEFT]: [],

@@ -2,10 +2,13 @@ import style from './settings.styl';
 import React from 'react';
 import {bindMethods} from 'helpers';
 import bem from 'bem-css-modules';
+
+import {ISettingsState} from 'flux/types';
+
 const b = bem({...style});
 
 interface IProps {
-    settings: any;
+    settings: ISettingsState;
     onChangeVolume(string): void;
 }
 
@@ -33,7 +36,7 @@ export default class Settings extends React.PureComponent<IProps, IState> {
 
     handleChangeVolume(e: any) {
         e.preventDefault();
-        this.props.onChangeVolume(e.target.value);
+        this.props.onChangeVolume(parseFloat(e.target.value));
     }
 
     handleBlurVolume(e: any) {
@@ -45,8 +48,6 @@ export default class Settings extends React.PureComponent<IProps, IState> {
         const {isVolumeRangeEnabled} = this.state;
         let {volume} = this.props.settings;
         let volumeType;
-
-        volume = parseFloat(volume);
 
         if (!volume) {
             volumeType = 'mute';

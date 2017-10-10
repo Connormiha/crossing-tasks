@@ -4,7 +4,7 @@ import {PositionCharacter} from 'games';
 
 interface IProps {
     position: PositionCharacter;
-    volume: string;
+    volume: number;
 }
 
 export default class AudioWave extends React.PureComponent<IProps> {
@@ -16,7 +16,7 @@ export default class AudioWave extends React.PureComponent<IProps> {
             this._audio.play();
         }
 
-        this._audio.volume = parseFloat(this.props.volume);
+        this._audio.volume = this.props.volume;
     }
 
     render() {
