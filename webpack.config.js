@@ -94,7 +94,7 @@ module.exports = {
             'node_modules'
         ],
         //modulesDirectories: [nodePath],
-        extensions:         ['.js', '.ts', '.tsx', '.json', '.mp3'],
+        extensions:         ['.js', '.ts', '.tsx', '.json', '.mp3', '.opus'],
         // This is default param
         enforceExtension: false,
         alias: CONFIG.alias,
@@ -132,7 +132,7 @@ module.exports = {
                 use: stylusLoaders
             },
             {
-                test: /\.(png|jpg|gif|ico|woff2?|eot|mp3)$/,
+                test: /\.(png|jpg|gif|ico|woff2?|eot|mp3|opus)$/,
                 loader: 'file-loader',
                 options: {
                     name: `${ROOT_URL}/static/[hash].[ext]`.replace(/^\//, ''),

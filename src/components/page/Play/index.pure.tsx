@@ -111,6 +111,7 @@ export default class PagePlayPure extends React.Component<IProps> {
                     <Settings settings={settings} onChangeVolume={onChangeVolume} />
                     <Sound
                         boatPosition={collocation.boatPosition}
+                        boatItemsLength={collocation.boat.length}
                         volume={settings.volume}
                     />
                     {message.content &&

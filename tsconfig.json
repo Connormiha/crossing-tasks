@@ -4,6 +4,7 @@
         "module": "es2015",
         "moduleResolution": "node",
         "strictNullChecks": true,
+        "alwaysStrict": true,
         "noUnusedLocals": true,
         "jsx": "react",
         "baseUrl" : "src",

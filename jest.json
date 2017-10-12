@@ -8,7 +8,7 @@
   "transform": {
     ".+\\.(ts|tsx)$": "<rootDir>/__tests__/preprocessor-typescript.js",
     ".+\\.(css|styl)$": "<rootDir>/node_modules/jest-css-modules-transform",
-    ".+\\.(mp3)$": "<rootDir>/__tests__/preprocessor-file.js"
+    ".+\\.(mp3|opus)$": "<rootDir>/__tests__/preprocessor-file.js"
   },
   "testRegex": "/__tests__/.*\\.spec\\.(ts|tsx)$",
   "moduleDirectories": [

@@ -81,9 +81,26 @@ exports[`<PagePlayPure /> should render (Boat right) 1`] = `
         />
       </div>
     </div>
-    <audio
-      src="assets/audio/wave.mp3"
-    />
+    <audio>
+      <source
+        src="assets/audio/wave.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/wave.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/water-drop.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/water-drop.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
     
   </div>
 </div>
@@ -170,9 +187,26 @@ exports[`<PagePlayPure /> should render 1`] = `
         />
       </div>
     </div>
-    <audio
-      src="assets/audio/wave.mp3"
-    />
+    <audio>
+      <source
+        src="assets/audio/wave.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/wave.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/water-drop.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/water-drop.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
     
   </div>
 </div>
@@ -259,9 +293,26 @@ exports[`<PagePlayPure /> should render finished 1`] = `
         />
       </div>
     </div>
-    <audio
-      src="assets/audio/wave.mp3"
-    />
+    <audio>
+      <source
+        src="assets/audio/wave.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/wave.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/water-drop.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/water-drop.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
     
     <div
       className="page-play__finish"
@@ -355,9 +406,26 @@ exports[`<PagePlayPure /> should render with message 1`] = `
         />
       </div>
     </div>
-    <audio
-      src="assets/audio/wave.mp3"
-    />
+    <audio>
+      <source
+        src="assets/audio/wave.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/wave.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/water-drop.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/water-drop.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
     <div
       className="warning"
     >

@@ -1,30 +1,10 @@
-import audioFile from 'assets/audio/wave.mp3';
-import React from 'react';
 import {PositionCharacter} from 'games';
+import AudioBase, {IPropsAudioBase} from 'components/common/sound/audio-base';
 
-interface IProps {
+interface IProps extends IPropsAudioBase {
     position: PositionCharacter;
-    volume: number;
 }
 
-export default class AudioWave extends React.PureComponent<IProps> {
-    _audio: HTMLAudioElement;
+export default class AudioWave extends AudioBase<IProps> {
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.position !== this.props.position) {
-            this._audio.currentTime = 0;
-            this._audio.play();
-        }
-
-        this._audio.volume = this.props.volume;
-    }
-
-    render() {
-        return (
-            <audio
-                src={audioFile}
-                ref={(el: HTMLAudioElement) => this._audio = el}
-            />
-        );
-    }
 }
