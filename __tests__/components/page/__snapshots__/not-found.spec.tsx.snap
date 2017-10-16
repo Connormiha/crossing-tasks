@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFoundPure /> should render 1`] = `
+<div
+  className="page-not-found"
+>
+  <h1
+    className="page-not-found__title"
+  >
+    Page not found
+  </h1>
+</div>
+`;
