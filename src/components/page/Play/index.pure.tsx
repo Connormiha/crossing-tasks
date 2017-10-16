@@ -28,9 +28,9 @@ interface IProps extends React.Props<any> {
     message: IMessageState;
     settings: ISettingsState;
     match: {params: any};
-    onMoveCharacter(collocation: any, gameId: string, id: string): void;
-    onMoveBoat(collocation: any, gameId: string): void;
-    onBoatMoveEnd(collocation: any): void;
+    onMoveCharacter(collocation: ICollocationState, gameId: string, id: string): void;
+    onMoveBoat(collocation: ICollocationState, gameId: string): void;
+    onBoatMoveEnd(collocation: ICollocationState): void;
     onFinishGame(): void;
     onStartGame(id: string): void;
     onChangeVolume(volume: string): void;
@@ -83,6 +83,7 @@ export default class PagePlayPure extends React.Component<IProps> {
     render() {
         let {collocation, message, game, settings, onChangeVolume} = this.props,
             characters = games[game.currentGame].characters;
+        const isBoatInvalid = !!message.content;
 
         return (
             <div className={b()}>
@@ -102,7 +103,7 @@ export default class PagePlayPure extends React.Component<IProps> {
                     <Boat
                         items={collocation.boat}
                         position={collocation.boatPosition}
-                        invalid={!!message.content}
+                        invalid={isBoatInvalid}
                         characters={characters}
                         onMoveCharacter={this.handleMoveCharacter}
                         onMoveEnd={this.handleMoveBoatEnd}
@@ -113,6 +114,7 @@ export default class PagePlayPure extends React.Component<IProps> {
                         boatPosition={collocation.boatPosition}
                         boatItemsLength={collocation.boat.length}
                         volume={settings.volume}
+                        isInvalid={isBoatInvalid}
                     />
                     {message.content &&
                         <Warning>{message.content}</Warning>
