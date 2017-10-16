@@ -101,6 +101,16 @@ exports[`<PagePlayPure /> should render (Boat right) 1`] = `
         type="audio/mpeg"
       />
     </audio>
+    <audio>
+      <source
+        src="assets/audio/shaker.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/shaker.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
     
   </div>
 </div>
@@ -207,6 +217,16 @@ exports[`<PagePlayPure /> should render 1`] = `
         type="audio/mpeg"
       />
     </audio>
+    <audio>
+      <source
+        src="assets/audio/shaker.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/shaker.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
     
   </div>
 </div>
@@ -310,6 +330,16 @@ exports[`<PagePlayPure /> should render finished 1`] = `
       />
       <source
         src="assets/audio/water-drop.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/shaker.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/shaker.mp3"
         type="audio/mpeg"
       />
     </audio>
@@ -423,6 +453,16 @@ exports[`<PagePlayPure /> should render with message 1`] = `
       />
       <source
         src="assets/audio/water-drop.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/shaker.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/shaker.mp3"
         type="audio/mpeg"
       />
     </audio>
