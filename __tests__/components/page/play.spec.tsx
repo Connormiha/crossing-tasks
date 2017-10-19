@@ -100,7 +100,7 @@ describe('<PagePlay />', () => {
         mapProps.onStartGame(game_1);
 
         expect(getState().collocation).toEqual(
-            {...games[game_1].collocation, boatPosition: RIVERSIDE_LEFT}
+            {...games[game_1].collocation, boatPosition: RIVERSIDE_LEFT, isBoatInvalid: false}
         );
 
         expect(getState().game).toMatchObject({currentGame: game_1, finished: false});
