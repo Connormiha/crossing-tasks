@@ -27,4 +27,5 @@ export interface ICollocationState {
     right: string[];
     boat: string[];
     boatPosition: RIVERSIDE_LEFT_TYPE | RIVERSIDE_RIGHT_TYPE;
+    isBoatInvalid: boolean;
 }

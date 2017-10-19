@@ -28,7 +28,8 @@ describe('<PagePlayPure />', () => {
             [BOAT]: ['farmer', 'cabbage'],
             [RIVERSIDE_LEFT]: ['sheep'],
             [RIVERSIDE_RIGHT]: ['wolf'],
-            boatPosition: RIVERSIDE_LEFT
+            boatPosition: RIVERSIDE_LEFT,
+            isBoatInvalid: false,
         },
         onMoveCharacter: noop,
         onBoatMoveEnd: noop,

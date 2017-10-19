@@ -34,12 +34,13 @@ interface IProps extends React.Props<any> {
     onFinishGame(): void;
     onStartGame(id: string): void;
     onChangeVolume(volume: string): void;
+    onToggleInvalidBoat(isBoatInvalid: boolean): void;
 }
 
 export default class PagePlayPure extends React.Component<IProps> {
     constructor(props) {
         super(props);
-        bindMethods(this, ['handleMoveCharacter', 'handleMoveBoat', 'handleMoveBoatEnd']);
+        bindMethods(this, ['handleMoveCharacter', 'handleMoveBoat', 'handleMoveBoatEnd', 'handleShakeEnd']);
     }
 
     componentWillMount() {
@@ -72,6 +73,10 @@ export default class PagePlayPure extends React.Component<IProps> {
         onBoatMoveEnd(collocation);
     }
 
+    handleShakeEnd() {
+        this.props.onToggleInvalidBoat(false);
+    }
+
     renderFinished(): React.ReactElement<any> {
         return (
             <div className={b('finish')}>
@@ -83,7 +88,6 @@ export default class PagePlayPure extends React.Component<IProps> {
     render() {
         let {collocation, message, game, settings, onChangeVolume} = this.props,
             characters = games[game.currentGame].characters;
-        const isBoatInvalid = !!message.content;
 
         return (
             <div className={b()}>
@@ -103,10 +107,11 @@ export default class PagePlayPure extends React.Component<IProps> {
                     <Boat
                         items={collocation.boat}
                         position={collocation.boatPosition}
-                        invalid={isBoatInvalid}
+                        invalid={collocation.isBoatInvalid}
                         characters={characters}
                         onMoveCharacter={this.handleMoveCharacter}
                         onMoveEnd={this.handleMoveBoatEnd}
+                        onShakeEnd={this.handleShakeEnd}
                     />
                     <Remote onClick={this.handleMoveBoat} disabled={!collocation.boat.length} />
                     <Settings settings={settings} onChangeVolume={onChangeVolume} />
@@ -114,7 +119,7 @@ export default class PagePlayPure extends React.Component<IProps> {
                         boatPosition={collocation.boatPosition}
                         boatItemsLength={collocation.boat.length}
                         volume={settings.volume}
-                        isInvalid={isBoatInvalid}
+                        isInvalid={collocation.isBoatInvalid}
                     />
                     {message.content &&
                         <Warning>{message.content}</Warning>

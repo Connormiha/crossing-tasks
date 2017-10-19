@@ -31,6 +31,7 @@ exports[`<PagePlayPure /> should render (Boat right) 1`] = `
     </div>
     <div
       className="boat boat_position_right"
+      onAnimationEnd={[Function]}
       onTransitionEnd={[Function]}
     >
       <div
@@ -147,6 +148,7 @@ exports[`<PagePlayPure /> should render 1`] = `
     </div>
     <div
       className="boat boat_position_left"
+      onAnimationEnd={[Function]}
       onTransitionEnd={[Function]}
     >
       <div
@@ -263,6 +265,7 @@ exports[`<PagePlayPure /> should render finished 1`] = `
     </div>
     <div
       className="boat boat_position_left"
+      onAnimationEnd={[Function]}
       onTransitionEnd={[Function]}
     >
       <div
@@ -385,7 +388,8 @@ exports[`<PagePlayPure /> should render with message 1`] = `
       </div>
     </div>
     <div
-      className="boat boat_position_left boat_invalid"
+      className="boat boat_position_left"
+      onAnimationEnd={[Function]}
       onTransitionEnd={[Function]}
     >
       <div

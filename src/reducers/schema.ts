@@ -15,7 +15,8 @@ const schema: ISchema = {
         boat: [],
         left: [],
         right: [],
-        boatPosition: RIVERSIDE_LEFT
+        boatPosition: RIVERSIDE_LEFT,
+        isBoatInvalid: false,
     },
     message: {
         content: '',

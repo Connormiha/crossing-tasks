@@ -13,7 +13,8 @@ export const mapDispatchToProps = (dispatch) => {
         onStartGame(id: string) {
             dispatch(batchActions([
                 collocationActions.init(games[id].collocation),
-                gameActions.set(id)
+                gameActions.set(id),
+                collocationActions.toggleBoatInvalid(false),
             ]));
         },
 
@@ -23,34 +24,48 @@ export const mapDispatchToProps = (dispatch) => {
             if (success) {
                 dispatch(batchActions([
                     collocationActions.moveCharacter(id),
-                    messageActions.set('')
+                    messageActions.set(''),
+                    collocationActions.toggleBoatInvalid(false),
                 ]));
             } else {
-                dispatch(messageActions.set(message));
+                dispatch(batchActions([
+                    messageActions.set(message),
+                    collocationActions.toggleBoatInvalid(true),
+                ]));
             }
         },
 
         onMoveBoat(collocation: any, gameId: string) {
-            let {success, message} = games[gameId].depetureValidator(collocation);
+            const {success, message} = games[gameId].depetureValidator(collocation);
 
             if (success) {
                 dispatch(batchActions([
                     collocationActions.moveBoat(),
-                    messageActions.set('')
+                    messageActions.set(''),
+                    collocationActions.toggleBoatInvalid(false),
                 ]));
             } else {
-                dispatch(messageActions.set(message));
+                dispatch(batchActions([
+                    messageActions.set(message),
+                    collocationActions.toggleBoatInvalid(true),
+                ]));
             }
         },
 
         onBoatMoveEnd(collocation: any) {
-            let actions: any[] = [];
+            let actions: any[] = [
+                collocationActions.toggleBoatInvalid(false),
+            ];
 
             for (let id of collocation.boat) {
                 actions.push(collocationActions.moveCharacter(id));
             }
 
             dispatch(batchActions(actions));
+        },
+
+        onToggleInvalidBoat(isBoatInvalid: boolean) {
+            dispatch(collocationActions.toggleBoatInvalid(isBoatInvalid));
         },
 
         onFinishGame() {

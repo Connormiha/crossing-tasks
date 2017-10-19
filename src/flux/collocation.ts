@@ -3,7 +3,7 @@ import immutable from 'immutability-helper';
 import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT, ICollocationState} from 'flux/types';
 
 import {
-    COLLOCATION_MOVE_CHARACTER, COLLOCATION_MOVE_BOAT, COLLOCATION_INIT
+    COLLOCATION_MOVE_CHARACTER, COLLOCATION_MOVE_BOAT, COLLOCATION_INIT, COLLOCATION_TOGGLE_BOAT_INVALID,
 } from './constants';
 
 /**
@@ -19,6 +19,12 @@ export const moveBoat = () =>
     ({type: COLLOCATION_MOVE_BOAT});
 
 /**
+ * Move boat to other riverside
+ */
+export const toggleBoatInvalid = (isBoatInvalid: boolean) =>
+    ({type: COLLOCATION_TOGGLE_BOAT_INVALID, isBoatInvalid});
+
+/**
  * Init new collocation
  */
 export const init = (collocation: any) =>
@@ -27,7 +33,7 @@ export const init = (collocation: any) =>
 const getDefaultState = (): ICollocationState =>
     schema.collocation;
 
-export default (state: ICollocationState = getDefaultState(), {type, collocation, id}): ICollocationState => {
+export default (state: ICollocationState = getDefaultState(), {type, collocation, isBoatInvalid, id}): ICollocationState => {
     switch (type) {
         case COLLOCATION_MOVE_CHARACTER:
             for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT]) {
@@ -54,6 +60,9 @@ export default (state: ICollocationState = getDefaultState(), {type, collocation
 
         case COLLOCATION_MOVE_BOAT:
             return immutable(state, {boatPosition: {$set: state.boatPosition === RIVERSIDE_LEFT ? RIVERSIDE_RIGHT : RIVERSIDE_LEFT}});
+
+        case COLLOCATION_TOGGLE_BOAT_INVALID:
+            return immutable(state, {isBoatInvalid: {$set: isBoatInvalid}});
 
         case COLLOCATION_INIT:
             return immutable(state, {$merge: {...collocation, boatPosition: RIVERSIDE_LEFT}});

@@ -9,18 +9,25 @@ import bem from 'bem-css-modules';
 
 const b = bem({...style});
 
-interface Props extends React.Props<any> {
+interface IProps extends React.Props<any> {
     items: string[];
     characters: any;
     position: PositionCharacter;
     invalid: boolean;
     onMoveCharacter(id: string): void;
     onMoveEnd(): void;
+    onShakeEnd(): void;
 }
 
-export default class Boat extends React.PureComponent<Props> {
+export default class Boat extends React.PureComponent<IProps> {
+    constructor(props: IProps) {
+        super(props);
+
+        this.handleAnimationEnd = this.handleAnimationEnd.bind(this);
+    }
+
     renderItems() {
-        let {items, characters, onMoveCharacter} = this.props;
+        const {items, characters, onMoveCharacter} = this.props;
 
         return items.map((id: string) => {
             return (
@@ -31,11 +38,21 @@ export default class Boat extends React.PureComponent<Props> {
         });
     }
 
+    handleAnimationEnd() {
+        if (this.props.invalid) {
+            this.props.onShakeEnd();
+        }
+    }
+
     render() {
         const {position, invalid, onMoveEnd} = this.props;
 
         return (
-            <div className={b({position, invalid})} onTransitionEnd={onMoveEnd}>
+            <div
+                className={b({position, invalid})}
+                onTransitionEnd={onMoveEnd}
+                onAnimationEnd={this.handleAnimationEnd}
+            >
                 {this.renderItems()}
             </div>
         );

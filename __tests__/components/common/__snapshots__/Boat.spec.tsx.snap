@@ -3,6 +3,7 @@
 exports[`<Boat /> should render 1`] = `
 <div
   className="boat boat_position_left"
+  onAnimationEnd={[Function]}
   onTransitionEnd={[Function]}
 />
 `;
@@ -10,6 +11,7 @@ exports[`<Boat /> should render 1`] = `
 exports[`<Boat /> should render items 1`] = `
 <div
   className="boat boat_position_left"
+  onAnimationEnd={[Function]}
   onTransitionEnd={[Function]}
 >
   <div
