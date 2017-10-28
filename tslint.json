@@ -8,6 +8,7 @@
             "options": "never"
         },
         "class-name": true,
+        "no-implicit-dependencies": false,
         "comment-format": {
             "options": "check-space"
         },

@@ -10,6 +10,7 @@
         "baseUrl" : "src",
         "allowSyntheticDefaultImports": true,
         "paths": {
+            "node": ["../node_modules/@types/node/index"],
             "history": ["../node_modules/@types/history/index"],
             "redux": ["../node_modules/@types/redux/index"],
             "react": ["../node_modules/@types/react/index"],

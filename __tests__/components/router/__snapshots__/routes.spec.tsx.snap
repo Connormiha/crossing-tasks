@@ -1,0 +1,862 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Route <EntryPage /> should render 1`] = `
+<div
+  className="page-entry"
+>
+  <div
+    className="page-entry__content"
+  >
+    <ul
+      className="list-games"
+    >
+      <li
+        className="list-games__item"
+      >
+        <a
+          href="/play/game_1/"
+          onClick={[Function]}
+        >
+          game_1
+        </a>
+      </li>
+      <li
+        className="list-games__item"
+      >
+        <a
+          href="/play/game_2/"
+          onClick={[Function]}
+        >
+          game_2
+        </a>
+      </li>
+      <li
+        className="list-games__item"
+      >
+        <a
+          href="/play/game_3/"
+          onClick={[Function]}
+        >
+          game_3
+        </a>
+      </li>
+      <li
+        className="list-games__item"
+      >
+        <a
+          href="/play/game_4/"
+          onClick={[Function]}
+        >
+          game_4
+        </a>
+      </li>
+      <li
+        className="list-games__item"
+      >
+        <a
+          href="/play/game_5/"
+          onClick={[Function]}
+        >
+          game_5
+        </a>
+      </li>
+      <li
+        className="list-games__item"
+      >
+        <a
+          href="/play/game_6/"
+          onClick={[Function]}
+        >
+          game_6
+        </a>
+      </li>
+      <li
+        className="list-games__item"
+      >
+        <a
+          href="/play/game_7/"
+          onClick={[Function]}
+        >
+          game_7
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Route <NotFoundPage /> should render /foo 1`] = `
+<div
+  className="page-not-found"
+>
+  <h1
+    className="page-not-found__title"
+  >
+    Page not found
+  </h1>
+</div>
+`;
+
+exports[`Route <PlayPage /> should render game_1 1`] = `
+<div
+  className="page-play"
+>
+  <div
+    className="page-play__content"
+  >
+    <div
+      className="riverside riverside_side_left"
+    >
+      <div>
+        <div
+          className="character character_skin_farmer"
+          onClick={[Function]}
+          title="Farmer"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_cabbage"
+          onClick={[Function]}
+          title="Cabbage"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_sheep"
+          onClick={[Function]}
+          title="Sheep"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_wolf"
+          onClick={[Function]}
+          title="Wolf"
+        />
+      </div>
+    </div>
+    <div
+      className="riverside riverside_side_right"
+    />
+    <div
+      className="boat boat_position_left"
+      onAnimationEnd={[Function]}
+      onTransitionEnd={[Function]}
+    />
+    <button
+      className="remote"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Go
+    </button>
+    <div
+      className="settings"
+    >
+      <div
+        className="settings__volume settings__volume_type_high"
+      >
+        <div
+          className="settings__volume-toggler"
+          onClick={[Function]}
+        />
+        <input
+          className="settings__volume-range settings__volume-range_hidden"
+          max="1"
+          min="0"
+          onBlur={[Function]}
+          onChange={[Function]}
+          step="0.05"
+          type="range"
+          value={1}
+        />
+      </div>
+    </div>
+    <audio>
+      <source
+        src="assets/audio/wave.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/wave.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/water-drop.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/water-drop.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/shaker.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/shaker.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    
+  </div>
+</div>
+`;
+
+exports[`Route <PlayPage /> should render game_2 1`] = `
+<div
+  className="page-play"
+>
+  <div
+    className="page-play__content"
+  >
+    <div
+      className="riverside riverside_side_left"
+    >
+      <div>
+        <div
+          className="character character_skin_caveman"
+          onClick={[Function]}
+          title="Caveman"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_caveman"
+          onClick={[Function]}
+          title="Caveman"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_caveman"
+          onClick={[Function]}
+          title="Caveman"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_priest"
+          onClick={[Function]}
+          title="Priest"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_priest"
+          onClick={[Function]}
+          title="Priest"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_priest"
+          onClick={[Function]}
+          title="Priest"
+        />
+      </div>
+    </div>
+    <div
+      className="riverside riverside_side_right"
+    />
+    <div
+      className="boat boat_position_left"
+      onAnimationEnd={[Function]}
+      onTransitionEnd={[Function]}
+    />
+    <button
+      className="remote"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Go
+    </button>
+    <div
+      className="settings"
+    >
+      <div
+        className="settings__volume settings__volume_type_high"
+      >
+        <div
+          className="settings__volume-toggler"
+          onClick={[Function]}
+        />
+        <input
+          className="settings__volume-range settings__volume-range_hidden"
+          max="1"
+          min="0"
+          onBlur={[Function]}
+          onChange={[Function]}
+          step="0.05"
+          type="range"
+          value={1}
+        />
+      </div>
+    </div>
+    <audio>
+      <source
+        src="assets/audio/wave.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/wave.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/water-drop.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/water-drop.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/shaker.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/shaker.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    
+  </div>
+</div>
+`;
+
+exports[`Route <PlayPage /> should render game_3 1`] = `
+<div
+  className="page-play"
+>
+  <div
+    className="page-play__content"
+  >
+    <div
+      className="riverside riverside_side_left"
+    >
+      <div>
+        <div
+          className="character character_skin_woman_red"
+          onClick={[Function]}
+          title="Woman_red"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_men_red"
+          onClick={[Function]}
+          title="Men_red"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_woman_white"
+          onClick={[Function]}
+          title="Woman_white"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_men_white"
+          onClick={[Function]}
+          title="Men_white"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_woman_black"
+          onClick={[Function]}
+          title="Woman_black"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_men_black"
+          onClick={[Function]}
+          title="Men_black"
+        />
+      </div>
+    </div>
+    <div
+      className="riverside riverside_side_right"
+    />
+    <div
+      className="boat boat_position_left"
+      onAnimationEnd={[Function]}
+      onTransitionEnd={[Function]}
+    />
+    <button
+      className="remote"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Go
+    </button>
+    <div
+      className="settings"
+    >
+      <div
+        className="settings__volume settings__volume_type_high"
+      >
+        <div
+          className="settings__volume-toggler"
+          onClick={[Function]}
+        />
+        <input
+          className="settings__volume-range settings__volume-range_hidden"
+          max="1"
+          min="0"
+          onBlur={[Function]}
+          onChange={[Function]}
+          step="0.05"
+          type="range"
+          value={1}
+        />
+      </div>
+    </div>
+    <audio>
+      <source
+        src="assets/audio/wave.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/wave.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/water-drop.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/water-drop.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/shaker.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/shaker.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    
+  </div>
+</div>
+`;
+
+exports[`Route <PlayPage /> should render game_4 1`] = `
+<div
+  className="page-play"
+>
+  <div
+    className="page-play__content"
+  >
+    <div
+      className="riverside riverside_side_left"
+    >
+      <div>
+        <div
+          className="character character_skin_men_black"
+          onClick={[Function]}
+          title="Men_black"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_boy_red"
+          onClick={[Function]}
+          title="Boy_red"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_boy_yellow"
+          onClick={[Function]}
+          title="Boy_yellow"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_woman_black"
+          onClick={[Function]}
+          title="Woman_black"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_girl_red"
+          onClick={[Function]}
+          title="Girl_red"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_girl_yellow"
+          onClick={[Function]}
+          title="Girl_yellow"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_criminal"
+          onClick={[Function]}
+          title="Criminal"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_policeman"
+          onClick={[Function]}
+          title="Policeman"
+        />
+      </div>
+    </div>
+    <div
+      className="riverside riverside_side_right"
+    />
+    <div
+      className="boat boat_position_left"
+      onAnimationEnd={[Function]}
+      onTransitionEnd={[Function]}
+    />
+    <button
+      className="remote"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Go
+    </button>
+    <div
+      className="settings"
+    >
+      <div
+        className="settings__volume settings__volume_type_high"
+      >
+        <div
+          className="settings__volume-toggler"
+          onClick={[Function]}
+        />
+        <input
+          className="settings__volume-range settings__volume-range_hidden"
+          max="1"
+          min="0"
+          onBlur={[Function]}
+          onChange={[Function]}
+          step="0.05"
+          type="range"
+          value={1}
+        />
+      </div>
+    </div>
+    <audio>
+      <source
+        src="assets/audio/wave.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/wave.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/water-drop.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/water-drop.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/shaker.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/shaker.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    
+  </div>
+</div>
+`;
+
+exports[`Route <PlayPage /> should render game_5 1`] = `
+<div
+  className="page-play"
+>
+  <div
+    className="page-play__content"
+  >
+    <div
+      className="riverside riverside_side_left"
+    >
+      <div>
+        <div
+          className="character character_skin_priest"
+          onClick={[Function]}
+          title="Priest"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_priest"
+          onClick={[Function]}
+          title="Priest"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_priest"
+          onClick={[Function]}
+          title="Priest"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_monkey"
+          onClick={[Function]}
+          title="Monkey"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_monkey"
+          onClick={[Function]}
+          title="Monkey"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_gorilla"
+          onClick={[Function]}
+          title="Gorilla"
+        />
+      </div>
+    </div>
+    <div
+      className="riverside riverside_side_right"
+    />
+    <div
+      className="boat boat_position_left"
+      onAnimationEnd={[Function]}
+      onTransitionEnd={[Function]}
+    />
+    <button
+      className="remote"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Go
+    </button>
+    <div
+      className="settings"
+    >
+      <div
+        className="settings__volume settings__volume_type_high"
+      >
+        <div
+          className="settings__volume-toggler"
+          onClick={[Function]}
+        />
+        <input
+          className="settings__volume-range settings__volume-range_hidden"
+          max="1"
+          min="0"
+          onBlur={[Function]}
+          onChange={[Function]}
+          step="0.05"
+          type="range"
+          value={1}
+        />
+      </div>
+    </div>
+    <audio>
+      <source
+        src="assets/audio/wave.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/wave.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/water-drop.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/water-drop.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/shaker.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/shaker.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    
+  </div>
+</div>
+`;
+
+exports[`Route <PlayPage /> should render game_6 1`] = `
+<div
+  className="page-play"
+>
+  <div
+    className="page-play__content"
+  >
+    <div
+      className="riverside riverside_side_left"
+    >
+      <div>
+        <div
+          className="character character_skin_woman_red"
+          onClick={[Function]}
+          title="Woman_red"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_men_red"
+          onClick={[Function]}
+          title="Men_red"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_woman_white"
+          onClick={[Function]}
+          title="Woman_white"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_men_white"
+          onClick={[Function]}
+          title="Men_white"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_woman_black"
+          onClick={[Function]}
+          title="Woman_black"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_men_black"
+          onClick={[Function]}
+          title="Men_black"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_woman_blue"
+          onClick={[Function]}
+          title="Woman_blue"
+        />
+      </div>
+      <div>
+        <div
+          className="character character_skin_men_blue"
+          onClick={[Function]}
+          title="Men_blue"
+        />
+      </div>
+    </div>
+    <div
+      className="riverside riverside_side_right"
+    />
+    <div
+      className="boat boat_position_left"
+      onAnimationEnd={[Function]}
+      onTransitionEnd={[Function]}
+    />
+    <button
+      className="remote"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Go
+    </button>
+    <div
+      className="settings"
+    >
+      <div
+        className="settings__volume settings__volume_type_high"
+      >
+        <div
+          className="settings__volume-toggler"
+          onClick={[Function]}
+        />
+        <input
+          className="settings__volume-range settings__volume-range_hidden"
+          max="1"
+          min="0"
+          onBlur={[Function]}
+          onChange={[Function]}
+          step="0.05"
+          type="range"
+          value={1}
+        />
+      </div>
+    </div>
+    <audio>
+      <source
+        src="assets/audio/wave.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/wave.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/water-drop.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/water-drop.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <audio>
+      <source
+        src="assets/audio/shaker.opus"
+        type="audio/ogg; codecs=opus"
+      />
+      <source
+        src="assets/audio/shaker.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    
+  </div>
+</div>
+`;
