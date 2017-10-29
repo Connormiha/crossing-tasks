@@ -44,6 +44,11 @@ Check TypeScript and Stylus code validation
 npm run lint
 ```
 
+Run Storybook on http://localhost:6006/
+```
+npm run storybook
+```
+
 ### Git
 On pre-commit set up hook for checking modified/added files by linter  
 On pre-push run unit tests
