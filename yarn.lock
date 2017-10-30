@@ -6,7 +6,7 @@
   version "3.0.9"
   resolved "https://registry.yarnpkg.com/@hypnosphi/fuse.js/-/fuse.js-3.0.9.tgz#ea99f6121b4a8f065b4c71f85595db2714498807"
 
-"@storybook/addon-actions@^3.2.13":
+"@storybook/addon-actions@3.2.13", "@storybook/addon-actions@^3.2.13":
   version "3.2.13"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.2.13.tgz#7fae9201514f0efeee710d466828ea3c6bf0ec16"
   dependencies:
@@ -17,7 +17,7 @@
     react-inspector "^2.2.0"
     uuid "^3.1.0"
 
-"@storybook/addon-links@^3.2.13":
+"@storybook/addon-links@3.2.13", "@storybook/addon-links@^3.2.13":
   version "3.2.13"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.2.13.tgz#925bb46350583a73538ac655f23df6f55019b560"
   dependencies:
@@ -78,7 +78,7 @@
     fuse.js "^3.0.1"
     prop-types "^15.5.9"
 
-"@storybook/react@^3.2.13":
+"@storybook/react@3.2.13":
   version "3.2.13"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-3.2.13.tgz#d5b4d24a16a78b74d89bcee22475c755a05693cd"
   dependencies:
@@ -260,7 +260,11 @@
   version "15.0.22"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.22.tgz#50803cde8d89f60a9b034f2dd0d619bc5f0273b5"
 
-"@types/react@16.0.18", "@types/react@^16.0.18":
+"@types/react@16.0.19":
+  version "16.0.19"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.19.tgz#f804a0fcd6d94c17df92cf2fd46671bbbc862329"
+
+"@types/react@^16.0.18":
   version "16.0.18"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.18.tgz#c08eea79ada55bf10b5353e18c21797dd17afa23"
 
@@ -8786,9 +8790,9 @@ tryor@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/tryor/-/tryor-0.1.2.tgz#8145e4ca7caff40acde3ccf946e8b8bb75b4172b"
 
-ts-loader@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-3.1.0.tgz#d59bed512ee1dfc2636184f437714baad08c7ca1"
+ts-loader@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-3.1.1.tgz#602d93c12029eaf8fa1ee478a90785d40c5f6658"
   dependencies:
     chalk "^2.3.0"
     enhanced-resolve "^3.0.0"

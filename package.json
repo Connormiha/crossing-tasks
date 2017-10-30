@@ -29,9 +29,9 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "@storybook/cli": "3.2.13",
     "@storybook/addon-actions": "3.2.13",
     "@storybook/addon-links": "3.2.13",
+    "@storybook/cli": "3.2.13",
     "@storybook/react": "3.2.13",
     "@types/enzyme": "3.1.1",
     "@types/history": "4.6.1",
@@ -39,7 +39,7 @@
     "@types/jest": "21.1.5",
     "@types/lodash": "4.14.80",
     "@types/node": "8.0.47",
-    "@types/react": "16.0.18",
+    "@types/react": "16.0.19",
     "@types/react-addons-test-utils": "0.14.20",
     "@types/react-dom": "16.0.2",
     "@types/react-redux": "5.0.12",
@@ -85,7 +85,7 @@
     "svg-url-loader": "2.3.0",
     "svgo": "0.7.2",
     "svgo-loader": "1.2.1",
-    "ts-loader": "3.1.0",
+    "ts-loader": "3.1.1",
     "tslint": "5.8.0",
     "tslint-loader": "3.5.3",
     "tslint-react": "3.2.0",
