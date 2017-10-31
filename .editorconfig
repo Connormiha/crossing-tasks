@@ -1,7 +1,7 @@
 # editorconfig.org
 root = true
 
-[js, jsx, styl, json]
+[js, ts, tsx, styl, json]
 indent_style = space
 end_of_line = lf
 charset = utf-8
