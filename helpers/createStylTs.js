@@ -1,7 +1,7 @@
 const stylus = require('stylus');
 const DtsCreator = require('typed-css-modules');
 const {execSync} = require('child_process');
-const creator = new DtsCreator();
+const creator = new DtsCreator({camelCase: true});
 let {readFile} = require('fs');
 
 let files = execSync('find src -name "*.styl"', {encoding: 'utf8'}).trim();

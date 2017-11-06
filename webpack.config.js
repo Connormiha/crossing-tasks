@@ -60,7 +60,16 @@ let cssLoaders = [
             }
         }
     ]
-    .concat(NODE_ENV === 'production' ? [] : 'typed-css-modules-loader')
+    .concat(
+        NODE_ENV === 'production'
+            ? []
+            : {
+                loader: 'typed-css-modules-loader',
+                options: {
+                    camelCase: true,
+                },
+            }
+    )
     .concat(
         {
             loader: 'postcss-loader',
