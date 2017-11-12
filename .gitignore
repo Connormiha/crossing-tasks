@@ -5,6 +5,8 @@
 /deploy
 /coverage
 /typings
+/backstop_data/html_report
+/backstop_data/bitmaps_test
 npm-debug.log
 yarn-error.log
 *.styl.d.ts
