@@ -2,8 +2,14 @@ import React from 'react';
 
 import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
+import {BrowserRouter as Router} from 'react-router-dom';
 import Character from 'components/common/Character';
-
+import PageEntryPure from 'components/page/Entry/index.pure';
+import NotFoundPure from 'components/page/NotFound';
+import PagePlayPure from 'components/page/Play/index.pure';
+import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
+import noop from 'lodash/noop';
+import games from 'games';
 
 const CharactersBlock = [
     'cabbage',
@@ -41,5 +47,78 @@ storiesOf('Character', module)
             <div style={{background: '#4a8841'}}>
                 {CharactersBlock}
             </div>
+        );
+});
+
+storiesOf('Page entry', module)
+    .add('Simple', () => {
+        return (
+            <Router>
+                <PageEntryPure
+                    game={{
+                        list: Object.keys(games)
+                    }}
+                />
+            </Router>
+        );
+});
+
+const RouteComponentPropsMock: any = {
+    match: {},
+    location: {},
+    history: {},
+};
+
+storiesOf('Page not found', module)
+    .add('Simple', () => {
+        return (
+            <Router>
+                <NotFoundPure
+                    {...RouteComponentPropsMock}
+                />
+            </Router>
+        );
+});
+
+const params = {
+    game: {
+        finished: false,
+        currentGame: 'game_1',
+        list: [],
+    },
+    message: {
+        content: '',
+        hidden: true,
+    },
+    match: {
+        params: {
+            id: ''
+        }
+    },
+    settings: {
+        volume: 1,
+    },
+    collocation: {
+        [BOAT]: [],
+        [RIVERSIDE_LEFT]: ['sheep', 'farmer', 'cabbage', 'wolf'],
+        [RIVERSIDE_RIGHT]: [],
+        boatPosition: RIVERSIDE_LEFT,
+        isBoatInvalid: false,
+    },
+    onMoveCharacter: noop,
+    onBoatMoveEnd: noop,
+    onFinishGame: noop,
+    onStartGame: noop,
+    onMoveBoat: noop,
+    onChangeVolume: noop,
+    onToggleInvalidBoat: noop,
+};
+
+storiesOf('Page play', module)
+    .add('Game 1', () => {
+        return (
+            <PagePlayPure
+                {...params}
+            />
         );
 });

@@ -15,7 +15,7 @@ describe('<PagePlayPure />', () => {
         },
         message: {
             content: ''
-        }
+        },
         match: {
             params: {
                 id: ''

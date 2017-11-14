@@ -1,6 +1,25 @@
 const backstop = require('backstopjs');
 
-backstop('test', {
+const TESTS = [
+    {
+        selectedKind: 'Character',
+        selectedStory: 'Simple',
+    },
+    {
+        selectedKind: 'Page entry',
+        selectedStory: 'Simple',
+    },
+    {
+        selectedKind: 'Page not found',
+        selectedStory: 'Simple',
+    },
+    {
+        selectedKind: 'Page play',
+        selectedStory: 'Game 1',
+    },
+];
+
+backstop(process.argv[2] === 'approve' ? 'approve' : 'test', {
     config: {
       id: 'backstop_default',
       viewports: [
@@ -17,11 +36,10 @@ backstop('test', {
       ],
       onBeforeScript: 'chromy/onBefore.js',
       onReadyScript: 'chromy/onReady.js',
-      scenarios: [
-        {
-          label: 'BackstopJS Homepage',
+      scenarios: TESTS.map(({selectedStory, selectedKind}) => ({
+          label: `${selectedStory}-${selectedKind}`,
           cookiePath: 'backstop_data/engine_scripts/cookies.json',
-          url: 'http://localhost:6006/iframe.html?selectedKind=Character&selectedStory=Simple',
+          url: `http://localhost:6006/iframe.html?selectedKind=${selectedKind}&selectedStory=${selectedStory}`,
           referenceUrl: '',
           readyEvent: '',
           readySelector: '',
@@ -34,9 +52,8 @@ backstop('test', {
           selectors: [],
           selectorExpansion: true,
           misMatchThreshold: 0.1,
-          requireSameDimensions: true
-        }
-      ],
+          requireSameDimensions: true,
+      })),
       paths: {
         bitmaps_reference: 'backstop_data/bitmaps_reference',
         bitmaps_test: 'backstop_data/bitmaps_test',
