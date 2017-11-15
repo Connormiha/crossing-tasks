@@ -6,36 +6,31 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import Character from 'components/common/Character';
 import PageEntryPure from 'components/page/Entry/index.pure';
 import NotFoundPure from 'components/page/NotFound';
-import PagePlayPure from 'components/page/Play/index.pure';
-import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
-import noop from 'lodash/noop';
 import games from 'games';
+import uniq from 'lodash/uniq';
+import './pages/game';
 
-const CharactersBlock = [
-    'cabbage',
-    'farmer',
-    'sheep',
-    'wolf',
-    'dog',
-    'caveman',
-    'priest',
-    'woman_black',
-    'woman_white',
-    'woman_red',
-    'woman_blue',
-    'men_black',
-    'men_white',
-    'men_red',
-    'men_blue',
-    'boy_red',
-    'boy_yellow',
-    'girl_red',
-    'girl_yellow',
-    'policeman',
-    'criminal',
-    'monkey',
-    'gorilla',
-].map((item) =>
+let charactersList: string[] = (function(): string[] {
+    const result: string[] = [];
+
+    for (const item in games) {
+        if (!games.hasOwnProperty(item)) {
+            continue;
+        }
+
+        for (const character in games[item].characters) {
+            if (!games[item].characters.hasOwnProperty(character)) {
+                continue;
+            }
+
+            result.push(games[item].characters[character].name.toLowerCase());
+        }
+    }
+
+    return uniq(result);
+})();
+
+const CharactersBlock = charactersList.map((item) =>
     <div style={{display: 'inline-block', margin: '10px'}}>
         <Character onClick={action(`Click ${item}`)} name={item} id={`id_${item}`} />
     </div>
@@ -77,48 +72,5 @@ storiesOf('Page not found', module)
                     {...RouteComponentPropsMock}
                 />
             </Router>
-        );
-});
-
-const params = {
-    game: {
-        finished: false,
-        currentGame: 'game_1',
-        list: [],
-    },
-    message: {
-        content: '',
-        hidden: true,
-    },
-    match: {
-        params: {
-            id: ''
-        }
-    },
-    settings: {
-        volume: 1,
-    },
-    collocation: {
-        [BOAT]: [],
-        [RIVERSIDE_LEFT]: ['sheep', 'farmer', 'cabbage', 'wolf'],
-        [RIVERSIDE_RIGHT]: [],
-        boatPosition: RIVERSIDE_LEFT,
-        isBoatInvalid: false,
-    },
-    onMoveCharacter: noop,
-    onBoatMoveEnd: noop,
-    onFinishGame: noop,
-    onStartGame: noop,
-    onMoveBoat: noop,
-    onChangeVolume: noop,
-    onToggleInvalidBoat: noop,
-};
-
-storiesOf('Page play', module)
-    .add('Game 1', () => {
-        return (
-            <PagePlayPure
-                {...params}
-            />
         );
 });

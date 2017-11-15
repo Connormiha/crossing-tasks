@@ -9,6 +9,7 @@
 **Jest, Enzyme** - unit tests library  
 **Tslint, Stylint** - TypeScript and Stylus code validation  
 **Gulp** for run linters  
+**Storybook, Backstop.js**  Storybook components + screen tests  
 **Yarn** Package manager (instead of npm)
 
 Tested with Node.js 8
@@ -47,6 +48,11 @@ npm run lint
 Run Storybook on http://localhost:6006/
 ```
 npm run storybook
+```
+
+Run sreenshots tests from Storybook
+```
+npm run test:backstop
 ```
 
 ### Git

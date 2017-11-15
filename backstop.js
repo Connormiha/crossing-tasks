@@ -1,4 +1,5 @@
 const backstop = require('backstopjs');
+const range = require('lodash/range');
 
 const TESTS = [
     {
@@ -13,10 +14,12 @@ const TESTS = [
         selectedKind: 'Page not found',
         selectedStory: 'Simple',
     },
-    {
-        selectedKind: 'Page play',
-        selectedStory: 'Game 1',
-    },
+    ...(range(1, 8).map((i) => (
+        {
+            selectedKind: 'Page play',
+            selectedStory: `Game ${i}`,
+        }
+    )))
 ];
 
 backstop(process.argv[2] === 'approve' ? 'approve' : 'test', {
