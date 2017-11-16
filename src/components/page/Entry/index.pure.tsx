@@ -2,13 +2,14 @@ import style from './index.styl';
 
 import React from 'react';
 import ListGames from 'components/common/ListGames';
+import {IGameState} from 'flux/types';
 
 import bem from 'bem-css-modules';
 
 const b = bem({...style});
 
 interface Props extends React.Props<any> {
-    game: any;
+    game: IGameState;
 }
 
 export default class PageEntryPure extends React.Component<Props> {

@@ -3,7 +3,7 @@ import {
     ICollocationState, IMessageState, IGameState, ISettingsState,
 } from 'flux/types';
 
-interface ISchema {
+export interface ISchema {
     collocation: ICollocationState;
     message: IMessageState;
     game: IGameState;

@@ -5,6 +5,7 @@ import * as messageActions from 'flux/message';
 import * as gameActions from 'flux/game';
 import * as settingsActions from 'flux/settings';
 import PagePlayPure from './index.pure';
+import {IGameState} from 'flux/types';
 
 import games from 'games';
 
@@ -79,6 +80,6 @@ export const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(
-    (state) => state,
+    (state: IGameState) => state,
     mapDispatchToProps
 )(PagePlayPure);
