@@ -51,7 +51,9 @@ storiesOf('Page entry', module)
             <Router>
                 <PageEntryPure
                     game={{
-                        list: Object.keys(games)
+                        list: Object.keys(games),
+                        currentGame: '',
+                        finished: false,
                     }}
                 />
             </Router>
