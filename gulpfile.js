@@ -23,7 +23,7 @@ if (PRE_COMMIT) {
  * @desc Check TypeScript validation
  */
 gulp.task('tslint', () =>
-    gulp.src(PRE_COMMIT ? changedFilesTypescript : ['{src,__tests__}/**/*.{ts,tsx}', '!src/**/*.d.ts'])
+    gulp.src(PRE_COMMIT ? changedFilesTypescript : ['{src,__tests__,stories}/**/*.{ts,tsx}', '!src/**/*.d.ts'])
         .pipe(tslint({
             formatter: 'verbose'
         }))

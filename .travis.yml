@@ -7,13 +7,15 @@ matrix:
   include:
     - os: linux
       node_js: "8"
+      env: OS=linux
     - os: osx
       node_js: "8"
       osx_image: xcode9.1
+      env: OS=osx
 
 before_script:
   - npm run lint
-  - npm run test:backstop
+  - if [ "$OS" = "osx" ]; then npm run test:backstop; fi
   - npm run build
 
 cache:

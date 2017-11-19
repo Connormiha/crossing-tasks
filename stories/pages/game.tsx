@@ -40,7 +40,7 @@ const createParams = (gameName: string) => {
         onChangeVolume: noop,
         onToggleInvalidBoat: noop,
     };
-}
+};
 
 const stories = storiesOf('Page play', module);
 

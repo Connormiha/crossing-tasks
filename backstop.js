@@ -3,8 +3,9 @@
 const backstop = require('backstopjs');
 const range = require('lodash/range');
 const http = require('http');
-const {exec, execSync} = require('child_process');
+const {spawn} = require('child_process');
 
+let spawnStorybook;
 const isApprove = process.argv[2] === 'approve';
 const TESTS = [
     {
@@ -27,7 +28,7 @@ const TESTS = [
     )))
 ];
 
-function runTests() {
+const runTests = () => {
     backstop(isApprove ? 'approve' : 'test', {
         config: {
             id: 'backstop_default',
@@ -79,8 +80,10 @@ function runTests() {
             debugWindow: false
         }
     }).then(() => {
+        spawnStorybook && spawnStorybook.kill();
         process.exit(0);
     }).catch(() => {
+        spawnStorybook && spawnStorybook.kill();
         process.exit(1);
     });
 }
@@ -90,12 +93,12 @@ let nextCheck;
 
 function checkServer() {
     attemptsCount++;
+    clearTimeout(nextCheck);
     http.get('http://localhost:6006', (res) => {
         if (res.statusCode === 200) {
             clearTimeout(nextCheck);
             runTests();
         }
-        console.log('Here');
     }).on('error', (e) => {
         console.error(`Got error: ${e.message}`);
     });
@@ -110,12 +113,31 @@ function checkServer() {
 if (isApprove) {
     runTests();
 } else {
-    exec('npm run storybook', {maxBuffer: 1500 * 1014}, (error) => {
-        if (error) {
-            console.log(error);
-            process.exit(1);
+    const portInUse = (port, callback) => {
+        const net = require('net');
+        const server = net.createServer();
+
+        server.once('error', (e) => {
+           server.close();
+           callback(true);
+        });
+        server.once('listening', (e) => {
+    	   server.close();
+    	   callback(false);
+        });
+
+        server.listen(port);
+    };
+
+    portInUse(6006, (inUse) => {
+        if (!inUse) {
+            console.log('Runnig storybook server');
+            spawnStorybook = spawn('npm', ['run', 'storybook']);
+
+            checkServer();
+        } else {
+            console.log('Storybook server is ready');
+            runTests();
         }
     });
-
-    checkServer();
 }

@@ -10,7 +10,7 @@ import games from 'games';
 import uniq from 'lodash/uniq';
 import './pages/game';
 
-let charactersList: string[] = (function(): string[] {
+let charactersList: string[] = ((): string[] => {
     const result: string[] = [];
 
     for (const item in games) {
@@ -31,9 +31,11 @@ let charactersList: string[] = (function(): string[] {
 })();
 
 const CharactersBlock = charactersList.map((item) =>
-    <div style={{display: 'inline-block', margin: '10px'}}>
-        <Character onClick={action(`Click ${item}`)} name={item} id={`id_${item}`} />
-    </div>
+    (
+        <div style={{display: 'inline-block', margin: '10px'}} key={item}>
+            <Character onClick={action(`Click ${item}`)} name={item} id={`id_${item}`} />
+        </div>
+    )
 );
 
 storiesOf('Character', module)
