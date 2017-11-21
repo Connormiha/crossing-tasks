@@ -201,9 +201,9 @@
   version "0.9.43"
   resolved "https://registry.yarnpkg.com/@types/core-js/-/core-js-0.9.43.tgz#65d646c5e8c0cd1bdee37065799f9d3d48748253"
 
-"@types/enzyme@3.1.4":
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-3.1.4.tgz#5d6fc570786345a8fb10d9b3643335746612f9d8"
+"@types/enzyme@3.1.5":
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-3.1.5.tgz#6cc31d7f7e552209e244a45d89279f4def4aaade"
   dependencies:
     "@types/cheerio" "*"
     "@types/react" "*"
@@ -224,9 +224,9 @@
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@types/inline-style-prefixer/-/inline-style-prefixer-3.0.1.tgz#8541e636b029124b747952e9a28848286d2b5bf6"
 
-"@types/jest@21.1.6":
-  version "21.1.6"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-21.1.6.tgz#9467945ce33261e4fdd14276576951aa130515aa"
+"@types/jest@21.1.7":
+  version "21.1.7"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-21.1.7.tgz#af148f4fd2cb54e3fceba7b9f2162122ca2bfb28"
 
 "@types/jquery@^3.2.13":
   version "3.2.13"
@@ -276,9 +276,9 @@
     "@types/react" "*"
     redux "^3.6.0"
 
-"@types/react-router-dom@4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-4.2.1.tgz#c5583550d7246dea60612cc55a523cf980d56df1"
+"@types/react-router-dom@4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-4.2.2.tgz#4d6d71ab98560efde309c6469e1023a70dfa5ea7"
   dependencies:
     "@types/history" "*"
     "@types/react" "*"
@@ -291,9 +291,9 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react-router@4.0.17":
-  version "4.0.17"
-  resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-4.0.17.tgz#1032c800ed0da188d8a3bb38fe6afa8c917865d5"
+"@types/react-router@4.0.18":
+  version "4.0.18"
+  resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-4.0.18.tgz#a990a89e797b1c77dc8651774b95649e642fd374"
   dependencies:
     "@types/history" "*"
     "@types/react" "*"
