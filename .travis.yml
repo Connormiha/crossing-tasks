@@ -15,8 +15,8 @@ matrix:
 
 before_script:
   - npm run lint
-  - if [ "$OS" = "osx" ]; then npm run test:backstop; fi
   - npm run build
+  - if [ "$OS" = "osx" ]; then npm run test:backstop; fi
 
 cache:
   yarn: true
