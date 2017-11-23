@@ -98,18 +98,21 @@ function checkServer() {
     attemptsCount++;
     clearTimeout(nextCheck);
     http.get(config.config.scenarios[0].url, (res) => {
+        clearTimeout(nextCheck);
+
         if (res.statusCode === 200) {
-            clearTimeout(nextCheck);
             runTests();
+        } else {
+            nextCheck = setTimeout(checkServer, 10000);
         }
     }).on('error', (e) => {
         console.error(`Got error: ${e.message}`);
+        clearTimeout(nextCheck);
+        nextCheck = setTimeout(checkServer, 10000);
     });
 
     if (attemptsCount > 10) {
         process.exit(1);
-    } else {
-        nextCheck = setTimeout(checkServer, 10000);
     }
 }
 
