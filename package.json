@@ -98,7 +98,7 @@
     "typescript": "2.6.2",
     "uglify-es": "3.2.0",
     "uglify-es-webpack-plugin": "0.10.0",
-    "webpack": "3.8.1",
+    "webpack": "3.9.1",
     "webpack-dev-server": "2.9.5",
     "webpack-sources": "1.1.0"
   }
