@@ -22,6 +22,7 @@
     "createTypesCss": "node helpers/createStylTs.js",
     "start": "npm run createTypesCss && webpack-dev-server",
     "test": "jest --no-cache --config jest.json",
+    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand --config jest.json",
     "test:update-snapshots": "jest --no-cache --config jest.json --updateSnapshot",
     "test:backstop": "node ./backstop.js",
     "test:backstop-approve": "node ./backstop.js approve",

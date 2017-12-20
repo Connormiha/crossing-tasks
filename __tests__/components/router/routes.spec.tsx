@@ -9,7 +9,8 @@ import * as gameActions from 'flux/game';
 
 /* tslint:disable:jsx-wrap-multiline */
 describe('Route', () => {
-    const originalPathname = location.pathname;
+    const originalHref = location.href;
+    const originalTitle = document.title;
     let store;
 
     beforeEach(() => {
@@ -18,18 +19,12 @@ describe('Route', () => {
     });
 
     afterAll(() => {
-        Object.defineProperty(location, 'pathname', {
-          value: originalPathname,
-          configurable: true,
-        });
+        global.history.replaceState({}, originalTitle, originalHref);
     });
 
     describe('<EntryPage />', () => {
         it('should render', () => {
-            Object.defineProperty(location, 'pathname', {
-              value: '/',
-              configurable: true,
-            });
+            global.history.replaceState({}, originalTitle, '/');
 
             const tree = renderer.create(
                 <Provider store={store}>
@@ -44,10 +39,7 @@ describe('Route', () => {
     describe('<PlayPage />', () => {
         for (let i = 1; i < 7; i++) {
             it(`should render game_${i}`, () => {
-                Object.defineProperty(location, 'pathname', {
-                  value: `/play/game_${i}/`,
-                  configurable: true,
-                });
+                global.history.replaceState({}, originalTitle, `/play/game_${i}/`);
 
                 const tree = renderer.create(
                     <Provider store={store}>
@@ -62,10 +54,7 @@ describe('Route', () => {
 
     describe('<NotFoundPage />', () => {
         it(`should render /foo`, () => {
-            Object.defineProperty(location, 'pathname', {
-              value: `/foo`,
-              configurable: true,
-            });
+            global.history.replaceState({}, originalTitle, '/foo');
 
             const tree = renderer.create(
                 <Provider store={store}>

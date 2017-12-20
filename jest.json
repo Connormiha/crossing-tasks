@@ -15,6 +15,7 @@
     "node_modules",
     "src"
   ],
+  "testURL": "http://ya.ru",
   "bail": true,
   "collectCoverageFrom": [
     "src/**/*.{ts,tsx}",
