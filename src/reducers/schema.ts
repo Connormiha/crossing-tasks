@@ -4,10 +4,10 @@ import {
 } from 'flux/types';
 
 export interface ISchema {
-    collocation: ICollocationState;
-    message: IMessageState;
-    game: IGameState;
-    settings: ISettingsState;
+    readonly collocation: ICollocationState;
+    readonly message: IMessageState;
+    readonly game: IGameState;
+    readonly settings: ISettingsState;
 }
 
 const schema: ISchema = {

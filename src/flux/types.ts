@@ -7,25 +7,25 @@ export const RIVERSIDE_RIGHT: RIVERSIDE_RIGHT_TYPE = 'right';
 export const BOAT: BOAT_TYPE = 'boat';
 
 export interface IMessageState {
-    content: string;
-    hidden: boolean;
+    readonly content: string;
+    readonly hidden: boolean;
 }
 
 export interface IGameState {
-    currentGame: string;
-    finished: boolean;
-    list: string[];
+    readonly currentGame: string;
+    readonly finished: boolean;
+    readonly list: string[];
 }
 
 export interface ISettingsState {
-    volume: number;
+    readonly volume: number;
 }
 
 // https://github.com/Microsoft/TypeScript/issues/5579
 export interface ICollocationState {
-    left: string[];
-    right: string[];
-    boat: string[];
-    boatPosition: RIVERSIDE_LEFT_TYPE | RIVERSIDE_RIGHT_TYPE;
-    isBoatInvalid: boolean;
+    readonly left: string[];
+    readonly right: string[];
+    readonly boat: string[];
+    readonly boatPosition: RIVERSIDE_LEFT_TYPE | RIVERSIDE_RIGHT_TYPE;
+    readonly isBoatInvalid: boolean;
 }

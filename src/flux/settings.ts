@@ -19,7 +19,10 @@ const getDefaultState = (): ISettingsState =>
 export default (state: ISettingsState = getDefaultState(), {type, volume}): ISettingsState => {
     switch (type) {
         case SETTINGS_SET_VOLUME:
-            return immutable(state, {volume: {$set: volume}});
+            return immutable(
+                state,
+                {volume: {$set: volume}}
+            );
     }
 
     return state;
