@@ -26,10 +26,6 @@ export default class Settings extends React.PureComponent<IProps, IState> {
         };
     }
 
-    get _updateItems() {
-        return ['settings'];
-    }
-
     handleToggleVolumeControl() {
         this.setState({isVolumeRangeEnabled: !this.state.isVolumeRangeEnabled});
     }
@@ -46,7 +42,7 @@ export default class Settings extends React.PureComponent<IProps, IState> {
 
     render() {
         const {isVolumeRangeEnabled} = this.state;
-        let {volume} = this.props.settings;
+        const {volume} = this.props.settings;
         let volumeType;
 
         if (!volume) {

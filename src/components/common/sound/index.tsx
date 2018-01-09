@@ -16,25 +16,29 @@ interface IProps {
     isInvalid: boolean;
 }
 
-export default class Sound extends React.PureComponent<IProps> {
+export default class Sound extends React.Component<IProps> {
     _audioWave: AudioBase;
     _audioBoatDrop: AudioBase;
     _audioShaker: AudioBase;
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.volume !== this.props.volume) {
+    shouldComponentUpdate() {
+        return false;
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.volume !== this.props.volume) {
             this._audioWave.setVolume(this.props.volume);
             this._audioBoatDrop.setVolume(this.props.volume);
         } else {
-            if (this.props.boatPosition !== prevProps.boatPosition) {
+            if (this.props.boatPosition !== nextProps.boatPosition) {
                 this._audioWave.play();
             }
 
-            if (this.props.boatItemsLength !== prevProps.boatItemsLength) {
+            if (this.props.boatItemsLength !== nextProps.boatItemsLength) {
                 this._audioBoatDrop.play();
             }
 
-            if (this.props.isInvalid && this.props.isInvalid !== prevProps.isInvalid) {
+            if (nextProps.isInvalid && this.props.isInvalid !== nextProps.isInvalid) {
                 this._audioShaker.play();
             }
         }
