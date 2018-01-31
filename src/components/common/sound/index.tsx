@@ -17,9 +17,9 @@ interface IProps {
 }
 
 export default class Sound extends React.Component<IProps> {
-    _audioWave: AudioBase;
-    _audioBoatDrop: AudioBase;
-    _audioShaker: AudioBase;
+    _audioWave!: AudioBase;
+    _audioBoatDrop!: AudioBase;
+    _audioShaker!: AudioBase;
 
     shouldComponentUpdate() {
         return false;

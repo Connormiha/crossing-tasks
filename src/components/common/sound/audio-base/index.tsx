@@ -6,7 +6,7 @@ export interface IPropsAudioBase {
 }
 
 export default class AudioBase extends React.Component<IPropsAudioBase> {
-    _audio: HTMLAudioElement;
+    _audio!: HTMLAudioElement;
 
     shouldComponentUpdate() {
         return false;
