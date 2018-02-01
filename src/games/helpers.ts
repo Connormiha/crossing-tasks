@@ -2,7 +2,7 @@ import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
 
 export type PositionCharacter = 'left' | 'right' | 'boat';
 
-export const COLLOCATIONS_LIST: string[] = [RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT];
+export const COLLOCATIONS_LIST: PositionCharacter[] = [RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT];
 
 export interface ValidatorResult {
     success: boolean;
@@ -30,7 +30,7 @@ export interface Game {
 }
 
 const getCharacterDirection = (collocation: any, characterId: string): string => {
-    for (let item of COLLOCATIONS_LIST) {
+    for (const item of COLLOCATIONS_LIST) {
         if (collocation[item].includes(characterId)) {
             return item === BOAT ? collocation.boatPosition : BOAT;
         }
