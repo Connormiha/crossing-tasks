@@ -243,9 +243,9 @@
   version "22.1.1"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-22.1.1.tgz#231d7c60ed130200af9e96c82469ed25b59a7ea2"
 
-"@types/lodash@4.14.100":
-  version "4.14.100"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.100.tgz#f353dd9d3a9785638b6cb8023e6639097bd31969"
+"@types/lodash@4.14.101":
+  version "4.14.101"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.101.tgz#512f6c9e1749890f4d024e98cb995a63f562d458"
 
 "@types/mkdirp@^0.3.29":
   version "0.3.29"
@@ -259,9 +259,9 @@
   version "6.0.66"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.66.tgz#5680b74a6135d33d4c00447e7c3dc691a4601625"
 
-"@types/node@9.4.0":
-  version "9.4.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.4.0.tgz#b85a0bcf1e1cc84eb4901b7e96966aedc6f078d1"
+"@types/node@9.4.1":
+  version "9.4.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.4.1.tgz#0f636f7837e15d2d73a7f6f3ea0e322eb2a5ab65"
 
 "@types/node@^6.0.46":
   version "6.0.88"
@@ -5699,9 +5699,9 @@ jest-config@^22.1.4:
     jest-validate "^22.1.2"
     pretty-format "^22.1.0"
 
-jest-css-modules-transform@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/jest-css-modules-transform/-/jest-css-modules-transform-1.0.3.tgz#cfd4cb01a469c81d73fae0ffff10ef075a4e8928"
+jest-css-modules-transform@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/jest-css-modules-transform/-/jest-css-modules-transform-1.0.5.tgz#d5f500d7c504767703423c5b501eb56736a3b1ac"
 
 jest-diff@^22.1.0:
   version "22.1.0"
@@ -6400,7 +6400,11 @@ lodash.uniq@^4.3.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@4.17.4, lodash@4.x.x, lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1:
+lodash@4.17.5:
+  version "4.17.5"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
+
+lodash@4.x.x, lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
