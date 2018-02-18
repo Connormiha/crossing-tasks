@@ -70,7 +70,7 @@
     "jest-cli": "22.3.0",
     "jest-css-modules-transform": "1.0.5",
     "lodash": "4.17.5",
-    "postcss": "6.0.18",
+    "postcss": "6.0.19",
     "postcss-loader": "2.1.0",
     "preload-webpack-plugin": "2.2.0",
     "react": "16.2.0",
