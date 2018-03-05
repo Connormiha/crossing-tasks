@@ -3,7 +3,7 @@ import React from 'react';
 
 export default class PureComponent<Props, State = {}> extends React.Component<Props, State> {
     _shouldComponentUpdate: (props1: any, props2: any) => boolean;
-    _updateItems: string[];
+    _updateItems!: string[];
 
     constructor(props: Props) {
         super(props);

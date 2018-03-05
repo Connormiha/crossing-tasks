@@ -19,9 +19,11 @@
         },
         "lib": ["dom", "es2017"]
     },
-    "files": [
-        "./src/additionTypings.d.ts"
+    "include": [
+        "src/**/*",
     ],
+    "compileOnSave": false,
+    "buildOnSave": false,
     "atom": {
         "rewriteTsconfig": false
     }
