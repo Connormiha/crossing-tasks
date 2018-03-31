@@ -9,17 +9,10 @@ const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const ROOT_URL = process.env.ROOT_URL || '';
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
 const nodePath = path.join(__dirname, './node_modules');
 const sourcePath = path.join(__dirname, './src/');
-
-function extractStyle(use) {
-    return ExtractTextPlugin.extract({
-        fallback: "style-loader",
-        use
-    });
-}
 
 const CONFIG = {
     production: {
@@ -51,6 +44,7 @@ const CONFIG = {
 }[NODE_ENV];
 
 let cssLoaders = [
+        MiniCssExtractPlugin.loader,
         {
             loader: 'css-loader',
             options: {
@@ -60,16 +54,17 @@ let cssLoaders = [
             }
         }
     ]
-    .concat(
-        NODE_ENV === 'production'
-            ? []
-            : {
-                loader: 'typed-css-modules-loader',
-                options: {
-                    camelCase: true,
-                },
-            }
-    )
+    // Waiting for support Webpack 4
+    // .concat(
+    //     NODE_ENV === 'production'
+    //         ? []
+    //         : {
+    //             loader: 'typed-css-modules-loader',
+    //             options: {
+    //                 camelCase: true,
+    //             },
+    //         }
+    // )
     .concat(
         {
             loader: 'postcss-loader',
@@ -83,12 +78,43 @@ let cssLoaders = [
 
 let stylusLoaders = cssLoaders.concat('stylus-loader');
 
-cssLoaders = extractStyle(cssLoaders);
-stylusLoaders = extractStyle(stylusLoaders);
+// cssLoaders = extractStyle(cssLoaders);
+// stylusLoaders = extractStyle(stylusLoaders);
 
 module.exports = {
     entry: {
         app: './src/app.tsx'
+    },
+
+    mode: NODE_ENV,
+
+    optimization: {
+        minimizer: [
+            new UglifyEsPlugin({
+                ecma: 8,
+                compress: {
+                    // https://github.com/mishoo/UglifyJS2/pull/2325
+                    unsafe_methods: true,
+                    unsafe_arrows: true,
+                    drop_console: true,
+                    passes: 2,
+                    pure_funcs: ['invariant'],
+                },
+            }),
+            new CssoWebpackPlugin(),
+            // Waiting for support Webpack 4
+            //   new PreloadWebpackPlugin({
+            //       rel: 'preload',
+            //       as(entry) {
+            //           if (/\.css$/.test(entry)) return 'style';
+            //           if (/\.woff$/.test(entry)) return 'font';
+            //           if (/\.(svg|png)$/.test(entry)) return 'image';
+
+            //           return 'script';
+            //       }
+            //   }),ls
+        ],
+        
     },
 
     //context: sourcePath,
@@ -173,12 +199,16 @@ module.exports = {
         new ScriptExtHtmlWebpackPlugin({
             defaultAttribute: 'defer'
         }),
-        new ExtractTextPlugin(`${ROOT_URL}/static/[hash].css`.replace(/^\//, '')),
+        // new ExtractTextPlugin(`${ROOT_URL}/static/[hash].css`.replace(/^\//, '')),
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify(NODE_ENV),
                 'ROOT_URL': JSON.stringify(ROOT_URL),
             },
+        }),
+        new MiniCssExtractPlugin({
+            filename: `${ROOT_URL}/static/[hash].css`.replace(/^\//, ''),
+            chunkFilename: `${ROOT_URL}/static/[id][hash].css`.replace(/^\//, ''),
         }),
         new webpack.optimize.ModuleConcatenationPlugin(),
     ],
@@ -194,31 +224,3 @@ module.exports = {
         stats: 'minimal'
     }
 };
-
-
-if (NODE_ENV === 'production') {
-  module.exports.plugins = module.exports.plugins.concat(
-      new UglifyEsPlugin({
-          ecma: 8,
-          compress: {
-              // https://github.com/mishoo/UglifyJS2/pull/2325
-              unsafe_methods: true,
-              unsafe_arrows: true,
-              drop_console: true,
-              passes: 2,
-              pure_funcs: ['invariant'],
-          },
-      }),
-      new CssoWebpackPlugin(),
-      new PreloadWebpackPlugin({
-          rel: 'preload',
-          as(entry) {
-              if (/\.css$/.test(entry)) return 'style';
-              if (/\.woff$/.test(entry)) return 'font';
-              if (/\.(svg|png)$/.test(entry)) return 'image';
-
-              return 'script';
-          }
-      }),
-  )
-}
