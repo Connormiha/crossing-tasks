@@ -3,7 +3,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-const UglifyEsPlugin = require('uglify-es-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CssoWebpackPlugin = require('csso-webpack-plugin').default;
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const autoprefixer = require('autoprefixer');
@@ -90,15 +90,20 @@ module.exports = {
 
     optimization: {
         minimizer: [
-            new UglifyEsPlugin({
-                ecma: 8,
-                compress: {
-                    // https://github.com/mishoo/UglifyJS2/pull/2325
-                    unsafe_methods: true,
-                    unsafe_arrows: true,
-                    drop_console: true,
-                    passes: 2,
-                    pure_funcs: ['invariant'],
+            new UglifyJsPlugin({
+                parallel: false,
+                sourceMap: false,
+                uglifyOptions: {
+                    ecma: 8,
+                    toplevel: true,
+                    compress: {
+                        // https://github.com/mishoo/UglifyJS2/pull/2325
+                        unsafe_methods: true,
+                        unsafe_arrows: true,
+                        drop_console: true,
+                        passes: 3,
+                        pure_funcs: ['invariant'],
+                    },
                 },
             }),
             new CssoWebpackPlugin(),
