@@ -89,6 +89,7 @@ module.exports = {
     mode: NODE_ENV,
 
     optimization: {
+        concatenateModules: true,
         minimizer: [
             new UglifyJsPlugin({
                 parallel: false,
@@ -215,7 +216,6 @@ module.exports = {
             filename: `${ROOT_URL}/static/[hash].css`.replace(/^\//, ''),
             chunkFilename: `${ROOT_URL}/static/[id][hash].css`.replace(/^\//, ''),
         }),
-        new webpack.optimize.ModuleConcatenationPlugin(),
     ],
     devServer: {
         host: 'localhost',
