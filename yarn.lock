@@ -14,11 +14,11 @@
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
-"@storybook/addon-actions@3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.4.1.tgz#6ec5dc337e4af301d2f0f8fbc0ad2dee812cfa29"
+"@storybook/addon-actions@3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.4.2.tgz#ab45c37f57027257530577a9c1af6896ffb40156"
   dependencies:
-    "@storybook/components" "3.4.1"
+    "@storybook/components" "3.4.2"
     babel-runtime "^6.26.0"
     deep-equal "^1.0.1"
     glamor "^2.20.40"
@@ -29,36 +29,36 @@
     react-inspector "^2.2.2"
     uuid "^3.2.1"
 
-"@storybook/addon-links@3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.4.1.tgz#b5c5e942b8865b2489d8d1537699316d0b154b1b"
+"@storybook/addon-links@3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.4.2.tgz#09531263bd332669807b2e94cc70bd15e173f421"
   dependencies:
-    "@storybook/components" "3.4.1"
+    "@storybook/components" "3.4.2"
     babel-runtime "^6.26.0"
     global "^4.3.2"
     prop-types "^15.6.1"
 
-"@storybook/addons@3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.4.1.tgz#ff80dc65a87607681b811a8cc4ff92124643f5ac"
+"@storybook/addons@3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.4.2.tgz#77f0d5cb3b9443da6765600d83cd5acda6115af6"
 
-"@storybook/channel-postmessage@3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-3.4.1.tgz#17a84b8df1613196554f0450733a0b13d0954907"
+"@storybook/channel-postmessage@3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-3.4.2.tgz#08476f2b5b04ae83714137f6916e142c92222513"
   dependencies:
-    "@storybook/channels" "3.4.1"
+    "@storybook/channels" "3.4.2"
     global "^4.3.2"
     json-stringify-safe "^5.0.1"
 
-"@storybook/channels@3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-3.4.1.tgz#13536c0211f0b49d24b63c5e7cef87b11ae43f85"
+"@storybook/channels@3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-3.4.2.tgz#da26b3116fae1f83ccdb44881537cd9a073aefe9"
 
-"@storybook/cli@3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@storybook/cli/-/cli-3.4.1.tgz#b78f42169d5b8845d7152322e98cd56ad418c3f3"
+"@storybook/cli@3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@storybook/cli/-/cli-3.4.2.tgz#d16f56f81c08a4a0aca7d0300fe0f1d59673cd05"
   dependencies:
-    "@storybook/codemod" "3.4.1"
+    "@storybook/codemod" "3.4.2"
     babel-plugin-transform-runtime "^6.23.0"
     babel-preset-env "^1.6.0"
     babel-register "^6.26.0"
@@ -74,33 +74,33 @@
     shelljs "^0.8.1"
     update-notifier "^2.3.0"
 
-"@storybook/client-logger@3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-3.4.1.tgz#5b24ea0fa105f0683a5e9797a41466e4267d2c7f"
+"@storybook/client-logger@3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-3.4.2.tgz#33a7b5c924e2960f9c129a934fc905ed1b271017"
 
-"@storybook/codemod@3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@storybook/codemod/-/codemod-3.4.1.tgz#c4ae671753e1be79edec8fb6332a30dfc48cce26"
+"@storybook/codemod@3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@storybook/codemod/-/codemod-3.4.2.tgz#f6dc1f2124055c77f2ad9d08345f50594877e101"
   dependencies:
     jscodeshift "^0.5.0"
 
-"@storybook/components@3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-3.4.1.tgz#74e3bcf9590cb314a4845d2f3264aada79856c1f"
+"@storybook/components@3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-3.4.2.tgz#1124cf22a54e36aa07c291608c652746919cf375"
   dependencies:
     glamor "^2.20.40"
     glamorous "^4.12.1"
     prop-types "^15.6.1"
 
-"@storybook/core@3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@storybook/core/-/core-3.4.1.tgz#5ddbe754faa95c48ba272cfa30ca2e3272481aeb"
+"@storybook/core@3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@storybook/core/-/core-3.4.2.tgz#d74b9232ef404e3dfc7c19539473699e83a2800a"
   dependencies:
-    "@storybook/addons" "3.4.1"
-    "@storybook/channel-postmessage" "3.4.1"
-    "@storybook/client-logger" "3.4.1"
-    "@storybook/node-logger" "3.4.1"
-    "@storybook/ui" "3.4.1"
+    "@storybook/addons" "3.4.2"
+    "@storybook/channel-postmessage" "3.4.2"
+    "@storybook/client-logger" "3.4.2"
+    "@storybook/node-logger" "3.4.2"
+    "@storybook/ui" "3.4.2"
     autoprefixer "^7.2.6"
     babel-runtime "^6.26.0"
     chalk "^2.3.2"
@@ -132,9 +132,9 @@
     "@storybook/react-simple-di" "^1.2.1"
     babel-runtime "6.x.x"
 
-"@storybook/node-logger@3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-3.4.1.tgz#d1bddbaa5bcf995b97d408e46c1c2125d04b6e58"
+"@storybook/node-logger@3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-3.4.2.tgz#1b5d909a1ab611b89da68216a81c4b22bf668c36"
   dependencies:
     npmlog "^4.1.2"
 
@@ -168,18 +168,18 @@
   dependencies:
     babel-runtime "^6.5.0"
 
-"@storybook/react@3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-3.4.1.tgz#db2b1c7980d9ed084aff4e28c5017e182b04bf3d"
+"@storybook/react@3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-3.4.2.tgz#d48952a01cc2fa6bb143a1042bfa178f7d634ec3"
   dependencies:
-    "@storybook/addon-actions" "3.4.1"
-    "@storybook/addon-links" "3.4.1"
-    "@storybook/addons" "3.4.1"
-    "@storybook/channel-postmessage" "3.4.1"
-    "@storybook/client-logger" "3.4.1"
-    "@storybook/core" "3.4.1"
-    "@storybook/node-logger" "3.4.1"
-    "@storybook/ui" "3.4.1"
+    "@storybook/addon-actions" "3.4.2"
+    "@storybook/addon-links" "3.4.2"
+    "@storybook/addons" "3.4.2"
+    "@storybook/channel-postmessage" "3.4.2"
+    "@storybook/client-logger" "3.4.2"
+    "@storybook/core" "3.4.2"
+    "@storybook/node-logger" "3.4.2"
+    "@storybook/ui" "3.4.2"
     airbnb-js-shims "^1.4.1"
     babel-loader "^7.1.4"
     babel-plugin-macros "^2.2.0"
@@ -212,11 +212,11 @@
     webpack "^3.11.0"
     webpack-hot-middleware "^2.21.2"
 
-"@storybook/ui@3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-3.4.1.tgz#2f0109d806d7922e45b7f4dea67584d61536df46"
+"@storybook/ui@3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-3.4.2.tgz#8e6bcb6ebdf88e7d7bb3d7dfaf4151620daca0ad"
   dependencies:
-    "@storybook/components" "3.4.1"
+    "@storybook/components" "3.4.2"
     "@storybook/mantra-core" "^1.7.2"
     "@storybook/podda" "^1.2.3"
     "@storybook/react-komposer" "^2.0.3"
@@ -246,9 +246,9 @@
   version "0.9.43"
   resolved "https://registry.yarnpkg.com/@types/core-js/-/core-js-0.9.43.tgz#65d646c5e8c0cd1bdee37065799f9d3d48748253"
 
-"@types/enzyme@3.1.9":
-  version "3.1.9"
-  resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-3.1.9.tgz#fbd97f3beb7cad76fc9c6f04c97d77f4834522ef"
+"@types/enzyme@3.1.10":
+  version "3.1.10"
+  resolved "https://registry.yarnpkg.com/@types/enzyme/-/enzyme-3.1.10.tgz#28108a9864e65699751469551a803a35d2e26160"
   dependencies:
     "@types/cheerio" "*"
     "@types/react" "*"
@@ -1928,9 +1928,9 @@ backstop-twentytwenty@^1.0.4:
   dependencies:
     react "^15.6.2"
 
-backstopjs@3.2.12:
-  version "3.2.12"
-  resolved "https://registry.yarnpkg.com/backstopjs/-/backstopjs-3.2.12.tgz#ed61545e4b5201ea6e1a9cfa5c03774065e6f4a2"
+backstopjs@3.2.15:
+  version "3.2.15"
+  resolved "https://registry.yarnpkg.com/backstopjs/-/backstopjs-3.2.15.tgz#aedff7c02df73552e21e7247a0a69eacd27d9a5e"
   dependencies:
     backstop-twentytwenty "^1.0.4"
     casperjs "^1.1.0-beta5"
@@ -11032,7 +11032,14 @@ strip-json-comments@2.0.1, strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-style-loader@0.20.3, style-loader@^0.20.3:
+style-loader@0.21.0:
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.21.0.tgz#68c52e5eb2afc9ca92b6274be277ee59aea3a852"
+  dependencies:
+    loader-utils "^1.1.0"
+    schema-utils "^0.4.5"
+
+style-loader@^0.20.3:
   version "0.20.3"
   resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.20.3.tgz#ebef06b89dec491bcb1fdb3452e913a6fd1c10c4"
   dependencies:
@@ -11621,9 +11628,9 @@ uglify-to-browserify@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz#6e0924d6bda6b5afe349e39a6d632850a0f882b7"
 
-uglifyjs-webpack-plugin@1.2.4, uglifyjs-webpack-plugin@^1.2.4:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.2.4.tgz#5eec941b2e9b8538be0a20fc6eda25b14c7c1043"
+uglifyjs-webpack-plugin@1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.2.5.tgz#2ef8387c8f1a903ec5e44fa36f9f3cbdcea67641"
   dependencies:
     cacache "^10.0.4"
     find-cache-dir "^1.0.0"
@@ -11641,6 +11648,19 @@ uglifyjs-webpack-plugin@^0.4.6:
     source-map "^0.5.6"
     uglify-js "^2.8.29"
     webpack-sources "^1.0.1"
+
+uglifyjs-webpack-plugin@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.2.4.tgz#5eec941b2e9b8538be0a20fc6eda25b14c7c1043"
+  dependencies:
+    cacache "^10.0.4"
+    find-cache-dir "^1.0.0"
+    schema-utils "^0.4.5"
+    serialize-javascript "^1.4.0"
+    source-map "^0.6.1"
+    uglify-es "^3.3.4"
+    webpack-sources "^1.1.0"
+    worker-farm "^1.5.2"
 
 uid-number@^0.0.6, uid-number@~0.0.6:
   version "0.0.6"
