@@ -54,17 +54,16 @@ let cssLoaders = [
             }
         }
     ]
-    // Waiting for support Webpack 4
-    // .concat(
-    //     NODE_ENV === 'production'
-    //         ? []
-    //         : {
-    //             loader: 'typed-css-modules-loader',
-    //             options: {
-    //                 camelCase: true,
-    //             },
-    //         }
-    // )
+    .concat(
+        NODE_ENV === 'production'
+            ? []
+            : {
+                loader: 'typed-css-modules-loader',
+                options: {
+                    camelCase: true,
+                },
+            }
+    )
     .concat(
         {
             loader: 'postcss-loader',
@@ -118,7 +117,7 @@ module.exports = {
 
             //           return 'script';
             //       }
-            //   }),ls
+            //   })
         ],
         
     },
@@ -205,7 +204,6 @@ module.exports = {
         new ScriptExtHtmlWebpackPlugin({
             defaultAttribute: 'defer'
         }),
-        // new ExtractTextPlugin(`${ROOT_URL}/static/[hash].css`.replace(/^\//, '')),
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify(NODE_ENV),
