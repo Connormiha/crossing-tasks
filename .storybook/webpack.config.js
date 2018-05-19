@@ -7,7 +7,7 @@
 // to "React Create App". This only has babel loader to load JavaScript.
 
 const mainWebpackConfig = require('../webpack.config');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Export a function. Accept the base config as the only param.
 module.exports = (storybookBaseConfig, configType) => {
@@ -19,7 +19,14 @@ module.exports = (storybookBaseConfig, configType) => {
   storybookBaseConfig.module.rules = [...storybookBaseConfig.module.rules, ...mainWebpackConfig.module.rules]
   storybookBaseConfig.resolve.extensions = mainWebpackConfig.resolve.extensions;
   storybookBaseConfig.resolve.modules = mainWebpackConfig.resolve.modules;
-  storybookBaseConfig.plugins.push(new ExtractTextPlugin(`/static/[hash].css`.replace(/^\//, '')));
+  storybookBaseConfig.plugins.push(
+    new MiniCssExtractPlugin(
+      {
+        filename: `/static/[hash].css`.replace(/^\//, ''),
+        chunkFilename: `/static/[id][hash].css`.replace(/^\//, ''),
+      }
+    )
+  );
 
   // Return the altered config
   return storybookBaseConfig;

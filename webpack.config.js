@@ -83,8 +83,6 @@ let stylusLoaders = cssLoaders.concat('stylus-loader');
 module.exports = {
     entry: {
         app: './src/app.tsx',
-        app2: './src/app2.tsx',
-        app2: './src/app2.tsx',
     },
 
     mode: NODE_ENV,
