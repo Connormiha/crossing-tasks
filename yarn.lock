@@ -373,16 +373,16 @@
     "@types/node" "*"
     "@types/react" "*"
 
-"@types/react-redux@6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-6.0.0.tgz#31711592b13ed6d6d2fd4506e5447b00e1f0b484"
+"@types/react-redux@6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-6.0.1.tgz#bb8f6cc19d00a999f9d932ab796212ad3921994b"
   dependencies:
     "@types/react" "*"
     redux "^4.0.0"
 
-"@types/react-router-dom@4.2.6":
-  version "4.2.6"
-  resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-4.2.6.tgz#9f7eb3c0e6661a9607d878ff8675cc4ea95cd276"
+"@types/react-router-dom@4.2.7":
+  version "4.2.7"
+  resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-4.2.7.tgz#9d36bfe175f916dd8d7b6b0237feed6cce376b4c"
   dependencies:
     "@types/history" "*"
     "@types/react" "*"
@@ -395,9 +395,9 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react-router@4.0.25":
-  version "4.0.25"
-  resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-4.0.25.tgz#1e25490780b80e0d8f96bf649379cca8638c1e5a"
+"@types/react-router@4.0.26":
+  version "4.0.26"
+  resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-4.0.26.tgz#4489c873642baa633014294a6d0a290001ba9860"
   dependencies:
     "@types/history" "*"
     "@types/react" "*"
@@ -406,9 +406,9 @@
   version "15.0.22"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.22.tgz#50803cde8d89f60a9b034f2dd0d619bc5f0273b5"
 
-"@types/react@16.3.15":
-  version "16.3.15"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.3.15.tgz#599ac28b9f14f826c2384e9a0da9fe0b2493114b"
+"@types/react@16.3.16":
+  version "16.3.16"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.3.16.tgz#78fc44a90b45701f50c8a7008f733680ba51fc86"
   dependencies:
     csstype "^2.2.0"
 
@@ -11913,9 +11913,9 @@ webpack-addons@^1.1.5:
   dependencies:
     jscodeshift "^0.4.0"
 
-webpack-cli@2.1.4:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-2.1.4.tgz#cab81e79249127384fb69b2fdfe2055f9c771b76"
+webpack-cli@2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-2.1.5.tgz#3081fdeb2f205f0a54aa397986880b0c20a71f7a"
   dependencies:
     chalk "^2.4.1"
     cross-spawn "^6.0.5"
