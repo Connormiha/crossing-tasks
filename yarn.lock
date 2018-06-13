@@ -322,9 +322,9 @@
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.6.2.tgz#12cfaba693ba20f114ed5765467ff25fdf67ddb0"
 
-"@types/jest@23.0.0":
-  version "23.0.0"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.0.0.tgz#760cac74f00bb9c3075587716d2b3b4435663bc0"
+"@types/jest@23.0.2":
+  version "23.0.2"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.0.2.tgz#f03f9e6dd2206cc2a2e8fd033161b0b7cf905db6"
 
 "@types/lodash@4.14.109":
   version "4.14.109"
@@ -2233,9 +2233,9 @@ backstop-twentytwenty@^1.0.4:
   dependencies:
     react "^15.6.2"
 
-backstopjs@3.2.16:
-  version "3.2.16"
-  resolved "https://registry.yarnpkg.com/backstopjs/-/backstopjs-3.2.16.tgz#c56cdff141b50eda574297f50cb5462e3ff78006"
+backstopjs@3.2.17:
+  version "3.2.17"
+  resolved "https://registry.yarnpkg.com/backstopjs/-/backstopjs-3.2.17.tgz#b8ff2194bd1393f4a0e26b1830d3db592cb0cc13"
   dependencies:
     backstop-twentytwenty "^1.0.4"
     casperjs "^1.1.0-beta5"
@@ -2248,14 +2248,12 @@ backstopjs@3.2.16:
     minimist "^1.2.0"
     node-resemble-js "^0.2.0"
     object-hash "1.1.5"
-    open "0.0.5"
+    opn "^5.3.0"
     os "^0.1.1"
     p-map "^1.1.1"
     path "^0.12.7"
     phantomjs-prebuilt "^2.1.7"
     puppeteer "^1.2.0-next.1523485686787"
-    react "^15.6.1"
-    react-dom "^15.6.1"
     react-modal "^3.0.3"
     react-redux "^5.0.6"
     react-sticky "^6.0.1"
@@ -7741,15 +7739,11 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
-open@0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/open/-/open-0.0.5.tgz#42c3e18ec95466b6bf0dc42f3a2945c3f0cad8fc"
-
 opener@~1.4.0:
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/opener/-/opener-1.4.3.tgz#5c6da2c5d7e5831e8ffa3964950f8d6674ac90b8"
 
-opn@5.3.0:
+opn@5.3.0, opn@^5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/opn/-/opn-5.3.0.tgz#64871565c863875f052cfdf53d3e3cb5adb53b1c"
   dependencies:
@@ -8800,15 +8794,6 @@ react-dom@16.4.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-dom@^15.6.1:
-  version "15.6.2"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.2.tgz#41cfadf693b757faf2708443a1d1fd5a02bef730"
-  dependencies:
-    fbjs "^0.8.9"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.0"
-    prop-types "^15.5.10"
-
 react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
@@ -8990,7 +8975,7 @@ react@16.4.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react@^15.6.1, react@^15.6.2:
+react@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.6.2.tgz#dba0434ab439cfe82f108f0f511663908179aa72"
   dependencies:
@@ -11107,9 +11092,9 @@ webidl-conversions@^4.0.1, webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
 
-webpack-cli@3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-3.0.3.tgz#1a8c6e09dee1fd45305f3b3828cf081903cee0f2"
+webpack-cli@3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/webpack-cli/-/webpack-cli-3.0.4.tgz#55d6ad2cdd608de8c0f757dde5bc4bf5bd2dec68"
   dependencies:
     chalk "^2.4.1"
     cross-spawn "^6.0.5"
