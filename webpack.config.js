@@ -49,7 +49,6 @@ let cssLoaders = [
             loader: 'css-loader',
             options: {
                 localIdentName: CONFIG.localIdentName,
-                root: sourcePath,
                 modules: true,
             }
         }
