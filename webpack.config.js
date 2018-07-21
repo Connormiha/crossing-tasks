@@ -155,6 +155,7 @@ module.exports = {
                 test: /\.tsx?$/,
                 exclude: [nodePath],
                 loader: 'tslint-loader',
+                sideEffects: false,
                 enforce: 'pre'
             },
             {
