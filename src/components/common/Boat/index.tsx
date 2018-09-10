@@ -7,7 +7,7 @@ import {PositionCharacter} from 'games';
 
 import bem from 'bem-css-modules';
 
-const b = bem({...style});
+const b = bem(style);
 
 interface IProps extends React.Props<any> {
     items: string[];

@@ -5,7 +5,7 @@ import Сharacter from 'components/common/Character';
 
 import bem from 'bem-css-modules';
 
-const b = bem({...style});
+const b = bem(style);
 
 interface Props extends React.Props<any> {
     side: string;

@@ -5,7 +5,7 @@ import {bindMethods} from 'helpers';
 
 import bem from 'bem-css-modules';
 
-const b = bem({...style});
+const b = bem(style);
 
 interface Props extends React.Props<any> {
     packed?: boolean;

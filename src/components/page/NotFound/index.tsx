@@ -3,7 +3,7 @@ import React from 'react';
 import bem from 'bem-css-modules';
 import {RouteComponentProps} from 'react-router';
 
-const b = bem({...style});
+const b = bem(style);
 
 // interface Props extends RouteComponentProps<any> {}
 

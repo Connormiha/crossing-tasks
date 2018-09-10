@@ -5,7 +5,7 @@ import bem from 'bem-css-modules';
 
 import {ISettingsState} from 'flux/types';
 
-const b = bem({...style});
+const b = bem(style);
 
 interface IProps {
     settings: ISettingsState;
