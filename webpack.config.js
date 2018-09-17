@@ -3,7 +3,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const CssoWebpackPlugin = require('csso-webpack-plugin').default;
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const autoprefixer = require('autoprefixer');
@@ -89,10 +89,10 @@ module.exports = {
     optimization: {
         concatenateModules: true,
         minimizer: [
-            new UglifyJsPlugin({
+            new TerserPlugin({
                 parallel: false,
                 sourceMap: false,
-                uglifyOptions: {
+                terserOptions: {
                     ecma: 8,
                     toplevel: true,
                     compress: {
