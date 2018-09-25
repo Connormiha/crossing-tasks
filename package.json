@@ -28,7 +28,7 @@
     "test:backstop-approve": "node ./backstop.js approve",
     "upgrade": "yarn upgrade-interactive --ignore-engines --exact --latest",
     "update-gh": "./helpers/update-gh.sh",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 --ci",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
@@ -51,6 +51,7 @@
     "@types/storybook__react": "3.0.9",
     "autoprefixer": "9.1.5",
     "babel-core": "6.26.3",
+    "babel-loader": "8.0.2",
     "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
     "backstopjs": "3.5.14",
     "bem-css-modules": "1.2.2",

@@ -16,6 +16,7 @@ module.exports = (storybookBaseConfig, configType) => {
   // 'PRODUCTION' is used when building the static version of storybook.
 
   // Make whatever fine-grained changes you need
+  storybookBaseConfig.devtool = false;
   storybookBaseConfig.module.rules = [...storybookBaseConfig.module.rules, ...mainWebpackConfig.module.rules]
   storybookBaseConfig.resolve.extensions = mainWebpackConfig.resolve.extensions;
   storybookBaseConfig.resolve.modules = mainWebpackConfig.resolve.modules;
