@@ -1,6 +1,6 @@
 import * as renderer from 'react-test-renderer';
 import {mapDispatchToProps} from 'components/page/Play';
-import PagePlayPure from 'components/page/Play/index.pure';
+import PagePlayPure from 'components/page/play/index.pure';
 import {createAppStore} from 'store';
 import noop from 'lodash/noop';
 import games from 'games';

@@ -3,9 +3,9 @@ import React from 'react';
 /* tslint:enable:no-unused-variable */
 
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import PagePlay from 'components/page/Play';
-import PageEntry from 'components/page/Entry';
-import NotFound from 'components/page/NotFound';
+import PagePlay from 'components/page/play';
+import PageEntry from 'components/page/entry';
+import NotFound from 'components/page/not-found';
 
 const ROOT_URL = process.env.ROOT_URL;
 

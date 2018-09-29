@@ -1,6 +1,6 @@
 import * as renderer from 'react-test-renderer';
 import {BrowserRouter as Router} from 'react-router-dom';
-import NotFoundPure from 'components/page/NotFound';
+import NotFoundPure from 'components/page/not-found';
 
 /* tslint:disable:jsx-wrap-multiline */
 describe('<NotFoundPure />', () => {

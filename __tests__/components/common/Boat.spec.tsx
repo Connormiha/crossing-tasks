@@ -1,5 +1,6 @@
+import React from 'react';
 import * as renderer from 'react-test-renderer';
-import Boat from 'components/common/Boat';
+import Boat from 'components/common/boat';
 
 import noop from 'lodash/noop';
 

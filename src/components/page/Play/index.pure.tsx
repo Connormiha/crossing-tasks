@@ -3,10 +3,10 @@ import style from './index.styl';
 import React from 'react';
 
 import Settings from 'components/common/settings';
-import Riverside from 'components/common/Riverside';
-import Boat from 'components/common/Boat';
-import Remote from 'components/common/Remote';
-import Warning from 'components/common/Warning';
+import Riverside from 'components/common/riverside';
+import Boat from 'components/common/boat';
+import Remote from 'components/common/remote';
+import Warning from 'components/common/warning';
 import Sound from 'components/common/sound';
 
 import {bindMethods} from 'helpers';

@@ -1,5 +1,5 @@
 import * as renderer from 'react-test-renderer';
-import Warning from 'components/common/Warning';
+import Warning from 'components/common/warning';
 
 describe('<Warning />', () => {
     it('should render', () => {

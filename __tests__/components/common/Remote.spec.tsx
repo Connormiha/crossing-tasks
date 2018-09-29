@@ -1,5 +1,5 @@
 import * as renderer from 'react-test-renderer';
-import Remote from 'components/common/Remote';
+import Remote from 'components/common/remote';
 
 import noop from 'lodash/noop';
 

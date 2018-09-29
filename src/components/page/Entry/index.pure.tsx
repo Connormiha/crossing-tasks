@@ -1,7 +1,7 @@
 import style from './index.styl';
 
 import React from 'react';
-import ListGames from 'components/common/ListGames';
+import ListGames from 'components/common/list-games';
 import {IGameState} from 'flux/types';
 
 import bem from 'bem-css-modules';

@@ -1,6 +1,6 @@
 import * as renderer from 'react-test-renderer';
 import {BrowserRouter as Router} from 'react-router-dom';
-import PageEntryPure from 'components/page/Entry/index.pure';
+import PageEntryPure from 'components/page/entry/index.pure';
 import games from 'games';
 
 /* tslint:disable:jsx-wrap-multiline */

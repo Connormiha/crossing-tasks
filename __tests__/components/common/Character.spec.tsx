@@ -1,5 +1,5 @@
 import * as renderer from 'react-test-renderer';
-import Character from 'components/common/Character';
+import Character from 'components/common/character';
 
 import noop from 'lodash/noop';
 

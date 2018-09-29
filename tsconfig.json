@@ -20,7 +20,8 @@
         "lib": ["dom", "es2017"]
     },
     "include": [
-        "src/**/*"
+        "src/**/*",
+        "__tests__/**/*"
     ],
     "compileOnSave": false,
     "buildOnSave": false,
