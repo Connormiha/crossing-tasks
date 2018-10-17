@@ -56,7 +56,7 @@ export default class Settings extends React.PureComponent<IProps, IState> {
         return (
             <div className={b()}>
                 <div className={b('volume', {type: volumeType})}>
-                    <div
+                    <button
                         className={b('volume-toggler')}
                         onClick={this.handleToggleVolumeControl}
                     />

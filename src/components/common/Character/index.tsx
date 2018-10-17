@@ -32,7 +32,7 @@ export default class Character extends React.Component<Props> {
         let {packed, name} = this.props;
 
         return (
-            <div className={b({skin: name.toLowerCase(), packed: !!packed})} onClick={this.handleClick} title={name} />
+            <button className={b({skin: name.toLowerCase(), packed: !!packed})} onClick={this.handleClick} title={name} />
         );
     }
 }
