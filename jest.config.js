@@ -16,7 +16,6 @@ module.exports = {
     'src'
   ],
   testURL: 'http://ya.ru',
-  bail: true,
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
     '!src/**/*.d.ts'

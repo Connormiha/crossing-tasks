@@ -108,28 +108,28 @@ exports[`Route <PlayPage /> should render game_1 1`] = `
       className="riverside riverside_side_left"
     >
       <div>
-        <div
+        <button
           className="character character_skin_farmer"
           onClick={[Function]}
           title="Farmer"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_cabbage"
           onClick={[Function]}
           title="Cabbage"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_sheep"
           onClick={[Function]}
           title="Sheep"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_wolf"
           onClick={[Function]}
           title="Wolf"
@@ -157,7 +157,7 @@ exports[`Route <PlayPage /> should render game_1 1`] = `
       <div
         className="settings__volume settings__volume_type_high"
       >
-        <div
+        <button
           className="settings__volume-toggler"
           onClick={[Function]}
         />
@@ -219,42 +219,42 @@ exports[`Route <PlayPage /> should render game_2 1`] = `
       className="riverside riverside_side_left"
     >
       <div>
-        <div
+        <button
           className="character character_skin_caveman"
           onClick={[Function]}
           title="Caveman"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_caveman"
           onClick={[Function]}
           title="Caveman"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_caveman"
           onClick={[Function]}
           title="Caveman"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_priest"
           onClick={[Function]}
           title="Priest"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_priest"
           onClick={[Function]}
           title="Priest"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_priest"
           onClick={[Function]}
           title="Priest"
@@ -282,7 +282,7 @@ exports[`Route <PlayPage /> should render game_2 1`] = `
       <div
         className="settings__volume settings__volume_type_high"
       >
-        <div
+        <button
           className="settings__volume-toggler"
           onClick={[Function]}
         />
@@ -344,42 +344,42 @@ exports[`Route <PlayPage /> should render game_3 1`] = `
       className="riverside riverside_side_left"
     >
       <div>
-        <div
+        <button
           className="character character_skin_woman_red"
           onClick={[Function]}
           title="Woman_red"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_men_red"
           onClick={[Function]}
           title="Men_red"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_woman_white"
           onClick={[Function]}
           title="Woman_white"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_men_white"
           onClick={[Function]}
           title="Men_white"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_woman_black"
           onClick={[Function]}
           title="Woman_black"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_men_black"
           onClick={[Function]}
           title="Men_black"
@@ -407,7 +407,7 @@ exports[`Route <PlayPage /> should render game_3 1`] = `
       <div
         className="settings__volume settings__volume_type_high"
       >
-        <div
+        <button
           className="settings__volume-toggler"
           onClick={[Function]}
         />
@@ -469,56 +469,56 @@ exports[`Route <PlayPage /> should render game_4 1`] = `
       className="riverside riverside_side_left"
     >
       <div>
-        <div
+        <button
           className="character character_skin_men_black"
           onClick={[Function]}
           title="Men_black"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_boy_red"
           onClick={[Function]}
           title="Boy_red"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_boy_yellow"
           onClick={[Function]}
           title="Boy_yellow"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_woman_black"
           onClick={[Function]}
           title="Woman_black"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_girl_red"
           onClick={[Function]}
           title="Girl_red"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_girl_yellow"
           onClick={[Function]}
           title="Girl_yellow"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_criminal"
           onClick={[Function]}
           title="Criminal"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_policeman"
           onClick={[Function]}
           title="Policeman"
@@ -546,7 +546,7 @@ exports[`Route <PlayPage /> should render game_4 1`] = `
       <div
         className="settings__volume settings__volume_type_high"
       >
-        <div
+        <button
           className="settings__volume-toggler"
           onClick={[Function]}
         />
@@ -608,42 +608,42 @@ exports[`Route <PlayPage /> should render game_5 1`] = `
       className="riverside riverside_side_left"
     >
       <div>
-        <div
+        <button
           className="character character_skin_priest"
           onClick={[Function]}
           title="Priest"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_priest"
           onClick={[Function]}
           title="Priest"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_priest"
           onClick={[Function]}
           title="Priest"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_monkey"
           onClick={[Function]}
           title="Monkey"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_monkey"
           onClick={[Function]}
           title="Monkey"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_gorilla"
           onClick={[Function]}
           title="Gorilla"
@@ -671,7 +671,7 @@ exports[`Route <PlayPage /> should render game_5 1`] = `
       <div
         className="settings__volume settings__volume_type_high"
       >
-        <div
+        <button
           className="settings__volume-toggler"
           onClick={[Function]}
         />
@@ -733,56 +733,56 @@ exports[`Route <PlayPage /> should render game_6 1`] = `
       className="riverside riverside_side_left"
     >
       <div>
-        <div
+        <button
           className="character character_skin_woman_red"
           onClick={[Function]}
           title="Woman_red"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_men_red"
           onClick={[Function]}
           title="Men_red"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_woman_white"
           onClick={[Function]}
           title="Woman_white"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_men_white"
           onClick={[Function]}
           title="Men_white"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_woman_black"
           onClick={[Function]}
           title="Woman_black"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_men_black"
           onClick={[Function]}
           title="Men_black"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_woman_blue"
           onClick={[Function]}
           title="Woman_blue"
         />
       </div>
       <div>
-        <div
+        <button
           className="character character_skin_men_blue"
           onClick={[Function]}
           title="Men_blue"
@@ -810,7 +810,7 @@ exports[`Route <PlayPage /> should render game_6 1`] = `
       <div
         className="settings__volume settings__volume_type_high"
       >
-        <div
+        <button
           className="settings__volume-toggler"
           onClick={[Function]}
         />

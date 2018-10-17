@@ -11,7 +11,7 @@ exports[`<PagePlayPure /> should render (Boat right) 1`] = `
       className="riverside riverside_side_left"
     >
       <div>
-        <div
+        <button
           className="character character_skin_sheep"
           onClick={[Function]}
           title="Sheep"
@@ -22,7 +22,7 @@ exports[`<PagePlayPure /> should render (Boat right) 1`] = `
       className="riverside riverside_side_right"
     >
       <div>
-        <div
+        <button
           className="character character_skin_wolf"
           onClick={[Function]}
           title="Wolf"
@@ -37,7 +37,7 @@ exports[`<PagePlayPure /> should render (Boat right) 1`] = `
       <div
         className="boat__character"
       >
-        <div
+        <button
           className="character character_skin_farmer character_packed"
           onClick={[Function]}
           title="Farmer"
@@ -46,7 +46,7 @@ exports[`<PagePlayPure /> should render (Boat right) 1`] = `
       <div
         className="boat__character"
       >
-        <div
+        <button
           className="character character_skin_cabbage character_packed"
           onClick={[Function]}
           title="Cabbage"
@@ -66,7 +66,7 @@ exports[`<PagePlayPure /> should render (Boat right) 1`] = `
       <div
         className="settings__volume settings__volume_type_high"
       >
-        <div
+        <button
           className="settings__volume-toggler"
           onClick={[Function]}
         />
@@ -128,7 +128,7 @@ exports[`<PagePlayPure /> should render 1`] = `
       className="riverside riverside_side_left"
     >
       <div>
-        <div
+        <button
           className="character character_skin_sheep"
           onClick={[Function]}
           title="Sheep"
@@ -139,7 +139,7 @@ exports[`<PagePlayPure /> should render 1`] = `
       className="riverside riverside_side_right"
     >
       <div>
-        <div
+        <button
           className="character character_skin_wolf"
           onClick={[Function]}
           title="Wolf"
@@ -154,7 +154,7 @@ exports[`<PagePlayPure /> should render 1`] = `
       <div
         className="boat__character"
       >
-        <div
+        <button
           className="character character_skin_farmer character_packed"
           onClick={[Function]}
           title="Farmer"
@@ -163,7 +163,7 @@ exports[`<PagePlayPure /> should render 1`] = `
       <div
         className="boat__character"
       >
-        <div
+        <button
           className="character character_skin_cabbage character_packed"
           onClick={[Function]}
           title="Cabbage"
@@ -183,7 +183,7 @@ exports[`<PagePlayPure /> should render 1`] = `
       <div
         className="settings__volume settings__volume_type_high"
       >
-        <div
+        <button
           className="settings__volume-toggler"
           onClick={[Function]}
         />
@@ -245,7 +245,7 @@ exports[`<PagePlayPure /> should render finished 1`] = `
       className="riverside riverside_side_left"
     >
       <div>
-        <div
+        <button
           className="character character_skin_sheep"
           onClick={[Function]}
           title="Sheep"
@@ -256,7 +256,7 @@ exports[`<PagePlayPure /> should render finished 1`] = `
       className="riverside riverside_side_right"
     >
       <div>
-        <div
+        <button
           className="character character_skin_wolf"
           onClick={[Function]}
           title="Wolf"
@@ -271,7 +271,7 @@ exports[`<PagePlayPure /> should render finished 1`] = `
       <div
         className="boat__character"
       >
-        <div
+        <button
           className="character character_skin_farmer character_packed"
           onClick={[Function]}
           title="Farmer"
@@ -280,7 +280,7 @@ exports[`<PagePlayPure /> should render finished 1`] = `
       <div
         className="boat__character"
       >
-        <div
+        <button
           className="character character_skin_cabbage character_packed"
           onClick={[Function]}
           title="Cabbage"
@@ -300,7 +300,7 @@ exports[`<PagePlayPure /> should render finished 1`] = `
       <div
         className="settings__volume settings__volume_type_high"
       >
-        <div
+        <button
           className="settings__volume-toggler"
           onClick={[Function]}
         />
@@ -369,7 +369,7 @@ exports[`<PagePlayPure /> should render with message 1`] = `
       className="riverside riverside_side_left"
     >
       <div>
-        <div
+        <button
           className="character character_skin_sheep"
           onClick={[Function]}
           title="Sheep"
@@ -380,7 +380,7 @@ exports[`<PagePlayPure /> should render with message 1`] = `
       className="riverside riverside_side_right"
     >
       <div>
-        <div
+        <button
           className="character character_skin_wolf"
           onClick={[Function]}
           title="Wolf"
@@ -395,7 +395,7 @@ exports[`<PagePlayPure /> should render with message 1`] = `
       <div
         className="boat__character"
       >
-        <div
+        <button
           className="character character_skin_farmer character_packed"
           onClick={[Function]}
           title="Farmer"
@@ -404,7 +404,7 @@ exports[`<PagePlayPure /> should render with message 1`] = `
       <div
         className="boat__character"
       >
-        <div
+        <button
           className="character character_skin_cabbage character_packed"
           onClick={[Function]}
           title="Cabbage"
@@ -424,7 +424,7 @@ exports[`<PagePlayPure /> should render with message 1`] = `
       <div
         className="settings__volume settings__volume_type_high"
       >
-        <div
+        <button
           className="settings__volume-toggler"
           onClick={[Function]}
         />

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Character /> should render 1`] = `
-<div
+<button
   className="character character_skin_farmer"
   onClick={[Function]}
   title="farmer"
@@ -9,7 +9,7 @@ exports[`<Character /> should render 1`] = `
 `;
 
 exports[`<Character /> should render packed 1`] = `
-<div
+<button
   className="character character_skin_sheep character_packed"
   onClick={[Function]}
   title="sheep"
