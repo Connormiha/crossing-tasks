@@ -193,9 +193,6 @@ module.exports = {
     },
     //devtool: CONFIG.sourceMap,
     plugins: [
-        new webpack.ProvidePlugin({
-            React: 'react',
-        }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             inject: 'head',

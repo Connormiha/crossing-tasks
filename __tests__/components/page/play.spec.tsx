@@ -1,3 +1,4 @@
+import * as React from 'react';
 import * as renderer from 'react-test-renderer';
 import {mapDispatchToProps} from 'components/page/Play';
 import PagePlayPure from 'components/page/play/index.pure';
