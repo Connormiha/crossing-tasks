@@ -1,7 +1,7 @@
 import * as renderer from 'react-test-renderer';
 import {createAppStore} from 'store';
 import {Provider} from 'react-redux';
-import routes from 'routes';
+import routes from 'router/routes';
 import games from 'games';
 
 // Redux

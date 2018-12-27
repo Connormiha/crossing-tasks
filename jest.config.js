@@ -10,7 +10,7 @@ module.exports = {
     '.+\\.(css|styl)$': '<rootDir>/node_modules/jest-css-modules-transform',
     '.+\\.(mp3|opus)$': '<rootDir>/__tests__/preprocessor-file.js'
   },
-  testRegex: '/__tests__/.*\\.spec\\.(ts|tsx)$',
+  testRegex: '/src/.*\\.spec\\.(ts|tsx)$',
   moduleDirectories: [
     'node_modules',
     'src'
