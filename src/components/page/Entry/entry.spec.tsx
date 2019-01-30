@@ -1,3 +1,4 @@
+import * as React from 'react';
 import * as renderer from 'react-test-renderer';
 import {BrowserRouter as Router} from 'react-router-dom';
 import PageEntryPure from 'components/page/entry/index.pure';
@@ -10,7 +11,9 @@ describe('<PageEntryPure />', () => {
             <Router>
                 <PageEntryPure
                     game={{
-                        list: Object.keys(games)
+                        list: Object.keys(games),
+                        finished: false,
+                        currentGame: 'game_1'
                     }}
                 />
             </Router>

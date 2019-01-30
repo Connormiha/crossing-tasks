@@ -9,7 +9,8 @@ describe('<Character />', () => {
     it('should render', () => {
         let tree = renderer.create(
             <Character
-                name="farmer"
+                name="Farmer"
+                id="farmer"
                 onClick={noop}
             />
         ).toJSON();
@@ -20,7 +21,8 @@ describe('<Character />', () => {
     it('should render packed', () => {
         let tree = renderer.create(
             <Character
-                name="sheep"
+                name="Sheep"
+                id="sheep"
                 packed
                 onClick={noop}
             />

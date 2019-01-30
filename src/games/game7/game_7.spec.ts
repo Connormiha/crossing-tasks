@@ -56,7 +56,7 @@ describe('Game_7', () => {
             [BOAT]: ['farmer', 'wolf1', 'wolf2'],
             [RIVERSIDE_LEFT]: game.collocation[RIVERSIDE_LEFT].filter((name) => name !== 'farmer' || name !== 'wolf'),
             [RIVERSIDE_RIGHT]: []
-        }, 'sheep', BOAT);
+        }, 'sheep');
 
         expect(result.success).toBe(false);
     });
