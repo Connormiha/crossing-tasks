@@ -5,7 +5,7 @@ import {action} from '@storybook/addon-actions';
 import {BrowserRouter as Router} from 'react-router-dom';
 import Character from 'components/common/Character';
 import PageEntryPure from 'components/page/Entry/index.pure';
-import NotFoundPure from 'components/page/NotFound';
+import NotFoundPure from 'components/page/not-found';
 import games from 'games';
 import uniq from 'lodash/uniq';
 import './pages/game';

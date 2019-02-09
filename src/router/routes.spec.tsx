@@ -20,12 +20,12 @@ describe('Route', () => {
     });
 
     afterAll(() => {
-        global.history.replaceState({}, originalTitle, originalHref);
+        history.replaceState({}, originalTitle, originalHref);
     });
 
     describe('<EntryPage />', () => {
         it('should render', () => {
-            global.history.replaceState({}, originalTitle, '/');
+            history.replaceState({}, originalTitle, '/');
 
             const tree = renderer.create(
                 <Provider store={store}>
@@ -40,7 +40,7 @@ describe('Route', () => {
     describe('<PlayPage />', () => {
         for (let i = 1; i < 7; i++) {
             it(`should render game_${i}`, () => {
-                global.history.replaceState({}, originalTitle, `/play/game_${i}/`);
+                history.replaceState({}, originalTitle, `/play/game_${i}/`);
 
                 const tree = renderer.create(
                     <Provider store={store}>
@@ -55,7 +55,7 @@ describe('Route', () => {
 
     describe('<NotFoundPage />', () => {
         it(`should render /foo`, () => {
-            global.history.replaceState({}, originalTitle, '/foo');
+            history.replaceState({}, originalTitle, '/foo');
 
             const tree = renderer.create(
                 <Provider store={store}>

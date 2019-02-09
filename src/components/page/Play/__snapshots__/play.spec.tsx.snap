@@ -78,7 +78,7 @@ exports[`<PagePlayPure /> should render (Boat right) 1`] = `
           onChange={[Function]}
           step="0.05"
           type="range"
-          value="1"
+          value={1}
         />
       </div>
     </div>
@@ -195,7 +195,7 @@ exports[`<PagePlayPure /> should render 1`] = `
           onChange={[Function]}
           step="0.05"
           type="range"
-          value="1"
+          value={1}
         />
       </div>
     </div>
@@ -312,7 +312,7 @@ exports[`<PagePlayPure /> should render finished 1`] = `
           onChange={[Function]}
           step="0.05"
           type="range"
-          value="1"
+          value={1}
         />
       </div>
     </div>
@@ -436,7 +436,7 @@ exports[`<PagePlayPure /> should render with message 1`] = `
           onChange={[Function]}
           step="0.05"
           type="range"
-          value="1"
+          value={1}
         />
       </div>
     </div>

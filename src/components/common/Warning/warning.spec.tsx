@@ -1,3 +1,4 @@
+import React from 'react';
 import * as renderer from 'react-test-renderer';
 import Warning from 'components/common/warning';
 

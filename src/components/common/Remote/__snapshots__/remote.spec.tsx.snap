@@ -13,6 +13,7 @@ exports[`<Remote /> should render disabled 1`] = `
 exports[`<Remote /> should render enabled 1`] = `
 <button
   className="remote"
+  disabled={false}
   onClick={[Function]}
 >
   Go

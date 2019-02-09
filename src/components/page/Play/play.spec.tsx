@@ -11,11 +11,13 @@ import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
 describe('<PagePlayPure />', () => {
     const params = {
         game: {
+            list: [],
             finished: false,
             currentGame: 'game_1'
         },
         message: {
-            content: ''
+            content: '',
+            hidden: true
         },
         match: {
             params: {
@@ -23,7 +25,7 @@ describe('<PagePlayPure />', () => {
             }
         },
         settings: {
-            volume: '1',
+            volume: 1,
         },
         collocation: {
             [BOAT]: ['farmer', 'cabbage'],
@@ -32,6 +34,8 @@ describe('<PagePlayPure />', () => {
             boatPosition: RIVERSIDE_LEFT,
             isBoatInvalid: false,
         },
+        onToggleInvalidBoat: noop,
+        onChangeVolume: noop,
         onMoveCharacter: noop,
         onBoatMoveEnd: noop,
         onFinishGame: noop,
@@ -53,7 +57,7 @@ describe('<PagePlayPure />', () => {
         let tree = renderer.create(
             <PagePlayPure
                 {...params}
-                message={{content: 'Test'}}
+                message={{content: 'Test', hidden: false}}
             />
         ).toJSON();
 

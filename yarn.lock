@@ -1819,6 +1819,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/puppeteer@*":
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/@types/puppeteer/-/puppeteer-1.12.1.tgz#f61f9e0da45e36cdbbeab3b088995a8a2cad47a4"
+  integrity sha512-6qpe7XXM93iWh8quEP8Ay516Vmfc2r+ZAxFH3Mt6fx3vzmZz+4Q+hYxc9PxeEIXJhWLAAPYAgAiM/vLHEUwGpw==
+  dependencies:
+    "@types/node" "*"
+
 "@types/react-addons-test-utils@0.14.23":
   version "0.14.23"
   resolved "https://registry.yarnpkg.com/@types/react-addons-test-utils/-/react-addons-test-utils-0.14.23.tgz#42117a27b96d1467a651997a3ca2eb07cb617dc3"
@@ -1898,7 +1905,36 @@
   resolved "https://registry.yarnpkg.com/@types/rimraf/-/rimraf-0.0.28.tgz#5562519bc7963caca8abf7f128cae3b594d41d06"
   integrity sha1-VWJRm8eWPKyoq/fxKMrjtZTUHQY=
 
-"@types/storybook__react@4.0.0":
+"@types/storybook-addon-jsx@5.4.1":
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/@types/storybook-addon-jsx/-/storybook-addon-jsx-5.4.1.tgz#63a789ab8e8f32cc35ed4a88ecf85fbf5e0f18c1"
+  integrity sha512-szskwiJFkpHy7U3haqTv9PxqPnMLo0KftzFZgihh5CJx28mXK/hLRkS6xju3XDlgnBI7W/rCPMvZDijcIpO5cg==
+  dependencies:
+    "@types/react" "*"
+    "@types/storybook__react" "*"
+
+"@types/storybook__addon-actions@3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@types/storybook__addon-actions/-/storybook__addon-actions-3.4.1.tgz#8f90d76b023b58ee794170f2fe774a3fddda2c1d"
+  integrity sha512-An8pNb1/7QhkdOT8Ht5WjJsSxAh2mWti/J4eILwUHpXVZ1j3xlVaOzwTbg8twN4DjgOAggjEDOj6Bx8YOWh9Pg==
+
+"@types/storybook__addon-backgrounds@4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@types/storybook__addon-backgrounds/-/storybook__addon-backgrounds-4.1.0.tgz#d884747c9d6535cacaa02cccf195aa0c715e914b"
+  integrity sha512-CfI51ojD4tATz8Ny+Bk7KQlLOD8uB9nurB+xFf605Bi9RD65m4U72dVlSm281eY3Bhdh818FDfPL6v1t0jTRiA==
+  dependencies:
+    "@types/storybook__react" "*"
+
+"@types/storybook__addon-storyshots@3.4.5":
+  version "3.4.5"
+  resolved "https://registry.yarnpkg.com/@types/storybook__addon-storyshots/-/storybook__addon-storyshots-3.4.5.tgz#eafd8f768e3216cbe4aba6967b7d4c6959005302"
+  integrity sha512-Ov5oHfBlq3X1WXMvJ0DqqNJ7QHjk09F89dgvfXXgpKsvo1mMUOgdjpsCw+T4O77PXPWAuMDrxsFcK52WjEQAyQ==
+  dependencies:
+    "@types/puppeteer" "*"
+    "@types/react" "*"
+    "@types/storybook__react" "*"
+
+"@types/storybook__react@*", "@types/storybook__react@4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/storybook__react/-/storybook__react-4.0.0.tgz#52cc452fbab599568d595075a90142ef4a1233f6"
   integrity sha512-Iq3RX953fqZRwWN3jywm8pUx1/Atev+x/9tF7/2CNA+Ii55sGSJJRWMRthUKQXTa3zOexcvfksfVYdUaIZY91w==
@@ -13869,10 +13905,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@3.2.4:
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.2.4.tgz#c585cb952912263d915b462726ce244ba510ef3d"
-  integrity sha512-0RNDbSdEokBeEAkgNbxJ+BLwSManFy9TeXz8uW+48j/xhEXv1ePME60olyzw2XzUqUBNAYFeJadIqAgNqIACwg==
+typescript@3.1.6:
+  version "3.1.6"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.1.6.tgz#b6543a83cfc8c2befb3f4c8fba6896f5b0c9be68"
+  integrity sha512-tDMYfVtvpb96msS1lDX9MEdHrW4yOuZ4Kdc4Him9oU796XldPYF/t2+uKoX0BBa0hXXwDlqYQbXY5Rzjzc5hBA==
 
 ua-parser-js@^0.7.9:
   version "0.7.12"

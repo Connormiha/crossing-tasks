@@ -4,7 +4,7 @@ exports[`<Character /> should render 1`] = `
 <button
   className="character character_skin_farmer"
   onClick={[Function]}
-  title="farmer"
+  title="Farmer"
 />
 `;
 
@@ -12,6 +12,6 @@ exports[`<Character /> should render packed 1`] = `
 <button
   className="character character_skin_sheep character_packed"
   onClick={[Function]}
-  title="sheep"
+  title="Sheep"
 />
 `;

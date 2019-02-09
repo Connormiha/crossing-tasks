@@ -9,9 +9,11 @@ describe('<Boat />', () => {
     it('should render', () => {
         let tree = renderer.create(<Boat
             items={[]}
+            characters={{}}
             position="left"
             onMoveEnd={noop}
             onMoveCharacter={noop}
+            onShakeEnd={noop}
             invalid={false}
         />).toJSON();
 
@@ -19,7 +21,7 @@ describe('<Boat />', () => {
     });
 
     it('should render items', () => {
-        let items = [0, 1],
+        let items = ['0', '1'],
             characters = {0: {name: 'sheep'}, 1: {name: 'farmer'}},
             tree = renderer.create(
                 <Boat
@@ -29,6 +31,7 @@ describe('<Boat />', () => {
                     invalid={false}
                     onMoveEnd={noop}
                     onMoveCharacter={noop}
+                    onShakeEnd={noop}
                 />
             ).toJSON();
 
