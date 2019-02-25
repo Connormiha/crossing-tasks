@@ -1,16 +1,14 @@
-'use strict';
-
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const CssoWebpackPlugin = require('csso-webpack-plugin').default;
-const PreloadWebpackPlugin = require('preload-webpack-plugin');
-const autoprefixer = require('autoprefixer');
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from 'path';
+import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
+import CssoWebpackPlugin from 'csso-webpack-plugin';
+// const PreloadWebpackPlugin = require('preload-webpack-plugin');
+import autoprefixer from 'autoprefixer';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const ROOT_URL = process.env.ROOT_URL || '';
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const path = require('path');
 const nodePath = path.join(__dirname, './node_modules');
 const sourcePath = path.join(__dirname, './src/');
 
@@ -27,7 +25,7 @@ const CONFIG = {
             collapseWhitespace: true
         },
         alias: {
-            'invariant': 'lodash/noop',
+            invariant: 'lodash/noop',
         },
     },
     development: {
@@ -72,14 +70,14 @@ let cssLoaders = [
                 ]
             }
         }
-    )
+    );
 
 let stylusLoaders = cssLoaders.concat('stylus-loader');
 
 // cssLoaders = extractStyle(cssLoaders);
 // stylusLoaders = extractStyle(stylusLoaders);
 
-module.exports = {
+export default {
     entry: {
         app: './src/app.tsx',
     },
@@ -118,7 +116,6 @@ module.exports = {
             //       }
             //   })
         ],
-        
     },
 
     //context: sourcePath,
@@ -203,8 +200,8 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
             'process.env': {
-                'NODE_ENV': JSON.stringify(NODE_ENV),
-                'ROOT_URL': JSON.stringify(ROOT_URL),
+                NODE_ENV: JSON.stringify(NODE_ENV),
+                ROOT_URL: JSON.stringify(ROOT_URL),
             },
         }),
         new MiniCssExtractPlugin({
