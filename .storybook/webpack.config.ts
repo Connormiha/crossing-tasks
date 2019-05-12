@@ -1,46 +1,32 @@
-// you can use this file to add your custom webpack plugins, loaders and anything you like.
-// This is just the basic way to add additional webpack configurations.
-// For more information refer the docs: https://storybook.js.org/configurations/custom-webpack-config
-
-// IMPORTANT
-// When you add this file, we won't add the default configurations which is similar
-// to "React Create App". This only has babel loader to load JavaScript.
-
 import mainWebpackConfig from '../webpack.config';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import {Configuration} from 'webpack';
 
-// Export a function. Accept the base config as the only param.
-export default (storybookBaseConfig: Configuration) => {
-  if (
-    !mainWebpackConfig || !mainWebpackConfig.module || !mainWebpackConfig.optimization ||
-    !mainWebpackConfig.resolve || !mainWebpackConfig.resolve.modules || !mainWebpackConfig.plugins
-  ) {
-  return storybookBaseConfig;
-  }
+import {Configuration, Rule} from 'webpack';
 
-  storybookBaseConfig.module = storybookBaseConfig.module || {rules: []};
-  storybookBaseConfig.resolve = storybookBaseConfig.resolve || {extensions: [], modules: []};
-  storybookBaseConfig.plugins = storybookBaseConfig.plugins || [];
-  storybookBaseConfig.optimization = storybookBaseConfig.optimization || {};
-  // configType has a value of 'DEVELOPMENT' or 'PRODUCTION'
-  // You can change the configuration based on that.
-  // 'PRODUCTION' is used when building the static version of storybook.
+export default ({config: storybookBaseConfig}: {config: Configuration}): Configuration => {
+    if (
+        !mainWebpackConfig || !mainWebpackConfig.module || !mainWebpackConfig.optimization ||
+        !mainWebpackConfig.resolve || !mainWebpackConfig.resolve.modules || !mainWebpackConfig.plugins
+    ) {
+        return storybookBaseConfig;
+    }
 
-  // Make whatever fine-grained changes you need
-  storybookBaseConfig.devtool = false;
-  (storybookBaseConfig.module.rules as any) = [...storybookBaseConfig.module.rules, ...mainWebpackConfig.module.rules];
-  storybookBaseConfig.resolve.extensions = mainWebpackConfig.resolve.extensions;
-  storybookBaseConfig.resolve.modules = mainWebpackConfig.resolve.modules;
-  storybookBaseConfig.plugins.push(
-    new MiniCssExtractPlugin(
-      {
-        filename: `/static/[hash].css`.replace(/^\//, ''),
-        chunkFilename: `/static/[id][hash].css`.replace(/^\//, ''),
-      }
-    )
-  );
+    storybookBaseConfig.module = storybookBaseConfig.module || {rules: []};
+    storybookBaseConfig.resolve = storybookBaseConfig.resolve || {extensions: [], modules: []};
+    storybookBaseConfig.plugins = storybookBaseConfig.plugins || [];
+    storybookBaseConfig.optimization = storybookBaseConfig.optimization || {};
 
-  // Return the altered config
-  return storybookBaseConfig;
+    storybookBaseConfig.devtool = false;
+    storybookBaseConfig.optimization.minimizer = mainWebpackConfig.optimization.minimizer;
+    storybookBaseConfig.mode = mainWebpackConfig.mode;
+    // https://github.com/storybooks/storybook/issues/5941
+    storybookBaseConfig.module.rules = storybookBaseConfig.module.rules.filter((rule: Rule) => {
+        return !rule.test.toString().includes('svg');
+    });
+    storybookBaseConfig.module.rules = [...storybookBaseConfig.module.rules, ...mainWebpackConfig.module.rules];
+    storybookBaseConfig.resolve.extensions = mainWebpackConfig.resolve.extensions;
+    storybookBaseConfig.resolve.modules = [...mainWebpackConfig.resolve.modules, 'src'];
+    storybookBaseConfig.plugins = [...storybookBaseConfig.plugins, ...mainWebpackConfig.plugins];
+
+    // Return the altered config
+    return storybookBaseConfig;
 };

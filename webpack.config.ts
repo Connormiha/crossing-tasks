@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import {Configuration as WebpackDevServerConfiguration} from 'webpack-dev-server';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
@@ -9,8 +10,13 @@ import autoprefixer from 'autoprefixer';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const ROOT_URL = process.env.ROOT_URL || '';
+const isProduction = NODE_ENV === 'production';
 const nodePath = path.join(__dirname, './node_modules');
 const sourcePath = path.join(__dirname, './src/');
+
+interface Configuration extends webpack.Configuration {
+    devServer?: WebpackDevServerConfiguration;
+  }
 
 const CONFIG = {
     production: {
@@ -77,12 +83,12 @@ let stylusLoaders = cssLoaders.concat('stylus-loader');
 // cssLoaders = extractStyle(cssLoaders);
 // stylusLoaders = extractStyle(stylusLoaders);
 
-export default {
+const webpackConfig: Configuration = {
     entry: {
         app: './src/app.tsx',
     },
 
-    mode: NODE_ENV,
+    mode: isProduction ? 'production' : 'development',
 
     optimization: {
         concatenateModules: true,
@@ -221,3 +227,5 @@ export default {
         stats: 'minimal'
     }
 };
+
+export default webpackConfig;
