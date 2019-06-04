@@ -33,7 +33,7 @@ interface IProps extends React.Props<any> {
     onBoatMoveEnd(collocation: ICollocationState): void;
     onFinishGame(): void;
     onStartGame(id: string): void;
-    onChangeVolume(volume: string): void;
+    onChangeVolume(volume: number): void;
     onToggleInvalidBoat(isBoatInvalid: boolean): void;
 }
 
