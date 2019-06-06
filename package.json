@@ -12,8 +12,9 @@
     "url": "git://github.com/Connormiha/crossing-tasks.git"
   },
   "scripts": {
-    "build": "rm -fr build && npm run createTypesCss && NODE_ENV=production TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack",
+    "build": "rm -fr build && npm run createTypesCss && NODE_ENV=production TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack && npm run build:custom-minify",
     "build:gh": "rm -fr build && npm run createTypesCss && NODE_ENV=production ROOT_URL=crossing-tasks TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack",
+    "build:custom-minify": "node helpers/minify.js",
     "coverage": "jest --coverage",
     "lint": "node lint.js",
     "build:open": "http-server build --gzip -p 8000 -s -c-1",
