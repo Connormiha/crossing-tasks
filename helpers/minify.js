@@ -6,7 +6,9 @@ function minify(content) {
     const nameMap = new Map();
     return content.replace(/_?\b(:?render|handle)([A-Z]:?)\w+/g, (str) => {
         if (!nameMap.has(str)) {
-            nameMap.set(str, '_' + i.toString(36));
+            nameMap.set(
+                str, i.toString(36).replace(/\d/g, (str) => String.fromCharCode(65 + parseInt(str, 10)))
+            );
             i++;
         }
 
