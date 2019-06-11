@@ -52,8 +52,9 @@ let cssLoaders = [
         {
             loader: 'css-loader',
             options: {
-                localIdentName: CONFIG.localIdentName,
-                modules: true,
+                modules: {
+                    localIdentName: CONFIG.localIdentName,
+                },
             }
         }
     ]
@@ -99,6 +100,9 @@ const webpackConfig: Configuration = {
                 terserOptions: {
                     ecma: 8,
                     toplevel: true,
+                    output: {
+                        comments: false,
+                    },
                     compress: {
                         // https://github.com/mishoo/UglifyJS2/pull/2325
                         unsafe_methods: true,
