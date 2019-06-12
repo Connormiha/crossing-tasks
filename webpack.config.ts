@@ -73,7 +73,7 @@ let cssLoaders = [
             loader: 'postcss-loader',
             options: {
                 plugins: [
-                    autoprefixer({browsers: ['Chrome 62', 'Firefox 56', 'Safari 11']})
+                    autoprefixer()
                 ]
             }
         }
