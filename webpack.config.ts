@@ -59,16 +59,6 @@ let cssLoaders = [
         }
     ]
     .concat(
-        NODE_ENV === 'production'
-            ? []
-            : {
-                loader: 'typed-css-modules-loader',
-                options: {
-                    camelCase: true,
-                },
-            }
-    )
-    .concat(
         {
             loader: 'postcss-loader',
             options: {
@@ -80,9 +70,6 @@ let cssLoaders = [
     );
 
 let stylusLoaders = cssLoaders.concat('stylus-loader');
-
-// cssLoaders = extractStyle(cssLoaders);
-// stylusLoaders = extractStyle(stylusLoaders);
 
 const webpackConfig: Configuration = {
     entry: {

@@ -1,3 +1,4 @@
+import 'types/css-modules';
 import './style.styl';
 
 /* tslint:disable:no-unused-variable */
