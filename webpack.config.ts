@@ -5,7 +5,6 @@ import path from 'path';
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import CssoWebpackPlugin from 'csso-webpack-plugin';
-// const PreloadWebpackPlugin = require('preload-webpack-plugin');
 import autoprefixer from 'autoprefixer';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -56,9 +55,7 @@ let cssLoaders = [
                     localIdentName: CONFIG.localIdentName,
                 },
             }
-        }
-    ]
-    .concat(
+        },
         {
             loader: 'postcss-loader',
             options: {
@@ -67,7 +64,7 @@ let cssLoaders = [
                 ]
             }
         }
-    );
+    ];
 
 let stylusLoaders = cssLoaders.concat('stylus-loader');
 
@@ -99,23 +96,12 @@ const webpackConfig: Configuration = {
                         pure_funcs: ['invariant'],
                     },
                 },
-            }),
+            }) as any,
             new CssoWebpackPlugin(),
-            // Waiting for support Webpack 4
-            //   new PreloadWebpackPlugin({
-            //       rel: 'preload',
-            //       as(entry) {
-            //           if (/\.css$/.test(entry)) return 'style';
-            //           if (/\.woff$/.test(entry)) return 'font';
-            //           if (/\.(svg|png)$/.test(entry)) return 'image';
-
-            //           return 'script';
-            //       }
-            //   })
         ],
     },
 
-    //context: sourcePath,
+    // context: sourcePath,
     output: {
         path: CONFIG.FOLDER,
         publicPath: '/',
@@ -126,7 +112,7 @@ const webpackConfig: Configuration = {
             sourcePath,
             'node_modules'
         ],
-        //modulesDirectories: [nodePath],
+        // modulesDirectories: [nodePath],
         extensions:         ['.js', '.ts', '.tsx', '.json', '.mp3', '.opus'],
         // This is default param
         enforceExtension: false,
@@ -201,7 +187,7 @@ const webpackConfig: Configuration = {
             }
         ],
     },
-    //devtool: CONFIG.sourceMap,
+    // devtool: CONFIG.sourceMap,
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
@@ -221,7 +207,7 @@ const webpackConfig: Configuration = {
             filename: `${ROOT_URL}/static/[hash].css`.replace(/^\//, ''),
             chunkFilename: `${ROOT_URL}/static/[id][hash].css`.replace(/^\//, ''),
         }),
-    ],
+    ] as any,
     devServer: {
         host: 'localhost',
         port: 8080,
