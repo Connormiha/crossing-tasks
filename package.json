@@ -16,7 +16,7 @@
     "build:gh": "rm -fr build && NODE_ENV=production ROOT_URL=crossing-tasks TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack",
     "build:custom-minify": "node helpers/minify.js",
     "coverage": "jest --coverage",
-    "lint": "tsc --noEmit -p ./ && tslint -p ./ && stylint && echo \"There are no error in codestyle.\"",
+    "lint": "tsc --noEmit -p ./ && tslint -p ./ && stylint ./src && echo \"There are no error in codestyle.\"",
     "build:open": "http-server build --gzip -p 8000 -s -c-1",
     "start": "TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack-dev-server",
     "test": "jest --no-cache",
