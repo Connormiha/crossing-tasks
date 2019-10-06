@@ -41,9 +41,6 @@ export default class PagePlayPure extends React.Component<IProps> {
     constructor(props) {
         super(props);
         bindMethods(this, ['handleMoveCharacter', 'handleMoveBoat', 'handleMoveBoatEnd', 'handleShakeEnd']);
-    }
-
-    componentWillMount() {
         this.props.onStartGame(this.props.match.params.id);
     }
 

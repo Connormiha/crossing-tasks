@@ -17,9 +17,9 @@ interface IProps {
 }
 
 export default class Sound extends React.Component<IProps> {
-    _audioWave!: AudioBase;
-    _audioBoatDrop!: AudioBase;
-    _audioShaker!: AudioBase;
+    _audioWave = React.createRef<AudioBase>();
+    _audioBoatDrop = React.createRef<AudioBase>();
+    _audioShaker = React.createRef<AudioBase>();
 
     shouldComponentUpdate() {
         return false;
@@ -27,49 +27,42 @@ export default class Sound extends React.Component<IProps> {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.volume !== this.props.volume) {
-            this._audioWave.setVolume(this.props.volume);
-            this._audioBoatDrop.setVolume(this.props.volume);
+            this._audioWave.current!.setVolume(this.props.volume);
+            this._audioBoatDrop.current!.setVolume(this.props.volume);
         } else {
             if (this.props.boatPosition !== nextProps.boatPosition) {
-                this._audioWave.play();
+                this._audioWave.current!.play();
             }
 
             if (this.props.boatItemsLength !== nextProps.boatItemsLength) {
-                this._audioBoatDrop.play();
+                this._audioBoatDrop.current!.play();
             }
 
             if (nextProps.isInvalid && this.props.isInvalid !== nextProps.isInvalid) {
-                this._audioShaker.play();
+                this._audioShaker.current!.play();
             }
         }
     }
 
     render() {
-        return [
-            (
+        return (
+            <React.Fragment>
                 <AudioBase
                     srcMp3={audioWaveFileMp3}
                     srcOpus={audioWaveFileOpus}
-                    ref={(el: AudioBase) => this._audioWave = el}
-                    key="wave"
+                    ref={this._audioWave}
                 />
-            ),
-            (
                 <AudioBase
                     srcMp3={audioBoatDropFileMp3}
                     srcOpus={audioBoatDropFileOpus}
-                    ref={(el: AudioBase) => this._audioBoatDrop = el}
-                    key="boat-drop"
+                    ref={this._audioBoatDrop}
                 />
-            ),
-            (
                 <AudioBase
                     srcMp3={audioShakerFileMp3}
                     srcOpus={audioShakerFileOpus}
-                    ref={(el: AudioBase) => this._audioShaker = el}
-                    key="shaker"
+                    ref={this._audioShaker}
                 />
-            ),
-        ];
+            </React.Fragment>
+        );
     }
 }
