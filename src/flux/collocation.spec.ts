@@ -3,7 +3,7 @@ import {createAppStore} from 'store';
 import schema from 'reducers/schema';
 import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
 
-const STORE_ID: string = 'collocation';
+const STORE_ID = 'collocation';
 
 let store;
 

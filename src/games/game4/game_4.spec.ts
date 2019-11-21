@@ -4,7 +4,7 @@ import {
     Game
 } from 'games/helpers';
 
-const game: Game = games.game_4;
+const game: Game = games.game4;
 
 describe('Game_4', () => {
     let result,
@@ -17,7 +17,7 @@ describe('Game_4', () => {
     });
 
     it('should move boat only with adult', () => {
-        for (let item of Object.keys(game.characters)) {
+        for (const item of Object.keys(game.characters)) {
             if (item === 'policeman') {
                 continue;
             }

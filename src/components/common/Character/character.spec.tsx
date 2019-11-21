@@ -7,7 +7,7 @@ import noop from 'lodash/noop';
 /* tslint:disable:jsx-wrap-multiline */
 describe('<Character />', () => {
     it('should render', () => {
-        let tree = renderer.create(
+        const tree = renderer.create(
             <Character
                 name="Farmer"
                 id="farmer"
@@ -19,7 +19,7 @@ describe('<Character />', () => {
     });
 
     it('should render packed', () => {
-        let tree = renderer.create(
+        const tree = renderer.create(
             <Character
                 name="Sheep"
                 id="sheep"

@@ -45,7 +45,7 @@ export default class PagePlayPure extends React.Component<IProps> {
     }
 
     componentDidUpdate() {
-        let {game: {finished}, collocation, onFinishGame} = this.props;
+        const {game: {finished}, collocation, onFinishGame} = this.props;
 
         if (!finished && collocation[BOAT].length === 0 && collocation[RIVERSIDE_LEFT].length === 0) {
             onFinishGame();
@@ -53,19 +53,19 @@ export default class PagePlayPure extends React.Component<IProps> {
     }
 
     handleMoveCharacter(id: string): void {
-        let {collocation, game, onMoveCharacter} = this.props;
+        const {collocation, game, onMoveCharacter} = this.props;
 
         onMoveCharacter(collocation, game.currentGame, id);
     }
 
     handleMoveBoat() {
-        let {collocation, game, onMoveBoat} = this.props;
+        const {collocation, game, onMoveBoat} = this.props;
 
         onMoveBoat(collocation, game.currentGame);
     }
 
     handleMoveBoatEnd() {
-        let {collocation, onBoatMoveEnd} = this.props;
+        const {collocation, onBoatMoveEnd} = this.props;
 
         onBoatMoveEnd(collocation);
     }

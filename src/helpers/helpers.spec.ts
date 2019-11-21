@@ -12,7 +12,7 @@ const mockCollocation = {
 describe('Games helpers', () => {
     describe('landingValidator', () => {
         it('should get success result', () => {
-            let result: ValidatorResult = landingValidator.call({
+            const result: ValidatorResult = landingValidator.call({
                 rules: {
                     beforeLanding: [
                         {
@@ -35,7 +35,7 @@ describe('Games helpers', () => {
         });
 
         it('should get fail result', () => {
-            let result: ValidatorResult = landingValidator.call({
+            const result: ValidatorResult = landingValidator.call({
                 rules: {
                     beforeLanding: [
                         {
@@ -60,7 +60,7 @@ describe('Games helpers', () => {
 
     describe('depetureValidator', () => {
         it('should get success result', () => {
-            let result: ValidatorResult = depetureValidator.call({
+            const result: ValidatorResult = depetureValidator.call({
                 rules: {
                     beforeDeparture: [
                         {
@@ -83,7 +83,7 @@ describe('Games helpers', () => {
         });
 
         it('should get fail result', () => {
-            let result: ValidatorResult = depetureValidator.call({
+            const result: ValidatorResult = depetureValidator.call({
                 rules: {
                     beforeDeparture: [
                         {

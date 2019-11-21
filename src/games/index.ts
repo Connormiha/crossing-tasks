@@ -1,10 +1,10 @@
-import game_1 from 'games/game1';
-import game_2 from 'games/game2';
-import game_3 from 'games/game3';
-import game_4 from 'games/game4';
-import game_5 from 'games/game5';
-import game_6 from 'games/game6';
-import game_7 from 'games/game7';
+import game1 from 'games/game1';
+import game2 from 'games/game2';
+import game3 from 'games/game3';
+import game4 from 'games/game4';
+import game5 from 'games/game5';
+import game6 from 'games/game6';
+import game7 from 'games/game7';
 
 import {
     Game, ValidatorResult, PositionCharacter
@@ -15,7 +15,7 @@ export {
 };
 
 const games = {
-    game_1, game_2, game_3, game_4, game_5, game_6, game_7
+    game1, game2, game3, game4, game5, game6, game7
 };
 
 export default games;

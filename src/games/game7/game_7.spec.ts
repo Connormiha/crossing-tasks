@@ -4,7 +4,7 @@ import {
     Game
 } from 'games/helpers';
 
-const game: Game = games.game_7;
+const game: Game = games.game7;
 
 describe('Game_7', () => {
     let result;
@@ -16,7 +16,7 @@ describe('Game_7', () => {
     });
 
     it('shouldn\'t move boat without farmer', () => {
-        for (let item of ['sheep', 'coat', 'cabbage', 'wolf1', 'wolf2', 'dog']) {
+        for (const item of ['sheep', 'coat', 'cabbage', 'wolf1', 'wolf2', 'dog']) {
             result = game.depetureValidator({
                 [BOAT]: [item],
                 [RIVERSIDE_LEFT]: game.collocation[RIVERSIDE_LEFT].filter((name) => name !== item),
@@ -28,7 +28,7 @@ describe('Game_7', () => {
     });
 
     it('shouldn\'t leave sheep with wolf alone without farmer', () => {
-        for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
+        for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
             result = game.depetureValidator({
                 [BOAT]: ['farmer', 'cabbage'],
                 [item]: game.collocation[RIVERSIDE_LEFT].filter((name) => name !== 'farmer' && name !== 'cabbage'),
@@ -40,7 +40,7 @@ describe('Game_7', () => {
     });
 
     it('shouldn\'t leave sheep with cabbage alone without farmer', () => {
-        for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
+        for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
             result = game.depetureValidator({
                 [BOAT]: ['farmer', 'wolf1'],
                 [item]: game.collocation[RIVERSIDE_LEFT].filter((name) => name !== 'farmer' && name !== 'wolf'),
@@ -62,7 +62,7 @@ describe('Game_7', () => {
     });
 
     it('should move boat with farmer and sheep', () => {
-        for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
+        for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
             result = game.depetureValidator({
                 [BOAT]: ['farmer', 'sheep'],
                 [item]: game.collocation[RIVERSIDE_LEFT].filter((name) => name !== 'farmer' || name !== 'sheep'),

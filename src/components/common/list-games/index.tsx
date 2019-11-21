@@ -13,7 +13,7 @@ interface Props extends React.Props<any> {
 
 export default class ListGames extends React.Component<Props> {
     renderList() {
-        let {items} = this.props;
+        const {items} = this.props;
 
         return items.map((id) => {
             return (

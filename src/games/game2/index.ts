@@ -28,16 +28,16 @@ const game: Game = {
             {
                 description: 'Savages do not have to get numerical superiority in any riverside',
                 check(collocation: any): boolean {
-                    for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
+                    for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
                         let side: string[] = collocation[item],
-                            priestsCount: number = 0,
-                            cavemansCount: number = 0;
+                            priestsCount = 0,
+                            cavemansCount = 0;
 
                         if (item !== collocation.boatPosition) {
                             side = side.concat(collocation[BOAT]);
                         }
 
-                        for (let character of side) {
+                        for (const character of side) {
                             if (characters[character].type === 'priest') {
                                 priestsCount++;
                             } else {

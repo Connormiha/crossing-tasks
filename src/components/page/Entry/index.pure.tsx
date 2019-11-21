@@ -14,7 +14,7 @@ interface Props extends React.Props<any> {
 
 export default class PageEntryPure extends React.Component<Props> {
     render() {
-        let {game} = this.props;
+        const {game} = this.props;
 
         return (
             <div className={b()}>

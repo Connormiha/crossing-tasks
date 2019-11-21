@@ -4,7 +4,7 @@ import Warning from 'components/common/warning';
 
 describe('<Warning />', () => {
     it('should render', () => {
-        let tree = renderer.create(
+        const tree = renderer.create(
             <Warning>Foo</Warning>
         ).toJSON();
 

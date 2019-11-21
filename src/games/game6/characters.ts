@@ -1,4 +1,6 @@
-const characters = {
+import {ICharacters} from 'flux/types';
+
+const characters: ICharacters = {
     women_red: {
         name: 'Woman_red',
         sex: 'female',

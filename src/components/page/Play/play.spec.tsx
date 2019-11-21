@@ -13,7 +13,7 @@ describe('<PagePlayPure />', () => {
         game: {
             list: [],
             finished: false,
-            currentGame: 'game_1'
+            currentGame: 'game1'
         },
         message: {
             content: '',
@@ -44,7 +44,7 @@ describe('<PagePlayPure />', () => {
     };
 
     it('should render', () => {
-        let tree = renderer.create(
+        const tree = renderer.create(
             <PagePlayPure
                 {...params}
             />
@@ -54,7 +54,7 @@ describe('<PagePlayPure />', () => {
     });
 
     it('should render with message', () => {
-        let tree = renderer.create(
+        const tree = renderer.create(
             <PagePlayPure
                 {...params}
                 message={{content: 'Test', hidden: false}}
@@ -65,7 +65,7 @@ describe('<PagePlayPure />', () => {
     });
 
     it('should render (Boat right)', () => {
-        let tree = renderer.create(
+        const tree = renderer.create(
             <PagePlayPure
                 {...params}
                 collocation={{...params.collocation, boatPosition: RIVERSIDE_RIGHT}}
@@ -76,7 +76,7 @@ describe('<PagePlayPure />', () => {
     });
 
     it('should render finished', () => {
-        let tree = renderer.create(
+        const tree = renderer.create(
             <PagePlayPure
                 {...params}
                 game={{...params.game, finished: true}}
@@ -100,14 +100,14 @@ describe('<PagePlay />', () => {
     });
 
     it('should work onStartGame', () => {
-        let game_1: string = Object.keys(games)[0];
+        const game1: string = Object.keys(games)[0];
 
-        mapProps.onStartGame(game_1);
+        mapProps.onStartGame(game1);
 
         expect(getState().collocation).toEqual(
-            {...games[game_1].collocation, boatPosition: RIVERSIDE_LEFT, isBoatInvalid: false}
+            {...games[game1].collocation, boatPosition: RIVERSIDE_LEFT, isBoatInvalid: false}
         );
 
-        expect(getState().game).toMatchObject({currentGame: game_1, finished: false});
+        expect(getState().game).toMatchObject({currentGame: game1, finished: false});
     });
 });

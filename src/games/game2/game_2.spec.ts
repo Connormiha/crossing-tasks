@@ -3,7 +3,7 @@ import {
     Game
 } from 'games/helpers';
 
-const game: Game = games.game_2;
+const game: Game = games.game2;
 
 describe('Game_2', () => {
     let result;

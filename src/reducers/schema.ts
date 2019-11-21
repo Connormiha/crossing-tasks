@@ -23,7 +23,7 @@ const schema: ISchema = {
         hidden: true
     },
     game: {
-        currentGame: 'game_1',
+        currentGame: 'game1',
         finished: false,
         list: []
     },

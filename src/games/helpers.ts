@@ -1,6 +1,11 @@
-import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
+import {
+    ICollocationState,
+    ICharacters,
+    RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT,
+    RIVERSIDE_LEFT_TYPE, RIVERSIDE_RIGHT_TYPE, BOAT_TYPE,
+} from 'flux/types';
 
-export type PositionCharacter = 'left' | 'right' | 'boat';
+export type PositionCharacter = RIVERSIDE_LEFT_TYPE | RIVERSIDE_RIGHT_TYPE | BOAT_TYPE;
 
 export const COLLOCATIONS_LIST: PositionCharacter[] = [RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT];
 
@@ -10,26 +15,28 @@ export interface ValidatorResult {
     meta?: any;
 }
 
+export type ICollocation = Record<PositionCharacter, any[]>;
+
 export interface Game {
-    characters: any;
-    collocation: any;
+    characters: ICharacters;
+    collocation: ICollocation;
     title: string;
     description: string;
     rules: {
         beforeLanding: Array<{
             description: string;
-            check(collocation: any, characterId: string, moveTo: string): boolean;
+            check(collocation: ICollocationState, characterId: string, moveTo: string): boolean;
         }>;
         beforeDeparture: Array<{
             description: string;
-            check(collocation: any): boolean;
+            check(collocation: ICollocationState): boolean;
         }>;
     };
-    landingValidator(collocation: any, characterId: string): ValidatorResult;
-    depetureValidator(collocation: any): ValidatorResult;
+    landingValidator(collocation: ICollocationState, characterId: string): ValidatorResult;
+    depetureValidator(collocation: ICollocationState): ValidatorResult;
 }
 
-const getCharacterDirection = (collocation: any, characterId: string): string => {
+const getCharacterDirection = (collocation: ICollocationState, characterId: string): string => {
     for (const item of COLLOCATIONS_LIST) {
         if (collocation[item].includes(characterId)) {
             return item === BOAT ? collocation.boatPosition : BOAT;
@@ -39,10 +46,10 @@ const getCharacterDirection = (collocation: any, characterId: string): string =>
     return '';
 };
 
-export function landingValidator(collocation: any, characterId: string): ValidatorResult {
-    let moveTo: string = getCharacterDirection(collocation, characterId);
+export function landingValidator(this: Game, collocation: ICollocationState, characterId: string): ValidatorResult {
+    const moveTo: string = getCharacterDirection(collocation, characterId);
 
-    for (let rule of this.rules.beforeLanding) {
+    for (const rule of this.rules.beforeLanding) {
         if (!rule.check(collocation, characterId, moveTo)) {
             return {
                 success: false,
@@ -57,7 +64,7 @@ export function landingValidator(collocation: any, characterId: string): Validat
 }
 
 export function depetureValidator(collocation: any): ValidatorResult {
-    for (let rule of this.rules.beforeDeparture) {
+    for (const rule of this.rules.beforeDeparture) {
         if (!rule.check(collocation)) {
             return {
                 success: false,

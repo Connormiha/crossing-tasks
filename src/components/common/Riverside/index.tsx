@@ -20,7 +20,7 @@ export default class Riverside extends React.Component<Props> {
     }
 
     renderItems() {
-        let {onMoveCharacter, characters, items} = this.props;
+        const {onMoveCharacter, characters, items} = this.props;
 
         return items.map((id: string) => {
             return (

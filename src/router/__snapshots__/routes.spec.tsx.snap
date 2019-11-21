@@ -14,70 +14,70 @@ exports[`Route <EntryPage /> should render 1`] = `
         className="list-games__item"
       >
         <a
-          href="/play/game_1/"
+          href="/play/game1/"
           onClick={[Function]}
         >
-          game_1
+          game1
         </a>
       </li>
       <li
         className="list-games__item"
       >
         <a
-          href="/play/game_2/"
+          href="/play/game2/"
           onClick={[Function]}
         >
-          game_2
+          game2
         </a>
       </li>
       <li
         className="list-games__item"
       >
         <a
-          href="/play/game_3/"
+          href="/play/game3/"
           onClick={[Function]}
         >
-          game_3
+          game3
         </a>
       </li>
       <li
         className="list-games__item"
       >
         <a
-          href="/play/game_4/"
+          href="/play/game4/"
           onClick={[Function]}
         >
-          game_4
+          game4
         </a>
       </li>
       <li
         className="list-games__item"
       >
         <a
-          href="/play/game_5/"
+          href="/play/game5/"
           onClick={[Function]}
         >
-          game_5
+          game5
         </a>
       </li>
       <li
         className="list-games__item"
       >
         <a
-          href="/play/game_6/"
+          href="/play/game6/"
           onClick={[Function]}
         >
-          game_6
+          game6
         </a>
       </li>
       <li
         className="list-games__item"
       >
         <a
-          href="/play/game_7/"
+          href="/play/game7/"
           onClick={[Function]}
         >
-          game_7
+          game7
         </a>
       </li>
     </ul>
@@ -97,7 +97,7 @@ exports[`Route <NotFoundPage /> should render /foo 1`] = `
 </div>
 `;
 
-exports[`Route <PlayPage /> should render game_1 1`] = `
+exports[`Route <PlayPage /> should render game1 1`] = `
 <div
   className="page-play"
 >
@@ -208,7 +208,7 @@ exports[`Route <PlayPage /> should render game_1 1`] = `
 </div>
 `;
 
-exports[`Route <PlayPage /> should render game_2 1`] = `
+exports[`Route <PlayPage /> should render game2 1`] = `
 <div
   className="page-play"
 >
@@ -333,7 +333,7 @@ exports[`Route <PlayPage /> should render game_2 1`] = `
 </div>
 `;
 
-exports[`Route <PlayPage /> should render game_3 1`] = `
+exports[`Route <PlayPage /> should render game3 1`] = `
 <div
   className="page-play"
 >
@@ -458,7 +458,7 @@ exports[`Route <PlayPage /> should render game_3 1`] = `
 </div>
 `;
 
-exports[`Route <PlayPage /> should render game_4 1`] = `
+exports[`Route <PlayPage /> should render game4 1`] = `
 <div
   className="page-play"
 >
@@ -597,7 +597,7 @@ exports[`Route <PlayPage /> should render game_4 1`] = `
 </div>
 `;
 
-exports[`Route <PlayPage /> should render game_5 1`] = `
+exports[`Route <PlayPage /> should render game5 1`] = `
 <div
   className="page-play"
 >
@@ -722,7 +722,7 @@ exports[`Route <PlayPage /> should render game_5 1`] = `
 </div>
 `;
 
-exports[`Route <PlayPage /> should render game_6 1`] = `
+exports[`Route <PlayPage /> should render game6 1`] = `
 <div
   className="page-play"
 >

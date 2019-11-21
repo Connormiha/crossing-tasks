@@ -36,11 +36,11 @@ const getDefaultState = (): ICollocationState =>
 export default (state: ICollocationState = getDefaultState(), {type, collocation, isBoatInvalid, id}): ICollocationState => {
     switch (type) {
         case COLLOCATION_MOVE_CHARACTER:
-            for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT]) {
+            for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT]) {
                 const index: number = state[item].indexOf(id);
 
                 if (index !== -1) {
-                    let moveTo = item === BOAT ? state.boatPosition : BOAT;
+                    const moveTo = item === BOAT ? state.boatPosition : BOAT;
 
                     return immutable(
                         state,

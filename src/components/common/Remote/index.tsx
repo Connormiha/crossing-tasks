@@ -17,7 +17,7 @@ export default class Boat extends React.Component<Props> {
     }
 
     render() {
-        let {disabled, onClick} = this.props;
+        const {disabled, onClick} = this.props;
 
         return (
             <button className={b()} onClick={onClick} disabled={disabled}>

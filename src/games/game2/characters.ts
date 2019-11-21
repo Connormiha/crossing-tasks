@@ -1,4 +1,6 @@
-const characters = {
+import {ICharacters} from 'flux/types';
+
+const characters: ICharacters = {
     caveman_1: {
         name: 'Caveman',
         type: 'caveman'

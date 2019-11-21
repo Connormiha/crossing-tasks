@@ -28,8 +28,8 @@ const game: Game = {
             {
                 description: 'Do not leave a wolf and a sheep alone without the farmer',
                 check(collocation: any): boolean {
-                    for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
-                        let side = collocation[item];
+                    for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
+                        const side = collocation[item];
 
                         if (!side.includes('farmer') && (side.includes('wolf1') || side.includes('wolf2')) && side.includes('sheep')) {
                             return false;
@@ -42,8 +42,8 @@ const game: Game = {
             {
                 description: 'Do not leave a wolf and a dog alone without the farmer',
                 check(collocation: any): boolean {
-                    for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
-                        let side = collocation[item];
+                    for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
+                        const side = collocation[item];
 
                         if (!side.includes('farmer') && (side.includes('wolf1') || side.includes('wolf2')) && side.includes('dog')) {
                             return false;
@@ -56,8 +56,8 @@ const game: Game = {
             {
                 description: 'Do not leave a dog and a sheep alone without the farmer',
                 check(collocation: any): boolean {
-                    for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
-                        let side = collocation[item];
+                    for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
+                        const side = collocation[item];
 
                         if (!side.includes('farmer') && side.includes('dog') && side.includes('sheep')) {
                             return false;
@@ -70,8 +70,8 @@ const game: Game = {
             {
                 description: 'Do not leave the sheep and cabbage alone without the farmer',
                 check(collocation: any): boolean {
-                    for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
-                        let side = collocation[item];
+                    for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
+                        const side = collocation[item];
 
                         if (!side.includes('farmer') && side.includes('cabbage') && side.includes('sheep')) {
                             return false;

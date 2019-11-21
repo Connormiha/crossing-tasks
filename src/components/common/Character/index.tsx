@@ -29,7 +29,7 @@ export default class Character extends React.Component<Props> {
     }
 
     render() {
-        let {packed, name} = this.props;
+        const {packed, name} = this.props;
 
         return (
             <button className={b({skin: name.toLowerCase(), packed: !!packed})} onClick={this.handleClick} title={name} />

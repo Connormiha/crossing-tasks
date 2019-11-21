@@ -6,7 +6,7 @@ import noop from 'lodash/noop';
 
 describe('<Remote />', () => {
     it('should render enabled', () => {
-        let tree = renderer.create(
+        const tree = renderer.create(
             <Remote
                 onClick={noop}
                 disabled={false}
@@ -17,7 +17,7 @@ describe('<Remote />', () => {
     });
 
     it('should render disabled', () => {
-        let tree = renderer.create(
+        const tree = renderer.create(
             <Remote onClick={noop} disabled />
         ).toJSON();
 

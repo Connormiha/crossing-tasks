@@ -2,7 +2,7 @@ import * as Actions from 'flux/message';
 import {createAppStore} from 'store';
 import schema from 'reducers/schema';
 
-const STORE_ID: string = 'message';
+const STORE_ID = 'message';
 
 let store;
 

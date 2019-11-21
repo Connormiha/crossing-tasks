@@ -20,7 +20,7 @@ export const mapDispatchToProps = (dispatch) => {
         },
 
         onMoveCharacter(collocation: any, gameId: string, id: string) {
-            let {success, message} = games[gameId].landingValidator(collocation, id);
+            const {success, message} = games[gameId].landingValidator(collocation, id);
 
             if (success) {
                 dispatch(batchActions([
@@ -54,11 +54,11 @@ export const mapDispatchToProps = (dispatch) => {
         },
 
         onBoatMoveEnd(collocation: any) {
-            let actions: any[] = [
+            const actions: any[] = [
                 collocationActions.toggleBoatInvalid(false),
             ];
 
-            for (let id of collocation.boat) {
+            for (const id of collocation.boat) {
                 actions.push(collocationActions.moveCharacter(id));
             }
 

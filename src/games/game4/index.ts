@@ -28,7 +28,7 @@ const game: Game = {
             {
                 description: 'Driving the boat can only adult',
                 check(collocation: any): boolean {
-                    for (let character of collocation.boat) {
+                    for (const character of collocation.boat) {
                         if (characters[character].adult) {
                             return true;
                         }
@@ -53,8 +53,8 @@ const game: Game = {
             {
                 description: 'The criminal shoudn\'t stay with citizens in riverside',
                 check(collocation: any): boolean {
-                    for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
-                        let side = collocation[item];
+                    for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
+                        const side = collocation[item];
 
                         if (side.includes('criminal') &&
                             !side.includes('policeman') &&
@@ -70,7 +70,7 @@ const game: Game = {
             {
                 description: 'Boys shoudn\'t stay with mother in riverside or boat alone without father',
                 check(collocation: any): boolean {
-                    for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT]) {
+                    for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT]) {
                         let side = collocation[item];
 
                         if (item !== collocation.boatPosition && collocation.boatPosition !== BOAT) {
@@ -91,7 +91,7 @@ const game: Game = {
             {
                 description: 'Girls shoudn\'t stay with father in riverside or boat alone without mother',
                 check(collocation: any): boolean {
-                    for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT]) {
+                    for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT]) {
                         let side = collocation[item];
 
                         if (item !== collocation.boatPosition && collocation.boatPosition !== BOAT) {

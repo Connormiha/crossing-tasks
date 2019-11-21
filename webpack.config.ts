@@ -134,13 +134,6 @@ const webpackConfig: Configuration = {
             {
                 test: /\.tsx?$/,
                 exclude: [nodePath],
-                loader: 'tslint-loader',
-                sideEffects: false,
-                enforce: 'pre'
-            },
-            {
-                test: /\.tsx?$/,
-                exclude: [nodePath],
                 loader: 'ts-loader'
             },
             {

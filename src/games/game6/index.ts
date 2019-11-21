@@ -28,11 +28,11 @@ const game: Game = {
             {
                 description: 'A woman can not be with a man without a husband in boat',
                 check(collocation: any): boolean {
-                    let side = collocation[BOAT],
+                    const side = collocation[BOAT],
                         mens: string[] = [],
                         women: string[] = [];
 
-                    for (let character of side) {
+                    for (const character of side) {
                         if (characters[character].sex === 'female') {
                             women.push(characters[character].family);
                         } else {
@@ -41,7 +41,7 @@ const game: Game = {
                     }
 
                     if (mens.length) {
-                        for (let woman of women) {
+                        for (const woman of women) {
                             if (!mens.includes(woman)) {
                                 return false;
                             }
@@ -55,7 +55,7 @@ const game: Game = {
             {
                 description: 'A woman can not be with a men without a husband or other woman in riverside',
                 check(collocation: any): boolean {
-                    for (let item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
+                    for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
                         let side: string[] = collocation[item],
                             mens: string[] = [],
                             women: string[] = [];
@@ -64,7 +64,7 @@ const game: Game = {
                             side = side.concat(collocation[BOAT]);
                         }
 
-                        for (let character of side) {
+                        for (const character of side) {
                             if (characters[character].sex === 'female') {
                                 women.push(characters[character].family);
                             } else {

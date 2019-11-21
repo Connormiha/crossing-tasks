@@ -7,13 +7,13 @@ import games from 'games';
 /* tslint:disable:jsx-wrap-multiline */
 describe('<PageEntryPure />', () => {
     it('should render', () => {
-        let tree = renderer.create(
+        const tree = renderer.create(
             <Router>
                 <PageEntryPure
                     game={{
                         list: Object.keys(games),
                         finished: false,
-                        currentGame: 'game_1'
+                        currentGame: 'game1'
                     }}
                 />
             </Router>

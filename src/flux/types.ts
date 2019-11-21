@@ -1,6 +1,6 @@
-type RIVERSIDE_LEFT_TYPE = 'left';
-type RIVERSIDE_RIGHT_TYPE = 'right';
-type BOAT_TYPE = 'boat';
+export type RIVERSIDE_LEFT_TYPE = 'left';
+export type RIVERSIDE_RIGHT_TYPE = 'right';
+export type BOAT_TYPE = 'boat';
 
 export const RIVERSIDE_LEFT: RIVERSIDE_LEFT_TYPE = 'left';
 export const RIVERSIDE_RIGHT: RIVERSIDE_RIGHT_TYPE = 'right';
@@ -20,6 +20,16 @@ export interface IGameState {
 export interface ISettingsState {
     readonly volume: number;
 }
+
+export interface ICharacter {
+    name: string;
+    adult?: boolean;
+    sex?: 'female' | 'male';
+    type?: string;
+    family?: string;
+}
+
+export type ICharacters = Record<string, ICharacter>;
 
 // https://github.com/Microsoft/TypeScript/issues/5579
 export interface ICollocationState {
