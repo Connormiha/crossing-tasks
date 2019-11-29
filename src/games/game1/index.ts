@@ -1,4 +1,5 @@
 import characters from './characters';
+import {ICharacterIdGame1} from './types';
 
 import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
 
@@ -6,7 +7,7 @@ import {
     Game, landingValidator, depetureValidator
 } from 'games/helpers';
 
-const game: Game = {
+const game: Game<ICharacterIdGame1> = {
     title: 'Crossing 1',
     description: 'It is necessary to get everyone across the river.',
     rules: {

@@ -1,6 +1,6 @@
 import {
     ICollocationState,
-    ICharacters,
+    ICharactersList, ICharacterBase,
     RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT,
     RIVERSIDE_LEFT_TYPE, RIVERSIDE_RIGHT_TYPE, BOAT_TYPE,
 } from 'flux/types';
@@ -17,8 +17,8 @@ export interface ValidatorResult {
 
 export type ICollocation = Record<PositionCharacter, any[]>;
 
-export interface Game {
-    characters: ICharacters;
+export interface Game<T> {
+    characters: ICharactersList<T>;
     collocation: ICollocation;
     title: string;
     description: string;

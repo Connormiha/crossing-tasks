@@ -1,21 +1,22 @@
-import {ICharacters} from 'flux/types';
+import {ICharactersListGame1} from './types';
 
-const characters: ICharacters = {
-    farmer: {
+const characters: ICharactersListGame1 = [
+    {
+        id: 'farmer',
         name: 'Farmer'
     },
-
-    cabbage: {
+    {
+        id: 'cabbage',
         name: 'Cabbage'
     },
-
-    sheep: {
+    {
+        id: 'sheep',
         name: 'Sheep'
     },
-
-    wolf: {
+    {
+        id: 'wolf',
         name: 'Wolf'
     }
-};
+];
 
 export default characters;

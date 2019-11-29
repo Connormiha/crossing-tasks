@@ -21,15 +21,13 @@ export interface ISettingsState {
     readonly volume: number;
 }
 
-export interface ICharacter {
-    name: string;
-    adult?: boolean;
-    sex?: 'female' | 'male';
-    type?: string;
-    family?: string;
+export interface ICharacterBase<T extends string> {
+    id: T;
 }
 
-export type ICharacters = Record<string, ICharacter>;
+export type ICharactersMap<T> = T extends ICharacterBase<infer S> ? Record<S, T> : never;
+//export type ICharactersList<T> = T extends ICharacterBase<infer S> ? (S extends string ? T[] : never) : never;
+export type ICharactersList<T> = T extends ICharacterBase<infer _S> ? T[] : never;
 
 // https://github.com/Microsoft/TypeScript/issues/5579
 export interface ICollocationState {
