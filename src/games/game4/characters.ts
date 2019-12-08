@@ -1,38 +1,46 @@
-import {ICharactersMap} from 'flux/types';
+import {ICharactersListGame3} from './types';
 
-const characters: ICharactersMap = {
-    men_black: {
+const characters: ICharactersListGame3 = [
+    {
+        id: 'men_black',
         name: 'Men_black',
         adult: true
     },
-    boy_red: {
+    {
+        id: 'boy_red',
         name: 'Boy_red',
         adult: false
     },
-    boy_yellow: {
+    {
+        id: 'boy_yellow',
         name: 'Boy_yellow',
         adult: false
     },
-    woman_black: {
+    {
+        id: 'woman_black',
         name: 'Woman_black',
         adult: true
     },
-    girl_red: {
+    {
+        id: 'girl_red',
         name: 'Girl_red',
         adult: false
     },
-    girl_yellow: {
+    {
+        id: 'girl_yellow',
         name: 'Girl_yellow',
         adult: false
     },
-    criminal: {
+    {
+        id: 'criminal',
         name: 'Criminal',
         adult: true
     },
-    policeman: {
+    {
+        id: 'policeman',
         name: 'Policeman',
         adult: true
     }
-};
+];
 
 export default characters;

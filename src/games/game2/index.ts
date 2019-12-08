@@ -3,17 +3,23 @@ import characters from './characters';
 import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
 
 import {
-    Game, landingValidator, depetureValidator
+    Game,
 } from 'games/helpers';
 
-const game: Game = {
-    title: 'Crossing 2',
-    description: 'It is necessary to get everyone across the river.',
-    rules: {
+export default new Game(
+    characters,
+    {
+        [BOAT]: [],
+        [RIVERSIDE_LEFT]: characters.map(({id}) => id),
+        [RIVERSIDE_RIGHT]: []
+    },
+    'Crossing 2',
+    'It is necessary to get everyone across the river.',
+    {
         beforeLanding: [
             {
                 description: 'The boat can accommodate only two persons',
-                check(collocation: any, characterId: string, moveTo: string): boolean {
+                check(collocation): boolean {
                     return collocation.boat.length < 2;
                 }
             }
@@ -21,15 +27,15 @@ const game: Game = {
         beforeDeparture: [
             {
                 description: 'The boat is empty',
-                check(collocation: any): boolean {
+                check(collocation): boolean {
                     return collocation.boat.length !== 0;
                 }
             },
             {
                 description: 'Savages do not have to get numerical superiority in any riverside',
-                check(collocation: any): boolean {
+                check(collocation): boolean {
                     for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
-                        let side: string[] = collocation[item],
+                        let side = collocation[item],
                             priestsCount = 0,
                             cavemansCount = 0;
 
@@ -54,15 +60,5 @@ const game: Game = {
                 }
             }
         ]
-    },
-    landingValidator,
-    depetureValidator,
-    characters,
-    collocation: {
-        [BOAT]: [],
-        [RIVERSIDE_LEFT]: Object.keys(characters),
-        [RIVERSIDE_RIGHT]: []
     }
-};
-
-export default game;
+);

@@ -3,17 +3,23 @@ import characters from './characters';
 import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
 
 import {
-    Game, landingValidator, depetureValidator
+    Game,
 } from 'games/helpers';
 
-const game: Game = {
-    title: 'Crossing 3',
-    description: 'No woman with other men without her hasband (or other woman)',
-    rules: {
+const game = new Game(
+    characters,
+    {
+        [BOAT]: [],
+        [RIVERSIDE_LEFT]: characters.map(({id}) => id),
+        [RIVERSIDE_RIGHT]: []
+    },
+    'Crossing 3',
+    'No woman with other men without her hasband (or other woman)',
+    {
         beforeLanding: [
             {
                 description: 'The boat can accommodate only two persons',
-                check(collocation: any, characterId: string, moveTo: string): boolean {
+                check(collocation, _, moveTo): boolean {
                     return moveTo !== BOAT || collocation.boat.length < 2;
                 }
             }
@@ -21,13 +27,13 @@ const game: Game = {
         beforeDeparture: [
             {
                 description: 'The boat is empty',
-                check(collocation: any): boolean {
+                check(collocation): boolean {
                     return collocation.boat.length !== 0;
                 }
             },
             {
                 description: 'A woman can not be with a man without a husband in boat',
-                check(collocation: any): boolean {
+                check(collocation): boolean {
                     const side = collocation[BOAT],
                         mens: string[] = [],
                         women: string[] = [];
@@ -54,7 +60,7 @@ const game: Game = {
 
             {
                 description: 'A woman can not be with a men without a husband or other woman in riverside',
-                check(collocation: any): boolean {
+                check(collocation): boolean {
                     for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
                         let side: string[] = collocation[item],
                             mens: string[] = [],
@@ -85,14 +91,6 @@ const game: Game = {
             }
         ]
     },
-    landingValidator,
-    depetureValidator,
-    characters,
-    collocation: {
-        [BOAT]: [],
-        [RIVERSIDE_LEFT]: Object.keys(characters),
-        [RIVERSIDE_RIGHT]: []
-    }
-};
+);
 
 export default game;

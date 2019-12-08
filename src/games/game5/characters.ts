@@ -1,30 +1,36 @@
-import {ICharactersMap} from 'flux/types';
+import {ICharactersListGame5} from './types';
 
-const characters: ICharactersMap = {
-    priest_1: {
+const characters: ICharactersListGame5 = [
+    {
+        id: 'priest_1',
         name: 'Priest',
         type: 'priest'
     },
-    priest_2: {
+    {
+        id: 'priest_1',
         name: 'Priest',
         type: 'priest'
     },
-    priest_3: {
+    {
+        id: 'priest_1',
         name: 'Priest',
         type: 'priest'
     },
-    monkey_1: {
+    {
+        id: 'monkey_1',
         name: 'Monkey',
         type: 'monkey'
     },
-    monkey_2: {
+    {
+        id: 'monkey_1',
         name: 'Monkey',
         type: 'monkey'
     },
-    gorilla: {
+    {
+        id: 'monkey_1',
         name: 'Gorilla',
         type: 'monkey'
     }
-};
+];
 
 export default characters;

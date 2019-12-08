@@ -1,10 +1,7 @@
 import games from 'games';
 import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
-import {
-    Game
-} from 'games/helpers';
 
-const game: Game = games.game1;
+const game = games.game1;
 
 describe('Game_1', () => {
     let result;

@@ -30,10 +30,10 @@ export type ICharactersMap<T> = T extends ICharacterBase<infer S> ? Record<S, T>
 export type ICharactersList<T> = T extends ICharacterBase<infer _S> ? T[] : never;
 
 // https://github.com/Microsoft/TypeScript/issues/5579
-export interface ICollocationState {
-    readonly left: string[];
-    readonly right: string[];
-    readonly boat: string[];
+export interface ICollocationState<T extends string> {
+    readonly left: T[];
+    readonly right: T[];
+    readonly boat: T[];
     readonly boatPosition: RIVERSIDE_LEFT_TYPE | RIVERSIDE_RIGHT_TYPE;
     readonly isBoatInvalid: boolean;
 }

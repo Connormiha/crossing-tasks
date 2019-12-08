@@ -3,17 +3,23 @@ import characters from './characters';
 import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
 
 import {
-    Game, landingValidator, depetureValidator
+    Game,
 } from 'games/helpers';
 
-const game: Game = {
-    title: 'Crossing 4',
-    description: '@todo',
-    rules: {
+const game = new Game(
+    characters,
+    {
+        [BOAT]: [],
+        [RIVERSIDE_LEFT]: characters.map(({id}) => id),
+        [RIVERSIDE_RIGHT]: []
+    },
+    'Crossing 4',
+    '@todo',
+    {
         beforeLanding: [
             {
                 description: 'The boat can accommodate only two persons',
-                check(collocation: any, characterId: string, moveTo: string): boolean {
+                check(collocation, characterId, moveTo): boolean {
                     return moveTo !== BOAT || collocation.boat.length < 2;
                 }
             }
@@ -21,13 +27,13 @@ const game: Game = {
         beforeDeparture: [
             {
                 description: 'The boat is empty',
-                check(collocation: any): boolean {
+                check(collocation): boolean {
                     return collocation.boat.length !== 0;
                 }
             },
             {
                 description: 'Driving the boat can only adult',
-                check(collocation: any): boolean {
+                check(collocation): boolean {
                     for (const character of collocation.boat) {
                         if (characters[character].adult) {
                             return true;
@@ -39,7 +45,7 @@ const game: Game = {
             },
             {
                 description: 'The criminal shoudn\'t stay with citizens in boat',
-                check(collocation: any): boolean {
+                check(collocation): boolean {
                     if (collocation.boat.length === 2 &&
                         !collocation.boat.includes('policeman') &&
                         collocation.boat.includes('criminal')
@@ -52,7 +58,7 @@ const game: Game = {
             },
             {
                 description: 'The criminal shoudn\'t stay with citizens in riverside',
-                check(collocation: any): boolean {
+                check(collocation): boolean {
                     for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
                         const side = collocation[item];
 
@@ -69,11 +75,11 @@ const game: Game = {
             },
             {
                 description: 'Boys shoudn\'t stay with mother in riverside or boat alone without father',
-                check(collocation: any): boolean {
+                check(collocation): boolean {
                     for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT]) {
                         let side = collocation[item];
 
-                        if (item !== collocation.boatPosition && collocation.boatPosition !== BOAT) {
+                        if (item !== collocation.boatPosition) {
                             side = side.concat(collocation[BOAT]);
                         }
 
@@ -90,11 +96,11 @@ const game: Game = {
             },
             {
                 description: 'Girls shoudn\'t stay with father in riverside or boat alone without mother',
-                check(collocation: any): boolean {
+                check(collocation): boolean {
                     for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT]) {
                         let side = collocation[item];
 
-                        if (item !== collocation.boatPosition && collocation.boatPosition !== BOAT) {
+                        if (item !== collocation.boatPosition) {
                             side = side.concat(collocation[BOAT]);
                         }
 
@@ -111,14 +117,6 @@ const game: Game = {
             }
         ]
     },
-    landingValidator,
-    depetureValidator,
-    characters,
-    collocation: {
-        [BOAT]: [],
-        [RIVERSIDE_LEFT]: Object.keys(characters),
-        [RIVERSIDE_RIGHT]: []
-    }
-};
+);
 
 export default game;

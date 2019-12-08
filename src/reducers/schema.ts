@@ -4,7 +4,7 @@ import {
 } from 'flux/types';
 
 export interface ISchema {
-    readonly collocation: ICollocationState;
+    readonly collocation: ICollocationState<string>;
     readonly message: IMessageState;
     readonly game: IGameState;
     readonly settings: ISettingsState;
