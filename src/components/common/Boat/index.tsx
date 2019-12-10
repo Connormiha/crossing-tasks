@@ -2,6 +2,7 @@ import style from './index.styl';
 
 import React from 'react';
 import Сharacter from 'components/common/Character';
+import {ICharacterBase} from 'flux/types';
 
 import {PositionCharacter} from 'games';
 
@@ -11,7 +12,7 @@ const b = bem(style);
 
 interface IProps extends React.Props<any> {
     items: string[];
-    characters: any;
+    characters: ICharacterBase<string>[];
     position: PositionCharacter;
     invalid: boolean;
     onMoveCharacter(id: string): void;
@@ -32,7 +33,12 @@ export default class Boat extends React.PureComponent<IProps> {
         return items.map((id: string) => {
             return (
                 <div className={b('character')} key={id}>
-                    <Сharacter name={characters[id].name} id={id} onClick={onMoveCharacter} packed />
+                    <Сharacter
+                        name={characters.find((item) => item.id === id)!.name}
+                        id={id}
+                        onClick={onMoveCharacter}
+                        packed
+                    />
                 </div>
             );
         });

@@ -1,15 +1,16 @@
 import games from 'games';
-import {
-    Game
-} from 'games/helpers';
 
-const game: Game = games.game3;
+const game = games.game3;
 
 describe('Game_3', () => {
     let result;
 
     it('shouldn\'t move empty boat', () => {
-        result = game.depetureValidator(game.collocation);
+        result = game.depetureValidator({
+            ...game.collocation,
+            isBoatInvalid: false,
+            boatPosition: 'left'
+        });
 
         expect(result.success).toBe(false);
     });

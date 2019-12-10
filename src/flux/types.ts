@@ -23,6 +23,7 @@ export interface ISettingsState {
 
 export interface ICharacterBase<T extends string> {
     id: T;
+    name: string;
 }
 
 export type ICharactersMap<T> = T extends ICharacterBase<infer S> ? Record<S, T> : never;
@@ -30,7 +31,7 @@ export type ICharactersMap<T> = T extends ICharacterBase<infer S> ? Record<S, T>
 export type ICharactersList<T> = T extends ICharacterBase<infer _S> ? T[] : never;
 
 // https://github.com/Microsoft/TypeScript/issues/5579
-export interface ICollocationState<T extends string> {
+export interface ICollocationState<T extends string = string> {
     readonly left: T[];
     readonly right: T[];
     readonly boat: T[];

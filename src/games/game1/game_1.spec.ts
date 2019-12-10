@@ -1,5 +1,9 @@
 import games from 'games';
-import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
+import {ICharacterIdGame1} from './types';
+import {
+    RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT,
+} from 'flux/types';
+import {getLeftRightCollocation} from 'helpers/tests';
 
 const game = games.game1;
 
@@ -7,17 +11,23 @@ describe('Game_1', () => {
     let result;
 
     it('shouldn\'t move empty boat', () => {
-        result = game.depetureValidator(game.collocation);
+        result = game.depetureValidator({
+            ...game.collocation,
+            isBoatInvalid: false,
+            boatPosition: 'left'
+        });
 
         expect(result.success).toBe(false);
     });
 
     it('shouldn\'t move boat without farmer', () => {
-        for (const item of ['sheep', 'coat', 'cabbage', 'wolf']) {
+        for (const item of ['sheep', 'coat', 'cabbage', 'wolf'] as ICharacterIdGame1[]) {
             result = game.depetureValidator({
                 [BOAT]: [item],
                 [RIVERSIDE_LEFT]: game.collocation[RIVERSIDE_LEFT].filter((name) => name !== item),
-                [RIVERSIDE_RIGHT]: []
+                [RIVERSIDE_RIGHT]: [],
+                isBoatInvalid: false,
+                boatPosition: 'left'
             });
 
             expect(result.success).toBe(false);
@@ -25,11 +35,12 @@ describe('Game_1', () => {
     });
 
     it('shouldn\'t leave sheep with wolf alone without farmer', () => {
-        for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
+        for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT] as any) {
             result = game.depetureValidator({
                 [BOAT]: ['farmer', 'cabbage'],
-                [item]: game.collocation[RIVERSIDE_LEFT].filter((name) => name !== 'farmer' && name !== 'cabbage'),
-                [item === RIVERSIDE_RIGHT ? RIVERSIDE_LEFT : RIVERSIDE_RIGHT]: []
+                ...getLeftRightCollocation(game, item, (name) => name !== 'farmer' && name !== 'cabbage'),
+                isBoatInvalid: false,
+                boatPosition: item
             });
 
             expect(result.success).toBe(false);
@@ -40,8 +51,9 @@ describe('Game_1', () => {
         for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
             result = game.depetureValidator({
                 [BOAT]: ['farmer', 'wolf'],
-                [item]: game.collocation[RIVERSIDE_LEFT].filter((name) => name !== 'farmer' && name !== 'wolf'),
-                [item === RIVERSIDE_RIGHT ? RIVERSIDE_LEFT : RIVERSIDE_RIGHT]: []
+                ...getLeftRightCollocation(game, item, (name) => name !== 'farmer' && name !== 'wolf'),
+                isBoatInvalid: false,
+                boatPosition: item
             });
 
             expect(result.success).toBe(false);
@@ -51,8 +63,10 @@ describe('Game_1', () => {
     it('shouldn\'t push on boat more, than 2 persons', () => {
         result = game.landingValidator({
             [BOAT]: ['farmer', 'wolf'],
-            [RIVERSIDE_LEFT]: game.collocation[RIVERSIDE_LEFT].filter((name) => name !== 'farmer' || name !== 'wolf'),
-            [RIVERSIDE_RIGHT]: []
+            [RIVERSIDE_LEFT]: game.collocation[RIVERSIDE_LEFT].filter((name) => name !== 'farmer' && name !== 'wolf'),
+            [RIVERSIDE_RIGHT]: [],
+            isBoatInvalid: false,
+            boatPosition: 'left'
         }, 'sheep');
 
         expect(result.success).toBe(false);
@@ -62,8 +76,9 @@ describe('Game_1', () => {
         for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
             result = game.depetureValidator({
                 [BOAT]: ['farmer', 'sheep'],
-                [item]: game.collocation[RIVERSIDE_LEFT].filter((name) => name !== 'farmer' || name !== 'sheep'),
-                [item === RIVERSIDE_RIGHT ? RIVERSIDE_LEFT : RIVERSIDE_RIGHT]: []
+                ...getLeftRightCollocation(game, item, (name) => name !== 'farmer' && name !== 'sheep'),
+                isBoatInvalid: false,
+                boatPosition: 'left'
             });
         }
 
@@ -74,7 +89,9 @@ describe('Game_1', () => {
         result = game.depetureValidator({
             [BOAT]: ['farmer', 'wolf'],
             [RIVERSIDE_LEFT]: ['sheep'],
-            [RIVERSIDE_RIGHT]: ['cabbage']
+            [RIVERSIDE_RIGHT]: ['cabbage'],
+            isBoatInvalid: false,
+            boatPosition: 'left'
         });
 
         expect(result.success).toBe(true);
@@ -84,7 +101,9 @@ describe('Game_1', () => {
         result = game.depetureValidator({
             [BOAT]: ['farmer', 'cabbage'],
             [RIVERSIDE_LEFT]: ['sheep'],
-            [RIVERSIDE_RIGHT]: ['wolf']
+            [RIVERSIDE_RIGHT]: ['wolf'],
+            isBoatInvalid: false,
+            boatPosition: 'left'
         });
 
         expect(result.success).toBe(true);

@@ -4,12 +4,11 @@ import Boat from 'components/common/boat';
 
 import noop from 'lodash/noop';
 
-/* tslint:disable:jsx-wrap-multiline */
 describe('<Boat />', () => {
     it('should render', () => {
         const tree = renderer.create(<Boat
             items={[]}
-            characters={{}}
+            characters={[]}
             position="left"
             onMoveEnd={noop}
             onMoveCharacter={noop}
@@ -22,7 +21,7 @@ describe('<Boat />', () => {
 
     it('should render items', () => {
         const items = ['0', '1'],
-            characters = {0: {name: 'sheep'}, 1: {name: 'farmer'}},
+            characters = [{id: '1', name: 'sheep'}, {id: '2', name: 'farmer'}],
             tree = renderer.create(
                 <Boat
                     items={items}

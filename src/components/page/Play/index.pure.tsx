@@ -24,13 +24,13 @@ const b = bem(style);
 
 interface IProps extends React.Props<any> {
     game: IGameState;
-    collocation: ICollocationState;
+    collocation: ICollocationState<string>;
     message: IMessageState;
     settings: ISettingsState;
     match: {params: any};
-    onMoveCharacter(collocation: ICollocationState, gameId: string, id: string): void;
-    onMoveBoat(collocation: ICollocationState, gameId: string): void;
-    onBoatMoveEnd(collocation: ICollocationState): void;
+    onMoveCharacter(collocation: ICollocationState<string>, gameId: string, id: string): void;
+    onMoveBoat(collocation: ICollocationState<string>, gameId: string): void;
+    onBoatMoveEnd(collocation: ICollocationState<string>): void;
     onFinishGame(): void;
     onStartGame(id: string): void;
     onChangeVolume(volume: number): void;
@@ -44,7 +44,7 @@ export default class PagePlayPure extends React.Component<IProps> {
         this.props.onStartGame(this.props.match.params.id);
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(): void {
         const {game: {finished}, collocation, onFinishGame} = this.props;
 
         if (!finished && collocation[BOAT].length === 0 && collocation[RIVERSIDE_LEFT].length === 0) {
@@ -58,19 +58,19 @@ export default class PagePlayPure extends React.Component<IProps> {
         onMoveCharacter(collocation, game.currentGame, id);
     }
 
-    handleMoveBoat() {
+    handleMoveBoat(): void {
         const {collocation, game, onMoveBoat} = this.props;
 
         onMoveBoat(collocation, game.currentGame);
     }
 
-    handleMoveBoatEnd() {
+    handleMoveBoatEnd(): void {
         const {collocation, onBoatMoveEnd} = this.props;
 
         onBoatMoveEnd(collocation);
     }
 
-    handleShakeEnd() {
+    handleShakeEnd(): void {
         this.props.onToggleInvalidBoat(false);
     }
 

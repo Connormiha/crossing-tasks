@@ -30,10 +30,10 @@ export const toggleBoatInvalid = (isBoatInvalid: boolean) =>
 export const init = (collocation: any) =>
     ({type: COLLOCATION_INIT, collocation});
 
-const getDefaultState = (): ICollocationState =>
+const getDefaultState = (): ICollocationState<string> =>
     schema.collocation;
 
-export default (state: ICollocationState = getDefaultState(), {type, collocation, isBoatInvalid, id}): ICollocationState => {
+export default (state: ICollocationState<string> = getDefaultState(), {type, collocation, isBoatInvalid, id}): ICollocationState => {
     switch (type) {
         case COLLOCATION_MOVE_CHARACTER:
             for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT]) {

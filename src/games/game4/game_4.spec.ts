@@ -1,23 +1,26 @@
 import games from 'games';
-import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
+import {ICharacterIdGame4} from './types';
 import {
-    Game
-} from 'games/helpers';
+    RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT,
+} from 'flux/types';
 
-const game: Game = games.game4;
+const game = games.game4;
 
 describe('Game_4', () => {
-    let result,
-        boat: string[];
+    let result;
 
     it('shouldn\'t move empty boat', () => {
-        result = game.depetureValidator(game.collocation);
+        result = game.depetureValidator({
+            ...game.collocation,
+            isBoatInvalid: false,
+            boatPosition: 'left'
+        });
 
         expect(result.success).toBe(false);
     });
 
     it('should move boat only with adult', () => {
-        for (const item of Object.keys(game.characters)) {
+        for (const item of game.characters.map(({id}) => id) as ICharacterIdGame4[]) {
             if (item === 'policeman') {
                 continue;
             }
@@ -25,7 +28,9 @@ describe('Game_4', () => {
             result = game.depetureValidator({
                 [BOAT]: [item],
                 [RIVERSIDE_LEFT]: game.collocation[RIVERSIDE_LEFT].filter((_item) => _item !== item),
-                [RIVERSIDE_RIGHT]: []
+                [RIVERSIDE_RIGHT]: [],
+                isBoatInvalid: false,
+                boatPosition: 'left'
             });
 
             expect(result.success).toBe(game.characters[item].adult);
@@ -33,12 +38,12 @@ describe('Game_4', () => {
     });
 
     it('shouldn\'t criminal stay with citizens without policeman', () => {
-        boat = ['policeman'];
-
         result = game.depetureValidator({
-            [BOAT]: boat,
+            [BOAT]: ['policeman'],
             [RIVERSIDE_LEFT]: game.collocation[RIVERSIDE_LEFT].filter((_item) => _item !== 'policeman'),
-            [RIVERSIDE_RIGHT]: []
+            [RIVERSIDE_RIGHT]: [],
+            isBoatInvalid: false,
+            boatPosition: 'left'
         });
 
         expect(result.success).toBe(false);
