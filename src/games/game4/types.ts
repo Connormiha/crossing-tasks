@@ -4,6 +4,6 @@ export type ICharacterIdGame4 = 'men_black' | 'boy_red' | 'boy_yellow' | 'woman_
 export interface ICharacterGame4 extends ICharacterBase<ICharacterIdGame4> {
     name: string;
     adult: boolean;
-};
+}
 
 export type ICharactersListGame3 = ICharactersList<ICharacterGame4>;

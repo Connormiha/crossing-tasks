@@ -12,7 +12,7 @@ export const COLLOCATIONS_LIST: PositionCharacter[] = [RIVERSIDE_LEFT, RIVERSIDE
 export type ValidatorResult = {
     success: false;
     message?: string;
-    meta?: any;
+    meta?: Record<string, string | number>;
 } | {
     success: true;
 }
@@ -20,6 +20,16 @@ export type ValidatorResult = {
 export type ICollocation<T extends string> = Record<PositionCharacter, T[]>;
 
 type ICharacterID<T> = T extends ICharacterBase<infer S> ? S : never;
+
+const getCharacterDirection = <T extends string>(collocation: ICollocationState<T>, characterId: T): PositionCharacter => {
+    for (const item of COLLOCATIONS_LIST) {
+        if (collocation[item].includes(characterId)) {
+            return item === BOAT ? collocation.boatPosition : BOAT;
+        }
+    }
+
+    throw Error('Missed character');
+};
 
 export class Game<T extends ICharacterBase<S>, S extends string = ICharacterID<T>> {
     constructor(
@@ -37,7 +47,7 @@ export class Game<T extends ICharacterBase<S>, S extends string = ICharacterID<T
                 check(collocation: ICollocationState<S>): boolean;
             }>;
         }
-    ) {};
+    ) {}
 
     landingValidator(collocation: ICollocationState<S>, characterId: S): ValidatorResult {
         const moveTo = getCharacterDirection(collocation, characterId);
@@ -71,14 +81,3 @@ export class Game<T extends ICharacterBase<S>, S extends string = ICharacterID<T
         };
     }
 }
-
-const getCharacterDirection = <T extends string>(collocation: ICollocationState<T>, characterId: T): PositionCharacter => {
-    for (const item of COLLOCATIONS_LIST) {
-        if (collocation[item].includes(characterId)) {
-            return item === BOAT ? collocation.boatPosition : BOAT;
-        }
-    }
-
-    throw Error('Missed character');
-};
-

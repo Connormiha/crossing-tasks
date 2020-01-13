@@ -1,4 +1,5 @@
 import characters from './characters';
+import {ICharacterIdGame6} from './types';
 
 import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
 
@@ -62,12 +63,12 @@ const game = new Game(
                 description: 'A woman can not be with a men without a husband or other woman in riverside',
                 check(collocation): boolean {
                     for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
-                        let side: string[] = collocation[item],
-                            mens: string[] = [],
-                            women: string[] = [];
+                        let side: ICharacterIdGame6[] = collocation[item],
+                            mens: ICharacterIdGame6[] = [],
+                            women: ICharacterIdGame6[] = [];
 
                         if (item !== collocation.boatPosition) {
-                            side = side.concat(collocation[BOAT]);
+                            side.push(...collocation[BOAT]);
                         }
 
                         for (const character of side) {

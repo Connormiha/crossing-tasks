@@ -1,10 +1,34 @@
 import characters from './characters';
 
 import {RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT} from 'flux/types';
+import {ICharacterIdGame3, ICharacterFamily} from './types';
 
 import {
     Game,
 } from 'games/helpers';
+
+const isWomanWithOtherMenWithuotHasband = (side: ICharacterIdGame3[]): boolean => {
+    const mens: ICharacterFamily[] = [];
+    const women: ICharacterFamily[] = [];
+
+    for (const character of side) {
+        if (characters[character].sex === 'female') {
+            women.push(characters[character].family);
+        } else {
+            mens.push(characters[character].family);
+        }
+    }
+
+    if (mens.length) {
+        for (const woman of women) {
+            if (!mens.includes(woman)) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+};
 
 export default new Game(
     characters,
@@ -34,56 +58,22 @@ export default new Game(
             {
                 description: 'A woman can not be with a man without a husband in boat',
                 check(collocation): boolean {
-                    const side = collocation[BOAT],
-                        mens: string[] = [],
-                        women: string[] = [];
-
-                    for (const character of side) {
-                        if (characters[character].sex === 'female') {
-                            women.push(characters[character].family);
-                        } else {
-                            mens.push(characters[character].family);
-                        }
-                    }
-
-                    if (mens.length) {
-                        for (const woman of women) {
-                            if (!mens.includes(woman)) {
-                                return false;
-                            }
-                        }
-                    }
-
-                    return true;
+                    return isWomanWithOtherMenWithuotHasband(collocation[BOAT]);
                 }
             },
 
             {
                 description: 'A woman can not be with a man without a husband in riverside',
-                check(collocation: any): boolean {
+                check(collocation): boolean {
                     for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
-                        let side: string[] = collocation[item],
-                            mens: string[] = [],
-                            women: string[] = [];
+                        const side: ICharacterIdGame3[] = collocation[item];
 
                         if (item !== collocation.boatPosition) {
-                            side = side.concat(collocation[BOAT]);
+                            side.push(...collocation[BOAT]);
                         }
 
-                        for (const character of side) {
-                            if (characters[character].sex === 'female') {
-                                women.push(characters[character].family);
-                            } else {
-                                mens.push(characters[character].family);
-                            }
-                        }
-
-                        if (mens.length) {
-                            for (const woman of women) {
-                                if (!mens.includes(woman)) {
-                                    return false;
-                                }
-                            }
+                        if (!isWomanWithOtherMenWithuotHasband(side)) {
+                            return false;
                         }
                     }
 
