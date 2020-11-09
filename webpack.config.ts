@@ -2,7 +2,6 @@ import webpack from 'webpack';
 import {Configuration as WebpackDevServerConfiguration} from 'webpack-dev-server';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
-import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import CssoWebpackPlugin from 'csso-webpack-plugin';
 import autoprefixer from 'autoprefixer';
@@ -187,10 +186,8 @@ const webpackConfig: Configuration = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             inject: 'head',
-            minify: CONFIG.minifyHTML
-        }),
-        new ScriptExtHtmlWebpackPlugin({
-            defaultAttribute: 'defer'
+            minify: CONFIG.minifyHTML,
+            scriptLoading: 'defer',
         }),
         new webpack.DefinePlugin({
             'process.env': {
