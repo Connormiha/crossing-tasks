@@ -1,4 +1,4 @@
-module.exports = function (chromy, scenario, vp) {
+module.exports = function(chromy, scenario, vp) {
   require('./loadCookies')(chromy, scenario);
 
   // IGNORE ANY CERT WARNINGS

@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-module.exports = function (chromy, scenario) {
+module.exports = function(chromy, scenario) {
   var cookies = [];
   var cookiePath = scenario.cookiePath;
 
@@ -10,7 +10,7 @@ module.exports = function (chromy, scenario) {
   }
 
   // MUNGE COOKIE DOMAIN FOR CHROMY USAGE
-  cookies = cookies.map(cookie => {
+  cookies = cookies.map((cookie) => {
     cookie.url = 'https://' + cookie.domain;
     delete cookie.domain;
     return cookie;

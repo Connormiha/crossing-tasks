@@ -1,7 +1,7 @@
 import React from 'react';
 import * as renderer from 'react-test-renderer';
-import {createAppStore} from 'store';
-import {Provider} from 'react-redux';
+import { createAppStore } from 'store';
+import { Provider } from 'react-redux';
 import routes from 'router/routes';
 import games from 'games';
 
@@ -10,60 +10,48 @@ import * as gameActions from 'flux/game';
 
 /* tslint:disable:jsx-wrap-multiline */
 describe('Route', () => {
-    const originalHref = location.href;
-    const originalTitle = document.title;
-    let store;
+  const originalHref = location.href;
+  const originalTitle = document.title;
+  let store;
 
-    beforeEach(() => {
-        store = createAppStore();
-        store.dispatch(gameActions.init(Object.keys(games)));
+  beforeEach(() => {
+    store = createAppStore();
+    store.dispatch(gameActions.init(Object.keys(games)));
+  });
+
+  afterAll(() => {
+    history.replaceState({}, originalTitle, originalHref);
+  });
+
+  describe('<EntryPage />', () => {
+    it('should render', () => {
+      history.replaceState({}, originalTitle, '/');
+
+      const tree = renderer.create(<Provider store={store}>{routes}</Provider>).toJSON();
+
+      expect(tree).toMatchSnapshot();
     });
+  });
 
-    afterAll(() => {
-        history.replaceState({}, originalTitle, originalHref);
+  describe('<PlayPage />', () => {
+    for (let i = 1; i < 7; i++) {
+      it(`should render game_${i}`, () => {
+        history.replaceState({}, originalTitle, `/play/game_${i}/`);
+
+        const tree = renderer.create(<Provider store={store}>{routes}</Provider>).toJSON();
+
+        expect(tree).toMatchSnapshot();
+      });
+    }
+  });
+
+  describe('<NotFoundPage />', () => {
+    it(`should render /foo`, () => {
+      history.replaceState({}, originalTitle, '/foo');
+
+      const tree = renderer.create(<Provider store={store}>{routes}</Provider>).toJSON();
+
+      expect(tree).toMatchSnapshot();
     });
-
-    describe('<EntryPage />', () => {
-        it('should render', () => {
-            history.replaceState({}, originalTitle, '/');
-
-            const tree = renderer.create(
-                <Provider store={store}>
-                    {routes}
-                </Provider>
-            ).toJSON();
-
-            expect(tree).toMatchSnapshot();
-        });
-    });
-
-    describe('<PlayPage />', () => {
-        for (let i = 1; i < 7; i++) {
-            it(`should render game_${i}`, () => {
-                history.replaceState({}, originalTitle, `/play/game_${i}/`);
-
-                const tree = renderer.create(
-                    <Provider store={store}>
-                        {routes}
-                    </Provider>
-                ).toJSON();
-
-                expect(tree).toMatchSnapshot();
-            });
-        }
-    });
-
-    describe('<NotFoundPage />', () => {
-        it(`should render /foo`, () => {
-            history.replaceState({}, originalTitle, '/foo');
-
-            const tree = renderer.create(
-                <Provider store={store}>
-                    {routes}
-                </Provider>
-            ).toJSON();
-
-            expect(tree).toMatchSnapshot();
-        });
-    });
+  });
 });

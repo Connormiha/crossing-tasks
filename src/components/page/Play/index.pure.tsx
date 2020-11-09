@@ -9,13 +9,18 @@ import Remote from 'components/common/remote';
 import Warning from 'components/common/warning';
 import Sound from 'components/common/sound';
 
-import {bindMethods} from 'helpers';
+import { bindMethods } from 'helpers';
 import noop from 'lodash/noop';
 
 import games from 'games';
 import {
-    RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT,
-    IGameState, IMessageState, ISettingsState, ICollocationState,
+  RIVERSIDE_LEFT,
+  RIVERSIDE_RIGHT,
+  BOAT,
+  IGameState,
+  IMessageState,
+  ISettingsState,
+  ICollocationState,
 } from 'flux/types';
 
 import bem from 'bem-css-modules';
@@ -23,109 +28,118 @@ import bem from 'bem-css-modules';
 const b = bem(style);
 
 interface IProps extends React.Props<any> {
-    game: IGameState;
-    collocation: ICollocationState<string>;
-    message: IMessageState;
-    settings: ISettingsState;
-    match: {params: any};
-    onMoveCharacter(collocation: ICollocationState<string>, gameId: string, id: string): void;
-    onMoveBoat(collocation: ICollocationState<string>, gameId: string): void;
-    onBoatMoveEnd(collocation: ICollocationState<string>): void;
-    onFinishGame(): void;
-    onStartGame(id: string): void;
-    onChangeVolume(volume: number): void;
-    onToggleInvalidBoat(isBoatInvalid: boolean): void;
+  game: IGameState;
+  collocation: ICollocationState<string>;
+  message: IMessageState;
+  settings: ISettingsState;
+  match: { params: any };
+  onMoveCharacter(collocation: ICollocationState<string>, gameId: string, id: string): void;
+  onMoveBoat(collocation: ICollocationState<string>, gameId: string): void;
+  onBoatMoveEnd(collocation: ICollocationState<string>): void;
+  onFinishGame(): void;
+  onStartGame(id: string): void;
+  onChangeVolume(volume: number): void;
+  onToggleInvalidBoat(isBoatInvalid: boolean): void;
 }
 
 export default class PagePlayPure extends React.Component<IProps> {
-    constructor(props) {
-        super(props);
-        bindMethods(this, ['handleMoveCharacter', 'handleMoveBoat', 'handleMoveBoatEnd', 'handleShakeEnd']);
-        this.props.onStartGame(this.props.match.params.id);
+  constructor(props) {
+    super(props);
+    bindMethods(this, [
+      'handleMoveCharacter',
+      'handleMoveBoat',
+      'handleMoveBoatEnd',
+      'handleShakeEnd',
+    ]);
+    this.props.onStartGame(this.props.match.params.id);
+  }
+
+  componentDidUpdate(): void {
+    const {
+      game: { finished },
+      collocation,
+      onFinishGame,
+    } = this.props;
+
+    if (!finished && collocation[BOAT].length === 0 && collocation[RIVERSIDE_LEFT].length === 0) {
+      onFinishGame();
     }
+  }
 
-    componentDidUpdate(): void {
-        const {game: {finished}, collocation, onFinishGame} = this.props;
+  handleMoveCharacter(id: string): void {
+    const { collocation, game, onMoveCharacter } = this.props;
 
-        if (!finished && collocation[BOAT].length === 0 && collocation[RIVERSIDE_LEFT].length === 0) {
-            onFinishGame();
-        }
-    }
+    onMoveCharacter(collocation, game.currentGame, id);
+  }
 
-    handleMoveCharacter(id: string): void {
-        const {collocation, game, onMoveCharacter} = this.props;
+  handleMoveBoat(): void {
+    const { collocation, game, onMoveBoat } = this.props;
 
-        onMoveCharacter(collocation, game.currentGame, id);
-    }
+    onMoveBoat(collocation, game.currentGame);
+  }
 
-    handleMoveBoat(): void {
-        const {collocation, game, onMoveBoat} = this.props;
+  handleMoveBoatEnd(): void {
+    const { collocation, onBoatMoveEnd } = this.props;
 
-        onMoveBoat(collocation, game.currentGame);
-    }
+    onBoatMoveEnd(collocation);
+  }
 
-    handleMoveBoatEnd(): void {
-        const {collocation, onBoatMoveEnd} = this.props;
+  handleShakeEnd(): void {
+    this.props.onToggleInvalidBoat(false);
+  }
 
-        onBoatMoveEnd(collocation);
-    }
+  renderFinished(): React.ReactElement<any> {
+    return (
+      <div className={b('finish')}>
+        <div>Finished!</div>
+      </div>
+    );
+  }
 
-    handleShakeEnd(): void {
-        this.props.onToggleInvalidBoat(false);
-    }
+  render() {
+    let { collocation, message, game, settings, onChangeVolume } = this.props,
+      characters = games[game.currentGame].characters;
 
-    renderFinished(): React.ReactElement<any> {
-        return (
-            <div className={b('finish')}>
-                <div>Finished!</div>
-            </div>
-        );
-    }
-
-    render() {
-        let {collocation, message, game, settings, onChangeVolume} = this.props,
-            characters = games[game.currentGame].characters;
-
-        return (
-            <div className={b()}>
-                <div className={b('content')}>
-                    <Riverside
-                        items={collocation[RIVERSIDE_LEFT]}
-                        characters={characters}
-                        side={RIVERSIDE_LEFT}
-                        onMoveCharacter={collocation.boatPosition === RIVERSIDE_LEFT ? this.handleMoveCharacter : noop}
-                    />
-                    <Riverside
-                        items={collocation[RIVERSIDE_RIGHT]}
-                        characters={characters}
-                        side={RIVERSIDE_RIGHT}
-                        onMoveCharacter={collocation.boatPosition === RIVERSIDE_RIGHT ? this.handleMoveCharacter : noop}
-                    />
-                    <Boat
-                        items={collocation.boat}
-                        position={collocation.boatPosition}
-                        invalid={collocation.isBoatInvalid}
-                        characters={characters}
-                        onMoveCharacter={this.handleMoveCharacter}
-                        onMoveEnd={this.handleMoveBoatEnd}
-                        onShakeEnd={this.handleShakeEnd}
-                    />
-                    <Remote onClick={this.handleMoveBoat} disabled={!collocation.boat.length} />
-                    <Settings settings={settings} onChangeVolume={onChangeVolume} />
-                    <Sound
-                        boatPosition={collocation.boatPosition}
-                        boatItemsLength={collocation.boat.length}
-                        volume={settings.volume}
-                        isInvalid={collocation.isBoatInvalid}
-                    />
-                    {message.content &&
-                        <Warning>{message.content}</Warning>
-                    }
-                    {game.finished &&
-                        this.renderFinished()
-                    }
-                </div>
-            </div>
-        );
-    }
+    return (
+      <div className={b()}>
+        <div className={b('content')}>
+          <Riverside
+            items={collocation[RIVERSIDE_LEFT]}
+            characters={characters}
+            side={RIVERSIDE_LEFT}
+            onMoveCharacter={
+              collocation.boatPosition === RIVERSIDE_LEFT ? this.handleMoveCharacter : noop
+            }
+          />
+          <Riverside
+            items={collocation[RIVERSIDE_RIGHT]}
+            characters={characters}
+            side={RIVERSIDE_RIGHT}
+            onMoveCharacter={
+              collocation.boatPosition === RIVERSIDE_RIGHT ? this.handleMoveCharacter : noop
+            }
+          />
+          <Boat
+            items={collocation.boat}
+            position={collocation.boatPosition}
+            invalid={collocation.isBoatInvalid}
+            characters={characters}
+            onMoveCharacter={this.handleMoveCharacter}
+            onMoveEnd={this.handleMoveBoatEnd}
+            onShakeEnd={this.handleShakeEnd}
+          />
+          <Remote onClick={this.handleMoveBoat} disabled={!collocation.boat.length} />
+          <Settings settings={settings} onChangeVolume={onChangeVolume} />
+          <Sound
+            boatPosition={collocation.boatPosition}
+            boatItemsLength={collocation.boat.length}
+            volume={settings.volume}
+            isInvalid={collocation.isBoatInvalid}
+          />
+          {message.content && <Warning>{message.content}</Warning>}
+          {game.finished && this.renderFinished()}
+        </div>
+      </div>
+    );
+  }
 }

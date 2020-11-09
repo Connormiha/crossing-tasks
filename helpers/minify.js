@@ -8,35 +8,45 @@ const nameMap = new Map();
 nameMap.set('createElement', '_');
 
 function getShortName(i) {
-    return i.toString(36).replace(/\d/, str => String.fromCharCode(65 + parseInt(str, 10)));
+  return i.toString(36).replace(/\d/, (str) => String.fromCharCode(65 + parseInt(str, 10)));
 }
 
 function minify(content) {
-    const uniqNames = [...new Set(content.match(/_?\b(:?render|handle)(:?[A-Z])\w+|\bcreateElement\b|\bcomponentDidMount\b/g))]
-        .filter(str => !skipNames.has(str))
-        .sort((a, b) => b.length - a.length)
-        .map(str => new RegExp(`\\b${str}\\b`, 'g'));
+  const uniqNames = [
+    ...new Set(
+      content.match(/_?\b(:?render|handle)(:?[A-Z])\w+|\bcreateElement\b|\bcomponentDidMount\b/g),
+    ),
+  ]
+    .filter((str) => !skipNames.has(str))
+    .sort((a, b) => b.length - a.length)
+    .map((str) => new RegExp(`\\b${str}\\b`, 'g'));
 
-    return uniqNames.reduce((acc, regExp) => acc.replace(regExp, (str) => {
+  return uniqNames.reduce(
+    (acc, regExp) =>
+      acc.replace(regExp, (str) => {
         if (!nameMap.has(str)) {
-            let name = getShortName(i);
-            if (skipShortNames.has(name)) {
-                i += 1;
-                name = getShortName(i);
-            }
-            nameMap.set(str, name);
+          let name = getShortName(i);
+          if (skipShortNames.has(name)) {
             i += 1;
+            name = getShortName(i);
+          }
+          nameMap.set(str, name);
+          i += 1;
         }
 
         return nameMap.get(str);
-    }), content);
+      }),
+    content,
+  );
 }
 
 fs.readdir(path.resolve(__dirname, '../build/static'), (err, files) => {
-    files.filter((filename) => filename.endsWith('.js')).forEach((filename) => {
-        const filePath = path.resolve(__dirname, '../build/static', filename);
-        fs.readFile(filePath, 'utf-8', (err, file) => {
-            fs.writeFileSync(filePath, minify(file));
-        });
+  files
+    .filter((filename) => filename.endsWith('.js'))
+    .forEach((filename) => {
+      const filePath = path.resolve(__dirname, '../build/static', filename);
+      fs.readFile(filePath, 'utf-8', (err, file) => {
+        fs.writeFileSync(filePath, minify(file));
+      });
     });
 });

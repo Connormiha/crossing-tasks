@@ -3,11 +3,9 @@ import * as renderer from 'react-test-renderer';
 import Warning from 'components/common/warning';
 
 describe('<Warning />', () => {
-    it('should render', () => {
-        const tree = renderer.create(
-            <Warning>Foo</Warning>
-        ).toJSON();
+  it('should render', () => {
+    const tree = renderer.create(<Warning>Foo</Warning>).toJSON();
 
-        expect(tree).toMatchSnapshot();
-    });
+    expect(tree).toMatchSnapshot();
+  });
 });

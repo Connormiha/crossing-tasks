@@ -7,23 +7,23 @@ export const RIVERSIDE_RIGHT: RIVERSIDE_RIGHT_TYPE = 'right';
 export const BOAT: BOAT_TYPE = 'boat';
 
 export interface IMessageState {
-    readonly content: string;
-    readonly hidden: boolean;
+  readonly content: string;
+  readonly hidden: boolean;
 }
 
 export interface IGameState {
-    readonly currentGame: string;
-    readonly finished: boolean;
-    readonly list: string[];
+  readonly currentGame: string;
+  readonly finished: boolean;
+  readonly list: string[];
 }
 
 export interface ISettingsState {
-    readonly volume: number;
+  readonly volume: number;
 }
 
 export interface ICharacterBase<T extends string> {
-    id: T;
-    name: string;
+  id: T;
+  name: string;
 }
 
 export type ICharactersMap<T> = T extends ICharacterBase<infer S> ? Record<S, T> : never;
@@ -32,9 +32,9 @@ export type ICharactersList<T> = T extends ICharacterBase<infer _S> ? T[] : neve
 
 // https://github.com/Microsoft/TypeScript/issues/5579
 export interface ICollocationState<T extends string = string> {
-    readonly left: T[];
-    readonly right: T[];
-    readonly boat: T[];
-    readonly boatPosition: RIVERSIDE_LEFT_TYPE | RIVERSIDE_RIGHT_TYPE;
-    readonly isBoatInvalid: boolean;
+  readonly left: T[];
+  readonly right: T[];
+  readonly boat: T[];
+  readonly boatPosition: RIVERSIDE_LEFT_TYPE | RIVERSIDE_RIGHT_TYPE;
+  readonly isBoatInvalid: boolean;
 }
