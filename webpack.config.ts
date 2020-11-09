@@ -13,9 +13,11 @@ const isProduction = NODE_ENV === 'production';
 const nodePath = path.join(__dirname, './node_modules');
 const sourcePath = path.join(__dirname, './src/');
 
+const PORT = process.env.PORT || 8080;
+
 interface Configuration extends webpack.Configuration {
     devServer?: WebpackDevServerConfiguration;
-  }
+}
 
 const CONFIG = {
     production: {
@@ -203,7 +205,7 @@ const webpackConfig: Configuration = {
     ] as any,
     devServer: {
         host: 'localhost',
-        port: 8080,
+        port: Number(PORT),
         historyApiFallback: true,
         // It suppress error shown in console, so it has to be set to false.
         quiet: false,
