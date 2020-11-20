@@ -133,22 +133,6 @@ const webpackConfig: Configuration = {
         loader: 'ts-loader',
       },
       {
-        test: /\.jsx?$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            babelrc: false,
-            cacheDirectory: true,
-            plugins: [
-              '@babel/plugin-syntax-jsx',
-              '@babel/plugin-transform-flow-strip-types',
-              '@babel/plugin-transform-react-jsx',
-              'babel-plugin-transform-react-remove-prop-types',
-            ],
-          },
-        },
-      },
-      {
         test: /\.css$/,
         use: cssLoaders,
       },
