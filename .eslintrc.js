@@ -16,7 +16,6 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
-    'plugin:sonarjs/recommended',
   ],
   plugins: ['jest'],
   rules: {
@@ -27,7 +26,6 @@ module.exports = {
         prefixWithI: 'always',
       },
     ],
-    'sonarjs/cognitive-complexity': ['error', 40],
     'react/display-name': 'off',
     'react/prop-types': 'off',
   },
