@@ -21,7 +21,6 @@ interface Configuration extends webpack.Configuration {
 const CONFIG = {
   production: {
     localIdentName: '[hash:base64:5]',
-    watch: false,
     FOLDER: `${__dirname}/build`,
     minifyHTML: {
       removeComments: true,
@@ -36,7 +35,6 @@ const CONFIG = {
   },
   development: {
     localIdentName: '[local]',
-    watch: true,
     FOLDER: `${__dirname}/deploy`,
     minifyHTML: {
       removeScriptTypeAttributes: true,
@@ -45,9 +43,9 @@ const CONFIG = {
     },
     alias: {},
   },
-}[NODE_ENV];
+}[NODE_ENV as ('development' | 'production')];
 
-let cssLoaders = [
+const cssLoaders = [
   MiniCssExtractPlugin.loader,
   {
     loader: 'css-loader',
@@ -65,7 +63,7 @@ let cssLoaders = [
   },
 ];
 
-let stylusLoaders = cssLoaders.concat('stylus-loader');
+const stylusLoaders = cssLoaders.concat('stylus-loader');
 
 const webpackConfig: Configuration = {
   entry: {
@@ -79,9 +77,9 @@ const webpackConfig: Configuration = {
     minimizer: [
       new TerserPlugin({
         parallel: false,
-        sourceMap: false,
         terserOptions: {
-          ecma: 8,
+          sourceMap: false,
+          ecma: 2019,
           toplevel: true,
           output: {
             comments: false,
@@ -114,15 +112,10 @@ const webpackConfig: Configuration = {
     enforceExtension: false,
     alias: CONFIG.alias,
   },
-  watch: CONFIG.watch,
   node: {
-    console: false,
     global: true,
-    process: false,
     __filename: false,
     __dirname: false,
-    Buffer: false,
-    setImmediate: false,
   },
   module: {
     // noParse: [/\.min\.js$/],
