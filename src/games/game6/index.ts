@@ -38,10 +38,11 @@ const game = new Game(
             women: string[] = [];
 
           for (const character of side) {
-            if (characters[character].sex === 'female') {
-              women.push(characters[character].family);
+            const item = characters.find(({id}) => id === character)!;
+            if (item.sex === 'female') {
+              women.push(item.family);
             } else {
-              mens.push(characters[character].family);
+              mens.push(item.family);
             }
           }
 
@@ -61,19 +62,21 @@ const game = new Game(
         description: 'A woman can not be with a men without a husband or other woman in riverside',
         check(collocation): boolean {
           for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
-            let side: ICharacterIdGame6[] = collocation[item],
-              mens: ICharacterIdGame6[] = [],
-              women: ICharacterIdGame6[] = [];
+            const side: ICharacterIdGame6[] = collocation[item];
+            const mens: ICharacterIdGame6[] = [];
+            const women: ICharacterIdGame6[] = [];
 
             if (item !== collocation.boatPosition) {
               side.push(...collocation[BOAT]);
             }
 
             for (const character of side) {
-              if (characters[character].sex === 'female') {
-                women.push(characters[character].family);
+              const item = characters.find(({id}) => id === character)!;
+
+              if (item.sex === 'female') {
+                women.push(item.id);
               } else {
-                mens.push(characters[character].family);
+                mens.push(item.id);
               }
             }
 

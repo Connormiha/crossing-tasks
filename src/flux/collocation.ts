@@ -1,5 +1,4 @@
 import schema from 'reducers/schema';
-import immutable from 'immutability-helper';
 import { RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT, ICollocationState } from 'flux/types';
 
 import {
@@ -36,41 +35,49 @@ const getDefaultState = (): ICollocationState<string> => schema.collocation;
 
 export default (
   state: ICollocationState<string> = getDefaultState(),
-  { type, collocation, isBoatInvalid, id },
+  action,
 ): ICollocationState => {
+  const { type, collocation, isBoatInvalid, id } = action;
   switch (type) {
-    case COLLOCATION_MOVE_CHARACTER:
+    case COLLOCATION_MOVE_CHARACTER: {
       for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT, BOAT]) {
         const index: number = state[item].indexOf(id);
 
         if (index !== -1) {
           const moveTo = item === BOAT ? state.boatPosition : BOAT;
 
-          return immutable(state, {
-            [item]: {
-              $set: [...state[item].slice(0, index), ...state[item].slice(index + 1)],
-            },
-            [moveTo]: {
-              $set: state[moveTo].concat(id),
-            },
-          });
+          return {
+            ...state,
+            [item]: Object.freeze([...state[item].slice(0, index), ...state[item].slice(index + 1)]),
+            [moveTo]: Object.freeze(state[moveTo].concat(id)),
+          };
         }
       }
 
       return state;
+    }
 
-    case COLLOCATION_MOVE_BOAT:
-      return immutable(state, {
-        boatPosition: {
-          $set: state.boatPosition === RIVERSIDE_LEFT ? RIVERSIDE_RIGHT : RIVERSIDE_LEFT,
-        },
-      });
+    case COLLOCATION_MOVE_BOAT: {
+      return {
+        ...state,
+        boatPosition: state.boatPosition === RIVERSIDE_LEFT ? RIVERSIDE_RIGHT : RIVERSIDE_LEFT
+      };
+    }
 
-    case COLLOCATION_TOGGLE_BOAT_INVALID:
-      return immutable(state, { isBoatInvalid: { $set: isBoatInvalid } });
+    case COLLOCATION_TOGGLE_BOAT_INVALID: {
+      return {
+        ...state,
+        isBoatInvalid,
+      };
+    }
 
-    case COLLOCATION_INIT:
-      return immutable(state, { $merge: { ...collocation, boatPosition: RIVERSIDE_LEFT } });
+    case COLLOCATION_INIT: {
+      return {
+        ...state,
+        ...collocation,
+        boatPosition: RIVERSIDE_LEFT,
+      };
+    }
   }
 
   return state;

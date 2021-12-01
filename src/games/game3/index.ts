@@ -10,10 +10,12 @@ const isWomanWithOtherMenWithuotHasband = (side: ICharacterIdGame3[]): boolean =
   const women: ICharacterFamily[] = [];
 
   for (const character of side) {
-    if (characters[character].sex === 'female') {
-      women.push(characters[character].family);
+    const item = characters.find(({id}) => id === character)!;
+
+    if (item.sex === 'female') {
+      women.push(item.family);
     } else {
-      mens.push(characters[character].family);
+      mens.push(item.family);
     }
   }
 

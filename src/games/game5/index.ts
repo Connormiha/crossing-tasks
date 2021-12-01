@@ -33,7 +33,7 @@ const game = new Game(
         description: 'Only big monkey or human can drive the boat',
         check(collocation): boolean {
           for (const character of collocation[BOAT]) {
-            if (character === 'gorilla' || characters[character].type === 'priest') {
+            if (character === 'gorilla' || characters.find(({id}) => id === character)!.type === 'priest') {
               return true;
             }
           }
@@ -54,7 +54,7 @@ const game = new Game(
             }
 
             for (const character of side) {
-              if (characters[character].type === 'priest') {
+              if (characters.find(({id}) => id === character)!.type === 'priest') {
                 priestsCount++;
               } else {
                 monkeyCount++;

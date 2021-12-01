@@ -1,5 +1,4 @@
 import schema from 'reducers/schema';
-import immutable from 'immutability-helper';
 
 import { MESSEGE_SET } from './constants';
 import { IMessageState } from 'flux/types';
@@ -14,7 +13,7 @@ const getDefaultState = (): IMessageState => schema.message;
 export default (state: IMessageState = getDefaultState(), { type, content }): IMessageState => {
   switch (type) {
     case MESSEGE_SET:
-      return immutable(state, { content: { $set: content } });
+      return {...state, content};
   }
 
   return state;

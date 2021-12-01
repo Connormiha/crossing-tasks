@@ -33,7 +33,7 @@ const game = new Game(
         description: 'Driving the boat can only adult',
         check(collocation): boolean {
           for (const character of collocation.boat) {
-            if (characters.some(({ id, adult }) => id === character && adult)) {
+            if (characters.find(({id}) => id === character)!.adult) {
               return true;
             }
           }

@@ -42,7 +42,7 @@ export default new Game(
             }
 
             for (const character of side) {
-              if (characters[character].type === 'priest') {
+              if (characters.find(({id}) => id === character)!.type === 'priest') {
                 priestsCount++;
               } else {
                 cavemansCount++;

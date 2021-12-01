@@ -1,5 +1,4 @@
 import schema from 'reducers/schema';
-import immutable from 'immutability-helper';
 
 import { GAME_SET, GAME_INIT, GAME_FINISH } from './constants';
 
@@ -18,14 +17,19 @@ const getDefaultState = (): IGameState => schema.game;
 
 export default (state: IGameState = getDefaultState(), { type, id, list }): IGameState => {
   switch (type) {
-    case GAME_SET:
-      return immutable(state, { $merge: { currentGame: id, finished: false } });
+    case GAME_SET: {
+      return {
+        ...state,
+        currentGame: id,
+        finished: false,
+      }
+    }
 
     case GAME_INIT:
-      return immutable(state, { list: { $set: list } });
+      return {...state, list};
 
     case GAME_FINISH:
-      return immutable(state, { finished: { $set: true } });
+      return {...state, finished: true };
   }
 
   return state;

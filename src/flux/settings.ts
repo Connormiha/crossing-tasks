@@ -1,5 +1,4 @@
 import schema from 'reducers/schema';
-import immutable from 'immutability-helper';
 
 import { SETTINGS_SET_VOLUME } from './constants';
 
@@ -15,7 +14,7 @@ const getDefaultState = (): ISettingsState => schema.settings;
 export default (state: ISettingsState = getDefaultState(), { type, volume }): ISettingsState => {
   switch (type) {
     case SETTINGS_SET_VOLUME:
-      return immutable(state, { volume: { $set: volume } });
+      return {...state, volume};
   }
 
   return state;
