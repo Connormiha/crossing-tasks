@@ -61,12 +61,11 @@ export default new Game(
           return isWomanWithOtherMenWithuotHasband(collocation[BOAT]);
         },
       },
-
       {
         description: 'A woman can not be with a man without a husband in riverside',
         check(collocation): boolean {
           for (const item of [RIVERSIDE_LEFT, RIVERSIDE_RIGHT]) {
-            const side: ICharacterIdGame3[] = collocation[item];
+            const side: ICharacterIdGame3[] = [...collocation[item]];
 
             if (item !== collocation.boatPosition) {
               side.push(...collocation[BOAT]);

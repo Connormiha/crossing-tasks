@@ -11,7 +11,7 @@ interface Props extends React.Props<any> {
   onClick(): void;
 }
 
-export default class Boat extends React.Component<Props> {
+export default class Remote extends React.Component<Props> {
   shouldComponentUpdate(nextProps) {
     return this.props.disabled !== nextProps.disabled;
   }
