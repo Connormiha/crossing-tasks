@@ -4,7 +4,6 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import TerserPlugin from 'terser-webpack-plugin';
 import CssoWebpackPlugin from 'csso-webpack-plugin';
-import autoprefixer from 'autoprefixer';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const ROOT_URL = process.env.ROOT_URL || '';
@@ -31,7 +30,7 @@ const CONFIG = {
     },
     alias: {
       invariant: 'lodash/noop',
-    },
+    } as any,
   },
   development: {
     localIdentName: '[local]',
@@ -41,7 +40,7 @@ const CONFIG = {
       removeStyleLinkTypeAttributes: true,
       removeRedundantAttributes: true,
     },
-    alias: {},
+    alias: {} as any,
   },
 }[NODE_ENV as ('development' | 'production')];
 
@@ -53,12 +52,6 @@ const cssLoaders = [
       modules: {
         localIdentName: CONFIG.localIdentName,
       },
-    },
-  },
-  {
-    loader: 'postcss-loader',
-    options: {
-      plugins: [autoprefixer()],
     },
   },
 ];

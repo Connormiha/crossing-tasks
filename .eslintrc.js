@@ -20,12 +20,11 @@ module.exports = {
   plugins: ['jest'],
   rules: {
     indent: ['error', 2],
-    '@typescript-eslint/interface-name-prefix': [
-      'error',
-      {
-        prefixWithI: 'always',
-      },
-    ],
+    '@typescript-eslint/naming-convention': ['error', {
+      selector: 'interface',
+      format: ["PascalCase"],
+      custom: { regex: "^I[A-Z]", match: true }
+    }],
     'react/display-name': 'off',
     'react/prop-types': 'off',
   },
